@@ -41,4 +41,4 @@ You can print the character sheets or open up the html versions at <insert link>
   I haven't personally been on this end of things, but will take notes when I run a campaign. Running one? Awesome! Make an issue and leave me some comments and feedback. Any is greatly appreciated.
   
 ---
-  This whole thing is still very much inder maintenance, still. If something feels unbalanced, or weirdy, please leave me a note. 
+  This whole thing is still very much under maintenance. If something feels unbalanced, or weirdy, please leave me a note. 
