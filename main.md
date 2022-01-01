@@ -35,6 +35,8 @@ color choice:
 >====================
 # Player Generation
 
+## class
+
     STR strength
         barbarian
         paladin
@@ -51,7 +53,7 @@ color choice:
         artificer
 
     RAN range
-        rogue
+        card-thrower
         hunter
         archer
         
@@ -60,9 +62,14 @@ color choice:
         cleric
         necromancer
 
-2d6 for 2  base, 
-  pick 1 class, subclass
+2d6 for 2  base,
+  if 6, choose class by hand 
+  pick 1 class & subclass
   non-chosen class is "major attribute"
+
+## race
+
+## attack
 
 2x `color choice`, pick 1 color
 
@@ -334,27 +341,28 @@ buildings
 >====================
 races
 
-    if roll contains: 
+    if roll contains number, pick 1 or none:
+    if roll is doubles (11, 22, 33) force the modifier 
     
         0 -> half-        
             roll for a secondary race
 
-        1 -> fel          
+        1 -> fel - BLK
             increased night vision, 
             fast night movement
 
-        2 -> high         
+        2 -> exalted (high-) - WHI   
             increased regeneration,
             CHA+2
 
-        3 -> aquatic      
+        3 -> aquatic - BLU
             water weird - invisible in water
 
-        4 -> flameborn    
+        4 -> flameborn - RED
             immune to fire, 
             stronger when in hot environments / on fire
 
-        5 -> earthkin     
+        5 -> earthkin - GRN
             grounded - cannot be knocked off feet
 
         6 -> studied
@@ -375,8 +383,8 @@ races
 
 
 00 - 11
-    merfolk
-    orc
+    triton
+    orog
     tiefling
     dwarf
     elf
@@ -386,14 +394,14 @@ races
     imp
     gnome
     goblin
-    nymph
+    genasi
 
 23 - 33
     piglin
     unknown
     spellforged
     titanborne
-    serperior
+    duarling
     
 34 - 44
     human
@@ -426,16 +434,16 @@ races
 78 - 88
     lynel
     sentient automaton
+    qualf
     tortle
     moonfolk
-    aarakocra
     
  89- 99  
     aligotarian
     animated armor
     halfling
     valkrye
-    qualf
+    aarakocra
 
 
 >======================
@@ -443,135 +451,150 @@ descriptions & mods
 
 
 
-    merfolk
+    triton          BLU
+      medium
+      Aquatic creatures. Merfolk with legs.
 
+    orog            RED
+      large
+      Really smart orc. Taller, stronger.
 
-    orc
+    tiefling        BLK
+      medium
+      Horned brows. Red, purple, otherwise dark skin.
 
+    dwarf           RED
+      small
+      Short, stout beings, fond of alcohol.
 
-    tiefling
+    elf             WHI BLK
+      medium
+      Slender, graceful, quiet. 
 
+    argonian        GRN BLU
+      medium
+      Reptilian humanoids, resistant to disease and poison.
 
-    dwarf
+    imp             RED
+      tiny
+      Tiny devils. Impervious to magic and can go invisible.
+      
+    gnome           WHI RED
+      small
+      Always busy, always curious.
 
+    goblin          GRN BLK
+      small
+      Weak, crafty, stealthy.
 
-    elf
+    genasi          
+      1d4 earth, water, fire, air
+      medium
+      
 
+    piglin          RED
+      medium
 
-    argonian
+    unknown         WHI BLK
+      medium
 
+    spellforged 
+      large
+      1d4 acid, water, fire, lightning
 
-    imp
+    titanborne      GRN RED
+      large
 
+    duarling        RED BLK 
+      small
 
-    gnome
+    human           WHT
+      medium
 
+    centaur         GRN
+      large
 
-    goblin
+    hobbit          GRN
+      small
 
+    treant/ent      GRN
+      large
 
-    nymph
+    troll           RED BLK
+      large
 
+    dragonkin       RED
+      medium
 
-    piglin
+    lizardfolk      BLU GRN
+      medium
 
+    kobold          BLK     
+      small
 
-    unknown
+    fae             GRN
+      small
 
+    satyr           GRN RED
+      medium 
 
-    spellforged
+    khajit          WHI GRN
+      medium
 
+    pump-kin        GRN BLK
+      medium
 
-    titanborne
+    roo             RED WHI
+      medium
 
-    serperior
+    etterkin        BLK
+      medium
 
+    kerbal          WHI
+      small
 
-    human
+    dryad           BLU
+      medium
 
+    naga            BLK
+      medium
 
-    centaur
+    yeti            BLU
+      large
 
+    amazonian       GRN
+      large
 
-    hobbit
+    golem        
+      1d4 earth, water, fire, air
+      large
 
+    lynel           WHI
+      large
 
-    treant/ent
+    sentient automaton NONE
+      medium
 
+    tortle          BLU
+      medium
 
-    troll
+    moonfolk        WHI  
+      small
 
+    aarakocra       WHI GRN
+      medium
 
-    dragonkin
+    aligotarian     BLU
+      medium
 
+    animated armor  BLK 
+      large
 
-    lizardfolk
+    halfling        WHI BLU
+      small
 
+    valkrye         WHI
+      medium
 
-    kobold
-
-
-    fae
-
-
-    satyr   
-
-
-    khajit
-
-
-    pump-kin
-
-
-    roo
-
-
-    etterkin
-
-
-    kerbal
-
-
-    dryad
-
-
-    naga
-
-
-    yeti
-
-
-    amazonian
-
-
-    golem - 1d4 earth, water, fire, air
-
-
-    lynel
-
-
-    sentient automaton
-
-
-    tortle
-
-
-    moonfolk
-
-
-    aarakocra
-
-
-    aligotarian
-
-
-    animated armor
-
-
-    halfling
-
-
-    valkrye
-
-
-    qualf
+    qualf           WHI BLU   
+      small
