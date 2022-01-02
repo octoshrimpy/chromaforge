@@ -1,15 +1,21 @@
 # Player Generation
+**requires:**
+* 2 d6
+* 1d100
+  * or 1d10 + 1 percentile die
+  * or 2d10
 
+---
 
 ## Get race
 
 0. Roll 1d100
-0. Pick race from bracket containing roll
+0. Using the Race table at the bottom, pick race from bracket containing roll
 
 
 ## Get race modifier
 
-take the individual numbers from the roll, and check race modifier. If roll is doubles (33, 55, 88) the modifier is forced
+Using the race modifier table below, take the individual numbers from the roll, and check race modifier. If roll is doubles (33, 55, 88) the modifier is forced
 
 
 _examples:_
@@ -35,7 +41,7 @@ _examples:_
    4. range
    5. charm
    6. player's choice
-0. pick one class from one the category rolled, the other becomes a secondary class for backstory building
+0. Using the class table below, pick one class from one of the categories rolled. The other category exists for backstory building
 
 _examples:_
 
@@ -47,6 +53,7 @@ _examples:_
     * Stealth, choice: arcane
     * Chose Druid (arcane)
     * end character: Stealthy Druid
+---
 ---
 
 ## Race table
@@ -183,3 +190,31 @@ if roll is doubles (11, 22, 33) force the modifier_
   * necromancer
 
 ---
+
+## Complete Example
+
+0. Rolls:
+   * 1d100: 42
+   * 2d6: 1+3
+0. Race
+   1. 42 falls in the 34 - 44 bracket
+       * Human, Centaur, Hobbit, Treant/Ent, Troll
+   2. Chosen Centaur
+   3. Check modifiers:
+      * 4: flameborn  - flameborn centaur
+      * 2: exalted  - exalted centaur  
+   0. Chosen flameborn
+1. Class
+   1. Check categories
+      * 1: strength
+      * 3: arcane
+   1. Chosen arcane
+   2. Check classes 
+      * sorcerer
+      * druid
+      * artificer 
+   0. Chosen druid
+   1. Append secondary class for worldbuilding:
+       * Strong druid
+0. full character
+   * Strong exalted druid centaur   
