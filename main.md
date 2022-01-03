@@ -1,72 +1,43 @@
->====================
-# Pre Game
-<details>
-  <summary>If using </summary>
-
-  1. separate colors
-  2. stack instants, sorceries enchantments per color
-  3. stack playable characters: <race> <class>
-  4. will end up with a stack of monsters per color
-</details>
-
-
-
 # Mechanics
 
-artifacts:
-    collected throughout the game
-
-overrides:
-    land for tile generation can be chosen to force a specific narrative
-
 money:
-    rupy          1rp = 20gp
-    gold piece    1gp = 10sp
-    silver piece  1sp = 10cp
-    copper piece  
+  * rupy          1rp = 20gp
+  * gold piece    1gp = 10sp
+  * silver piece  1sp = 10cp
+  * copper piece  1cp = 10sp  
 
-generators:
-    there are 3 main campaign progressors: town, dungeon, quest.
-    these 3 will have their own in-depth generators
+There are 3 main campaign progressors they have their own in-depth generators below
+  * town
+  * dungeon
+  * quest
       
->====================
+
 # Functions
 
+colors:
+```
+           white
+
+
+    green           blue
+
+
+       red      black
+```
 color choice:
     always start at the top, count clockwise, if 6, pick color manually
 
->====================
-# Player Generation
 
-## class
-
-2d6 for 2  base,
-  if 6, choose class by hand 
-  pick 1 class & subclass
-  non-chosen class is "major attribute"
-
-## race
-
-## attack
+# attack
 
 2x `color choice`, pick 1 color
 
 draw 3 attacks, pick 2    
 
-
+# inventory
 All players start with: 
-    1 Spirit Orb
-    2 Silver Pieces
-            
->====================
-# OLD - Player Generation
-
-    1. `color choice`, pick random card
-    2. `color choice`, pick 1 instant/spell per starting level
-
-All players start with: 
-    1 Spirit Orb
-    2 sp
+  * 1 Spirit Orb
+  * 2 Silver Pieces
     
 
 >====================
