@@ -1,18 +1,5 @@
-# Mechanics
 
-money:
-  * rupy          1rp = 20gp
-  * gold piece    1gp = 10sp
-  * silver piece  1sp = 10cp
-  * copper piece  1cp = 10sp  
-
-There are 3 main campaign progressors they have their own in-depth generators below
-  * town
-  * dungeon
-  * quest
-      
-
-# Functions
+# helpers
 
 colors:
 ```
@@ -24,9 +11,16 @@ colors:
 
        red      black
 ```
-color choice:
-    always start at the top, count clockwise, if 6, pick color manually
 
+### color choice
+Always start at the top, count clockwise, if 6, pick color manually
+
+### money
+  * rupy          1rp = 20gp
+  * gold piece    1gp = 10sp
+  * silver piece  1sp = 10cp
+  * copper piece  1cp = 10sp  
+      
 
 # attack
 
