@@ -29,7 +29,7 @@ base actions will always stem from these categories:
 * charm
 
 sometimes an action might fit into two categories. 
-pick one and roll with it.
+pick the best fitting one and roll with it.
 
 =====================
 

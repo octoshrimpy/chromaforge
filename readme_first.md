@@ -10,14 +10,14 @@ or manually create a character that matches the template_
 0. roll 2d6
 0. choose main house
 0. choose class from house
-0. use second d6 as descriptor
+0. use second d6 house as descriptor
 
 <descriptor> <race modifier> <race> <class>
-_charming studied moonfolk druid_
+> charming studied moonfolk druid
 
 
 # skill check
-_Any time a PC wants to do attempt anything of significance, check skill_
+_Any time a PC wants to attempt anything of significance, check skill_
 
 ### instructions
 
@@ -91,6 +91,8 @@ fail:   3
 
 
 # combat
+
+
 
 
 # leveling up

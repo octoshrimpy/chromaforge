@@ -147,3 +147,8 @@ Races.md
 
     qualf           WHI BLU   
       small
+
+
+unused races
+    kenku
+        crow humanoid

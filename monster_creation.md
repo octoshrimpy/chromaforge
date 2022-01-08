@@ -31,12 +31,92 @@ horde
 
 
 =======================
+=======================
 
-rolled 1d20 for difficulty
-    1
+# monster list
 
-rolled for monster count
+## humanoids
+anything from the races list
+acolyte
+assassin
+archmage
+bandit
+bugbear
+commoner
+cultist
+cycops
+gladiator
+gnoll
+guard
+hobgoblin
+kenku
+knight
+thug
+troglodyte
+vampire
+zombie
 
+## creatures
+sentient locust swarm
+ape
+baboon
+badger
+banshee
+bat
+bear
+boar
+constrictor snake
+crab
+crocodile
+direwolf
+giant centipede
+giant octopus
+giant rat
+giant scorpion
+giant spider
+sabertoothed tiger
+tiger
 
-rolled for monster health
-    15
+## mythicals
+baby dragon (small)
+adult dragon (large)
+faerie dragon (tiny)
+basilisk
+beholder
+wyrm
+doppleganger
+frost giant
+griffon
+sphynx
+harpy
+hellhound
+hippogriff
+hydra
+intelectual devourer
+lich
+manticore
+kraken
+poltergeist
+wyvern
+
+## fey, oozes, magical
+giant slug
+slime
+gelatinous cube
+reanimated skeleton
+elemental
+awakened tree
+crawlling claw
+drow
+ettercap
+fire snake
+flying sword
+iron golem
+mummy
+hag (rol lfor color)
+scarecrow
+owlbear
+shadow
+specter
+wight
+
