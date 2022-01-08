@@ -53,8 +53,11 @@ _examples:_
     * Stealth, choice: arcane
     * Chose Druid (arcane)
     * end character: Stealthy Druid
----
----
+
+    
+------------------------------------------
+------------------------------------------
+
 
 ## Race table
 
