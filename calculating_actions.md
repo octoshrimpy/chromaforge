@@ -2,7 +2,7 @@ all base stats are 1d10
 
 
 whenever rolling for action, DM always rolls 1d10 while player rolls appropriate dice,
-this will cause the general average of success higher or lower.
+this will cause the general average of success to be higher or lower.
 for actions where PC is more skilled, they will use a larger die + modifier points added in
 
 
@@ -29,7 +29,7 @@ base actions will always stem from these categories:
 * charm
 
 sometimes an action might fit into two categories. 
-
+pick one and roll with it.
 
 =====================
 
@@ -55,7 +55,8 @@ what to do:
     
         
 ==================
-
+= REFERENCE
+==================
 
 base actions
 
@@ -65,10 +66,10 @@ base actions
     range
     charm
 
-extended
+extended actions
 
     strength
-        Athleticsstrength
+        Athletics
         
     dexterity
         Acrobatics
