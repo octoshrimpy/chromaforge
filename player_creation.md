@@ -78,7 +78,7 @@ _examples:_
 23 - 33
   * Piglin
   * Unknown
-  * Spellforged - 1d4 acid, water, fire, lightning
+  * `Spellforged` - 1d4 acid, water, fire, lightning
   * Titanborne
   * Duarling
     
@@ -98,7 +98,7 @@ _examples:_
     
 56 - 66    
   * Khajit
-  * Pump-kin
+  * `Pump-kin`
   * Roo
   * Etterkin
   * Kerbal
@@ -112,7 +112,7 @@ _examples:_
     
 78 - 88
   * Lynel
-  * Sentient Automaton
+  * `Sentient Automaton`
   * Qualf
   * Tortle
   * Moonfolk
