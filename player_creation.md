@@ -91,7 +91,7 @@ _examples:_
     
 45 - 55
   * Dragonkin
-  * lLizardfolk
+  * Lizardfolk
   * Kobold
   * Fae
   * Satyr

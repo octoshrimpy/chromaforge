@@ -152,3 +152,6 @@ Races.md
 unused races
     kenku
         crow humanoid
+    tengu
+        winged japanese demon
+    warforged

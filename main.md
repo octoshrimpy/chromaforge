@@ -103,6 +103,8 @@ All players start with:
 
         1d6 (+3 above) - building count
 
+        1d6 rol for town color
+
 
 >====================
 

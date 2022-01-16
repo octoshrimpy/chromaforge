@@ -98,6 +98,7 @@ manticore
 kraken
 poltergeist
 wyvern
+tengu
 
 ## fey, oozes, magical
 giant slug
