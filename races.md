@@ -40,14 +40,7 @@ Races.md
       1d4 earth, water, fire, air
       medium
       
-
-    piglin          RED
-      medium
-
-    unknown         WHI BLK
-      medium
-
-    spellforged 
+    Warforged 
       large
       1d4 acid, water, fire, lightning
 
@@ -90,22 +83,10 @@ Races.md
     khajit          WHI GRN
       medium
 
-    pump-kin        GRN BLK
-      medium
-
     roo             RED WHI
       medium
 
     etterkin        BLK
-      medium
-
-    kerbal          WHI
-      small
-
-    dryad           BLU
-      medium
-
-    naga            BLK
       medium
 
     yeti            BLU
@@ -118,10 +99,7 @@ Races.md
       1d4 earth, water, fire, air
       large
 
-    lynel           WHI
-      large
-
-    sentient automaton NONE
+    kenku           BLU
       medium
 
     tortle          BLU
@@ -133,25 +111,12 @@ Races.md
     aarakocra       WHI GRN
       medium
 
-    aligotarian     BLU
-      medium
-
     animated armor  BLK 
       large
 
     halfling        WHI BLU
       small
 
-    valkrye         WHI
-      medium
-
     qualf           WHI BLU   
       small
 
-
-unused races
-    kenku
-        crow humanoid
-    tengu
-        winged japanese demon
-    warforged

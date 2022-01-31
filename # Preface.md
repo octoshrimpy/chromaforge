@@ -1,0 +1,229 @@
+# Preface
+  Welcome to The Forge, a lightweight, on-the-fly, storytelling group thing!
+
+---
+
+# Part 1 - Character Creation
+
+Unlike most roleplaying games, in The Forge you don't have to make many choices to get a character up and running. All it takes is two dice rolls and four choices and your whole character is created!
+
+There are Races, Race Modifiers, Houses, and Classes. 
+Race is the kind of creature you are: Human, Goblin, Centaur. 
+Race Modifiers help create backstory to the character, as well as add some helpful modifiers.
+House is the style of knowledge your Class falls under. You will have a main House and a secondary House. The secondary House is for character background and a few perks. 
+Class you choose will dictate what kind of fighting you're good at (or not!).
+
+
+**Requires:**
+* 1d100
+* 2d6
+
+There are:
+* 36 races
+* 9 race modifiers
+* 5 class houses
+* 15 classes, 3 per house
+
+
+### Chapter 1 - Step-By-Step Example
+
+1. Rolls:
+   * Race - 1d100: _42_
+   * Class - 2d6: _1, 3_
+2. Race
+   1. _42_ falls in the 34 - 44 bracket
+       * Human, Centaur, Hobbit, Troll
+   2. Chosen **Centaur**
+   3. Check modifiers:
+      * 4: Flameborn  - Flameborn Centaur
+      * 2: Exalted  - Exalted Centaur  
+   4. Chosen **Flameborn**
+3. Class
+   1. Check houses
+      * 1: Strength
+      * 3: Arcana
+   2. Chosen **Arcana**
+   3. Check classes 
+      * Sorcerer
+      * Druid
+      * Artificer 
+   4. Chosen **Druid**
+   5. Append secondary house:
+       * Strong Druid
+4. full character
+   * _Strong Flameborn Druid Centaur_   
+
+
+
+### Chapter 2 - Races & Race Modifiers
+
+Races are divided into groupings of 4, within a 10 digit bracket. 
+Roll a 1d100, and then check what bracket contains the number you rolled.
+
+* 27: 23 - 33
+* 84: 78 - 88
+* 55: 45 - 55
+
+Choose one of the four races in your bracket. You can check out the races document for extra information about your options to make a more informed decision, or just pick the top one if you're looking to generate a quick character.
+
+##### Races
+
+00 - 11
+  * Triton
+  * Orog
+  * Tiefling
+  * Elf
+
+12 - 22
+  * Imp
+  * Gnome
+  * Goblin
+  * Genasi - 1d4 earth, water, fire, air
+
+23 - 33
+  * Warforged - 1d4 acid, water, fire, lightning
+  * Titanborne
+  * Duarling
+  * Dwarf
+    
+34 - 44
+  * Human
+  * Centaur
+  * Hobbit
+  * Troll
+    
+45 - 55
+  * Treant/Ent
+  * Dragonkin
+  * Lizardfolk
+  * Kobold
+    
+56 - 66    
+  * Fae
+  * Satyr
+  * Khajit
+  * Roo
+  
+67 - 77
+  * Yeti
+  * Amazonian
+  * Golem - 1d4 earth, water, fire, air
+  * Etterkin
+    
+78 - 88
+  * Kenku
+  * Qualf
+  * Tortle
+  * Moonfolk
+    
+ 89- 99  
+  * Animated Armor
+  * Halfling
+  * Argonian
+  * Aarakocra/Rito
+  
+##### Race Modifiers
+
+Now, take the same roll and split it into its individual numbers. Those are your choices for Race Modifiers.
+
+* 27: 2, 7
+* 84: 8, 4
+* 55: 5, 5
+
+For a quick character you can ignore these altogether or just take the first digit.
+
+
+0. exalted (high-) - WHI
+   * RAN+1
+1. aquatic - BLU
+    * ARC+1
+2. fel (dark-) - BLK
+    * STL+1
+3. flameborn - RED
+    * STR+1
+4. earthkin - GRN
+    * CHR+1 
+5. half-        
+    * roll for a secondary race
+6. studied
+    *        
+7. streetkin
+    * 
+8. careful
+    * 
+9. outgoing
+    *  
+
+
+### Chapter 3 - Houses & Classes
+
+There are five Houses:
+  * STR - Strength
+  * STL - Stealth
+  * ARC - Arcana
+  * RAN - Range
+  * CHR - Charm
+  
+Each House contains three Classes that showcase the House's skills.
+Roll 2d6. If you got a 6, either roll again or choose one of the Houses manually.
+
+1. Strength
+2. Stealth
+3. Arcana
+4. Range
+5. Charm
+6. player's choice, or roll again
+
+From the two rolls, choose which will be your Primary House and Secondary House. 
+Now, choose a Class from your Primary House using the table below. 
+Afterwards, prepend the Secondary House to your Class.
+
+_Charming Artificer_
+
+_Strong Thief_
+
+_Ranged Beserker_
+
+
+* **STR** _Strength_
+  * barbarian
+  * paladin
+  * berserker
+
+   
+* **STL** _Stealth_
+  * thief
+  * monk
+  * rogue
+
+
+* **ARC** _Arcana_
+  * sorcerer
+  * druid
+  * artificer
+
+
+* **RAN** _Range_
+  * card-thrower
+  * hunter
+  * archer
+
+
+### Chapter 4 - Personality & Background
+
+### Chapter 5 - Equipment & Inventory
+
+---
+
+# Part 2 - In-Game Mechanics
+
+### Chapter 6 - Skill Checks
+
+### Chapter 7 - Travel & Adventuring
+
+### Chapter 8 - Combat
+
+### Chapter 9 - Leveling Up
+
+---
+

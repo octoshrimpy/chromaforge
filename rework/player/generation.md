@@ -98,94 +98,85 @@ _examples:_
   * Triton
   * Orog
   * Tiefling
-  * Dwarf
   * Elf
 
 12 - 22
-  * Argonian
   * Imp
   * Gnome
   * Goblin
   * Genasi - 1d4 earth, water, fire, air
 
 23 - 33
-  * Piglin
-  * Unknown
-  * `Spellforged` - 1d4 acid, water, fire, lightning
+  * Warforged - 1d4 acid, water, fire, lightning
   * Titanborne
   * Duarling
+  * Dwarf
     
 34 - 44
   * Human
   * Centaur
   * Hobbit
-  * Treant/Ent
   * Troll
     
 45 - 55
+  * Treant/Ent
   * Dragonkin
   * Lizardfolk
   * Kobold
-  * Fae
-  * Satyr
     
 56 - 66    
+  * Fae
+  * Satyr
   * Khajit
-  * `Pump-kin`
   * Roo
-  * Etterkin
-  * Kerbal
   
 67 - 77
-  * Dryad
-  * Naga
   * Yeti
   * Amazonian
   * Golem - 1d4 earth, water, fire, air
+  * Etterkin
     
 78 - 88
-  * Lynel
-  * `Sentient Automaton`
+  * Kenku
   * Qualf
   * Tortle
   * Moonfolk
     
  89- 99  
-  * Aligotarian
   * Animated Armor
   * Halfling
-  * Valkrye
+  * Argonian
   * Aarakocra/Rito
 
 ---
 
 ### Race Modifiers
 
-0. half-        
+1. half-        
     * roll for a secondary race
-1. fel - BLK
+2. fel - BLK
     * increased night vision
     * fast night movement
-2. exalted (high-) - WHI   
+3. exalted (high-) - WHI   
     * increased regeneration
     * CHA+2
-3. aquatic - BLU
+4. aquatic - BLU
     * water weird - invisible in water
-4. flameborn - RED
+5. flameborn - RED
     * immune to fire,
     * stronger when in hot environments / on fire
-5. earthkin - GRN
+6. earthkin - GRN
     * grounded - cannot be knocked off feet
-6. studied
+7. studied
     * INT+3
     * WIS+1           
-7. streetkin
+8. streetkin
     * INT+1
     * WIS+3
-8. lycanthrope  
+9. lycanthrope  
     * every X days lose all equipment on person
     * STR+3
-9. doppelganger 
+10. doppelganger 
     * can shift 1/day to person seen recently, requires full rest beforehand
     * requires a shift to go back to themselves
 
