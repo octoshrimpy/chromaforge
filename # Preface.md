@@ -211,10 +211,15 @@ _Ranged Beserker_
 
 ### Chapter 4 - Personality & Background
 
+Forge doesn't have built-in alignment charts, however now that you have your character built you can pick one if you'd like. 
+
 ### Chapter 5 - Equipment & Inventory
 
----
+Inventory is simple: You have unlimited inventory slots, and can carry unlimited items or weight, _to a reasonable limit_. Your pack can't carry a whole dragon's gold stash, but you could feasibly use it to sneak a couple dragon eggs away from their clutch.
 
+Equipment is much the same way as inventory. Sensible real-world logic and physics apply, unless there is a magical explanation. 
+
+---
 # Part 2 - In-Game Mechanics
 
 ### Chapter 6 - Skill Checks
