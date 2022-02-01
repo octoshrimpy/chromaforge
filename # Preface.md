@@ -25,7 +25,7 @@ There are:
 * 15 classes, 3 per house
 
 
-### Chapter 1 - Step-By-Step Example
+## Chapter 1 - Step-By-Step Example
 
 1. Rolls:
    * Race - 1d100: _42_
@@ -55,7 +55,7 @@ There are:
 
 
 
-### Chapter 2 - Races & Race Modifiers
+## Chapter 2 - Races & Race Modifiers
 
 Races are divided into groupings of 4, within a 10 digit bracket. 
 Roll a 1d100, and then check what bracket contains the number you rolled.
@@ -66,7 +66,7 @@ Roll a 1d100, and then check what bracket contains the number you rolled.
 
 Choose one of the four races in your bracket. You can check out the races document for extra information about your options to make a more informed decision, or just pick the top one if you're looking to generate a quick character.
 
-##### Races
+### Races
 
 00 - 11
   * Triton
@@ -122,7 +122,7 @@ Choose one of the four races in your bracket. You can check out the races docume
   * Argonian
   * Aarakocra/Rito
   
-##### Race Modifiers
+### Race Modifiers
 
 Now, take the same roll and split it into its individual numbers. Those are your choices for Race Modifiers.
 
@@ -155,7 +155,7 @@ For a quick character you can ignore these altogether or just take the first dig
     *  
 
 
-### Chapter 3 - Houses & Classes
+## Chapter 3 - Houses & Classes
 
 There are five Houses:
   * STR - Strength
@@ -209,7 +209,7 @@ _Ranged Beserker_
   * archer
 
 
-### Chapter 4 - Personality & Background
+## Chapter 4 - Personality & Background
 
 Forge doesn't have built-in alignment charts, however now that you have your character built you can pick one if you'd like. 
 
@@ -222,13 +222,17 @@ Equipment is much the same way as inventory. Sensible real-world logic and physi
 ---
 # Part 2 - In-Game Mechanics
 
-### Chapter 6 - Skill Checks
+## Chapter 6 - Skill Checks
 
-### Chapter 7 - Travel & Adventuring
+Whenever a player attempts an action that could change the course of history or the world around them, an appropriate Skill Check is used. Every check falls within one of the 5 Houses, however players can rationalize using one house as opposed to another.
 
-### Chapter 8 - Combat
+Every skill check uses a 1d10, except for 
 
-### Chapter 9 - Leveling Up
+## Chapter 7 - Travel & Adventuring
+
+## Chapter 8 - Combat
+
+## Chapter 9 - Leveling Up
 
 ---
 
