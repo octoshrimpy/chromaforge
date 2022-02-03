@@ -209,11 +209,15 @@ _Ranged Beserker_
   * archer
 
 
+### House Permanent Points
+
+Whenever you level up, you can exchange 3XP for a House Permanent Point. These points are permanently added to your rolls whenever you do a skill check within that house.
+
 ## Chapter 4 - Personality & Background
 
 Forge doesn't have built-in alignment charts, however now that you have your character built you can pick one if you'd like. 
 
-### Chapter 5 - Equipment & Inventory
+## Chapter 5 - Equipment & Inventory
 
 Inventory is simple: You have unlimited inventory slots, and can carry unlimited items or weight, _to a reasonable limit_. Your pack can't carry a whole dragon's gold stash, but you could feasibly use it to sneak a couple dragon eggs away from their clutch.
 
@@ -226,13 +230,22 @@ Equipment is much the same way as inventory. Sensible real-world logic and physi
 
 Whenever a player attempts an action that could change the course of history or the world around them, an appropriate Skill Check is used. Every check falls within one of the 5 Houses, however players can rationalize using one house as opposed to another.
 
-Every skill check uses a 1d10, except for 
+Every skill check uses a 1d10, unless stated otherwise in the racial traits. In those cases, use the mentioned die.
+
+For every three successful Skill Checks in one house you get one Experience Point towards that House.
+These XP points cannot be allocated anywhere else except for this one House.  
 
 ## Chapter 7 - Travel & Adventuring
 
 ## Chapter 8 - Combat
 
 ## Chapter 9 - Leveling Up
+
+Every time you have three successful Skill Checks, you get one Experience Point towards the house the checks were used towards.
+After a long rest or before/after a session, you may convert any 3 House-specific XP into a House Permanent.
+
+You may also convert any three XP into a Spirit Orb. These Orbs can be used as currency, or handed to other players/characters for them to use as experience. Be aware, one Spirit Orb will only give you one floating XP that you can add to any House, so there is a loss in the conversion.
+
 
 ---
 
