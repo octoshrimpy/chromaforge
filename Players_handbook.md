@@ -208,6 +208,11 @@ _Ranged Beserker_
   * hunter
   * archer
 
+* **CHR** _charm_
+  * bard
+  * cleric
+  * necromancer
+
 
 ### House Permanent Points
 
@@ -235,16 +240,53 @@ Every skill check uses a 1d10, unless stated otherwise in the racial traits. In 
 For every three successful Skill Checks in one house you get one Experience Point towards that House.
 These XP points cannot be allocated anywhere else except for this one House.  
 
+Skill checks are used to progress as a character in the game
+when a character goes to on a mission or quest, it can be difficult to succeed at harder tasks.
+Skill checks give a chance to level up abilities.
+
+Every race has a strong and weak house. An Orc may be really strong (STR) but not as charming with words (CHR).
+
+Race-based strengths are used by giving a permanent +2 to any rolls within that House.
+Class-based strengths are accounted for by giving a permanent +1 to any rolls in that House.
+Weaknesses are accounted for by having a smaller die being rolled.
+
+
+Every character attempting the skill check needs to roll the appropriate die for their character.
+The DM will determine which house the check will be ran against, players may persuade the DM on using a different house for their personal check.
+
+
+Checks grant Skill Check Points (sk) when successful. They require a minimum of the DC rolled, and fail if that roll cannot be achieved within the fail count. 
+
+easy = 1sk
+    DC:     3
+    fails:  7
+
+medium = 2sk
+    DC:     5
+    fails:  5
+    
+hard = 3sk
+    DC:     7
+    fails:  3
+
 ## Chapter 7 - Travel & Adventuring
 
 ## Chapter 8 - Combat
 
 ## Chapter 9 - Leveling Up
 
-Every time you have three successful Skill Checks, you get one Experience Point towards the house the checks were used towards.
+Any time you have three Skill Points (sk), you may exchange them for one Experience Point towards the house the checks were used towards.
 After a long rest or before/after a session, you may convert any 3 House-specific XP into a House Permanent.
 
 You may also convert any three XP into a Spirit Orb. These Orbs can be used as currency, or handed to other players/characters for them to use as experience. Be aware, one Spirit Orb will only give you one floating XP that you can add to any House, so there is a loss in the conversion.
+
+
+   
+at level 5, the world rolls against 
+the player with 1d20 instead of 1d10
+
+each class has a poor and very poor house. those houses are limited on the max level they can be raised to. 
+poor maxes at level 7, very poor maxes at level 5. all other houses max out at level 10
 
 
 ---
