@@ -55,6 +55,8 @@ thug
 troglodyte
 vampire
 zombie
+seer
+kobold
 
 ## creatures
 sentient locust swarm
@@ -63,19 +65,21 @@ baboon
 badger
 banshee
 bat
-bear
+brown bear
+black bear
 boar
-constrictor snake
+snake
 crab
 crocodile
+wolf
 direwolf
-giant centipede
-giant octopus
-giant rat
-giant scorpion
-giant spider
 sabertoothed tiger
 tiger
+hawk
+eagle
+cat
+octopus
+wasp
 
 ## mythicals
 baby dragon (small)
@@ -99,9 +103,12 @@ kraken
 poltergeist
 wyvern
 tengu
+chimera
+gorgon
 
 ## fey, oozes, magical
 slime
+drake
 gelatinous cube
 reanimated skeleton
 elemental
@@ -118,7 +125,10 @@ scarecrow
 owlbear
 shadow
 specter
+ghost
 wight
+mimic
+homunculus
 
 ## gigantism
 slug
