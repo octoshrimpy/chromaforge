@@ -2,22 +2,22 @@
 to have lower difficulty, use smaller die, down to 1d6
 
 1 - 5
-    d4
+    4 + d4
     
 6 - 10
-    d6
+    6 + d6
     
 11 - 14
-    d8
+    8 + d8
 
 15 - 17
-    d10
+    10 + d10
 
 18 - 19
-    d12
+    12 + d12
 
 20
-    d20
+    20 + d20
     
     
 lone
@@ -85,7 +85,7 @@ basilisk
 beholder
 wyrm
 doppleganger
-frost giant
+giant
 griffon
 sphynx
 harpy
@@ -101,7 +101,6 @@ wyvern
 tengu
 
 ## fey, oozes, magical
-giant slug
 slime
 gelatinous cube
 reanimated skeleton
@@ -114,10 +113,25 @@ fire snake
 flying sword
 iron golem
 mummy
-hag (rol lfor color)
+hag
 scarecrow
 owlbear
 shadow
 specter
 wight
 
+## gigantism
+slug
+slime
+snail
+spider
+beetle
+rat
+centipede
+bat
+crab
+frog
+lizard
+octopus
+scorpion
+wasp
