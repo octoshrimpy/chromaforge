@@ -133,7 +133,7 @@ Now, take the same roll and split it into its individual numbers. Those are your
 For a quick character you can ignore these altogether or just take the first digit.
 
 
-0. exalted (high-) - WHI
+0. holy (high-) - WHI
    * RAN+1
 1. aquatic - BLU
     * ARC+1

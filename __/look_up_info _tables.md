@@ -91,7 +91,7 @@ CHR              ARC
 
 ## Race Modifiers
 
-0. exalted (high-) - WHI
+0. holy (high-) - WHI
    * RAN+1
 1. aquatic - BLU
     * ARC+1
