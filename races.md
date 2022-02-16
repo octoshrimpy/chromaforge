@@ -99,7 +99,7 @@ Races.md
       1d4 earth, water, fire, air
       large
 
-    kenku           BLU
+    kenku           BLK
       medium
 
     tortle          BLU

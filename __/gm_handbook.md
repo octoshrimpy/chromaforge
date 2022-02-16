@@ -1,3 +1,6 @@
+generating campaign ideas:
+https://perchance.org/ttrpg-campaign-concept
+
 # Generating Land tiles
 
 ## Tile Color
@@ -56,30 +59,43 @@ if 1d6 = 6,
 
 ## Tile Content
 
-nothing
-hunting party
-    human
-    monster
-quest party
-    human
-    monster
-camp
-    human
-    monster
-travelling salesman
-    race
-    gender
-dungeon
-town
-    human
-    monster
-landmark
-    natural
-    man-made
-        fast travel gate
-        puzzle
-            item
-            entrance to secret location
+if roll ends on 0, then tile is empty
+
+01 - 20 `NPC`
+  1. friendly
+  2. friendly
+  3. friendly
+  4. friendly
+  5. store
+  6. store
+  7. store
+  8. Generate Quest
+  9. Generate Quest
+
+21 - 40 `hunting / camp` 
+  * 1d2
+    * heads - camp + quest
+    * tails - hunting party
+  * +2DEF,1ATK to leader
+
+  1. monster - 1d4  +2
+  2. monster - 1d6  +2
+  3. monster - 1d8  +2
+  4. monster - 1d10 +2
+  5. monster - 1d12 +2
+  6. quest - 1d4    +2
+  7. quest - 1d6    +2
+  8. quest - 1d8    +2
+  9. quest - 1d10   +2
+  
+41 - 60 `landmark`
+  Generate Landmark
+  
+61 - 80 `town` see mech:generators
+  Generate Town
+  
+81 - 100 `dungeon` see mech:generators
+  Generate Dungeon
 
 
 extra ideas
@@ -100,4 +116,80 @@ extra ideas
 
 # Town
 
-# Landmark
+
+## Generate Landmark
+
+any color tile may grab a landmark from a nearby color.
+check the color circle in lookup info tables
+
+natural
+  WHI
+    shelter/ice cave
+    mushroom rings
+    glacier
+        optional earth golem "swimming in da river"
+    salt flats
+    bird hill
+      birds wil always be on it
+      migratory birds divert to fly over it
+    "HOPE" tree
+        hope carved into it, nobody knows who or why
+  
+  BLU
+    series of small waterfalls
+    small "empty" lake (crystal clear)
+    reflective ponds you cannot see the bottom of
+    waterfall that reverses direction on full moon
+    left-footed water
+        anyone stepping into water with their right foot
+        will walk on the water. to penetrate water, first
+        stick your left foot in.
+    3 worried stones looking into lake
+        disappear when not being looked at
+        found hiding nearby
+
+  BLK
+    sinkhole
+    glowing water (danger)
+    massive skull with creatures living within
+    battlefield with scattered skeletons in piles
+    giant rusted 50ft sword stabbed into ground
+        all animals/plants avoid the area around it
+    all trees in the are are petrified
+
+  RED
+    empty lava tubes
+    giant dead carcass
+    hoodoos (sandstone/wind formation)
+    giant perfect round stone, always warm
+    changing fluid, pours out of rock, changes
+        lava, water, mud, beer, wine, acid, milk, saltwater, blood, feywater (teleports drinker nearby)
+        two fluids, one at the spout, other at the pool
+        it's different for everyone
+    giant's playground
+        stone clearing with giant footprints embedded
+
+  GRN
+    clearing
+    tree canopy tunnel
+    giant lone redwood
+    swordleaf trees
+        trees always rustling in  strong "wind"
+        leaves look razor-sharp
+    area covered with drawing moss
+        touching it makes moss move to where touched
+    candle trees
+        bright red leaves, contrasting well
+        leaves can be brewed into tea, warms down to bones
+
+man-made
+  WHI
+    glass tree, made to honor dwarven king
+      shatters anything that tries to break it
+  BLU
+    grounded pirate ship
+  BLK
+  RED
+  GRN
+    small abandoned treehouse village
+    taller tree with ARC or CHR NPC living within

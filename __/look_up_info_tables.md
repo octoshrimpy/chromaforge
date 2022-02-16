@@ -120,7 +120,7 @@ house - color
 
 **RAN** _Ranged_ WHI
     * cleric              :STL
-    * paladin             :
+    * card-thrower        :
     * monk                :STR
 
 **ARC** _Arcana_ BLU
@@ -135,7 +135,7 @@ house - color
 
 **STR** _Strength_ RED
     * berserker           :ARC
-    * card-thrower        :
+    * paladin             :
     * barbarian           :RAN
 
 **CHR** _Charm_ GRN
