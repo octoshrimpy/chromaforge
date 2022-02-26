@@ -55,11 +55,11 @@ CHR              ARC
 34 - 44
   * Human
   * Centaur
-  * Hobbit
+  * Changeling
   * Troll
     
 45 - 55
-  * Treant/Ent
+  * Entling
   * Dragonkin
   * Lizardfolk
   * Kobold
@@ -67,7 +67,7 @@ CHR              ARC
 56 - 66    
   * Fae
   * Satyr
-  * Khajit
+  * Tabaxi
   * Roo
   
 67 - 77
@@ -85,7 +85,7 @@ CHR              ARC
  89- 99  
   * Animated Armor
   * Halfling
-  * Argonian
+  * Hippofolk
   * Aarakocra/Rito
 
 

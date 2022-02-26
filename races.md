@@ -1,122 +1,146 @@
-Races.md
+race            color(s, choose one)
+  size
+  perk: add +2 to House checks
+  bane: roll 1d8 for House checks
+  visual description
+  1d4 choice
 
-    triton          BLU
-      medium
-      Aquatic creatures. Merfolk with legs.
+============================
 
-    orog            RED
-      large
-      Really smart orc. Taller, stronger.
+triton          BLU
+  medium
+  Aquatic creatures. Merfolk with legs.
 
-    tiefling        BLK
-      medium
-      Horned brows. Red, purple, otherwise dark skin.
+orog            RED
+  large
+  Really smart orc. Taller, stronger.
 
-    dwarf           RED
-      small
-      Short, stout beings, fond of alcohol.
+tiefling        BLK
+  medium
+  Horned brows. Red, purple, otherwise dark skin.
 
-    elf             WHI BLK
-      medium
-      Slender, graceful, quiet. 
+dwarf           RED
+  small
+  Short, stout beings, fond of alcohol.
 
-    argonian        GRN BLU
-      medium
-      Reptilian humanoids, resistant to disease and poison.
+elf             WHI BLK
+  medium
+  Slender, graceful, quiet. 
 
-    imp             RED
-      tiny
-      Tiny devils. Impervious to magic and can go invisible.
-      
-    gnome           WHI RED
-      small
-      Always busy, always curious.
+hippofolk       GRN BLU
+  medium
+  Human-like hippos. 
 
-    goblin          GRN BLK
-      small
-      Weak, crafty, stealthy.
+imp             RED
+  tiny
+  Tiny devils. Impervious to magic and can go invisible.
+  
+gnome           WHI RED
+  small
+  Always busy, always curious.
 
-    genasi          
-      1d4 earth, water, fire, air
-      medium
-      
-    Warforged 
-      large
-      1d4 acid, water, fire, lightning
+goblin          GRN BLK
+  small
+  Weak, crafty, stealthy.
 
-    titanborne      GRN RED
-      large
+genasi          
+  medium
+  Resemble humans, touched by elemental power.
+  1d4 earth, water, fire, air
+  
+Warforged 
+  medium
+  Human-like figure, sentient machines made of wood and metal.
+  1d4 acid, water, fire, lightning
 
-    duarling        RED BLK 
-      small
+titanborne      GRN RED
+  Giants in human form, with grooved tattoos on their thick skin.
+  large
 
-    human           WHT
-      medium
+duarling        RED BLK 
+  Short like a halfling, strong like a dwarf. 
+  small
 
-    centaur         GRN
-      large
+human           WHT
+  Your average run-of-the-mill person
+  medium
 
-    hobbit          GRN
-      small
+centaur         GRN
+  Half human, half horse.
+  large
 
-    treant/ent      GRN
-      large
+changeling      GRN
+  Use a hard CHR check to change appearance without changing stats.
+  CHR +2
+  RAN 1d8
+  medium
 
-    troll           RED BLK
-      large
+entling      GRN
+  I am groot
+  large
 
-    dragonkin       RED
-      medium
+troll           RED BLK
 
-    lizardfolk      BLU GRN
-      medium
+  large
 
-    kobold          BLK     
-      small
+dragonkin       RED
+  medium
 
-    fae             GRN
-      small
+lizardfolk      BLU GRN
+  medium
 
-    satyr           GRN RED
-      medium 
+kobold          BLK     
+  small
 
-    khajit          WHI GRN
-      medium
+fae             GRN
+  small
 
-    roo             RED WHI
-      medium
+satyr           GRN
+  Half man, half goat.
+  CHR +2
+  STL 1d8
+  medium 
 
-    etterkin        BLK
-      medium
+khajit          WHI GRN
+  medium
 
-    yeti            BLU
-      large
+roo             RED WHI
+  medium
 
-    amazonian       GRN
-      large
+yeti            BLU
+  large
 
-    golem        
-      1d4 earth, water, fire, air
-      large
+amazonian       GRN
+  large
 
-    kenku           BLK
-      medium
+golem        
+  1d4 earth, water, fire, air
+  large
 
-    tortle          BLU
-      medium
+etterkin        BLK
+  humanesque with spider eyes, and 3-fingered hands.
+  STL +2
+  CHR 1d8
+  medium
 
-    moonfolk        WHI  
-      small
+kenku           BLK
+  medium
 
-    aarakocra       WHI GRN
-      medium
+tortle          BLU
+  medium
 
-    animated armor  BLK 
-      large
+qualf           WHI BLU   
+  small
 
-    halfling        WHI BLU
-      small
+moonfolk        WHI  
+  small
 
-    qualf           WHI BLU   
-      small
+aarakocra       WHI GRN
+  medium
+
+animated armor  BLK 
+  large
+
+halfling        WHI BLU
+  small
 
