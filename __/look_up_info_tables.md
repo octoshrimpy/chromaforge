@@ -56,7 +56,7 @@ CHR              ARC
   * Human
   * Centaur
   * Changeling
-  * Troll
+  * Bugbear
     
 45 - 55
   * Entling
@@ -71,9 +71,9 @@ CHR              ARC
   * Roo
   
 67 - 77
-  * Yeti
-  * Amazonian
-  * Golem - 1d4 earth, water, fire, air
+  * Apeling
+  * Amazon
+  * shelled elemental - 1d4 earth, water, fire, air
   * Etterkin
     
 78 - 88
