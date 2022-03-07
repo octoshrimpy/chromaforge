@@ -145,3 +145,4 @@ lizard
 octopus
 scorpion
 wasp
+scarab beetle

@@ -53,3 +53,16 @@ util
 
 
 
+blue has 
+    all blue spells
+    all small spells whi/blk
+    all utility spells
+
+whi/blk
+    only their own color spells
+    all grn/red small spells
+    all small utility spells
+
+grn/red
+    only their own color small spells
+    all small utility spells

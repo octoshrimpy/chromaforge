@@ -132,7 +132,7 @@ lizardfolk      BLU GRN
   CHR 1d8
 
 kobold          BLK     
-  A humanoid dragon with rat-like features.
+  A humanoid dragon with mouse-like features.
   small
   CHR +2
   STR 1d8
@@ -225,6 +225,9 @@ halfling        WHI BLU
 hippofolk       GRN BLU
   medium
   Human-like hippos. 
+  STR +1
+  ARC +1
+  RAN 1d8
 
 aarakocra       WHI GRN
   medium
