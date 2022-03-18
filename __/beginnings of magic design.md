@@ -23,33 +23,84 @@ start off with 3 spells before needing rest
     large uitl
 
 
+range: 30'
+time: Level * 10 minutes
 WHI
-   
-BLU
-   
-BLK
-   
-RED
-   
-GRN
-
-attack
-    elemental hand
-    embolden
     telekinesis
-    exhaust
+        move any L*count object that isn't grounded
+        more objects than level lower the timer
+    vibe check
+        finger guns at someone to gather intent
+        both roll 1d20, if caster rolls higher,
+            caster knows target's intent. 
+            if intent is to hurt caster, next target's attack will deal 1/2 the damage.
+            if caster rolls lower, nothing happens.
+            if both roll the same, they are vibin'.
+                they cannot attack each other.
 
-defense
-    cast fog
-    healing touch
     force shield
+        cast bubble around zone, size of 1 person per 2L
+        level 3 caster can cover 1 large, or 1 medium + 1 small
+    healing touch
+        removes negative effects or heals for ARC skill check
+
+    reveal path
+        caster knows the way to any thing or person that they have seen a picture of, or in real life. the picture doesn't have to be recognizable for the caster.
+    control light
+        caster can control light sources around them, enabling or disabling the light itself.
+
+BLU
+    elemental hand
+        "Hi my name is Aang and I'm the avatar"
+    wizard mark
+        magical paint comes out of fingers to coat target (touched).
+        paint can only be seen by wizards, can be seen through walls.
+   
+    mirror image
+        create L*count clones of yourself. you cannot control them,
+        but they have the exact same mindset as you. legit clones.
+    thaumaturgic anchor
+        enchant an item, any magic that would target anything else
+        instead targets the anchor
+
+    illusion
+        pick one of the 5 senses, cast illusion towards person on that sense
+    simplify problem
+        reveals clues, simplifies problems, makes hard things easier to do
+
+BLK
+    dread presence
+    babble
+   
+    defy death
+    cast fog
+
+    time jump
+    polymorph
+
+RED
+    summon thing
+    embolden
+   
+    gravity shift
+    leather carapace
+
+    flesh warp
+    filch
+
+GRN
+    boogie bomb
+    improv sesh
+
+    ghost of pets past
     no u
 
-util
-    cast light
-    illusion
     charm
-    polymorph
+    catheryne
+
+
+any color
+    snail knight
 
 
 
