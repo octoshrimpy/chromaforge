@@ -13,14 +13,14 @@ start off with 3 spells before needing rest
 2 extra spells per ARC level
 
 6 spells per color
-    small ATK
-    large ATK
+    large ATK       restored after long rest (sleep)
+    small ATK       restored after short rest (relax)
 
-    small DEF
-    large DEF
+    large DEF       restored after long rest (sleep)
+    small DEF       restored after short rest (relax)
     
-    small util
-    large uitl
+    large util      restored after short rest (relax)
+    small util      can be cast every half hour
 
 
 range: 30'
@@ -125,7 +125,7 @@ GRN
     charm
         L * target creatures are attracted to object/creature of your choosing.
     question rock
-        you may ask any inanimate a question, and it will answer, but only you will hear. May not be accurate, or truthful.
+        you may ask any inanimate object or non-verbal creature a question, and it will answer, but only you will hear. May not be accurate, or truthful.
 
 
 any color
