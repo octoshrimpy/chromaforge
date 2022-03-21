@@ -214,9 +214,9 @@ _Ranged Beserker_
   * necromancer
 
 
-### House Permanent Points
+### House Proficiency Points
 
-Whenever you level up, you can exchange 3XP for a House Permanent Point. These points are permanently added to your rolls whenever you do a skill check within that house.
+Whenever you level up, you can exchange 3XP for a House Proficiency Point. These points are permanently added to your rolls whenever you do a skill check within that house.
 
 ## Chapter 4 - Personality & Background
 

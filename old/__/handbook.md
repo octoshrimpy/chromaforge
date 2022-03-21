@@ -201,14 +201,3 @@ If revived player's HP is higher than 4, they may attempt reviving someone as we
 
 
 =======================================================
-# Todo still
-
-* races
-    * add base HP
-    * add descriptions
-    * add pro/con houses
-* classes
-    * what if primary house had a max level of 12, or rolled with 12       
-* combat
-    figure out offset-based attacks for smarter combat
-

@@ -89,30 +89,6 @@ CHR              ARC
   * Aarakocra/Rito
 
 
-## Race Modifiers
-
-0. holy (high-) - WHI
-   * RAN+1
-1. aquatic - BLU
-    * ARC+1
-2. fel (dark-) - BLK
-    * STL+1
-3. flameborn - RED
-    * STR+1
-4. earthkin - GRN
-    * CHR+1 
-5. half-        
-    * roll for a secondary race
-6. studied
-    *        
-7. streetkin
-    * 
-8. careful
-    * 
-9. outgoing
-    *  
-
-
 ## Classes
 
 house - color
@@ -193,7 +169,7 @@ xp
     can have a house attached, or be "floating", to be assigned to any house
 
 pp
-    Permanence Point (house points)
+    Proficiency Point (house points)
     each pp grants +1 to any roll on checks towards the specific house
     cannot be exchanged across houses
 
