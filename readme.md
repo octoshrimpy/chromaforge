@@ -1,6 +1,6 @@
 * dungeon master
     * generate
-        * [world tile](DM's handbook/gen_world_tile.md)
+        * [world tile](dm_handbook/gen_world_tile.md)
         * landmark
         * dungeon
         * town
