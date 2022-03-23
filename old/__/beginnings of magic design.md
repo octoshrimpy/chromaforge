@@ -94,7 +94,7 @@ RED
     summon thing
         L * items you can describe appears on your outstretched hand. it has to be an item that exists and you've seen recently
     embolden
-        target creature gets L * 1 perk to any house.
+        target creature gets L * 1 perk to any house until after that house is used.
    
     gravity shift
         you can change the direction of gravity, for yourself only.

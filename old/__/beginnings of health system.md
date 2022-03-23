@@ -18,6 +18,7 @@ weapon
 situation
     ranged vs close
     standing vs prone
+    jumping vs standing
 
 situation: balanced
     defender - on ground, prone, with club
