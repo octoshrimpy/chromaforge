@@ -1,3 +1,16 @@
+100 monsters
+roll 1d20/10 per every few levels
+so you roll more dice, 
+raise your average
+harder monsters at end of list
+
+first roll is also initiative
+
+
+
+=====================
+
+
 1d20 for difficulty scale
 to have lower difficulty, use smaller die, down to 1d6
 
@@ -403,13 +416,7 @@ homunculus
     size
     description
 
-
-    size
-    description
-
 ## gigantism
-    size
-    description
 
 slug
     size
@@ -467,4 +474,7 @@ wasp
     size
     description
 
-    descriptionscarab beetle   size
+    
+scarab beetle   
+    size
+    description

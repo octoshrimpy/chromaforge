@@ -16,7 +16,6 @@ weapon
     disadvantage
 
 situation
-    ranged vs close
     standing vs prone
     jumping vs standing
 
