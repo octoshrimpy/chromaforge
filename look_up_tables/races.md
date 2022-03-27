@@ -177,8 +177,8 @@ amazon          GRN
   RAN 1d8
 
 shelled elemental        
-  small
   Elemental wants to be "people", covered in protective layer.
+  small
   CHR +1
   ARC +1
   STL 1d8
@@ -186,9 +186,9 @@ shelled elemental
 
 etterkin        BLK
   humanesque with spider eyes, and 3-fingered hands.
+  medium
   STL +2
   CHR 1d8
-  medium
 
 kenku           BLK
   Humanoid crows. Cannot fly or speak, only use mimicry.
@@ -197,21 +197,25 @@ kenku           BLK
   STR 1d8
 
 qualf           WHI BLU
-  small
   Four-armed, short and slender. Tinkerers.
+  small
   ARC +1
   STR +1
   RAN 1d8
 
 tortle          BLU
- Turtle humanoid. Slow, wise, and friendly survivalist.
-   medium
-   STR +1
-   ARC +1
-   STL 1d8
+  Turtle humanoid. Slow, wise, and friendly survivalist.
+  medium
+  STR +1
+  ARC +1
+  STL 1d8
 
 moonfolk        WHI  
+  Rabbit-like humanoid, with large rabbit ears and feet.
   small
+  CHR+1
+  ARC+1
+  STR 1d8
 
 animated armor  BLK 
   Armor brought to life by magic, has a soul. Loud and strong.
@@ -220,15 +224,22 @@ animated armor  BLK
   STL 1d8
 
 halfling        WHI BLU
+  Friendly, cheerful humans, no taller than your average waist.
   small
+  STL+1
+  CHR+1
+  STR 1d8
 
 hippofolk       GRN BLU
+  Human-like hippos, generous and friendly. 
   medium
-  Human-like hippos. 
   STR +1
   ARC +1
   RAN 1d8
 
 aarakocra       WHI GRN
+  winged birdfolk with talons on their feet
   medium
-
+  RAN+1
+  CHR+1
+  STL 1d8
