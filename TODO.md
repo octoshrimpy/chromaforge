@@ -1,6 +1,6 @@
-- [ ] propagate folders with proper files. see index.md
+- [ ] propagate folders with proper files. see readme.md
+- [ ] populate index.md with proper links to files
 - [ ] go through index entres, and check all content from ./old/ is included
-- [ ] remove race modifiers from character creation
 - [ ] reorganize races so each bracket has more diverse options
 - [ ] world tile gen: tile content should not be mutually exclusive. modify brackets to include other options
 - [ ] organize character creation to output like so:
