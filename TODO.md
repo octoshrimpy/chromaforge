@@ -1,5 +1,7 @@
 - [ ] propagate folders with proper files. see readme.md
 - [ ] populate index.md with proper links to files
+- [ ] think about when spells can be used
+- [ ] balance out OP cantrips (maybe even add cantrips, and leave util spells like they are)
 - [ ] go through index entres, and check all content from ./old/ is included
 - [ ] reorganize races so each bracket has more diverse options
 - [ ] world tile gen: tile content should not be mutually exclusive. modify brackets to include other options
