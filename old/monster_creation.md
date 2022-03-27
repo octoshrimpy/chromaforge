@@ -46,9 +46,8 @@ horde
 =======================
 ## TODO
 
-* add size
-
-
+* add description
+* organize into statblock brackets
 
 =======================
 
@@ -233,7 +232,7 @@ dragon - baby
     description
 
 dragon - adult
-    giant
+    huge
     description
 
 dragon - faerie
@@ -241,240 +240,231 @@ dragon - faerie
     description
 
 basilisk
-    giant
+    huge
     description
 
 beholder
-    size
+    large
     description
 
 wyrm
-    size
+    large
     description
 
 doppleganger
-    size
+    medium (varies)
     description
 
 giant
-    size
+    huge
     description
 
 griffon
-    size
+    large
     description
 
 sphynx
-    size
+    large
     description
 
 harpy
-    size
+    medium
     description
 
 hellhound
-    size
+    medium
     description
 
 hippogriff
-    size
+    large
     description
 
 hydra
-    size
+    huge
     description
 
 intelectual devourer
-    size
+    tiny
     description
 
 lich
-    size
+    medium
     description
 
 manticore
-    size
+    large
     description
 
 kraken
-    size
+    huge
     description
 
-poltergeist
-    size
+geist
+    medium
     description
 
 wyvern
-    size
+    large
     description
 
 tengu
-    size
+    medium
     description
 
 chimera
-    size
+    large
     description
 
 gorgon
-    size
+    large
     description
 
-
-    size
-    description
 
 ## fey, oozes, magical
-    size
-    description
 
 slime
-    size
+    varies
     description
 
 drake
-    size
+    large
     description
 
 gelatinous cube
-    size
+    varies
     description
 
 reanimated skeleton
-    size
+    medium
     description
 
 elemental
-    size
+    large
     description
 
 awakened tree
-    size
+    huge
     description
 
-crawlling claw
-    size
+crawling claw
+    tiny
     description
 
 drow
-    size
+    medium
     description
 
 ettercap
-    size
-    description
-
-fire snake
-    size
+    medium
     description
 
 flying sword
-    size
+    small
     description
 
 iron golem
-    size
+    large
     description
 
 mummy
-    size
+    medium
     description
 
 hag
-    size
+    medium
     description
 
 scarecrow
-    size
+    medium
     description
 
 owlbear
-    size
+    large
     description
 
 shadow
-    size
+    medium
     description
 
 specter
-    size
+    medium
     description
 
 ghost
-    size
+    medium
     description
 
 wight
-    size
+    medium
     description
 
 mimic
-    size
+    varies
     description
 
 homunculus
-    size
+    tiny
     description
 
 ## gigantism
 
 slug
-    size
+    huge
     description
 
 slime
-    size
+    huge
     description
 
 snail
-    size
+    huge
     description
 
 spider
-    size
+    huge
     description
 
 beetle
-    size
+    huge
     description
 
 rat
-    size
+    huge
     description
 
 centipede
-    size
+    huge
     description
 
 bat
-    size
+    huge
     description
 
 crab
-    size
+    huge
     description
 
 frog
-    size
+    huge
     description
 
 lizard
-    size
+    huge
     description
 
 octopus
-    size
+    huge
     description
 
 scorpion
-    size
+    huge
     description
 
 wasp
-    size
+    huge
     description
 
     
 scarab beetle   
-    size
+    huge
     description
