@@ -59,31 +59,31 @@ anything from the races list
 
 acolyte
     medium
-    description
+    Junior member of a religious group, has access to minor spells. 
 
 assassin
     medium
-    description
+    Hired killers, spies, bounty hunters. Their job is your death.
 
 archmage
     medium
-    description
+    Very old, very powerfull spellcaster. Can be anywhere in alignment spectrum.
 
 bandit
     medium
-    description
+    Pirates, over seas or land. Not all are evil.
 
 bugbear
-    large
-    description
+    medium
+    Hairy goblinoids, born for battle and mayhem. 
 
 commoner
     medium
-    description
+    Just your run-of-the-mill Joe Nobody.
 
 cultist
     medium
-    description
+    Allegiant to dark powers. Show signs of insanity in beliefs and practices.
 
 cycops
     large
