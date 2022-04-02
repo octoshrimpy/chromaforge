@@ -86,56 +86,56 @@ cultist
     Allegiant to dark powers. Show signs of insanity in beliefs and practices.
 
 cycops
-    large
-    description
+    huge
+    One-eyed giants living a simple life in the wild lands. Not too bright.
 
 gladiator
     large
-    description
+    Humanoid used to life-or-death fights. Brave and brutish.
 
 gnoll
     medium
-    description
+    Feral Hyena-headed humanoids. Attack without warning, slaughter and eat victims.
 
 guard
     medium
-    description
+    Watch over a city or fort, bodyguards for nobles. Can call reinforcements.
 
 hobgoblin
     medium
-    description
+    Bigger, stronger than average goblins. More organized and brutal in combat.
 
-kenku
+sahuagin
     medium
-    description
+    Humanoid sea devils with webbed frog feet and gilled fish heads. 
 
 knight
     medium
-    description
+    Warriors who pledged their services. Often travel with squires or hirelings.
 
 thug
     medium
-    description
+    Ruthless enforcers skilled at intimidation and violence. Very little morals.
 
 troglodyte
     medium
-    description
+    Barbaric reptilian humanoids. Stand tall, with muscular arms and strong noses.
 
 vampire
     medium
-    description
+    Shapeshifting, immune to magic, usually surrounded by vampire spawn.
 
 zombie
     medium
-    description
+    Move with a jerky uneven gait. Smell of decay. 
 
-seer
+gargoyle
     medium
-    description
+    Malevolent creatures of elemental earth, resembling grotesque statues.
 
-kobold
+deep gnome
     small
-    description
+    Gnome that lives deep underground, with rocky ashen skin and affinity to darkness.
 
 
 ## creatures
