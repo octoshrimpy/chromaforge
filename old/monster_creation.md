@@ -119,7 +119,7 @@ thug
 
 troglodyte
     medium
-    Barbaric reptilian humanoids. Stand tall, with muscular arms and strong noses.
+    Barbaric reptilian humanoids. Stand tall, with muscular arms and great sense of smell.
 
 vampire
     medium
