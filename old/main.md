@@ -101,9 +101,9 @@ All players start with:
           3. t no rumor  yes quest
           4. t no rumor  no quest - town hall defaults to quest
 
-        1d6 (+3 above) - building count
+        1d10 (+3 above) - building count
 
-        1d6 rol for town color
+        1d0/2 roll for town color
 
 
 >====================

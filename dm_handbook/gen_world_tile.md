@@ -1,12 +1,16 @@
 
 ## Tile Color
 
-_1d100, 1d10, 1d6_
+_1d100, 1d10, 1d6, 1d4_
 
 1d100 determines content
 1d10 determines color
 1d6 determines biome
-
+1d4 determines how much oontent generates
+1. one thing
+2. two things
+3. three things
+4. nothing (land is empty)
 
 if 1d6 = 5, 
     ignore color die, 
@@ -86,6 +90,7 @@ if roll ends on 0, then tile is empty
   7. quest - 1d6    +2
   8. quest - 1d8    +2
   9. quest - 1d10   +2
+  10. quest - 1d12  +2
   
 41 - 60 `landmark`
   Generate Landmark

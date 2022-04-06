@@ -167,6 +167,23 @@ grn
 
 
 
+good list of cantrips [here](https://www.dndbeyond.com/spells?filter-class=0&filter-search=&filter-level=0&filter-verbal=&filter-somatic=&filter-material=&filter-concentration=&filter-ritual=&filter-sub-class=)
+
+
+tentative cantrips
+    prestigidation  - charm?
+    mage hand       - arcana only
+    spare the dying
+    shocking grasp
+    message
+    vicious mockery - charm only
+    guidance        - ranged?
+    thaumaturgy     - stealth? 
+    shillelagh
+    infestation     - stealth?
+    druidcraft
+
+
 any color
     snail knight
     polymorph
