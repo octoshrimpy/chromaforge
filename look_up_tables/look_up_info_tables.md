@@ -2,11 +2,11 @@
 
 ## Colors
 
-WHIte
-BLUe
-BLacK
-RED
-GReeN
+YELlow: order, lawful, good, by the book; cleric, paladin, sorcerer
+BLUe: knowledge, wisdom, intelligence, introvert; artificer, ranger(?), wizard
+PuRPle: chaos; druid, warlock
+RED: strength, brute force, muscles
+GReeN: social butterfly, nature, outdoors, charming, manipulative; bard, ranger(?), sorcerer
                   
         WHI
 

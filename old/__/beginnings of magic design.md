@@ -133,7 +133,7 @@ cantrips
 range: self to 15'
 time: level * 5 minutes
 
-yel whi: order, lawful, good, by the book; cleric, paladin, sorcerer
+yel
     dancing lights
         creates one torch-sized light within range, making it appear as a torch, lantern, or glowing orb that hovers in the air for the duration. The light sheds dim light in a 5-foot radius. As a bonus action on your turn, you can move the lights up to 10 feet to a new spot within range.
     chill touch
@@ -141,7 +141,7 @@ yel whi: order, lawful, good, by the book; cleric, paladin, sorcerer
     decompose
         You reach out and touch the corpse of a creature. Over the next minute, the corpse begins to rapidly decompose, sprouting fungus and moss as it begins to degrade into compost and mulch. An odd-colored flower or two may also spring from the corpse in this time. Applicable requirements for resurrection are unaffected by this decomposition.
 
-blu: knowledge, wisdom, intelligence, introvert; artificer, ranger(?), wizard
+blu
     encode thoughts
         You pull a thought from your mind and transform it into a tangible string of glowing energy called a thought strand, which persists for the duration or until you cast this spell again. The thought strand appears in an unoccupied space within 5 feet of you as a Tiny, weightless, semisolid object that can be held and carried like a ribbon. It is otherwise stationary.
 
@@ -155,7 +155,7 @@ blu: knowledge, wisdom, intelligence, introvert; artificer, ranger(?), wizard
         
         You can cast this spell through solid objects if you are familiar with the target and know it is beyond the barrier. Magical silence, 1 foot of stone, 1 inch of common metal, a thin sheet of lead, or 3 feet of wood blocks the spell. The spell doesn't have to follow a straight line and can travel freely around corners or through openings.
 
-prp blk: chaos; druid, warlock
+prp
     acid splash
         You hurl a bubble of acid. Choose one creature you can see within range, or choose two creatures you can see within range that are within 5 feet of each other. A target must succeed on a Dexterity saving throw or take 1d6 acid damage.
     eldritch blast
@@ -163,9 +163,16 @@ prp blk: chaos; druid, warlock
     poison spray
         You extend your hand toward a creature you can see within range and project a puff of noxious gas from your palm. The creature must succeed on a Constitution saving throw or take 1d12 poison damage.
 
-red: strength, brute force, muscles
+red
+    shocking grasp
+        Lightning springs from your hand to deliver a shock to a creature you try to touch. Make a melee spell attack against the target. You have advantage on the attack roll if the target is wearing armor made of metal. On a hit, the target takes 1d8 lightning damage, and it can't take reactions until the start of its next turn.
 
-grn: social butterfly, nature, outdoors, charming, manipulative; bard, ranger(?), sorcerer
+        The spell's damage increases by 1d8 when you reach 5th level (2d8), 11th level (3d8), and 17th level (4d8).
+    shillelagh
+        The wood of a club or quarterstaff you are holding is imbued with nature's power. For the duration, you can use your spellcasting ability instead of Strength for the attack and damage rolls of melee attacks using that weapon, and the weapon's damage die becomes a d8. The weapon also becomes magical, if it isn't already. The spell ends if you cast it again or if you let go of the weapon.
+    booming blade
+        You brandish the weapon used in the spell’s casting and make a melee attack with it against one creature within 5 feet of you. On a hit, the target suffers the weapon attack’s normal effects and then becomes sheathed in booming energy until the start of your next turn. If the target willingly moves 5 feet or more before then, the target takes 1d8 thunder damage, and the spell ends.
+grn
     blade ward
         You extend your hand and trace a sigil of warding in the air. Until the end of your next turn, you have resistance against bludgeoning, piercing, and slashing damage dealt by weapon attacks.
     friends
@@ -181,15 +188,15 @@ good list of cantrips [here](https://www.dndbeyond.com/spells?filter-class=0&fil
 
 
 tentative cantrips
-    prestigidation  - charm?
+    prestigidation  - charm? (yes)
     mage hand       - arcana only
-    spare the dying
-    shocking grasp
-    message
+    spare the dying - chaos
+    shocking grasp  - under red
+    message         - under grn
     vicious mockery - charm only
     guidance        - ranged?
     thaumaturgy     - stealth? 
-    shillelagh
+    shillelagh      - under red
     infestation     - stealth?
     druidcraft
 
