@@ -2,18 +2,18 @@
 
 ## Colors
 
-WHIte
+YELlow
 BLUe
-BLacK
+PuRPle
 RED
 GReeN
                   
-        WHI
+        YEL
 
 GRN              BLU
 
 
-   RED        BLK
+   RED        PRP
 
 
 ## Houses
