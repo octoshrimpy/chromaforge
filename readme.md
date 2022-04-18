@@ -33,3 +33,4 @@
         * max levels
     * magic
         * colors & spell availability
+  tests
