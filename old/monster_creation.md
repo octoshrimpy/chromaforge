@@ -1,15 +1,256 @@
-100 monsters
-roll 1d20/10 per every few levels
-so you roll more dice, 
-raise your average
-harder monsters at end of list
+# how to generate monster(s)
 
-first roll is also initiative
+1. 1d10 - encounter purpose
+2. 1d10 - house
+3. 1d20 - monster
+4. if any PC lvl higher than 20, generate multiple monsters 
+
+-----------------------
+### TODO
+
+* finish adding description
+* finish organizing monsters into houses
+* gigantism - one option under each house, re-roll for monster
+    * will give more room for monsters
+
+-----------------------
+=======================
+## encounter purpose
+_1d10_
+
+1. fight ends - non-human reason
+2. PCs feel invincible
+3. fight ends - monster runs away - weak
+4. PCs feel strong
+5. fight ends - monster runs away - higher orders
+6. PCs feel weak
+7. fight ends - stronger help comes in
+8. PCs feel powerless
+9. fight ends - rescued from strong attack
+0. PCs forced to kill
+
+=======================
+# monster list
+_1d10 house, 1d10 monster_
+
+1,2 ran
+3,4 arc
+5,6 stl
+7,8 str
+9,0 chr
+
+### RAN ranged
+> ready
+
+1. bat
+    tiny creature
+    description
+
+2. hawk
+    small creature
+    description
+
+3. eagle
+    small creature
+    description
+
+4. acolyte
+    medium humanoid
+    Junior member of a religious group, has access to minor spells
+
+5. flying sword
+    small magical
+    description
+
+6. guard
+    medium humanoid
+    Watch over a city or fort, bodyguards for nobles. Can call reinforcements.
+
+7. sentient locust swarm
+    varies creature
+    description
+
+8. dragon - baby
+    small mythical
+    description
+
+9. dragon - faerie
+    tiny mythical
+    description
+
+10. dragon - adult
+    huge mythical
+    description
+
+### ARC arcana
+> ready
 
 
+1. cultist
+    medium humanoid
+    Allegiant to dark powers. Show signs of insanity in beliefs and practices.
 
-=====================
+2. hag
+    medium magical
+    description
 
+3. vampire
+    medium humanoid
+    Shapeshifting, immune to magic, usually surrounded by vampire spawn.
+
+4. elemental
+    large magical
+    description
+
+5. archmage
+    medium humanoid
+    Very old, very powerfull spellcaster. Can be anywhere in alignment spectrum
+
+6. lich
+    medium mythical
+    description
+
+### STL stealth
+> ready
+
+1. snake
+    tiny creature
+    description
+
+2. cat
+    small creature
+    description
+
+3. bandit
+    medium humanoid
+    Pirates, over seas or land. Not all are evil.
+
+4. deep gnome
+    small humanoid
+    Gnome that lives deep underground, with rocky ashen skin and affinity to darkness.
+
+5. tiger
+    medium creature
+    description
+
+6. assassin
+    medium humanoid
+    Hired killers, spies, bounty hunters. Their job is your death.
+
+7. troglodyte
+    medium humanoid
+    Barbaric reptilian humanoids. Stand tall, with muscular arms and great sense of smell.
+
+8. sabertoothed tiger
+    medium creature
+    description
+
+9. gnoll
+    medium humanoid
+    Feral Hyena-headed humanoids. Attack without warning, slaughter and eat victims.
+
+10. sahuagin
+    medium humanoid
+    Humanoid sea devils with webbed frog feet and gilled fish heads. 
+
+### STR strength
+> ready 
+
+1. commoner
+    medium humanoid
+    Just your run-of-the-mill Joe Nobody.
+
+2. zombie
+    medium humanoid
+    Move with a jerky uneven gait. Smell of decay. 
+
+3. thug
+    medium humanoid
+    Ruthless enforcers skilled at intimidation and violence. Very little morals.
+
+4. knight
+    medium humanoid
+    Warriors who pledged their services. Often travel with squires or hirelings.
+
+5. bugbear
+    medium humanoid
+    Hairy goblinoids, born for battle and mayhem. 
+
+6. gladiator
+    large humanoid
+    Humanoid used to life-or-death fights. Brave and brutish.
+
+7. gargoyle
+    medium humanoid
+    Malevolent creatures of elemental earth, resembling grotesque statues.
+
+8. hobgoblin
+    medium humanoid
+    Bigger, stronger than average goblins. More organized and brutal in combat.
+
+9. cycops
+    huge humanoid
+    One-eyed giants living a simple life in the wild lands. Not too bright.
+
+### CHR charm
+> ready
+
+1. ape
+    medium creature
+    description
+
+2. baboon
+    medium creature
+    description
+
+3. scarecrow
+    medium magical
+    description
+
+4. doppleganger
+    medium (varies) mythical
+    description
+
+5. awakened tree
+    huge magical
+    description
+
+6. intelectual devourer
+    tiny mythical
+    description
+
+7. sphynx
+    large mythical
+    description
+
+8. beholder
+    large mythical
+    description
+
+9. tengu
+    medium mythical
+    description
+
+=======================
+## monster attack
+_level - roll for atk dmg_
+
+1,2     1d4
+3,4     1d6
+5,6     1d8
+7,8     d10
+9,10    1d10 + 4
+11,12   1d12 + 6
+13,14   1d20 + 8
+15,16   1d10 + 10 
+17,18   1d12 + 12
+19,20   1d20 + 20
+
+this goes until halfway up the level scale (max 50) 
+after this, start spawning in groups every time
+
+=======================
+## generate monster count
 
 1d20 for difficulty scale
 to have lower difficulty, use smaller die, down to 1d6
@@ -31,8 +272,7 @@ to have lower difficulty, use smaller die, down to 1d6
 
 20
     20 + d20
-    
-    
+        
 lone
     generate monster
     
@@ -42,429 +282,242 @@ group
 horde
     15 + 1d10
 
-
-=======================
-## TODO
-
-* add description
-* organize into statblock brackets
-
 =======================
 
-# monster list
 
-## humanoids
-
-anything from the races list
-
-acolyte
-    medium
-    Junior member of a religious group, has access to minor spells. 
-
-assassin
-    medium
-    Hired killers, spies, bounty hunters. Their job is your death.
-
-archmage
-    medium
-    Very old, very powerfull spellcaster. Can be anywhere in alignment spectrum.
-
-bandit
-    medium
-    Pirates, over seas or land. Not all are evil.
-
-bugbear
-    medium
-    Hairy goblinoids, born for battle and mayhem. 
-
-commoner
-    medium
-    Just your run-of-the-mill Joe Nobody.
-
-cultist
-    medium
-    Allegiant to dark powers. Show signs of insanity in beliefs and practices.
-
-cycops
-    huge
-    One-eyed giants living a simple life in the wild lands. Not too bright.
-
-gladiator
-    large
-    Humanoid used to life-or-death fights. Brave and brutish.
-
-gnoll
-    medium
-    Feral Hyena-headed humanoids. Attack without warning, slaughter and eat victims.
-
-guard
-    medium
-    Watch over a city or fort, bodyguards for nobles. Can call reinforcements.
-
-hobgoblin
-    medium
-    Bigger, stronger than average goblins. More organized and brutal in combat.
-
-sahuagin
-    medium
-    Humanoid sea devils with webbed frog feet and gilled fish heads. 
-
-knight
-    medium
-    Warriors who pledged their services. Often travel with squires or hirelings.
-
-thug
-    medium
-    Ruthless enforcers skilled at intimidation and violence. Very little morals.
-
-troglodyte
-    medium
-    Barbaric reptilian humanoids. Stand tall, with muscular arms and great sense of smell.
-
-vampire
-    medium
-    Shapeshifting, immune to magic, usually surrounded by vampire spawn.
-
-zombie
-    medium
-    Move with a jerky uneven gait. Smell of decay. 
-
-gargoyle
-    medium
-    Malevolent creatures of elemental earth, resembling grotesque statues.
-
-deep gnome
-    small
-    Gnome that lives deep underground, with rocky ashen skin and affinity to darkness.
-
-
-## creatures
-
-sentient locust swarm
-    varies
-    description
-
-ape
-    medium
-    description
-
-baboon
-    medium
-    description
+============================
+## to organize below
 
 badger
-    small
+    small creature
     description
 
 banshee
-    medium
-    description
-
-bat
-    tiny
+    medium creature
     description
 
 brown bear
-    large
+    large creature
     description
 
 black bear
-    large
+    large creature
     description
 
 boar
-    medium
-    description
-
-snake
-    tiny
+    medium creature
     description
 
 crab
-    tiny
+    tiny creature
     description
 
 crocodile
-    medium
+    medium creature
     description
 
 wolf
-    small
+    small creature
     description
 
 direwolf
-    medium
-    description
-
-sabertoothed tiger
-    medium
-    description
-
-tiger
-    medium
-    description
-
-hawk
-    small
-    description
-
-eagle
-    small
-    description
-
-cat
-    small
+    medium creature
     description
 
 octopus
-    small
+    small creature
     description
 
 wasp
-    tiny
+    tiny creature
     description
 
 
 ## mythicals
 
-dragon - baby
-    small
-    description
-
-dragon - adult
-    huge
-    description
-
-dragon - faerie
-    tiny
-    description
-
 basilisk
-    huge
+    huge mythical
     description
 
-beholder
-    large
-    description
 
 wyrm
-    large
-    description
-
-doppleganger
-    medium (varies)
+    large mythical
     description
 
 giant
-    huge
+    huge mythical
     description
 
 griffon
-    large
-    description
-
-sphynx
-    large
+    large mythical
     description
 
 harpy
-    medium
+    medium mythical
     description
 
 hellhound
-    medium
+    medium mythical
     description
 
 hippogriff
-    large
+    large mythical
     description
 
 hydra
-    huge
-    description
-
-intelectual devourer
-    tiny
-    description
-
-lich
-    medium
+    huge mythical
     description
 
 manticore
-    large
+    large mythical
     description
 
 kraken
-    huge
+    huge mythical
     description
 
 geist
-    medium
+    medium mythical
     description
 
 wyvern
-    large
-    description
-
-tengu
-    medium
+    large mythical
     description
 
 chimera
-    large
+    large mythical
     description
 
 gorgon
-    large
+    large mythical
     description
 
 
-## fey, oozes, magical
+## magical
 
 slime
-    varies
+    varies magical
     description
 
 drake
-    large
+    large magical
     description
 
 gelatinous cube
-    varies
+    varies magical
     description
 
 reanimated skeleton
-    medium
-    description
-
-elemental
-    large
-    description
-
-awakened tree
-    huge
+    medium magical
     description
 
 crawling claw
-    tiny
+    tiny magical
     description
 
 drow
-    medium
+    medium magical
     description
 
 ettercap
-    medium
-    description
-
-flying sword
-    small
+    medium magical
     description
 
 iron golem
-    large
+    large magical
     description
 
 mummy
-    medium
-    description
-
-hag
-    medium
-    description
-
-scarecrow
-    medium
+    medium magical
     description
 
 owlbear
-    large
+    large magical
     description
 
 shadow
-    medium
+    medium magical
     description
 
 specter
-    medium
+    medium magical
     description
 
 ghost
-    medium
+    medium magical
     description
 
 wight
-    medium
+    medium magical
     description
 
 mimic
-    varies
+    varies magical
     description
 
 homunculus
-    tiny
+    tiny magical
     description
 
 ## gigantism
 
 slug
-    huge
+    huge creature
     description
 
 slime
-    huge
+    huge magical
     description
 
 snail
-    huge
+    huge creature
     description
 
 spider
-    huge
+    huge creature
     description
 
 beetle
-    huge
+    huge creature
     description
 
 rat
-    huge
+    huge creature
     description
 
 centipede
-    huge
+    huge creature
     description
 
 bat
-    huge
+    huge creature
     description
 
 crab
-    huge
+    huge creature
     description
 
 frog
-    huge
+    huge creature
     description
 
 lizard
-    huge
+    huge creature
     description
 
 octopus
-    huge
+    huge creature
     description
 
 scorpion
-    huge
+    huge creature
     description
 
 wasp
-    huge
+    huge creature
     description
 
     
 scarab beetle   
-    huge
+    huge creature
     description
