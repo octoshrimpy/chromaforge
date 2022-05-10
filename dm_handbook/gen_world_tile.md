@@ -6,7 +6,7 @@ _1d100, 1d10, 1d6, 1d4_
 1d100 determines content
 1d10 determines color
 1d6 determines biome
-1d4 determines how much oontent generates
+1d4 determines how much content generates
 1. one thing
 2. two things
 3. three things
@@ -78,7 +78,7 @@ if roll ends on 0, then tile is empty
 21 - 40 `hunting / camp` 
   * 1d2
     * heads - camp + quest
-    * tails - hunting party
+    * a
   * +2DEF,1ATK to leader
 
   1. monster - 1d4  +2
