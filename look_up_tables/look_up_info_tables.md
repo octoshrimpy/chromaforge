@@ -2,19 +2,19 @@
 
 ## Colors
 
-YELlow: order, lawful, good, by the book; cleric, paladin, sorcerer
-BLUe: knowledge, wisdom, intelligence, introvert; artificer, ranger(?), wizard
-PuRPle: chaos; druid, warlock
-RED: strength, brute force, muscles
-GReeN: social butterfly, nature, outdoors, charming, manipulative; bard, ranger(?), sorcerer
-                  
+**YELlow**: order, lawful, good, by the book; _cleric, paladin, sorcerer_   
+BLUe: knowledge, wisdom, intelligence, introvert; artificer, ranger(?), wizard   
+PuRPle: chaos; druid, warlock   
+RED: strength, brute force, muscles   
+GReeN: social butterfly, nature, outdoors, charming, manipulative; bard, ranger(?), sorcerer   
+```                  
         YEL
 
 GRN              BLU
 
 
    RED        PRP
-
+```
 
 ## Houses
 

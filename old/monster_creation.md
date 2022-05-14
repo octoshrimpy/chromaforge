@@ -14,6 +14,7 @@
     * will give more room for monsters
 
 -----------------------
+
 =======================
 ## encounter purpose
 _1d10_

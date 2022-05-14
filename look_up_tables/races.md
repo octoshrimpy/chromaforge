@@ -1,18 +1,18 @@
-race            color(s, choose one)
-  visual description
-  size
-  perk: add +2 to House checks
-  bane: roll 1d8 for House checks
-  1d4 choice
+### race            _color(s, choose one)_
+visual description   
+size   
+perk: add +2 to House checks   
+bane: roll 1d8 for House checks   
+1d4 choice   
 
 ============================
 
-triton          BLU
-  Aquatic creatures. Merfolk with legs.
-  medium
-  CHR +1
-  STR +1
-  RAN 1d8
+### triton          _BLU_
+  Aquatic creatures. Merfolk with legs.   
+  medium   
+  CHR +1   
+  STR +1   
+  RAN 1d8   
 
 orog            RED
   Really smart orc. Taller, stronger.
