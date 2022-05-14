@@ -1,84 +1,84 @@
-## humanoids
+## Humanoids
 
-1    acolyte
-medium
-Junior member of a religious group, has access to minor spells. 
+##### 1. Acolyte
+> * medium
+> * Junior member of a religious group, has access to minor spells. 
 
-2    assassin
-medium
-Hired killers, spies, bounty hunters. Their job is your death.
+##### 2. Assassin
+> * medium
+> * Hired killers, spies, bounty hunters. Their job is your death.
 
-3    archmage
-medium
-Very old, very powerfull spellcaster. Can be anywhere in alignment spectrum.
+##### 3. Archmage
+> * medium
+> * Very old, very powerfull spellcaster. Can be anywhere in > alignment spectrum.
 
-4    bandit
-medium
-Pirates, over seas or land. Not all are evil.
+##### 4. Bandit
+> * medium
+> * Pirates, over seas or land. Not all are evil.
 
-5    bugbear
-medium
-Hairy goblinoids, born for battle and mayhem. 
+##### 5. Bugbear
+> * medium
+> * Hairy goblinoids, born for battle and mayhem. 
 
-6    commoner
-medium
-Just your run-of-the-mill Joe Nobody.
+##### 6. Commoner
+> * medium
+> * Just your run-of-the-mill Joe Nobody.
 
-7    cultist
-medium
-Allegiant to dark powers. Show signs of insanity in beliefs and practices.
+##### 7. Cultist
+> * medium
+> * Allegiant to dark powers. Show signs of insanity in beliefs and > practices.
 
-8    cycops
-huge
-One-eyed giants living a simple life in the wild lands. Not too bright.
+##### 8. Cycops
+> * huge
+> * One-eyed giants living a simple life in the wild lands. Not too > bright.
 
-9    gladiator
-large
-Humanoid used to life-or-death fights. Brave and brutish.
+##### 9. Gladiator
+> * large
+> * Humanoid used to life-or-death fights. Brave and brutish.
 
-10    gnoll
-medium
-Feral Hyena-headed humanoids. Attack without warning, slaughter and eat victims.
+##### 10. Gnoll
+> * medium
+> * Feral Hyena-headed humanoids. Attack without warning, slaughter > and eat victims.
 
-11    guard
-medium
-Watch over a city or fort, bodyguards for nobles. Can call reinforcements.
+##### 11. Guard
+> * medium
+> * Watch over a city or fort, bodyguards for nobles. Can call > reinforcements.
 
-12    hobgoblin
-medium
-Bigger, stronger than average goblins. More organized and brutal in combat.
+##### 12. Hobgoblin
+> * medium
+> * Bigger, stronger than average goblins. More organized and brutal > in combat.
 
-13    sahuagin
-medium
-Humanoid sea devils with webbed frog feet and gilled fish heads. 
+##### 13. Sahuagin
+> * medium
+> * Humanoid sea devils with webbed frog feet and gilled fish heads. 
 
-14    knight
-medium
-Warriors who pledged their services. Often travel with squires or hirelings.
+##### 14. Knight
+> * medium
+> * Warriors who pledged their services. Often travel with squires > or hirelings.
 
-15    thug
-medium
-Ruthless enforcers skilled at intimidation and violence. Very little morals.
+##### 15. Thug
+> * medium
+> * Ruthless enforcers skilled at intimidation and violence. Very > little morals.
 
-16    troglodyte
-medium
-Barbaric reptilian humanoids. Stand tall, with muscular arms and great sense of smell.
+##### 16. Troglodyte
+> * medium
+> * Barbaric reptilian humanoids. Stand tall, with muscular arms and > great sense of smell.
 
-17    vampire
-medium
-Shapeshifting, immune to magic, usually surrounded by vampire spawn.
+##### 17. Vampire
+> * medium
+> * Shapeshifting, immune to magic, usually surrounded by vampire > spawn.
 
-18    zombie
-medium
-Move with a jerky uneven gait. Smell of decay. 
+##### 18. Zombie
+> * medium
+> * Move with a jerky uneven gait. Smell of decay. 
 
-19    gargoyle
-medium
-Malevolent creatures of elemental earth, resembling grotesque statues.
+##### 19. Gargoyle
+> * medium
+> * Malevolent creatures of elemental earth, resembling grotesque > statues.
 
-20    deep gnome
-small
-Gnome that lives deep underground, with rocky ashen skin and affinity to darkness.
+##### 20. Deep gnome
+> * small
+> * Gnome that lives deep underground, with rocky ashen skin and > affinity to darkness.
 
 
 ## creatures
