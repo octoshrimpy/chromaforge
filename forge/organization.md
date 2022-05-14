@@ -30,7 +30,7 @@ forge
             // content(s)
 
     compendium
-        colors / houses
+        colors & houses
         list of spells
         list of races
         list of classes
