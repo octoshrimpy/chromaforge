@@ -27,10 +27,13 @@ _Any time a PC wants to attempt anything of significance, check skill_
     * if PC roll higher, action success
     * if DM roll higher, action failed 
 
+===========================
+# here
+============================
+
 
 # traveling
 _Travelling will require skill checks by players_
-
 
 Skill checks are determined by rolling 1d6 per skill check required.
 
@@ -90,9 +93,9 @@ fail:   3
         * combat encounter
 
 
-# combat
-
-
+===========================
+# here
+============================
 
 
 # leveling up
@@ -114,3 +117,6 @@ skill check.
 after a long rest
 
 
+===========================
+# here
+============================
