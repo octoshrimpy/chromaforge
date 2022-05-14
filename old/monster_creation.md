@@ -105,7 +105,7 @@ _1d10 house, 1d10 monster_
 
 5. archmage
     medium humanoid
-    Very old, very powerfull spellcaster. Can be anywhere in alignment spectrum
+    Very old, very powerful spellcaster. Can be anywhere in alignment spectrum
 
 6. lich
     medium mythical
@@ -142,7 +142,7 @@ _1d10 house, 1d10 monster_
     medium humanoid
     Barbaric reptilian humanoids. Stand tall, with muscular arms and great sense of smell.
 
-8. sabertoothed tiger
+8. sabertooth tiger
     medium creature
     description
 
@@ -189,7 +189,7 @@ _1d10 house, 1d10 monster_
     medium humanoid
     Bigger, stronger than average goblins. More organized and brutal in combat.
 
-9. cycops
+9. cyclops
     huge humanoid
     One-eyed giants living a simple life in the wild lands. Not too bright.
 
@@ -216,11 +216,11 @@ _1d10 house, 1d10 monster_
     huge magical
     description
 
-6. intelectual devourer
+6. intellectual devourer
     tiny mythical
     description
 
-7. sphynx
+7. sphinx
     large mythical
     description
 
