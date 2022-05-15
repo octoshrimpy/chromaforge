@@ -1,35 +1,3 @@
-# look up info and tables
-
-## Colors
-
-**YELlow**: order, lawful, good, by the book; _cleric, paladin, sorcerer_   
-BLUe: knowledge, wisdom, intelligence, introvert; artificer, ranger(?), wizard   
-PuRPle: chaos; druid, warlock   
-RED: strength, brute force, muscles   
-GReeN: social butterfly, nature, outdoors, charming, manipulative; bard, ranger(?), sorcerer   
-```                  
-        YEL
-
-GRN              BLU
-
-
-   RED        PRP
-```
-
-## Houses
-
-RANge
-ARCana
-STeaLth
-STRength
-CHaRm
-                  
-        RAN
-
-CHR              ARC
-
-
-   STR        STL
 
 
 ## Conversions & Currencies
@@ -60,6 +28,13 @@ orb
 
 
 ---
+
+### money
+  * rupy          1rp = 20gp
+  * gold piece    1gp = 10sp
+  * silver piece  1sp = 10cp
+  * copper piece  1cp = 10sp  
+      
 
 rp  Rupy
 gp  Gold Piece
