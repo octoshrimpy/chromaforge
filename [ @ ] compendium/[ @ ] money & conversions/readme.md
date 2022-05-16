@@ -26,7 +26,14 @@ orb
 3xp  -> 1orb
 1orb -> 1xp
 
+can only convert spirit orbs at beginning or end of session, or after full rest
 
+3xp = spirit orb
+1xp = 1HP
+3xp + house permanent = +1 house permanent
+    3xp + +2sth = 5xp = +1sth 
+
+1so = +1 on any skill (house permanent)
 ---
 
 ### money

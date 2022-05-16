@@ -20,7 +20,7 @@ any color tile may grab a landmark from a nearby color.
 check the color circle in lookup info tables
 
 * natural
-  1. WHI
+  1. YEL
     1. shelter/ice cave
     2. mushroom rings
     3. glacier
@@ -45,7 +45,7 @@ check the color circle in lookup info tables
         disappear when not being looked at
         found hiding nearby
 
-  3. BLK
+  3. PRP
     1. sinkhole
     2. glowing water (danger)
     3. massive skull with creatures living within
@@ -80,7 +80,7 @@ check the color circle in lookup info tables
         leaves can be brewed into tea, warms down to bones
 
 * man-made
-  6. WHI
+  6. YEL
     1. glass tree, made to honor dwarven king
         shatters anything that tries to break it
     2. giant banner on a very tall flagpole
@@ -104,7 +104,7 @@ check the color circle in lookup info tables
         all the books are filled with proper titles and chapter
         headings, but the contents of the pages are nonsense
 
-  8. BLK
+  8. PRP
     1. large obelisk, does not reflect any light. 
         faintly glows purple whenever spirit orbs are around
     2. abandoned terraced gardens, filled to the brim with dead 

@@ -1,0 +1,1 @@
+<!-- todo add in worthy goals or build a rudimentary quest generator. possibly look online for a 1d100 list, or make your own, using multiple rolls + stats -->

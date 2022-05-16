@@ -1,20 +1,23 @@
-# traveling
+
 _Travelling will require skill checks by players_
 
-Skill checks are determined by rolling 1d6 per skill check required.
+Skill checks are determined by rolling 1d6 per skill check required. players can roll this.
 
-1. strength
-    * clearing paths
-    * setting up camp
-2. stealth
-    * hunting
-    * detection of possible enemies
-3. arcane
-    * detection of possible traps
-    * protection spells
-4. range
+
+## rolling for what checks to use while travelling
+
+1. ranged
     * hunting
     * scouting path for baddies
+2. arcana
+    * detection of possible traps
+    * protection spells
+3. stealth
+    * hunting
+    * detection of possible enemies
+4. strength
+    * clearing paths
+    * setting up camp
 5. charm
     * being friendly to passerbys
     * talking their way past toll roads
@@ -22,30 +25,7 @@ Skill checks are determined by rolling 1d6 per skill check required.
     * anything you want goes here
     * or pick one of the choices above
 
-_DC stands for difficulty class. 
-Players need to roll that number or higher to pass the check. 
-Any roll less than DC counts as 1 failed check._
-
-##### easy
-DC:     3     
-Skills: 3
-
-win:    3
-fail:   7
-    
-##### medium
-DC:     5
-Skills: 5
-
-win:    5
-fail:   5
-
-##### hard
-DC:     7
-Skills: 7
-
-win:    7
-fail:   3
+---
 
 
 ### instructions
@@ -57,4 +37,3 @@ fail:   3
         * non-combat encounter
     * less than half success roll achieved
         * combat encounter
-

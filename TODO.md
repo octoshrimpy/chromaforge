@@ -1,4 +1,7 @@
-- [ ] populate [quick_links.md](./quick_links.md) with proper links to files
+# V1 release
+
+- [ ] populate [quick_links.md](./quick_links.md) with proper links to files  
+- [ ] rename `primary house` to `main house`, and `secondary house` to `find-term-for-here house`
 - [ ] think about when spells can be used
 - [ ] balance out OP cantrips (maybe even add cantrips, and leave util spells like they are)
 - [ ] reorganize races so each bracket has more diverse options
