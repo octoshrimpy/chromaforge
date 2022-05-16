@@ -19,8 +19,18 @@ STR +1 /9   1d10 // 2
 CHR +0 /7   1d8
 ```
 
----
-
 - [x] world tile gen: tile content should not be mutually exclusive. modify brackets to include other options
 - [x] propagate folders with proper files. see readme.md
 - [x] go through index entries, and check all content from ./old/ is included
+
+---
+
+# The Monsterful Update
+
+---
+
+# Gerrimand's Lootbox of Shiny Things
+
+---
+
+# Mr. Smiley's Mercurial Moods
