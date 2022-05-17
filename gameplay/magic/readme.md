@@ -1,4 +1,5 @@
-<!-- todo: rethink this whole thing, separate list of spells and cantrips from this page. this is how magic works, not a list of magic stuff  -->
+<!-- @todo this needs to have proper explanations on use, how it tires the user, etc -->
+<!-- @todo: rethink this whole thing, separate list of spells and cantrips from this page. this is how magic works, not a list of magic stuff  -->
 Magic takes stamina. Magic takes effort. Physical, mental, both, or otherwise. 
 
 Energy cannot be created from nothing. Casting magic can make you sweat, cry, and bleed. Casting magic is the same as lifting weights: at first you don't know what you're doing and unless there's good supervision, you could seriously hurt yourself. 
