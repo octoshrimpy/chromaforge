@@ -32,3 +32,23 @@ To level up, you need 3xp plus however many pp you have on that house:
 * leveling up `CHR+1` needs **4** _(3+1)_ CHR xp
 
 Spirit Orbs can be used as currency in shops, or handed to other characters to use as xp.
+
+
+## Chapter 9 - Leveling Up
+
+Any time you have three Skill Points (sk), you may exchange them for one Experience Point towards the house the checks were used towards.
+After a long rest or before/after a session, you may convert any 3 House-specific XP into a House Permanent.
+
+You may also convert any three XP into a Spirit Orb. These Orbs can be used as currency, or handed to other players/characters for them to use as experience. Be aware, one Spirit Orb will only give you one floating XP that you can add to any House, so there is a loss in the conversion.
+
+
+   
+at level 5, the world rolls against 
+the player with 1d20 instead of 1d10
+
+each class has a poor and very poor house. those houses are limited on the max level they can be raised to. 
+poor maxes at level 7, very poor maxes at level 5. all other houses max out at level 10
+
+
+---
+
