@@ -5,13 +5,6 @@ roll:
 1d100       34
 
 
----
-## Race
-
-1d100 will be within a bracket - check races table
-choose race from within given bracket
-each race has pros and cons. check races information
-
 34 -> 34 - 44 bracket
         human
         centaur
@@ -113,4 +106,36 @@ CHR
 
 copy from Player's handbook into here
 
- 
+
+@todo item :octoshrimpy
+TODO item
+[ ] item
+
+@doing item
+DOING
+[o] item
+
+@think item
+THINK item
+[?] item
+
+@bug item
+BUG  item
+[@] item
+
+@hack  item
+HACK  item
+[>] item
+
+@fixme item
+FIXME item
+[!] item
+
+@done item
+DONE item
+[x] item
+
+@cancel item
+@nope item
+CANCEL item
+[-] item
