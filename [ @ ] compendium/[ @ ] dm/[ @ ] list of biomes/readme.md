@@ -1,29 +1,31 @@
-# Yellow
-1. plains
-2. grasslands
-3. snowy peaks
-4. frozen forest
+# List of Biomes
 
-# Blue
-1. riverlands
-2. flooded canyon
-3. lake
-4. water caves
+### Yellow
+* Plains
+* Grasslands
+* Snowy peaks
+* Frozen forest
 
-# Purple
-1. swamp
-2. burned wasteland
-3. sulphur pools
-4. giant mushroom fields
+### Blue
+* Riverlands
+* Flooded canyon
+* Lake
+* Water caves
 
-# Red
-1. desert
-2. savannah
-3. volcanic lands
-4. lava geyser field
+### Purple
+* Swamp
+* Burned wasteland
+* Sulphur pools
+* Giant mushroom fields
 
-# Green
-1. forest
-2. jungle
-3. flower fields
-4. orchards
+### Red
+* Desert
+* Savannah
+* Volcanic lands
+* Lava geyser field
+
+### Green
+* Forest
+* Jungle
+* Flower fields
+* Orchards
