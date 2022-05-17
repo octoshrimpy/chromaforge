@@ -1,30 +1,30 @@
 # List of Biomes
 
-### Yellow
+## Yellow
 * Plains
 * Grasslands
 * Snowy peaks
 * Frozen forest
 
-### Blue
+## Blue
 * Riverlands
 * Flooded canyon
 * Lake
 * Water caves
 
-### Purple
+## Purple
 * Swamp
 * Burned wasteland
 * Sulphur pools
 * Giant mushroom fields
 
-### Red
+## Red
 * Desert
 * Savannah
 * Volcanic lands
 * Lava geyser field
 
-### Green
+## Green
 * Forest
 * Jungle
 * Flower fields
