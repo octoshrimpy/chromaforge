@@ -1,5 +1,6 @@
 # V1 release
 
+- [ ] Create optional lore and NPCs for landmarks, shops, etc (Gym's Jim)
 - [ ] populate [quick_links.md](./quick_links.md) with proper links to files  
 - [ ] rename `primary house` to `main house`, and `secondary house` to `find-term-for-here house`
 - [ ] think about when spells can be used

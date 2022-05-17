@@ -1,7 +1,7 @@
 # Natural
 
 ### Yellow
-1. Shelter/ice cave
+1. Shelter / Ice cave
 2. Mushroom rings
 3. Glacier
     * Optional earth golem "swimming in da river"
@@ -110,17 +110,20 @@
 
 
 ### Red
+1.  Altar stone 
+    *   Sits atop a hill
+    *   Surrounded by charred skeletons
+    *   It has a crack through the middle
+    *   Inscription describes a god that nobody worships
+    *   It catches fire every solstice for 24 hours
+
 1. A large sand castle inhabited by non-verbal gnomes
-2. An altar stone atop a hill with a crack through the middle
-    surrounded by charred skeletons. an inscription describes
-    a god that nobody worships. it catches fire every solstice
-    for 24 hours.
-3. Military outpost. good condition, stocked, no people.
-4. Small shack that leads to underground cavern where illegal 
+1. Military outpost. good condition, stocked, no people.
+1. Small shack that leads to underground cavern where illegal 
     pet fighting happens
-5. Forge ran by faeries, used to create otherwise 
+1. Forge ran by faeries, used to create otherwise 
     non-obtainable items and tools
-6. Gym's Jim. bigger-on-the-inside shack, with concealed 
+1. Gym's Jim. bigger-on-the-inside shack, with concealed 
     portal to a central gym. working out here gives +1 STR or CHR until end of next battle. the "gym" is always the same
 
 
