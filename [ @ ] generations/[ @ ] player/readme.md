@@ -1,4 +1,4 @@
-
+<!-- @todo add bracketed list of races to here  -->
 Unlike most roleplaying games, in The Forge you don't have to make many choices to get a character up and running. All it takes is two dice rolls and four choices and your whole character is created!
 
 There are Races, Race Modifiers, Houses, and Classes. 
