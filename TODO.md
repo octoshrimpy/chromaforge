@@ -24,6 +24,17 @@ CHR +0 /7   1d8
 - [x] propagate folders with proper files. see readme.md
 - [x] go through index entries, and check all content from ./old/ is included
 
+- [ ] redo classes into below
+
+
+| `color` | yellow    | blue      | purple  | red       | green  |
+|---------|-----------|-----------|---------|-----------|--------|
+| `focus` | ranged    | arcana    | stealth | strength  | social |
+| `name`  | integrity | knowledge | chaos   | fortitude | charm  |
+| `sense` | sight     | taste     | sound   | smell     | touch  |
+
+
+
 ---
 
 # The Monsterful Update
