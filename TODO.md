@@ -42,7 +42,21 @@ CHR +0 /7   1d8
 ---
 
 # Gerrimand's Lootbox of Shiny Things
+_more items for lootdrops. not always overpowered_
+_simple things like broken glasses, box of letters_
+_fun items that can change the game later on_
 
+- crystal gems
+    - throw gems around you, create fighting clones of thrower
+    - clone will never be better than thrower
+    - clone will always have same dis/advantages as thrower
+        - prone, etc. 
+    - requires some magic to setup
+    - made of any gem 
+    - @think only fights as good as quality of gem 
+    - @think only lasts as good as quality of gem
+
+- new item
 ---
 
 # Mr. Smiley's Mercurial Moods
