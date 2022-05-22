@@ -24,7 +24,7 @@ CHR +0 /7   1d8
 - [x] propagate folders with proper files. see readme.md
 - [x] go through index entries, and check all content from ./old/ is included
 
-- [ ] redo classes into below
+- [x] redo classes into below
 
 
 | `house` | Integrity | Knowledge | Chaos   | Fortitude | Charm  |

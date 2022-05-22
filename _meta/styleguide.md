@@ -6,8 +6,11 @@ author: Amanda Gutmann
 
 <!-- [ ] Tila you can put markdown style ideas in here for me/us to follow. -->
 
-- `line indents`: Use 4 spaces for indentation
-- `split lines`: use a space followed by a backslash
+* `lists`       : Use a star, not a dash
+* `line indents`: Use 4 spaces for indentation
+* `split lines` : Use a space followed by a backslash
+* `slashes`     : Wrap spash with spaces. Slash should not touch any other character
+
 ---
 
 ## Lists 
