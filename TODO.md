@@ -27,10 +27,10 @@ CHR +0 /7   1d8
 - [ ] redo classes into below
 
 
-| `color` | yellow    | blue      | purple  | red       | green  |
+| `house` | Integrity | Knowledge | Chaos   | Fortitude | Charm  |
 |---------|-----------|-----------|---------|-----------|--------|
+| `color` | yellow    | blue      | purple  | red       | green  |
 | `focus` | ranged    | arcana    | stealth | strength  | social |
-| `name`  | integrity | knowledge | chaos   | fortitude | charm  |
 | `sense` | sight     | taste     | sound   | smell     | touch  |
 
 

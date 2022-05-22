@@ -1,11 +1,13 @@
 ---
-author: Amanda Gutmann, 
+author: Amanda Gutmann
 ---
 
 # Style 
 
 <!-- [ ] Tila you can put markdown style ideas in here for me/us to follow. -->
 
+- `line indents`: Use 4 spaces for indentation
+- `split lines`: use a space followed by a backslash
 ---
 
 ## Lists 
@@ -13,7 +15,7 @@ author: Amanda Gutmann,
 ### Visual descriptions
 <!-- @think: Refactor description for visual description priority  -->
 
- When describing landmark items, list the features beginning with those that the characters would perceive at first glance, followed by those that require a closer inspection.
+When describing landmark items, list the features beginning with those that the characters would perceive at first glance, followed by those that require a closer inspection.
 
 ```md
 1.  Altar stone 
