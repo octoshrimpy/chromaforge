@@ -1,4 +1,6 @@
-# Natural
+# List of Landmarks
+
+## Natural
 
 ### Yellow
 1. Shelter / Ice cave
@@ -83,7 +85,7 @@
 
 ---
 
-# Man-made
+## Man-made
 
 ### Yellow
 1. Glass tree

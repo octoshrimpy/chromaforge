@@ -1,4 +1,4 @@
-# List of links
+# List of Links
 
 ## Riddles
 * https://www.dndspeak.com/2018/11/28/100-riddles-and-their-answers/
@@ -12,7 +12,7 @@
 ## Encounter ideas
 * https://www.roleplayingtips.com/campaigns/wilderness-encounter-ideas/
 
-## generators
+## Generators
 *   NPCs
     *   https://npcgenerator.com/
 
