@@ -28,39 +28,3 @@ When describing landmark items, list the features beginning with those that the 
     *   Inscription describes a god that nobody worships
     *   It catches fire every solstice for 24 hours
 ```
-
----
-
-@todo item :octoshrimpy
-TODO item
-[ ] item
-
-@doing item
-DOING
-[o] item
-
-@think item
-THINK item
-[?] item
-
-@bug item
-BUG  item
-[@] item
-
-@hack  item
-HACK  item
-[>] item
-
-@fixme item
-FIXME item
-[!] item
-
-@done item
-DONE item
-[x] item
-
-@cancel item
-@nope item
-CANCEL item
-[-] item
-
