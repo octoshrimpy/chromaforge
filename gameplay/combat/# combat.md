@@ -1,21 +1,25 @@
 # combat
 
 
-## attacking and defending
-_does not change with attack choice_
+## on attack
 
-* +1d4 on self color
-* -+0  on next colors
-* -1d4 on opposite colors
+1. attacker calculates:
+    1. self.color vs land.color bonus
+        * +n same color
+        * +0 neighbor colors
+        * -n opposite colors
+    2. weapon advantage
+        * magic
+        * ranged
+        * meelee
+    3. situation advantage
+        * high ground
+        * standing
+        * prone
+2. defense calculates:
+    1. self.color vs land.color bonus
+    2. defense status
+        * surprised
+        * default
+        * braced
 
-## advantage system
-_these are optional, use is decided at beginning of battle_
-
-* weapon
-    * advantage
-    * balanced
-    * disadvantage
-
-* situation
-    * standing _vs_ prone
-    * high ground _vs_ standing
