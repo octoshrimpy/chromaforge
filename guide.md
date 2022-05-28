@@ -5,7 +5,7 @@ _welcome to the quick 'n' dirty Forge guide_
 
 1. [generate characters 🔗](/generators/player/readme.md) for everyone playing
 1. _**`borked`**_ generate campaign idea from [campaign concept generator 🔗](https://perchance.org/ttrpg-campaign-concept) 
-1. generate first tile using forge's [tile generator 🔗](./generators/world_tile/simple.md)
+1. generate first tile using the [tile generator 🔗](./generators/world_tile/simple.md)
 
 ---
 
@@ -24,6 +24,12 @@ _welcome to the quick 'n' dirty Forge guide_
 * [leveling up 🔗](/gameplay/leveling/readme.md)
 
 ### For the Dungeon Master
+
+* [tile 🔗](/generators/world_tile/simple.md)
+* [monster gen 🔗](/generators/monster/readme.md)
+* [monster list 🔗](/generators/monster/readme.md)
+
+
 _**`borked`**_ 
 _none of these work yet for generation, and are only empty links_
 

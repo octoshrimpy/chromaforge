@@ -1,25 +1,12 @@
 # Generate Monster
 
-  draw, 1d2
-    1. draw again, coinflip
-    2. heads, no more monsters
-
---- # how to generate monster(s)
-
-1. 1d10 - encounter purpose
-2. 1d10 - house
-3. 1d20 - monster
+1. `1d10` - encounter purpose
+2. `1d10` - house
+3. `1d20` - monster
 4. if any PC lvl higher than 20, generate multiple monsters 
 
 -----------------------
-### TODO
 
-* finish adding description
-* finish organizing monsters into houses
-* gigantism - one option under each house, re-roll for monster
-    * will give more room for monsters
-
------------------------
 
 ## encounter purpose
 _1d10_
@@ -51,25 +38,27 @@ see: [compendium/monsters]("/compendium/list of monsters")
 ---
 
 ## monster attack
-_level - roll for atk dmg_
 
-1,2     1d4
-3,4     1d6
-5,6     1d8
-7,8     d10
-9,10    1d10 + 4
-11,12   1d12 + 6
-13,14   1d20 + 8
-15,16   1d10 + 10 
-17,18   1d12 + 12
-19,20   1d20 + 20
+| level     | roll for atk dmg |
+|-----------|------------------|
+| `1`,`2`   | 1d4              |
+| `3`,`4`   | 1d6              |
+| `5`,`6`   | 1d8              |
+| `7`,`8`   | d10              |
+| `9`,`10`  | 1d10 + _4_       |
+| `11`,`12` | 1d12 + _6_       |
+| `13`,`14` | 1d20 + _8_       |
+| `15`,`16` | 1d10 + _10_      |
+| `17`,`18` | 1d12 + _12_      |
+| `19`,`20` | 1d20 + _20_      |
 
 this goes until halfway up the level scale (max 50) 
 after this, start spawning in groups every time
 
 ---
+---
 
-<!-- todo rethink this bit -->
+<!-- @todo rethink this bit -->
 
 ## generate monster count
 
@@ -102,3 +91,16 @@ group
     
 horde
     15 + 1d10
+
+
+----
+
+
+
+
+- [ ] finish adding description
+- [ ] finish organizing monsters into houses
+- [ ] gigantism - one option under each house, re-roll for monster
+    * will give more room for monsters
+
+-----------------------
