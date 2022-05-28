@@ -23,11 +23,22 @@ _welcome to the quick 'n' dirty Forge guide_
 * [combat 🔗](/gameplay/combat/readme.md)
 * [leveling up 🔗](/gameplay/leveling/readme.md)
 
+### For the Dungeon Master
+_**`borked`**_ 
+_none of these work yet for generation, and are only empty links_
+
+| places       | alives      | ideas         |
+|--------------|-------------|---------------|
+| [tile]()     | [monster]() | [encounter]() |
+| [town]()     | [npc]()     | [quest]()     |
+| [building]() | [player]()  |               |
+| [dungeon]()  |             |               |
+
 ---
 
 ## post-session
 
 * use skill checks and xp to level up ➡ [conversions 🔗](/compendium/money_conversions/readme.md)
 * ask for user feedback
-    * of towards the game itself, leave me an note [over here 🔗](https://github.com/octoshrimpy/chromaforge/issues/new)
+    * if towards the game itself, leave me a note [over here 🔗](https://github.com/octoshrimpy/chromaforge/issues/new)
 
