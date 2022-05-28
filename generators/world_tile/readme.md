@@ -81,16 +81,15 @@ if roll ends on 0, then tile is empty
     * a
   * +2DEF,1ATK to leader
 
+  5. monster - 1    +2
   1. monster - 1d4  +2
   2. monster - 1d6  +2
   3. monster - 1d8  +2
-  4. monster - 1d10 +2
-  5. monster - 1d12 +2
   6. quest - 1d4    +2
   7. quest - 1d6    +2
   8. quest - 1d8    +2
   9. quest - 1d10   +2
-  10. quest - 1d12  +2
+  9. quest - 1d12   +2
   
 41 - 60 `landmark`
   Generate Landmark

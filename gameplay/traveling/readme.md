@@ -1,7 +1,7 @@
 
 _Travelling will require skill checks by players_
 
-Skill checks are determined by rolling 1d6 per skill check required. players can roll this.
+Skill checks are determined by rolling 1d6 per skill check required. players can roll this. everyone needs to have a roll.
 
 
 ## rolling for what checks to use while travelling
@@ -34,6 +34,6 @@ Skill checks are determined by rolling 1d6 per skill check required. players can
     * travel was uneventful
 * players reach failed roll count first
     * more than half success roll achieved
-        * non-combat encounter
-    * less than half success roll achieved
-        * combat encounter
+    * non-combat encounter
+* less than half success roll achieved
+    * combat encounter

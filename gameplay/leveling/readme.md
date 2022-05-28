@@ -2,10 +2,12 @@
 
 characters have a max of 50 levels to attain
 
-house           - 10
-bane house(s)   - 5, 7
-main house      - 13
-secondary house - 12
+| house     | max level |
+|-----------|-----------|
+| `main`      | 13        |
+| `secondary` | 12        |
+| `regular`   | 10        |
+| `bane`      | 5, 7      |
 
 
 
@@ -28,7 +30,7 @@ spirit orbs can be traded across players, and even used as currency.
 Characters can only convert sk/xp/pp/orbs after a long rest, or before/after a session. \
 To level up, you need 3xp plus however many pp you have on that house:
 
-* leveling up `STL+4` needs **7** _(3+4)_ STL xp
+* leveling up `STL+4` needs **7** _(3+4)_ STL xp 
 * leveling up `CHR+1` needs **4** _(3+1)_ CHR xp
 
 Spirit Orbs can be used as currency in shops, or handed to other characters to use as xp.

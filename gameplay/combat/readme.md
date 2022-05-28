@@ -49,6 +49,8 @@ If revived player's HP is higher than 4, they may attempt reviving someone as we
 
 ---
 
+---
+
 # example
 
 # PC: lvl 16
