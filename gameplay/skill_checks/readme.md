@@ -46,8 +46,8 @@ medium
     fails:  5
 hard
     worth:  3sk
-    DC:     5
-    fails:  5
+    DC:     7
+    fails:  3
 
 ---
 

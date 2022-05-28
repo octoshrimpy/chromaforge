@@ -233,7 +233,7 @@ animated armor  BLK
   FRT +2
   CAO 1d8
 
-halfling        WHI BLU
+halfling        YEL BLU
   Friendly, cheerful humans, no taller than your average waist.
   small
   STL+1
