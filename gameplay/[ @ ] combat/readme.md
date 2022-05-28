@@ -2,6 +2,10 @@
 
 defender does not have to do any work, all numbers influence attacker
 
+1. attacker rolls 1d20 for AC check
+2. if AC roll not high enough, no hit
+3. if AC roll high enough, proceed with the math below
+
 ## on attack
 `n` is attacker's racial color house level, divided by 4, rounded down to the nearest whole number
 
