@@ -129,3 +129,72 @@ Equipment is much the same way as inventory. Sensible real-world logic and physi
 ## Final character
 
 Put together everything you just did in this order: `{racemod} {secondary house} {race} {class}`
+
+
+---
+
+
+## Race table
+
+00 - 11
+  * Triton
+  * Orog
+  * Tiefling
+  * Dwarf
+  * Elf
+
+12 - 22
+  * Argonian
+  * Imp
+  * Gnome
+  * Goblin
+  * Genasi - 1d4 earth, water, fire, air
+
+23 - 33
+  * Piglin
+  * Unknown
+  * `Spellforged` - 1d4 acid, water, fire, lightning
+  * Titanborne
+  * Duarling
+    
+34 - 44
+  * Human
+  * Centaur
+  * Hobbit
+  * Treant/Ent
+  * Troll
+    
+45 - 55
+  * Dragonkin
+  * Lizardfolk
+  * Kobold
+  * Fae
+  * Satyr
+    
+56 - 66    
+  * Khajit
+  * `Pump-kin`
+  * Roo
+  * Etterkin
+  * Kerbal
+  
+67 - 77
+  * Dryad
+  * Naga
+  * Yeti
+  * Amazonian
+  * Golem - 1d4 earth, water, fire, air
+    
+78 - 88
+  * Lynel
+  * `Sentient Automaton`
+  * Qualf
+  * Tortle
+  * Moonfolk
+    
+ 89- 99  
+  * Aligotarian
+  * Animated Armor
+  * Halfling
+  * Valkrye
+  * Aarakocra/Rito
