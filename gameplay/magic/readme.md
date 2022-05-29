@@ -74,7 +74,7 @@ BLU
     simplify problem
         reveals clues, simplifies problems, makes hard things easier to do
 
-BLK
+PRP
     dread presence
         every creature in a L*5' radius around you become aware of your ominous presence. if they have not noticed you, they become anxious, afraid, skittish.
     babble
@@ -83,7 +83,7 @@ BLK
     defy death
         a target creature is protected from death. if their HP would be 0, it instead stays at 1.
     cast fog
-        a fog with color of your choosing billows out from under you, out in a L * 5' radius. if ARC is level 5 or higher, you can choose a target location within 30'
+        a fog with color of your choosing billows out from under you, out in a L * 5' radius. if KNW is level 5 or higher, you can choose a target location within 30'
 
     time jump
         an item you touch will be sent L * 1 minute into the future. it will appear at the same exact location, with the same momentum. 
@@ -159,8 +159,10 @@ blu
 prp
     acid splash
         You hurl a bubble of acid. Choose one creature you can see within range, or choose two creatures you can see within range that are within 5 feet of each other. A target must succeed on a Dexterity saving throw or take 1d6 acid damage.
+
     eldritch blast
         A beam of crackling energy streaks toward a creature within range. Make a ranged spell attack against the target. On a hit, the target takes 1d10 force damage.
+        
     poison spray
         You extend your hand toward a creature you can see within range and project a puff of noxious gas from your palm. The creature must succeed on a Constitution saving throw or take 1d12 poison damage.
 

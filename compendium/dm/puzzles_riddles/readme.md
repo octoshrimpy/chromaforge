@@ -55,3 +55,7 @@ to the players. 100% voice-based roleplay no dice to generate, unless you want p
 > * pedestal in middle of room, face on one side, sentence on another, stating "show me only X". 
 > * players have to cover up the rest of the sentence, "show me only" so the statue only sees X. 
 > * put random items in room, as red herrings for pedestal. 
+
+---
+
+@bug add traps here asap

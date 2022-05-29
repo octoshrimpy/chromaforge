@@ -1,7 +1,7 @@
 _organized by attack type, and then by difficulty_
 ### RAN ranged
 
-1. **bat**
+1. **bat** AC: 15
 _`tiny` creature_
 description
 

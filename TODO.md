@@ -57,6 +57,7 @@ _fun items that can change the game later on_
     - @think only lasts as good as quality of gem
 
 - new item
+
 ---
 
 # Mr. Smiley's Mercurial Moods

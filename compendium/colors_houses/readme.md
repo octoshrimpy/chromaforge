@@ -2,19 +2,19 @@
 
 
 ## Colors
-* `YEL` Yellow  
 * `BLU` Blue   
 * `PRP` Purple 
 * `RED` Red    
 * `GRN` Green  
+* `YEL` Yellow  
 
 
 ## Houses
-* `NTG` Integrity    
 * `KNO` Knowledge    
 * `CAO` Chaos        
 * `FRT` Fortitude    
 * `CHR` Charm        
+* `NTG` Integrity    
 
 ```                  
           NTG

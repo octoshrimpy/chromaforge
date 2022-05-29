@@ -30,6 +30,8 @@ if dead end, no doors around, still could be above or below
 | 61 - 80  | `treasure door` |
 | 81 - 100 | `treasure room` |
 
+@todo more monsters if higher roll above
+
 ## roll 1d6
   1. trap, small treasure
   2. trap, medium treasure, generate puzzle
@@ -39,5 +41,5 @@ if dead end, no doors around, still could be above or below
   6. no trap, large treasure, generate monster
 
 `Boss`
-    1. 1d6 for color, draw random
+    1. 1d10 for color, generate random high difficulty
     2. add 1d4 to DEF, 1d4 to ATK 

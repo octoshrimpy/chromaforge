@@ -117,7 +117,7 @@ Nearly impossible | 30 | 1     | 6
 <!-- @todo rethink using the ones below -->
 extended skillset
 roll 1d20, never rolled against by DM
-    
+
 ### Knowledge
 * Arcana
 * Insight

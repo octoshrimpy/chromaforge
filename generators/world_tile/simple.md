@@ -36,9 +36,9 @@
 ### 1d4 content count
 
 1. 0 content
-1. 1 content
-1. 2 contents
-1. 3 contents
+2. 1 content
+3. 2 contents
+4. 3 contents
 
 
 ### 1d100 content
