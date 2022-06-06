@@ -2,7 +2,6 @@
 
 - [ ] Create optional lore and NPCs for landmarks, shops, etc (Gym's Jim)
 - [ ] populate [quick_links.md](./quick_links.md) with proper links to files  
-- [ ] rename `primary house` to `main house`, and `secondary house` to `find-term-for-here house`
 - [ ] think about when spells can be used
 - [ ] balance out OP cantrips (maybe even add cantrips, and leave util spells like they are)
 - [ ] reorganize races so each bracket has more diverse options
@@ -20,6 +19,7 @@ STR +1 /9   1d10 // 2
 CHR +0 /7   1d8
 ```
 
+- [x] rename `primary house` to `house`, and `secondary house` to `guild`
 - [x] world tile gen: tile content should not be mutually exclusive. modify brackets to include other options
 - [x] propagate folders with proper files. see readme.md
 - [x] go through index entries, and check all content from ./old/ is included

@@ -6,7 +6,7 @@ str 1d8     // from race
 
 strong monk
 
-str +1      // from secondary house
+str +1      // from guild
 
 strong kobold monk
 
@@ -21,7 +21,7 @@ ran 1d8
 
 ranged druid
 
-ran +1      // from secondary house
+ran +1      // from guild
 
 ranged hippofolk druid
 

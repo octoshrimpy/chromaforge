@@ -1,10 +1,10 @@
 <!-- @todo add bracketed list of races to here  -->
 Unlike most roleplaying games, in The Forge you don't have to make many choices to get a character up and running. All it takes is two dice rolls and four choices and your whole character is created!
 
-There are Races, Race Modifiers, Houses, and Classes. 
+There are Races, Race Modifiers, House, Guild, and Classes. 
 Race is the kind of creature you are: Human, Goblin, Centaur. 
-Race Modifiers help create backstory to the character, as well as add some helpful modifiers.
-House is the style of knowledge your Class falls under. You will have a main House and a secondary House. The secondary House is for character background and a few perks. 
+House is the style of knowledge your Class falls under.
+Guild is for a few perks, and character background. 
 Class you choose will dictate what kind of fighting you're good at (or not!).
 
 # Player Generation
@@ -26,7 +26,7 @@ _Generating a character before campaign. You can follow instructions below or ma
 0. roll 2d6
 0. choose main house
 0. choose class from house
-0. use second d6 house as secondary house
+0. use second d6 house as guild
 ---
 
 ## Race
@@ -64,19 +64,20 @@ Roll 2d6. If you got a 6, either roll again or choose one of the Houses manually
 5. Charm
 6. player's choice, or roll again
 
-From the two rolls, choose which will be your Primary House and Secondary House. 
-Now, choose a Class from your Primary House
+From the two rolls, choose which will be your House and guild. 
+Now, choose a Class from your House
 
-2 x 1d6 gives you a choice for a primary house from two. \
-rolling a 6 means you roll again, or pick a house manually. \
-each house has 3 classes within. \
-from the two choices, pick which wil be your primary and secondary house \
-pick a class from your primary house \
-your secondary house gives you things you're good at (pros) \
+2 x 1d6 gives you a choice for a House from two.
+rolling a 6 means you roll again, or pick a house manually.
+each house has 3 classes within.
+from the two choices, pick which wil be your house and guild
+pick a class from your house
+<!-- @todo check if this is accurate below -->
+your guild gives you things you're good at (pros)
 your class gives you things you're bad at (cons)
 
 
-the class you choose will add limits to the max level you can get certain houses to. \
+the class you choose will add limits to the max level you can get certain houses to.
 If the class has one house listed, that mentioned house is capped at level 5.
 If it has 2 houses, they're both capped at level 7.
 
@@ -87,10 +88,11 @@ If it has 2 houses, they're both capped at level 7.
     4. STR
     5. CHR
     6. choose manually
-2. decide which house is primary, other roll defaults to secondary
-3. primary house gets +4 extra levels to work towards and +2 pp
-4. secondary house gets +3 extra levels to work towards, and +1 PP
-5. look up classes that are within primary house, choose one
+2. decide which roll will be your House, other roll defaults to Guild
+<!-- @todo these numbers below are wrong -->
+3. House gets +4 extra levels to work towards and +2 pp
+4. Guild gets +3 extra levels to work towards, and +1 PP
+5. look up classes that are within your House, choose one
 
 ### House Proficiency Points
 
@@ -128,7 +130,7 @@ Equipment is much the same way as inventory. Sensible real-world logic and physi
 
 ## Final character
 
-Put together everything you just did in this order: `{racemod} {secondary house} {race} {class}`
+Put together everything you just did in this order: `{guild} {race} {class} of {House} house`
 
 
 ---
