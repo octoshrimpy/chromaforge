@@ -19,7 +19,7 @@
         *   Found hiding nearby
         *   Reappear by lake if nobody nearby
 * Manmade
-1. Grounded pirate ship
+    1. Grounded pirate ship
     1. Offensive statue
         *   Labelled as "the `1d6 adjective` person alive"
         *   Changes how it looks to be whoever is currently looking at it
@@ -40,7 +40,6 @@
     1. Library 
         *   Maintained by ghosts with no voice 
         *   All the books are filled with proper titles and chapter headings, but the contents of the pages are nonsense
-
 
 ## Yellow
 * Natural
