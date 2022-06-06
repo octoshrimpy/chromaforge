@@ -4,10 +4,10 @@ characters have a max of 50 levels to attain
 
 | house     | max level |
 |-----------|-----------|
-| `main`      | 13        |
-| `secondary` | 12        |
-| `regular`   | 10        |
-| `bane`      | 5, 7      |
+| `house`   | 13        |
+| `guild`   | 12        |
+| `regular` | 10        |
+| `bane`    | 5, 7      |
 
 
 

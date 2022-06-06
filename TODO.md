@@ -10,8 +10,8 @@
 ```
 strong lightning warforged mentalist
 
-ARC     main house, 1d12, +4 max level, +2 PP
-STR     secondary, +2 max level, +1 PP
+ARC     House, 1d12, +4 max level, +2 PP
+STR     guild, +2 max level, +1 PP
 
 RAN +0 /10  1d10
 ARC +2 /14  1d12 // 1
