@@ -27,48 +27,52 @@ _Start off with 3 spells cast before needing rest 2 extra spells cast per ARC le
 * Small util      can be cast every half hour
 
 ## Defaults
-* Range: 30'
-* Time: player level * 10 minutes
+* Range: 30 feet, area of range determined by spell
+* Duration: player level * 10 minutes
 
 ## WHI
 * Telekinesis
-    * Move any L*count object that isn't grounded
-    * More objects than level lower the timer
+    * Move amount of objects equal to player level
+    * Objects cannot be grounded
+    * More objects than level lowers the duration of spell
 * Vibe check
     * Finger guns at someone to gather intent
     * Both roll 1d20, if caster rolls higher,
         * Caster knows target's intent. 
-        * If intent is to hurt caster, next target's attack will deal 1/2 the damage.
+            * If intent is to hurt caster, next target's attack will deal 1/2 the damage.
         * If caster rolls lower, nothing happens.
-        * If both roll the same, they are vibin' they cannot attack each other.
+        * If both roll the same, they are vibin' and cannot attack each other.
 
 * Force Shield
-    * Cast bubble around zone, size of 1 person per 2L
+    * Cast bubble around zone, every 2 levels covers 1 person
     * Level 3 caster can cover 1 large, or 1 medium + 1 small
 * Healing Touch
-    * Removes negative effects or heals for ARC skill check
+    * Removes negative effects or heals for `KNW` skill check
 
 * Reveal Path
-    * Caster knows the way to any thing or person that they have seen a picture of, or in real life. the picture doesn't have to be recognizable for the caster.
-* Control light
+    * Caster knows the way to any thing or person that they have seen a picture of, or in real life. 
+    * Pictures don't have to be recognizable to the caster.
+* Control Light
     * Caster can control light sources around them, enabling or disabling the light itself.
 
 ## BLU
-* Elemental hand
-    * If ARC level is lower than 3, roll a 1d4 where:
+* Elemental Hand
+    * If `KNW` level is lower than 3, roll a 1d4 where:
         1. air
         2. earth
         3. water
         4. fire
-    * Otherwise choose one of the four elements to control 
-* Wizard mark
-    * Magical paint comes out of fingers to coat target (touched).
+    * Otherwise, choose one of the four elements to control 
+* Wizard Mark
+    * Magical paint comes out of fingers to coat target, target must be touched by caster.
     * Paint can only be seen by wizards, can be seen through walls.
 
 * Mirror image
-    * Create L*count clones of yourself. you cannot control them,
-    * But they have the exact same mindset as you. legit clones.
-* Thaumaturgic anchor
+    * Create number of self clones equal to player level. 
+    * Caster cannot control clones.
+    * Clones have the exact same mindset as you.
+@think rethink wording
+* Thaumaturgic Anchor
     * Enchant an item, any magic that would target anything else
     * Instead targets the anchor
 

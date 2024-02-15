@@ -145,7 +145,7 @@ check the color circle in lookup info tables
 
 =========================
 
-extra ideas
+## extra ideas
 
 * sprouts of magic mushrooms, when touched give the person 
   * full 10 on charm. the person actually has a -2 CHR for a few weeks.
