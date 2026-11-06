@@ -4,7 +4,7 @@ Only generate buildings as players interact with them:
 
 - tavern - only rumor
 - town hall - only quest
-- shop - [generate shop 🔗](/generators/building/readme.md)
+- shop - [generate shop 🔗](/generators/building.md)
 
 ## steps
 
@@ -23,7 +23,7 @@ Only generate buildings as players interact with them:
 
 ### culture
 
-_the town's dominant fount — its banner color, temple, and civic character (see [colors & houses](/compendium/colors_houses/readme.md))._
+_the town's dominant fount — its banner color, temple, and civic character (see [colors & houses](/compendium/colors_houses.md))._
 
 | roll  | result                     |
 | ----- | -------------------------- |

@@ -65,5 +65,5 @@ Goal: GM starts in Kathara, follows players off expected path, and returns to ch
 
 ## 6. Magic reconciliation
 
-- [ ] Map V1 spell list (YEL/BLU/PRP/RED/GRN) in [compendium/spells](compendium/spells/readme.md) to Founts, or drop entries that don't fit.
+- [ ] Map V1 spell list (YEL/BLU/PRP/RED/GRN) in [compendium/spells](compendium/spells.md) to Founts, or drop entries that don't fit.
 - [ ] Decide whether V1's "magic as exertion / corruption toward a color" ([rules-v1](_meta/archive/rules-v1.md#magic)) becomes the spell-resource answer in section 4.

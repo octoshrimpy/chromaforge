@@ -1,8 +1,8 @@
-> **V1 spell catalog, not active mechanics.** Use [alpha magic](../../guide.md#magic). Entries are inspiration until reconciled with a Fount. V1 magic concept: [rules-v1](../../_meta/archive/rules-v1.md#magic).
+> **V1 spell catalog, not active mechanics.** Use [alpha magic](../guide.md#magic). Entries are inspiration until reconciled with a Fount. V1 magic concept: [rules-v1](../_meta/archive/rules-v1.md#magic).
 
 # Spells
 
-`L` = caster level. Default range 30'; duration L × 10 min. Colors are V1 labels. Mapping them to Founts is open in [TODO](../../TODO.md).
+`L` = caster level. Default range 30'; duration L × 10 min. Colors are V1 labels. Mapping them to Founts is open in [TODO](../TODO.md).
 
 ## YEL
 

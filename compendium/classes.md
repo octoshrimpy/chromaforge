@@ -30,22 +30,12 @@ These remain in original roster but lack alpha-ready kits and signature abilitie
 - **Builder** — Drun-led construction, endurance, and field control.
 - **Artisan** — Veyra-led craft, performance, and social leverage.
 
-| Fount             | Color  | Original roster name | Alpha status |
-| ----------------- | ------ | -------------------- | ------------ |
-| Seron — Integrity | yellow | Warden               | completed    |
-| Orvik — Knowledge | blue   | Medic                | completed    |
-| Zhark — Change    | red    | Pathfinder           | completed    |
-| Drun — Fortitude  | green  | Builder              | later        |
-| Veyra — Charm     | purple | Artisan              | later        |
+| Fount             | Color  | Archetype  | Symbol | Alpha status |
+| ----------------- | ------ | ---------- | ------ | ------------ |
+| Seron — Integrity | yellow | Warden     | `ᛄ`    | completed    |
+| Orvik — Knowledge | blue   | Medic      | `∵`    | completed    |
+| Zhark — Change    | red    | Pathfinder | `ϟ`    | completed    |
+| Drun — Fortitude  | green  | Builder    | `△`    | later        |
+| Veyra — Charm     | purple | Artisan    | `⌘`    | later        |
 
-### Generator symbols
-
-Kept for existing paper and HTML generator output.
-
-| Archetype  | Symbol |
-| ---------- | ------ |
-| Warden     | `ᛄ`    |
-| Medic      | `∵`    |
-| Pathfinder | `ϟ`    |
-| Builder    | `△`    |
-| Artisan    | `⌘`    |
+Symbols mark archetypes on paper generator output.

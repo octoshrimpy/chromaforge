@@ -1,4 +1,4 @@
-> **V1 random generator, not active alpha character creation.** Use the single procedure in [the alpha guide](../../guide.md#character-creation). This page remains for generator compatibility and historical ancestry tables.
+> **V1 random generator, not active alpha character creation.** Use the single procedure in [the alpha guide](../guide.md#character-creation). This page remains for generator compatibility and historical ancestry tables.
 
 # Player Generation
 
@@ -37,7 +37,7 @@ _Generating a character before a campaign. You can follow the instructions below
 
 ### race
 
-Races are divided into groups within a 100-digit bracket, read as percentile (`00`-`99`) — a natural roll of 100 reads as `00`. Roll `1d100`; the tool picks one race from the matching bracket (reroll the step for a different one, or check [compendium/races](../../compendium/races/readme.md) to choose deliberately).
+Races are divided into groups within a 100-digit bracket, read as percentile (`00`-`99`) — a natural roll of 100 reads as `00`. Roll `1d100`; the tool picks one race from the matching bracket (reroll the step for a different one, or check [compendium/races](../compendium/races.md) to choose deliberately).
 
 | roll       | result                                                                              |
 | ---------- | ----------------------------------------------------------------------------------- |
@@ -67,7 +67,7 @@ _roll this step twice: first roll is your House, second is your Guild. On a 6, r
 | 5    | CHR - Charm                |
 | 6    | choose manually, or reroll |
 
-Your **House** gives you things you're good at (pros); your **Guild** gives you things you're bad at (cons). Each House has one Class (see [compendium/classes](../../compendium/classes/readme.md)).
+Your **House** gives you things you're good at (pros); your **Guild** gives you things you're bad at (cons). Each House has one Class (see [compendium/classes](../compendium/classes.md)).
 
 ### class
 

@@ -1,6 +1,6 @@
 # Generate Landmark
 
-Any color tile may grab a landmark from a nearby color — check the clockwise color order in [colors & houses](/compendium/colors_houses/readme.md).
+Any color tile may grab a landmark from a nearby color — check the clockwise color order in [colors & houses](/compendium/colors_houses.md).
 
 ## steps
 

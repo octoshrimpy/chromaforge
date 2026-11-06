@@ -1,6 +1,6 @@
 # Colors and the Five Founts
 
-This is the active color and lore reference. Alpha characters have all five Founts as stats; Houses, fixed focus/sense links, and class ownership are V1 mechanics, not Fount identities. Founts are laws of being without agency. Worldbuilding source: [The Five Founts](../../../katharra.wiki/magic/the_five_founts.md).
+This is the active color and lore reference. Alpha characters have all five Founts as stats; Houses, fixed focus/sense links, and class ownership are V1 mechanics, not Fount identities. Founts are laws of being without agency. Worldbuilding source: [The Five Founts](../../katharra.wiki/magic/the_five_founts.md).
 
 ## The five
 

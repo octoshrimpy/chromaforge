@@ -34,7 +34,7 @@ When describing landmark items, list the features beginning with those that the 
 
 ## Generator tables
 
-Any `generators/*/readme.md` (or `simple.md`) that the DM-aid tool ([html_generators/](../html_generators/)) reads from must follow this shape so it can be parsed automatically. Prose intros, `<!-- -->` comments, and anything outside these sections are ignored by the tool and free-form.
+Every `generators/*.md` follows this shape so a DM can roll top to bottom (and a future tool can parse it). Prose intros, `<!-- -->` comments, and anything outside these sections are free-form.
 
 A `## steps` table declares, in roll order, every table the generator needs:
 

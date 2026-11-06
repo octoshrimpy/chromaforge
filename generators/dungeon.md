@@ -54,5 +54,5 @@ _@todo more monsters if this roll is higher within its range_
 
 ## boss
 
-1. `1d10` for color (see [colors & houses](/compendium/colors_houses/readme.md)), generate a random high-difficulty monster of that color
+1. `1d10` for color (see [colors & houses](/compendium/colors_houses.md)), generate a random high-difficulty monster of that color
 2. add `1d4` to DEF, `1d4` to ATK

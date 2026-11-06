@@ -1,7 +1,7 @@
 # Generate Shop Inventory
 
 A notable item in stock — what it is, how good, and what's odd about it.
-(See [town building](/generators/building/readme.md) for the kind of shop.)
+(See [town building](/generators/building.md) for the kind of shop.)
 
 ## steps
 

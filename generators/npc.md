@@ -45,7 +45,7 @@ _one race from the rolled bracket._
 
 ### class
 
-_a class from the NPC's house (see [classes](/compendium/classes/readme.md))._
+_a class from the NPC's house (see [classes](/compendium/classes.md))._
 
 | house           | 1-6                |
 | --------------- | ------------------ |

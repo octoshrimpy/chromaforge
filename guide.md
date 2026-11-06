@@ -32,10 +32,10 @@ Rest and appropriate quiet practice ease these costs. White and black are histor
 
 One procedure; no House, Guild, race bonus, class cap, or second stat roll.
 
-1. **Concept.** Name the character and describe one visible trait, one desire, and one bond. An ancestry from [the legacy roster](compendium/races/readme.md) may inform fiction but grants no alpha modifier.
+1. **Concept.** Name the character and describe one visible trait, one desire, and one bond. An ancestry from [the legacy roster](compendium/races.md) may inform fiction but grants no alpha modifier.
 2. **Roll Founts.** Roll `6d6` individually. Set aside the lowest die. Assign the highest five dice, one each, to Seron, Orvik, Zhark, Drun, and Veyra.
 3. **Spend bonus points.** The set-aside die is that many points. Spend each point to raise any Fount by 1, in any distribution. No starting or archetype cap applies.
-4. **Choose an archetype and specialty.** Pick one completed option from [Starting archetypes](compendium/classes/readme.md). Copy its kit and signature ability. Archetype is a beginning, not a restriction.
+4. **Choose an archetype and specialty.** Pick one completed option from [Starting archetypes](compendium/classes.md). Copy its kit and signature ability. Archetype is a beginning, not a restriction.
 5. **Derived values.** Maximum HP is `10 + Drun`. Copy Defense and attack bonus from the provisional formulas below.
 6. **Finish.** Copy equipment, choose one useful mundane personal item, and answer: “Why are you traveling with this party?”
 
@@ -129,7 +129,7 @@ A spell cannot erase an established clue or fact. Larger scope, distance, durati
 
 **Provisional playtest rule: casting cost.** Alpha uses no spell-point or slot resource. On a failed risky cast, apply the relevant Fount's overuse cost until the character rests or takes a scene of restorative practice; repeated failure intensifies its fictional consequence. Reason: this permits magic while resource design remains open. Whether spells consume a resource remains unresolved.
 
-Existing spells in [`compendium/spells/`](compendium/spells/) are inspiration, not additional active mechanics.
+Existing spells in [`compendium/spells/`](compendium/spells.md) are inspiration, not additional active mechanics.
 
 ## XP and advancement
 

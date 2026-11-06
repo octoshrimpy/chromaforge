@@ -62,4 +62,4 @@ Outcome: success count reached first = uneventful. Fail count reached first with
 
 ### Magic
 
-Magic costs stamina and effort. Energy is never created from nothing: casters sweat, cry, and bleed. It works like lifting weights: untrained casting can cause real injury, and it shows up differently in each person. Careless casting corrupts the caster toward a color, leaving them out of tune: easier to distract, hurt, and tire. Spell list: [compendium/spells](../../compendium/spells/readme.md).
+Magic costs stamina and effort. Energy is never created from nothing: casters sweat, cry, and bleed. It works like lifting weights: untrained casting can cause real injury, and it shows up differently in each person. Careless casting corrupts the caster toward a color, leaving them out of tune: easier to distract, hurt, and tire. Spell list: [compendium/spells](../../compendium/spells.md).

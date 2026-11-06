@@ -14,11 +14,11 @@ No campaign concept or session preparation is required. Record generated facts: 
 
 ## Fast table links
 
-- [Starting archetypes](compendium/classes/readme.md)
-- [Fount reference](compendium/colors_houses/readme.md)
+- [Starting archetypes](compendium/classes.md)
+- [Fount reference](compendium/colors_houses.md)
 - [DM toolbox](compendium/dm.md)
-- [V1 spell ideas](compendium/spells/readme.md)
-- [Race ideas](compendium/races/readme.md)
+- [V1 spell ideas](compendium/spells.md)
+- [Race ideas](compendium/races.md)
 - [Scratch ideas](testing/scratch.md)
 - [Current decisions and backlog](TODO.md)
 - [Archived V1 backlog](_meta/archive/TODO-v1.md)
@@ -26,4 +26,4 @@ No campaign concept or session preparation is required. Record generated facts: 
 
 ## Status
 
-Playable alpha. Rules labeled **Provisional playtest rule** settle only what a session cannot run without; corresponding decisions remain open in [TODO.md](TODO.md). Existing campaigns under [`campaigns/`](campaigns/) remain preserved as historical campaign material.
+Playable alpha. Rules labeled **Provisional playtest rule** settle only what a session cannot run without; corresponding decisions remain open in [TODO.md](TODO.md). Existing campaigns under [`campaigns/`](campaigns) remain preserved as historical campaign material.

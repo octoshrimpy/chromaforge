@@ -2,7 +2,7 @@
 
 Inspiration the generators don't already cover. Forge runs on improvisation: use any part, or none.
 
-Biomes, tile content, and landmarks live in [world tile](../generators/world_tile/simple.md) and [landmark](../generators/landmark/readme.md). Only leftovers are kept here.
+Biomes, tile content, and landmarks live in [world tile](../generators/world_tile.md) and [landmark](../generators/landmark.md). Only leftovers are kept here.
 
 ## Leftover biomes
 
@@ -39,7 +39,7 @@ Describe, don't roll. Use checks only if players attempt risky actions.
 
 ## V1 monster pool
 
-Generic fantasy creatures from before the [monster generator](../generators/monster/readme.md) moved to Katharra fauna. Use for non-canon runs or to reskin.
+Generic fantasy creatures from before the [monster generator](../generators/monster.md) moved to Katharra fauna. Use for non-canon runs or to reskin.
 
 - **Ranged**: bat, hawk, eagle, acolyte, flying sword, guard (calls reinforcements), sentient locust swarm, faerie/baby/adult dragon
 - **Arcana**: cultist, hag, vampire (shapeshifter, magic-immune, spawn), elemental, archmage, lich
