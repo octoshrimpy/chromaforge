@@ -27,11 +27,11 @@ _the town's dominant fount — its banner color, temple, and civic character (se
 
 | roll  | result                     |
 | ----- | -------------------------- |
-| 1, 2  | yellow — Seron / Integrity |
-| 3, 4  | blue — Orvik / Knowledge   |
-| 5, 6  | red — Zhark / Change       |
-| 7, 8  | green — Drun / Fortitude   |
-| 9, 10 | purple — Veyra / Charm     |
+| 1, 2  | yellow — ᛄ Seron / Integrity |
+| 3, 4  | blue — ∵ Orvik / Knowledge   |
+| 5, 6  | red — ϟ Zhark / Change       |
+| 7, 8  | green — △ Drun / Fortitude   |
+| 9, 10 | purple — ⌘ Veyra / Charm     |
 
 ### rumor_quest
 

@@ -10,9 +10,9 @@ Starting-location rolls:
 
 | Field                     |     Roll | Result                                          |
 | ------------------------- | -------: | ----------------------------------------------- |
-| primary                   |  d10 = 4 | Orvik / blue / Knowledge                        |
+| primary                   |  d10 = 4 | ∵ Orvik / blue / Knowledge                        |
 | secondary chance          |   d6 = 2 | secondary present                               |
-| secondary excluding Orvik |   d4 = 4 | Veyra / purple / Charm                          |
+| secondary excluding ∵ Orvik |   d4 = 4 | ⌘ Veyra / purple / Charm                          |
 | terrain                   |   d8 = 4 | cliff pass / quarry / exposed highland          |
 | problem                   |   d8 = 2 | records and memories disagree about useful site |
 | reveal                    |    heads | unfolding on arrival                            |
@@ -32,7 +32,7 @@ GM writes:
 
 ## Opening
 
-Problem is visible on arrival. Rua repeats map text three times and sees erased Rodani marks: essential clue, no roll. Foreman asks party to endorse his copy. Seli refuses and asks who last touched originals. GM calls standard Seron check because crowd's reaction matters, not clue access. Seli rolls 9 + Seron 4 = 13 and succeeds. Keeper admits healer's patient brought newest rubbing.
+Problem is visible on arrival. Rua repeats map text three times and sees erased Rodani marks: essential clue, no roll. Foreman asks party to endorse his copy. Seli refuses and asks who last touched originals. GM calls standard ᛄ Seron check because crowd's reaction matters, not clue access. Seli rolls 9 + ᛄ Seron 4 = 13 and succeeds. Keeper admits healer's patient brought newest rubbing.
 
 Party chooses healer lead instead of archive. **Archive hook is skipped, not deleted.** GM advances its offscreen consequence after next scene.
 
@@ -40,9 +40,9 @@ Party chooses healer lead instead of archive. **Archive hook is skipped, not del
 
 Healer expects quiet escort. Halfway to quarry, patient bolts across a krailgoat feeding ledge. Route becomes detour: recover patient without driving herd into miners below.
 
-Rua tracks patient under time pressure and rolls natural 1 on Orvik. Critical failure: patient tracks remain obvious—the essential clue—but Rua dislodges stones. Herd raises horns. GM presents capable krailgoat stats and asks intent.
+Rua tracks patient under time pressure and rolls natural 1 on ∵ Orvik. Critical failure: patient tracks remain obvious—the essential clue—but Rua dislodges stones. Herd raises horns. GM presents capable krailgoat stats and asks intent.
 
-Players avoid combat. Tovan identifies nutrient-rich trail; Seli backs everyone out; Rua uses rope to reach a parallel shelf. Easy Drun check succeeds. Herd keeps feeding. Party finds patient, who explains Veyra effect made foreman's confident reading feel like personal memory.
+Players avoid combat. Tovan identifies nutrient-rich trail; Seli backs everyone out; Rua uses rope to reach a parallel shelf. Easy △ Drun check succeeds. Herd keeps feeding. Party finds patient, who explains ⌘ Veyra effect made foreman's confident reading feel like personal memory.
 
 Obstacle is major: patient safe, herd not harmed, false certainty understood. Each character gains 4 XP; half goes to Fount chiefly used, other half allocated by player.
 
@@ -59,7 +59,7 @@ Party returns to visibly changed High Pass Village:
 - keeper will no longer speak publicly;
 - rival offers access in exchange for public humiliation of foreman.
 
-Players reject both factions' framing. They demonstrate Orvik core by having neutral elder repeat route text three times, then break Veyra certainty by separating readers before comparing accounts. No combat. Foreman removes toll pending village review; keeper opens archive with elder present.
+Players reject both factions' framing. They demonstrate ∵ Orvik core by having neutral elder repeat route text three times, then break ⌘ Veyra certainty by separating readers before comparing accounts. No combat. Foreman removes toll pending village review; keeper opens archive with elder present.
 
 Ignored lead now becomes active again: original rubbing points down Old Oasis Road. Rival remains angry and develops offscreen if party leaves. Same location, people, Fount rule, and prior choices persist.
 

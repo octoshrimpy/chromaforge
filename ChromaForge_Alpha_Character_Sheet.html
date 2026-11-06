@@ -1,0 +1,936 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ChromaForge — Alpha Character Sheet</title>
+    <style>
+      :root {
+        color-scheme: light;
+        --ink: #27283d;
+        --muted: #737488;
+        --line: #d6d3ce;
+        --paper: #f7f5f0;
+        --white: #fffefa;
+        --bar: #eceae6;
+        --bg: #dddcd8;
+        --rule: var(--rule);
+        --row: var(--row);
+        --field: #fff;
+        --edge: #d2cec8;
+      }
+
+      /* Dark on screen only; print always uses the light tokens above. */
+      @media screen and (prefers-color-scheme: dark) {
+        .fount-row .fount-icon {
+          background: color-mix(in srgb, var(--c) 22%, transparent);
+          color: var(--c);
+        }
+
+        :root {
+          color-scheme: dark;
+          --ink: #e8e6f0;
+          --muted: #9a9bb0;
+          --line: #3a3a4a;
+          --paper: #20202b;
+          --white: #272733;
+          --bar: #2f2f3d;
+          --bg: #15151c;
+          --rule: #44445a;
+          --row: #343444;
+          --field: #1d1d27;
+          --edge: #4a4a5c;
+        }
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--ink);
+        font:
+          13px/1.35 system-ui,
+          -apple-system,
+          "Segoe UI",
+          sans-serif;
+      }
+
+      button,
+      input,
+      textarea {
+        font: inherit;
+      }
+
+      .toolbar {
+        max-width: 900px;
+        margin: 16px auto;
+        padding: 0 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 12px;
+      }
+
+      .toolbar button {
+        border: 1px solid var(--edge);
+        border-radius: 6px;
+        background: var(--field);
+        color: var(--ink);
+        padding: 8px 14px;
+        cursor: pointer;
+      }
+
+      .page {
+        width: min(100% - 20px, 816px);
+        min-height: 1056px;
+        margin: 0 auto 24px;
+        background: var(--paper);
+        padding: 0 31px 14px;
+        box-shadow: 0 5px 24px #0002;
+        border-top: 8px solid transparent;
+        border-image: linear-gradient(
+            90deg,
+            #e5b638 0 20%,
+            #5897ce 20% 40%,
+            #d35f56 40% 60%,
+            #62a174 60% 80%,
+            #9560bd 80% 100%
+          )
+          1;
+      }
+
+      .page-head {
+        display: flex;
+        align-items: center;
+        gap: 17px;
+        min-height: 80px;
+        border-bottom: 1px solid var(--row);
+        margin-bottom: 13px;
+      }
+
+      .brandmark {
+        width: 59px;
+        height: 59px;
+        border: 1.5px solid var(--muted);
+        border-radius: 50%;
+        position: relative;
+        flex-shrink: 0;
+        background: var(--field);
+      }
+
+      .brandmark::before {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        background: #e5b638;
+        border-radius: 50%;
+        left: 23px;
+        top: 5px;
+        box-shadow:
+          18px 14px #5897ce,
+          12px 34px #d35f56,
+          -11px 34px #62a174,
+          -16px 14px #9560bd;
+      }
+
+      .brandmark::after {
+        content: "";
+        position: absolute;
+        width: 9px;
+        height: 15px;
+        /* border: 1.5px solid #9291a0; */
+        border-radius: 2px;
+        left: 23px;
+        top: 22px;
+      }
+
+      h1 {
+        margin: 0;
+        font-size: 29px;
+        line-height: 1;
+        letter-spacing: 0.12em;
+        font-weight: 750;
+      }
+
+      .subtitle {
+        color: var(--muted);
+        margin-top: 7px;
+        font-size: 10px;
+        font-weight: 750;
+        letter-spacing: 0.22em;
+      }
+
+      .page-number {
+        margin-left: auto;
+        align-self: flex-start;
+        padding-top: 15px;
+        font-size: 22px;
+        font-weight: 700;
+        color: #aaa5b0;
+      }
+
+      .panel {
+        min-width: 0;
+        overflow: hidden;
+        background: var(--white);
+        border: 1px solid var(--line);
+        border-radius: 14px;
+      }
+
+      .panel-head {
+        background: var(--bar);
+        min-height: 36px;
+        padding: 9px 16px 7px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 10px;
+      }
+
+      h2 {
+        margin: 0;
+        text-transform: uppercase;
+        letter-spacing: 0.11em;
+        font-size: 12px;
+        line-height: 1.2;
+      }
+
+      .panel-head small {
+        font-size: 10px;
+        color: var(--muted);
+        font-weight: 700;
+        letter-spacing: 0.01em;
+        white-space: nowrap;
+      }
+
+      .panel-body {
+        padding: 13px 16px;
+      }
+
+      .identity-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px 20px;
+      }
+
+      label.field {
+        display: block;
+        min-width: 0;
+        color: var(--muted);
+        text-transform: uppercase;
+        font-size: 10px;
+        font-weight: 750;
+      }
+
+      .field input,
+      .field textarea {
+        color: var(--ink);
+        width: 100%;
+        min-width: 0;
+        border: 0;
+        outline: 0;
+        background: transparent;
+        border-bottom: 2px solid var(--rule);
+        border-radius: 0;
+        padding: 4px 0 2px;
+      }
+
+      .field input {
+        height: 20px;
+      }
+
+      .field textarea {
+        height: 26px;
+        resize: vertical;
+      }
+
+      .field :is(input, textarea):focus {
+        border-bottom-color: #8e64b4;
+      }
+
+      .cols {
+        display: grid;
+        grid-template-columns: 1.1fr 1.6fr;
+        gap: 14px;
+        margin-top: 14px;
+        align-items: stretch;
+      }
+
+      .cols-2 {
+        grid-template-columns: 1.1fr 1fr;
+      }
+
+      .cols > .panel {
+        min-height: 0;
+      }
+
+      .fount-header {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) 51px;
+        gap: 9px;
+        margin: 6px 0 2px;
+        padding-bottom: 5px;
+        border-bottom: 2px solid var(--line);
+        color: var(--muted);
+        font-size: 10px;
+        font-weight: 750;
+        text-transform: uppercase;
+      }
+
+      .fount-header span:not(:first-child) {
+        text-align: center;
+      }
+
+      .fount-row {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) 51px;
+        gap: 9px;
+        align-items: center;
+        min-height: 41px;
+        border-bottom: 1px solid var(--row);
+      }
+
+      .fount-row:last-child {
+        border-bottom: 0;
+      }
+
+      .points-label {
+        color: var(--muted);
+        font-size: 10px;
+        font-weight: 750;
+        text-transform: uppercase;
+      }
+
+      .fount-identity {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        min-width: 0;
+      }
+
+      .fount-icon {
+        display: grid;
+        place-items: center;
+        flex-shrink: 0;
+        width: 29px;
+        height: 29px;
+        border-radius: 6px;
+        color: white;
+        font-size: 20px;
+        line-height: 1;
+        font-weight: 600;
+      }
+
+      .seron {
+        --c: #e3b332;
+        background: var(--c);
+        /* Runic glyph falls back to a thin font; scale and thicken it. */
+        font-size: 23px;
+        -webkit-text-stroke: 0.3px currentColor;
+      }
+
+      .orvik {
+        --c: #5593c9;
+        background: var(--c);
+      }
+
+      .zhark {
+        --c: #d36055;
+        background: var(--c);
+      }
+
+      .drun {
+        --c: #5c9c70;
+        background: var(--c);
+      }
+
+      .veyra {
+        --c: #9360b7;
+        background: var(--c);
+      }
+
+      .fount-name {
+        font-size: 12px;
+        font-weight: 750;
+        white-space: nowrap;
+      }
+
+      .fount-role {
+        font-size: 8px;
+        font-weight: 700;
+        letter-spacing: 0.14em;
+        color: var(--muted);
+        text-transform: uppercase;
+        padding-top: 2px;
+      }
+
+      .numeric {
+        width: 100%;
+        height: 30px;
+        background: var(--field);
+        color: var(--ink);
+        border: 1px solid var(--edge);
+        border-radius: 7px;
+        padding: 3px;
+        text-align: center;
+        font-variant-numeric: tabular-nums;
+      }
+
+      .combat-row {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        min-height: 38px;
+        border-bottom: 1px solid var(--row);
+      }
+
+      .combat-row:last-child {
+        border-bottom: 0;
+      }
+
+      .combat-label {
+        font-size: 10px;
+        font-weight: 750;
+        color: var(--muted);
+        text-transform: uppercase;
+        flex: 0 0 auto;
+      }
+
+      .combat-note {
+        font-size: 10px;
+        flex: 1;
+        white-space: nowrap;
+      }
+
+      .combat-row .numeric {
+        width: 63px;
+        margin-left: auto;
+        flex-shrink: 0;
+      }
+
+      .combat-row .line-input {
+        width: 100%;
+        flex: 1;
+        min-width: 0;
+        border: 0;
+        border-bottom: 2px solid var(--rule);
+        background: transparent;
+        outline: 0;
+      }
+
+      .combat-row .line-input:focus {
+        border-bottom-color: #8e64b4;
+      }
+
+      .choice {
+        display: inline-flex;
+        align-items: center;
+        gap: 3px;
+        font-size: 9px;
+        white-space: nowrap;
+        font-weight: 650;
+        text-transform: uppercase;
+      }
+
+      .choice input {
+        width: 13px;
+        height: 13px;
+        margin: 0;
+        accent-color: #8d64b2;
+      }
+
+      .armor-row {
+        gap: 5px;
+      }
+
+      .armor-row .combat-label {
+        min-width: 58px;
+      }
+
+      .armor-row .choices {
+        width: 100%;
+        display: flex;
+        gap: 8px;
+        justify-content: space-evenly;
+      }
+
+      .archetype-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 13px 17px;
+      }
+
+      .archetype-grid .wide {
+        grid-column: 1/-1;
+      }
+
+      .archetype-grid .field input {
+        height: 24px;
+      }
+
+      .kit-lines {
+        display: grid;
+        gap: 0;
+      }
+
+      .kit-lines input {
+        display: block;
+        width: 100%;
+        height: 26px;
+        border: 0;
+        border-bottom: 2px solid var(--rule);
+        border-radius: 0;
+        background: transparent;
+        outline: none;
+      }
+
+      .kit-lines input:focus {
+        border-bottom-color: #8e64b4;
+      }
+
+      .notes {
+        margin-top: 14px;
+      }
+
+      .notes-body {
+        padding-top: 3px;
+        padding-bottom: 11px;
+      }
+
+      .notes-row {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        min-height: 36px;
+      }
+
+      .notes-row label {
+        flex: 0 0 auto;
+        color: var(--muted);
+        text-transform: uppercase;
+        font-weight: 750;
+        font-size: 10px;
+      }
+
+      .notes-row input {
+        flex: 1;
+        min-width: 0;
+        width: 100%;
+        border: 0;
+        border-bottom: 2px solid var(--rule);
+        border-radius: 0;
+        outline: 0;
+        background: transparent;
+        height: 24px;
+      }
+
+      .notes-row input:focus {
+        border-bottom-color: #8e64b4;
+      }
+
+      .foot {
+        padding: 10px 3px 0;
+        display: flex;
+        justify-content: space-between;
+        color: var(--muted);
+        text-transform: uppercase;
+        letter-spacing: 0.14em;
+        font-size: 8px;
+        font-weight: 750;
+      }
+
+      @media screen and (max-width: 650px) {
+        .page {
+          min-height: unset;
+          padding: 0 14px 18px;
+        }
+
+        .cols {
+          grid-template-columns: 1fr;
+        }
+
+        .page-head {
+          gap: 12px;
+        }
+
+        h1 {
+          font-size: 21px;
+        }
+
+        .identity-grid {
+          gap: 12px;
+        }
+
+        .panel-head small {
+          font-size: 9px;
+        }
+      }
+
+      @page {
+        size: letter;
+        margin: 0;
+      }
+
+      @media print {
+        html,
+        body {
+          background: white;
+          margin: 0;
+          print-color-adjust: exact;
+          -webkit-print-color-adjust: exact;
+        }
+
+        .toolbar {
+          display: none;
+        }
+
+        .page {
+          width: 8.5in;
+          min-height: 11in;
+          margin: 0;
+          padding-left: 31px;
+          padding-right: 31px;
+          box-shadow: none;
+          break-after: page;
+        }
+
+        input,
+        textarea {
+          box-shadow: none;
+        }
+
+        .panel {
+          break-inside: avoid;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="toolbar">
+      <strong>ChromaForge · Alpha Character Sheet</strong>
+      <button type="button" onclick="window.print()">Print / Save PDF</button>
+    </div>
+    <main class="page">
+      <header class="page-head">
+        <div class="brandmark" aria-hidden="true"></div>
+        <div>
+          <h1>CHROMAFORGE</h1>
+          <div class="subtitle">ALPHA / CHARACTER SHEET</div>
+        </div>
+        <!-- <div class="page-number">01</div> -->
+      </header>
+      <form autocomplete="off">
+        <section class="panel" aria-labelledby="identity-title">
+          <div class="panel-head">
+            <h2 id="identity-title">Identity</h2>
+            <small>01 / Who you are</small>
+          </div>
+          <div class="panel-body identity-grid">
+            <label class="field">
+              Name
+              <input name="name" />
+            </label>
+            <label class="field">
+              Visible trait
+              <input name="visible_trait" />
+            </label>
+            <label class="field">
+              Desire
+              <input name="desire" />
+            </label>
+            <label class="field">
+              Primary Fount
+              <input name="primary_fount" />
+            </label>
+            <label class="field">
+              Why travel with the party?
+              <input name="travel_reason" />
+            </label>
+            <label class="field">
+              Ancestry / bane
+              <input name="ancestry" />
+            </label>
+          </div>
+        </section>
+        <div class="cols cols-1">
+          <section class="panel" aria-labelledby="fount-title">
+            <div class="panel-head">
+              <h2 id="fount-title">Founts</h2>
+              <small>02 / Power & growth</small>
+            </div>
+            <div class="panel-body">
+              <!-- <div class="fount-header">
+                <span>Fount / Domain</span><span>Score</span>
+              </div> -->
+              <div class="fount-row">
+                <div class="fount-identity">
+                  <span class="fount-icon seron" aria-hidden="true">ᛄ</span>
+                  <div>
+                    <div class="fount-name">Seron — Integrity</div>
+                    <div class="fount-role">Warden</div>
+                  </div>
+                </div>
+                <input
+                  class="numeric"
+                  type="number"
+                  aria-label="Seron score"
+                  name="seron_score"
+                />
+              </div>
+              <div class="fount-row">
+                <div class="fount-identity">
+                  <span class="fount-icon orvik" aria-hidden="true">∵</span>
+                  <div>
+                    <div class="fount-name">Orvik — Knowledge</div>
+                    <div class="fount-role">Medic</div>
+                  </div>
+                </div>
+                <input
+                  class="numeric"
+                  type="number"
+                  aria-label="Orvik score"
+                  name="orvik_score"
+                />
+              </div>
+              <div class="fount-row">
+                <div class="fount-identity">
+                  <span class="fount-icon zhark" aria-hidden="true">ϟ</span>
+                  <div>
+                    <div class="fount-name">Zhark — Change</div>
+                    <div class="fount-role">Pathfinder</div>
+                  </div>
+                </div>
+                <input
+                  class="numeric"
+                  type="number"
+                  aria-label="Zhark score"
+                  name="zhark_score"
+                />
+              </div>
+              <div class="fount-row">
+                <div class="fount-identity">
+                  <span class="fount-icon drun" aria-hidden="true">△</span>
+                  <div>
+                    <div class="fount-name">Drun — Fortitude</div>
+                    <div class="fount-role">Builder</div>
+                  </div>
+                </div>
+                <input
+                  class="numeric"
+                  type="number"
+                  aria-label="Drun score"
+                  name="drun_score"
+                />
+              </div>
+              <div class="fount-row">
+                <div class="fount-identity">
+                  <span class="fount-icon veyra" aria-hidden="true">⌘</span>
+                  <div>
+                    <div class="fount-name">Veyra — Charm</div>
+                    <div class="fount-role">Artisan</div>
+                  </div>
+                </div>
+                <input
+                  class="numeric"
+                  type="number"
+                  aria-label="Veyra score"
+                  name="veyra_score"
+                />
+              </div>
+              <div class="fount-row">
+                <label class="points-label" for="points">Unspent points</label>
+                <input
+                  class="numeric"
+                  id="points"
+                  name="points"
+                  type="number"
+                />
+              </div>
+            </div>
+          </section>
+          <section class="panel" aria-labelledby="combat-title">
+            <div class="panel-head">
+              <h2 id="combat-title">Combat</h2>
+              <small>03 / Survive</small>
+            </div>
+            <div class="panel-body">
+              <div class="combat-row">
+                <label class="combat-label" for="maxhp">Max HP</label>
+                <span class="combat-note">
+                  <span>6 + △ Drun</span>
+                  <input
+                    class="numeric"
+                    id="maxhp"
+                    name="max_hp"
+                    type="number"
+                  />
+                </span>
+                <label
+                  class="combat-label"
+                  for="currenthp"
+                  style="min-width: 50px; text-align: right"
+                >
+                  Current
+                </label>
+                <input
+                  class="numeric small-number"
+                  id="currenthp"
+                  name="current_hp"
+                  type="number"
+                />
+              </div>
+              <div class="combat-row armor-row">
+                <span class="combat-label">Armor</span>
+                <div class="choices">
+                  <label class="choice">
+                    <input type="radio" name="armor" value="0" />
+                    None 0
+                  </label>
+                  <label class="choice">
+                    <input type="radio" name="armor" value="1" />
+                    Light 1
+                  </label>
+                  <label class="choice">
+                    <input type="radio" name="armor" value="2" />
+                    Heavy 2
+                  </label>
+                </div>
+              </div>
+              <div class="combat-row">
+                <label class="combat-label" for="attack_fount">
+                  Normal attack Fount
+                </label>
+                <input
+                  class="line-input"
+                  id="attack_fount"
+                  name="attack_fount"
+                />
+              </div>
+              <div class="combat-row">
+                <label class="combat-label" for="weapon">Weapon</label>
+                <input class="line-input" id="weapon" name="weapon" />
+              </div>
+              <div class="combat-row">
+                <label class="combat-label" for="damage">Damage</label>
+                <span class="combat-note">d6 + Fount (+1 heavy)</span>
+                <input
+                  class="numeric"
+                  id="damage"
+                  name="damage"
+                  type="number"
+                />
+              </div>
+              <div class="combat-row">
+                <span class="combat-label">Reaction used?</span>
+                <label class="choice">
+                  <input type="radio" name="reaction" value="yes" />
+                  Yes
+                </label>
+                <label class="choice">
+                  <input type="radio" name="reaction" value="no" />
+                  No
+                </label>
+              </div>
+            </div>
+          </section>
+        </div>
+        <div class="cols cols-2">
+          <section class="panel" aria-labelledby="archetype-title">
+            <div class="panel-head">
+              <h2 id="archetype-title">Archetype</h2>
+              <small>04 / Your path</small>
+            </div>
+            <div class="panel-body archetype-grid">
+              <label class="field">
+                Starting archetype
+                <input name="archetype" />
+              </label>
+              <label class="field">
+                Specialty
+                <input name="specialty" />
+              </label>
+              <label class="field wide">
+                Signature ability
+                <input name="signature_ability" />
+              </label>
+              <label class="field wide">
+                Specialty ability
+                <input name="specialty_ability" />
+              </label>
+            </div>
+          </section>
+          <section class="panel" aria-labelledby="kit-title">
+            <div class="panel-head">
+              <h2 id="kit-title">Kit & learned abilities</h2>
+              <small>05 / Equipment</small>
+            </div>
+            <div class="panel-body kit-lines">
+              <input aria-label="Kit or ability 1" name="kit_1" />
+              <input aria-label="Kit or ability 2" name="kit_2" />
+              <input aria-label="Kit or ability 3" name="kit_3" />
+              <input aria-label="Kit or ability 4" name="kit_4" />
+              <input aria-label="Kit or ability 5" name="kit_5" />
+            </div>
+          </section>
+        </div>
+        <section class="panel notes" aria-labelledby="notes-title">
+          <div class="panel-head">
+            <h2 id="notes-title">Conditions & Notes</h2>
+            <small>06 / Consequences & connections</small>
+          </div>
+          <div class="panel-body notes-body">
+            <div class="notes-row">
+              <label for="overuse">Fount overuse</label>
+              <input id="overuse" name="fount_overuse" />
+            </div>
+            <div class="notes-row">
+              <label for="promises">People / promises</label>
+              <input id="promises" name="people_promises" />
+            </div>
+            <div class="notes-row">
+              <label for="leads">Leads</label>
+              <input id="leads" name="leads" />
+            </div>
+            <div class="notes-row">
+              <label for="other">Other</label>
+              <input id="other" name="other" />
+            </div>
+          </div>
+        </section>
+      </form>
+      <footer class="foot"></footer>
+    </main>
+    <script>
+      // Keep entered information in the current browser between page reloads.
+      const form = document.querySelector("form");
+      const storageKey = "chromaforge-alpha-character-sheet";
+      try {
+        const saved = JSON.parse(localStorage.getItem(storageKey) || "{}");
+        for (const field of form.elements) {
+          if (!field.name || saved[field.name] === undefined) continue;
+          if (field.type === "radio")
+            field.checked = saved[field.name] === field.value;
+          else field.value = saved[field.name];
+        }
+      } catch (_) {
+        /* local storage may be disabled */
+      }
+      form.addEventListener("input", () => {
+        const data = {};
+        for (const field of form.elements) {
+          if (!field.name || (field.type === "radio" && !field.checked))
+            continue;
+          data[field.name] = field.value;
+        }
+        try {
+          localStorage.setItem(storageKey, JSON.stringify(data));
+        } catch (_) {}
+      });
+    </script>
+  </body>
+</html>

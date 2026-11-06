@@ -6,11 +6,11 @@ Roll each step in order. Record results in the output block. Re-roll only duplic
 
 |  d10 | Primary           | Color  | Reliable core rule                                          |
 | ---: | ----------------- | ------ | ----------------------------------------------------------- |
-|  1–2 | Seron — Integrity | yellow | a named boundary, distinction, or promise holds literally   |
-|  3–4 | Orvik — Knowledge | blue   | repeated observation reveals a hidden pattern or memory     |
-|  5–6 | Zhark — Change    | red    | one defined feature transforms when disturbed               |
-|  7–8 | Drun — Fortitude  | green  | damage, labor, or time feeds persistence or regrowth        |
-| 9–10 | Veyra — Charm     | purple | a bond transfers influence, feeling, access, or consequence |
+|  1–2 | ᛄ Seron — Integrity | yellow | a named boundary, distinction, or promise holds literally   |
+|  3–4 | ∵ Orvik — Knowledge | blue   | repeated observation reveals a hidden pattern or memory     |
+|  5–6 | ϟ Zhark — Change    | red    | one defined feature transforms when disturbed               |
+|  7–8 | △ Drun — Fortitude  | green  | damage, labor, or time feeds persistence or regrowth        |
+| 9–10 | ⌘ Veyra — Charm     | purple | a bond transfers influence, feeling, access, or consequence |
 
 Primary determines visible color and core rule. Founts have no agency.
 
@@ -18,15 +18,15 @@ Primary determines visible color and core rule. Founts have no agency.
 
 On `1–2`, a secondary exists. On `3–6`, leave it empty. This is exactly a 1-in-3 chance.
 
-When present, list the four Founts other than primary in guide order—Seron, Orvik, Zhark, Drun, Veyra—and roll d4. Secondary never matches primary.
+When present, list the four Founts other than primary in guide order—ᛄ Seron, ∵ Orvik, ϟ Zhark, △ Drun, ⌘ Veyra—and roll d4. Secondary never matches primary.
 
 | Secondary | Add one discoverable twist                                   |
 | --------- | ------------------------------------------------------------ |
-| Seron     | an exact word, edge, or category creates an exception        |
-| Orvik     | a repeatable pattern reveals a safer use or hidden cost      |
-| Zhark     | one trigger can redirect or transform the core effect        |
-| Drun      | enduring a cycle stores an opportunity, but rushing it costs |
-| Veyra     | linked beings share, transfer, or bargain with the effect    |
+| ᛄ Seron     | an exact word, edge, or category creates an exception        |
+| ∵ Orvik     | a repeatable pattern reveals a safer use or hidden cost      |
+| ϟ Zhark     | one trigger can redirect or transform the core effect        |
+| △ Drun      | enduring a cycle stores an opportunity, but rushing it costs |
+| ⌘ Veyra     | linked beings share, transfer, or bargain with the effect    |
 
 These are prompts, not the unfinished 20-pair reference. State one concrete trigger and outcome before play.
 
@@ -122,13 +122,13 @@ NOTES FOR REVISIT:
 
 ## Worked two-Fount landmark: left-footed water
 
-**Primary:** Seron / yellow / Integrity. **Secondary:** Veyra / purple / Charm.
+**Primary:** ᛄ Seron / yellow / Integrity. **Secondary:** ⌘ Veyra / purple / Charm.
 
 - **Notice:** water reflects a thin yellow edge around every footprint. Old tracks cross the pool in right-foot hops; paired tracks sometimes lie at identical depth.
-- **Reliable Seron rule:** a left foot breaks the surface and enters the water. A right foot stays on top. The rule applies to every creature and has no motive.
-- **Veyra twist:** while two people hold hands, both share the footing of whoever steps onto the water first. If first person enters left-foot first, both pass below the surface; if first enters right-foot first, both are supported.
-- **Reveal:** tracks provide essential clue. Testing a stick proves surface has a rule but not which foot. A safe deliberate step reveals it without a roll; a rushed crossing under danger calls for an easy Seron or Drun check.
-- **Letting go:** shared footing ends immediately. Seron's core resolves under each person: any left foot presses through; any right foot remains supported. Someone relying on partner may suddenly sink or be left hopping, but gets a reaction to grab an edge or hand.
+- **Reliable ᛄ Seron rule:** a left foot breaks the surface and enters the water. A right foot stays on top. The rule applies to every creature and has no motive.
+- **⌘ Veyra twist:** while two people hold hands, both share the footing of whoever steps onto the water first. If first person enters left-foot first, both pass below the surface; if first enters right-foot first, both are supported.
+- **Reveal:** tracks provide essential clue. Testing a stick proves surface has a rule but not which foot. A safe deliberate step reveals it without a roll; a rushed crossing under danger calls for an easy ᛄ Seron or △ Drun check.
+- **Letting go:** shared footing ends immediately. ᛄ Seron's core resolves under each person: any left foot presses through; any right foot remains supported. Someone relying on partner may suddenly sink or be left hopping, but gets a reaction to grab an edge or hand.
 - **Exploit:** pairs can rescue someone underwater, carry a non-swimmer, or cross while keeping both hands occupied only by forming a longer hand-linked chain.
 - **Cost/risk:** breaking contact at the wrong moment separates elevations. A critical failure tangles or pulls another linked person with the actor; it does not change the rule.
 

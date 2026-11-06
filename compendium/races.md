@@ -1,42 +1,42 @@
 # Races
 
-_perk: add +2 to House checks (or +1 to two Houses). bane: roll 1d8 for that House check instead. some races get a 1d4 choice on top._
+_Primary: choose one listed Fount at creation; it gets +1. Bane: your checks with that Fount have disadvantage (roll 2d20, keep the lower). Some races get a 1d4 choice on top._
 
-| race              | color(s) | size   | perks        | bane    | notes                                                                                          |
-| ----------------- | -------- | ------ | ------------ | ------- | ---------------------------------------------------------------------------------------------- |
-| triton            | BLU      | medium | CHR+1, FRT+1 | NTG 1d8 | Aquatic creatures. Merfolk with legs.                                                          |
-| orog              | RED      | large  | FRT+1, KNO+1 | NTG 1d8 | Really smart orc. Taller, stronger.                                                            |
-| tiefling          | PRP      | medium | KNO+2        | FRT 1d8 | Horned brows. Red, purple, otherwise dark skin.                                                |
-| elf               | YEL, PRP | medium | NTG+2        | CHR 1d8 | Slender, graceful, quiet.                                                                      |
-| imp               | RED      | small  | CHG+2        | CHR 1d8 | Tiny devils. Impervious to magic.                                                              |
-| gnome             | YEL, RED | small  | CHR+2        | FRT 1d8 | Always busy, always curious.                                                                   |
-| goblin            | GRN, PRP | small  | KNO+1, CHG+1 | NTG 1d8 | Weak, crafty, stealthy.                                                                        |
-| genasi            |          | medium | KNO+2        | CHG 1d8 | Resemble humans, touched by elemental power. `1d4`: earth/water/fire/air.                      |
-| warforged         |          | medium | FRT+2        | CHR 1d8 | Human-like figure, sentient machines made of wood and metal. `1d4`: acid/water/fire/lightning. |
-| titanborne        | GRN, RED | large  | FRT+1, NTG+1 | KNO 1d8 | Giants in human form, with grooved tattoos on their thick skin.                                |
-| duarling          | RED, PRP | small  | CHR+1, FRT+1 | NTG 1d8 | Short like a halfling, strong like a dwarf.                                                    |
-| dwarf             | RED      | small  | FRT+2        | NTG 1d8 | Short, stout beings, fond of alcohols.                                                         |
-| human             | YEL      | medium | CHR+2        | KNO 1d8 | Your average run-of-the-mill person.                                                           |
-| centaur           | GRN      | large  | FRT+1, KNO+1 | CHG 1d8 | Half human, half horse.                                                                        |
-| changeling        | GRN      | medium | CHR+2        | NTG 1d8 | Use a hard CHR check to change appearance without changing stats.                              |
-| bugbear           | RED, PRP | large  | FRT+2        | CHG 1d8 | Chewbacca + orc = bugbear.                                                                     |
-| entling           | GRN      | large  | FRT+2        | KNO 1d8 | I am groot.                                                                                    |
-| dragonkin         | RED      | medium | KNO+1, FRT+1 | CHG 1d8 | Humanoid dragons, cousins to dragonborn.                                                       |
-| lizardfolk        | BLU, GRN | medium | KNO+1, CHG+1 | CHR 1d8 | Lizard humanoids, averse to smoothskins.                                                       |
-| kobold            | PRP      | small  | CHR+2        | FRT 1d8 | A humanoid dragon with mouse-like features.                                                    |
-| fae               | GRN      | medium | CHR+1, KNO+1 | FRT 1d8 | Human-like in looks, originated from the feywild.                                              |
-| satyr             | GRN      | medium | CHR+2        | CHG 1d8 | Half man, half goat.                                                                           |
-| tabaxi            | YEL, GRN | medium | CHG+2        | CHR 1d8 | Feline humanoids, resembling leopards or jaguars.                                              |
-| roo               | RED, YEL | medium | FRT+2        | CHG 1d8 | Guardians of sacred places, kangaroo humanoids.                                                |
-| apeling           | BLU      | large  | FRT+1, CHR+1 | KNO 1d8 | Descendants of the Monkey King, humanoids with monkey traits.                                  |
-| amazon            | GRN      | medium | FRT+1, CHR+1 | NTG 1d8 | Well-built female humanoids, with white/black/silver hair.                                     |
-| shelled elemental |          | small  | CHR+1, KNO+1 | CHG 1d8 | Elemental wants to be "people", covered in protective layer. `1d4`: earth/water/fire/air.      |
-| etterkin          | PRP      | medium | CHG+2        | CHR 1d8 | humanesque with spider eyes, and 3-fingered hands.                                             |
-| kenku             | PRP      | medium | CHG+2        | FRT 1d8 | Humanoid crows. Cannot fly or speak, only use mimicry.                                         |
-| qualf             | YEL, BLU | small  | KNO+1, FRT+1 | NTG 1d8 | Four-armed, short and slender. Tinkerers.                                                      |
-| tortle            | BLU      | medium | FRT+1, KNO+1 | CHG 1d8 | Turtle humanoid. Slow, wise, and friendly survivalist.                                         |
-| moonfolk          | YEL      | small  | CHR+1, KNO+1 | FRT 1d8 | Rabbit-like humanoid, with large rabbit ears and feet.                                         |
-| animated armor    | PRP      | large  | FRT+2        | CHG 1d8 | Armor brought to life by magic, has a soul. Loud and strong.                                   |
-| halfling          | YEL, BLU | small  | CHG+1, CHR+1 | FRT 1d8 | Friendly, cheerful humans, no taller than your average waist.                                  |
-| hippofolk         | GRN, BLU | medium | FRT+1, KNO+1 | NTG 1d8 | Human-like hippos, generous and friendly.                                                      |
-| aarakocra         | YEL, GRN | medium | NTG+1, CHR+1 | CHG 1d8 | winged birdfolk with talons on their feet.                                                     |
+| race              | size   | primary (pick one) | bane    | notes                                                                                          |
+| ----------------- | ------ | ------------------ | ------- | ---------------------------------------------------------------------------------------------- |
+| triton            | medium | ⌘ Veyra, △ Drun    | ᛄ Seron 1d6 | Aquatic creatures. Merfolk with legs.                                                          |
+| orog              | large  | △ Drun, ∵ Orvik    | ᛄ Seron 1d6 | Really smart orc. Taller, stronger.                                                            |
+| tiefling          | medium | ∵ Orvik            | △ Drun  1d6 | Horned brows. Red, purple, otherwise dark skin.                                                |
+| elf               | medium | ᛄ Seron            | ⌘ Veyra 1d6 | Slender, graceful, quiet.                                                                      |
+| imp               | small  | ϟ Zhark            | ⌘ Veyra 1d6 | Tiny devils. Impervious to magic.                                                              |
+| gnome             | small  | ⌘ Veyra            | △ Drun  1d6 | Always busy, always curious.                                                                   |
+| goblin            | small  | ∵ Orvik, ϟ Zhark   | ᛄ Seron 1d6 | Weak, crafty, stealthy.                                                                        |
+| genasi            | medium | ∵ Orvik            | ϟ Zhark 1d6 | Resemble humans, touched by elemental power. `1d4`: earth/water/fire/air.                      |
+| warforged         | medium | △ Drun             | ⌘ Veyra 1d6 | Human-like figure, sentient machines made of wood and metal. `1d4`: acid/water/fire/lightning. |
+| titanborne        | large  | △ Drun, ᛄ Seron    | ∵ Orvik 1d6 | Giants in human form, with grooved tattoos on their thick skin.                                |
+| duarling          | small  | ⌘ Veyra, △ Drun    | ᛄ Seron 1d6 | Short like a halfling, strong like a dwarf.                                                    |
+| dwarf             | small  | △ Drun             | ᛄ Seron 1d6 | Short, stout beings, fond of alcohols.                                                         |
+| human             | medium | ⌘ Veyra            | ∵ Orvik 1d6 | Your average run-of-the-mill person.                                                           |
+| centaur           | large  | △ Drun, ∵ Orvik    | ϟ Zhark 1d6 | Half human, half horse.                                                                        |
+| changeling        | medium | ⌘ Veyra            | ᛄ Seron 1d6 | Use a hard ⌘ Veyra check to change appearance without changing stats.                            |
+| bugbear           | large  | △ Drun             | ϟ Zhark 1d6 | Chewbacca + orc = bugbear.                                                                     |
+| entling           | large  | △ Drun             | ∵ Orvik 1d6 | I am groot.                                                                                    |
+| dragonkin         | medium | ∵ Orvik, △ Drun    | ϟ Zhark 1d6 | Humanoid dragons, cousins to dragonborn.                                                       |
+| lizardfolk        | medium | ∵ Orvik, ϟ Zhark   | ⌘ Veyra 1d6 | Lizard humanoids, averse to smoothskins.                                                       |
+| kobold            | small  | ⌘ Veyra            | △ Drun  1d6 | A humanoid dragon with mouse-like features.                                                    |
+| fae               | medium | ⌘ Veyra, ∵ Orvik   | △ Drun  1d6 | Human-like in looks, originated from the feywild.                                              |
+| satyr             | medium | ⌘ Veyra            | ϟ Zhark 1d6 | Half man, half goat.                                                                           |
+| tabaxi            | medium | ϟ Zhark            | ⌘ Veyra 1d6 | Feline humanoids, resembling leopards or jaguars.                                              |
+| roo               | medium | △ Drun             | ϟ Zhark 1d6 | Guardians of sacred places, kangaroo humanoids.                                                |
+| apeling           | large  | △ Drun, ⌘ Veyra    | ∵ Orvik 1d6 | Descendants of the Monkey King, humanoids with monkey traits.                                  |
+| amazon            | medium | △ Drun, ⌘ Veyra    | ᛄ Seron 1d6 | Well-built female humanoids, with white/black/silver hair.                                     |
+| shelled elemental | small  | ⌘ Veyra, ∵ Orvik   | ϟ Zhark 1d6 | Elemental wants to be "people", covered in protective layer. `1d4`: earth/water/fire/air.      |
+| etterkin          | medium | ϟ Zhark            | ⌘ Veyra 1d6 | humanesque with spider eyes, and 3-fingered hands.                                             |
+| kenku             | medium | ϟ Zhark            | △ Drun  1d6 | Humanoid crows. Cannot fly or speak, only use mimicry.                                         |
+| qualf             | small  | ∵ Orvik, △ Drun    | ᛄ Seron 1d6 | Four-armed, short and slender. Tinkerers.                                                      |
+| tortle            | medium | △ Drun, ∵ Orvik    | ϟ Zhark 1d6 | Turtle humanoid. Slow, wise, and friendly survivalist.                                         |
+| moonfolk          | small  | ⌘ Veyra, ∵ Orvik   | △ Drun  1d6 | Rabbit-like humanoid, with large rabbit ears and feet.                                         |
+| animated armor    | large  | △ Drun             | ϟ Zhark 1d6 | Armor brought to life by magic, has a soul. Loud and strong.                                   |
+| halfling          | small  | ϟ Zhark, ⌘ Veyra   | △ Drun  1d6 | Friendly, cheerful humans, no taller than your average waist.                                  |
+| hippofolk         | medium | △ Drun, ∵ Orvik    | ᛄ Seron 1d6 | Human-like hippos, generous and friendly.                                                      |
+| aarakocra         | medium | ᛄ Seron, ⌘ Veyra   | ϟ Zhark 1d6 | winged birdfolk with talons on their feet.                                                     |

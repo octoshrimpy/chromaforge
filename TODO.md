@@ -32,7 +32,7 @@ Goal: GM starts in Kathara, follows players off expected path, and returns to ch
 ## 4. Playable rules and generation
 
 - [x] Consolidate character creation: 6d6 individually, highest five assigned, lowest die as bonus points.
-- [x] Use five Founts as core stats and HP `10 + Drun`.
+- [x] Use five Founts as core stats and HP `10 + △ Drun`.
 - [x] Turn Warden, Medic, and Pathfinder into starting archetypes with kits, signature abilities, and Fount specialties.
 - [ ] Complete Builder and Artisan alpha archetypes.
 - [x] Remove active alpha House/Guild rolls, proficiency, class caps, and ancestry modifiers.
