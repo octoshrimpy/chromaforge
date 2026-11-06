@@ -325,12 +325,19 @@
         font-weight: 600;
       }
 
+      .fount-icon svg {
+        width: 20px;
+        height: 20px;
+        fill: none;
+        stroke: currentColor;
+        stroke-width: 2;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+
       .seron {
         --c: #e3b332;
         background: var(--c);
-        /* Runic glyph falls back to a thin font; scale and thicken it. */
-        font-size: 23px;
-        -webkit-text-stroke: 0.3px currentColor;
       }
 
       .orvik {
@@ -611,6 +618,32 @@
   </head>
 
   <body>
+    <!-- Fount symbols; colored via currentColor. -->
+    <svg width="0" height="0" style="position: absolute" aria-hidden="true">
+      <symbol id="sym-seron" viewBox="0 0 24 24">
+        <path d="M12 3v18M12 6l7 6-7 6M12 6l-7 6 7 6" />
+      </symbol>
+      <symbol id="sym-orvik" viewBox="0 0 24 24">
+        <circle cx="12" cy="6.5" r="2" fill="currentColor" />
+        <circle cx="6.5" cy="17" r="2" fill="currentColor" />
+        <circle cx="17.5" cy="17" r="2" fill="currentColor" />
+      </symbol>
+      <symbol id="sym-zhark" viewBox="0 0 24 24">
+        <!-- Outline of the ϟ glyph (Noto Sans SemiBold), fitted to the box. -->
+        <path
+          fill="currentColor"
+          stroke="none"
+          transform="translate(12 12) scale(0.0199 -0.0199) translate(-276.5 -263)"
+          d="M396 -240Q330 -240 287.0 -212.0Q244 -184 244 -116Q244 -95 250.5 -67.5Q257 -40 267 -11L367 263L46 195V275L152 552Q161 576 166.5 597.0Q172 618 172 637Q172 654 161.0 662.5Q150 671 133 671Q124 671 111.5 668.5Q99 666 88 660L64 750Q82 758 105.0 762.0Q128 766 155 766Q222 766 255.5 733.5Q289 701 289 648Q289 602 264 534L187 329L505 394L507 321L388 -5Q378 -35 373.5 -53.0Q369 -71 369 -89Q369 -115 381.5 -130.0Q394 -145 428 -145Q444 -145 456.5 -142.5Q469 -140 477 -137V-228Q465 -232 444.5 -236.0Q424 -240 396 -240Z"
+        />
+      </symbol>
+      <symbol id="sym-drun" viewBox="0 0 24 24">
+        <path d="M12 4 20 19H4z" />
+      </symbol>
+      <symbol id="sym-veyra" viewBox="0 0 24 24">
+        <path d="M9 9h6v6H9zM9 9V7a2 2 0 1 0-2 2h2M15 9V7a2 2 0 1 1 2 2h-2M9 15v2a2 2 0 1 1-2-2h2M15 15v2a2 2 0 1 0 2-2h-2" />
+      </symbol>
+    </svg>
     <div class="toolbar">
       <strong>ChromaForge · Alpha Character Sheet</strong>
       <button type="button" onclick="window.print()">Print / Save PDF</button>
@@ -669,7 +702,7 @@
               </div> -->
               <div class="fount-row">
                 <div class="fount-identity">
-                  <span class="fount-icon seron" aria-hidden="true">ᛄ</span>
+                  <span class="fount-icon seron" aria-hidden="true"><svg><use href="#sym-seron" /></svg></span>
                   <div>
                     <div class="fount-name">Seron — Integrity</div>
                     <div class="fount-role">Warden</div>
@@ -684,7 +717,7 @@
               </div>
               <div class="fount-row">
                 <div class="fount-identity">
-                  <span class="fount-icon orvik" aria-hidden="true">∵</span>
+                  <span class="fount-icon orvik" aria-hidden="true"><svg><use href="#sym-orvik" /></svg></span>
                   <div>
                     <div class="fount-name">Orvik — Knowledge</div>
                     <div class="fount-role">Medic</div>
@@ -699,7 +732,7 @@
               </div>
               <div class="fount-row">
                 <div class="fount-identity">
-                  <span class="fount-icon zhark" aria-hidden="true">ϟ</span>
+                  <span class="fount-icon zhark" aria-hidden="true"><svg><use href="#sym-zhark" /></svg></span>
                   <div>
                     <div class="fount-name">Zhark — Change</div>
                     <div class="fount-role">Pathfinder</div>
@@ -714,7 +747,7 @@
               </div>
               <div class="fount-row">
                 <div class="fount-identity">
-                  <span class="fount-icon drun" aria-hidden="true">△</span>
+                  <span class="fount-icon drun" aria-hidden="true"><svg><use href="#sym-drun" /></svg></span>
                   <div>
                     <div class="fount-name">Drun — Fortitude</div>
                     <div class="fount-role">Builder</div>
@@ -729,7 +762,7 @@
               </div>
               <div class="fount-row">
                 <div class="fount-identity">
-                  <span class="fount-icon veyra" aria-hidden="true">⌘</span>
+                  <span class="fount-icon veyra" aria-hidden="true"><svg><use href="#sym-veyra" /></svg></span>
                   <div>
                     <div class="fount-name">Veyra — Charm</div>
                     <div class="fount-role">Artisan</div>
