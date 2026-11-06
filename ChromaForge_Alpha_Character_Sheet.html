@@ -27,11 +27,21 @@
       }
 
       /* Primary Fount recolors the page's highlights. */
-      :root:has(#primary_fount [value="seron"]:checked) { --accent: var(--seron); }
-      :root:has(#primary_fount [value="orvik"]:checked) { --accent: var(--orvik); }
-      :root:has(#primary_fount [value="zhark"]:checked) { --accent: var(--zhark); }
-      :root:has(#primary_fount [value="drun"]:checked) { --accent: var(--drun); }
-      :root:has(#primary_fount [value="veyra"]:checked) { --accent: var(--veyra); }
+      :root:has(#primary_fount [value="seron"]:checked) {
+        --accent: var(--seron);
+      }
+      :root:has(#primary_fount [value="orvik"]:checked) {
+        --accent: var(--orvik);
+      }
+      :root:has(#primary_fount [value="zhark"]:checked) {
+        --accent: var(--zhark);
+      }
+      :root:has(#primary_fount [value="drun"]:checked) {
+        --accent: var(--drun);
+      }
+      :root:has(#primary_fount [value="veyra"]:checked) {
+        --accent: var(--veyra);
+      }
 
       /* Dark on screen only; print always uses the light tokens above. */
       @media screen and (prefers-color-scheme: dark) {
@@ -106,11 +116,11 @@
         border-top: 8px solid transparent;
         border-image: linear-gradient(
             90deg,
-            #e5b638 0 20%,
-            #5897ce 20% 40%,
-            #d35f56 40% 60%,
-            #62a174 60% 80%,
-            #9560bd 80% 100%
+            var(--seron) 0 20%,
+            var(--orvik) 20% 40%,
+            var(--zhark) 40% 60%,
+            var(--drun) 60% 80%,
+            var(--veyra) 80% 100%
           )
           1;
       }
@@ -139,26 +149,15 @@
         position: absolute;
         width: 10px;
         height: 10px;
-        background: #e5b638;
+        background: var(--seron);
         border-radius: 50%;
         left: 23px;
         top: 5px;
         box-shadow:
-          18px 14px #5897ce,
-          12px 34px #d35f56,
-          -11px 34px #62a174,
-          -16px 14px #9560bd;
-      }
-
-      .brandmark::after {
-        content: "";
-        position: absolute;
-        width: 9px;
-        height: 15px;
-        /* border: 1.5px solid #9291a0; */
-        border-radius: 2px;
-        left: 23px;
-        top: 22px;
+          18px 14px var(--orvik),
+          12px 34px var(--zhark),
+          -11px 34px var(--drun),
+          -16px 14px var(--veyra);
       }
 
       h1 {
@@ -177,15 +176,6 @@
         letter-spacing: 0.22em;
       }
 
-      .page-number {
-        margin-left: auto;
-        align-self: flex-start;
-        padding-top: 15px;
-        font-size: 22px;
-        font-weight: 700;
-        color: #aaa5b0;
-      }
-
       .panel {
         min-width: 0;
         overflow: hidden;
@@ -196,7 +186,7 @@
 
       .panel-head {
         background: var(--bar);
-        min-height: 36px;
+        min-height: 30px;
         padding: 9px 16px 7px;
         display: flex;
         justify-content: space-between;
@@ -224,6 +214,15 @@
         padding: 13px 16px;
       }
 
+      .panel-body.tight {
+        padding-bottom: 4px; /* last row already has its own min-height */
+      }
+
+      .pair {
+        display: flex;
+        gap: 8px;
+      }
+
       .identity-grid {
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -235,39 +234,52 @@
         min-width: 0;
         color: var(--muted);
         text-transform: uppercase;
-        font-size: 10px;
+        font-size: 9.5px;
         font-weight: 750;
       }
 
-      .field input,
-      .field select,
-      .field textarea {
+      /* Shared underline-only text inputs. */
+      :is(
+        .field input,
+        .field select,
+        .field textarea,
+        .combat-row .line-input,
+        .notes-row input
+      ) {
         color: var(--ink);
-        width: 100%;
         min-width: 0;
         border: 0;
-        outline: 0;
-        background: transparent;
         border-bottom: 2px solid var(--rule);
         border-radius: 0;
+        outline: 0;
+        background: transparent;
+
+        &:focus {
+          border-bottom-color: var(--accent);
+        }
+      }
+
+      .field :is(input, select, textarea) {
+        width: 100%;
+        /* the label is 10px bold caps; the controls must not inherit that */
+        font-family: inherit;
+        font-size: 15px;
+        font-weight: 400;
+        text-transform: none;
         padding: 4px 0 2px;
       }
 
       .field input {
-        height: 20px;
+        height: 26px;
       }
 
       .field select {
-        height: 24px;
+        height: 28px;
       }
 
       .field textarea {
         height: 26px;
         resize: vertical;
-      }
-
-      .field :is(input, select, textarea):focus {
-        border-bottom-color: var(--accent);
       }
 
       .cols {
@@ -308,12 +320,201 @@
         grid-template-columns: minmax(0, 1fr) 51px;
         gap: 9px;
         align-items: center;
-        min-height: 41px;
+        min-height: 40px;
         border-bottom: 1px solid var(--row);
       }
 
       .fount-row:last-child {
         border-bottom: 0;
+      }
+
+      /* Boon/bane: show the modifier beside the affected Fount's score (CSS only). */
+      :root {
+        --boon: "+2";
+      }
+
+      :root:has(#primary_fount_2 option:checked:not([value=""])) {
+        --boon: "+1";
+      }
+
+      :root:has(
+          #primary_fount [value="seron"]:checked,
+          #primary_fount_2 [value="seron"]:checked
+        )
+        .fount-row:has(.seron) {
+        grid-template-columns: minmax(0, 1fr) auto 51px;
+
+        &::after {
+          content: var(--boon);
+          order: 1;
+          color: var(--seron);
+          font-size: 13px;
+          font-weight: 750;
+        }
+
+        & > .numeric {
+          order: 2;
+        }
+      }
+
+      :root:has(#bane_fount [value="seron"]:checked) .fount-row:has(.seron) {
+        grid-template-columns: minmax(0, 1fr) auto 51px;
+
+        &::after {
+          content: "−1";
+          order: 1;
+          color: var(--seron);
+          font-size: 13px;
+          font-weight: 750;
+        }
+
+        & > .numeric {
+          order: 2;
+        }
+      }
+
+      :root:has(
+          #primary_fount [value="orvik"]:checked,
+          #primary_fount_2 [value="orvik"]:checked
+        )
+        .fount-row:has(.orvik) {
+        grid-template-columns: minmax(0, 1fr) auto 51px;
+
+        &::after {
+          content: var(--boon);
+          order: 1;
+          color: var(--orvik);
+          font-size: 13px;
+          font-weight: 750;
+        }
+
+        & > .numeric {
+          order: 2;
+        }
+      }
+
+      :root:has(#bane_fount [value="orvik"]:checked) .fount-row:has(.orvik) {
+        grid-template-columns: minmax(0, 1fr) auto 51px;
+
+        &::after {
+          content: "−1";
+          order: 1;
+          color: var(--orvik);
+          font-size: 13px;
+          font-weight: 750;
+        }
+
+        & > .numeric {
+          order: 2;
+        }
+      }
+
+      :root:has(
+          #primary_fount [value="zhark"]:checked,
+          #primary_fount_2 [value="zhark"]:checked
+        )
+        .fount-row:has(.zhark) {
+        grid-template-columns: minmax(0, 1fr) auto 51px;
+
+        &::after {
+          content: var(--boon);
+          order: 1;
+          color: var(--zhark);
+          font-size: 13px;
+          font-weight: 750;
+        }
+
+        & > .numeric {
+          order: 2;
+        }
+      }
+
+      :root:has(#bane_fount [value="zhark"]:checked) .fount-row:has(.zhark) {
+        grid-template-columns: minmax(0, 1fr) auto 51px;
+
+        &::after {
+          content: "−1";
+          order: 1;
+          color: var(--zhark);
+          font-size: 13px;
+          font-weight: 750;
+        }
+
+        & > .numeric {
+          order: 2;
+        }
+      }
+
+      :root:has(
+          #primary_fount [value="drun"]:checked,
+          #primary_fount_2 [value="drun"]:checked
+        )
+        .fount-row:has(.drun) {
+        grid-template-columns: minmax(0, 1fr) auto 51px;
+
+        &::after {
+          content: var(--boon);
+          order: 1;
+          color: var(--drun);
+          font-size: 13px;
+          font-weight: 750;
+        }
+
+        & > .numeric {
+          order: 2;
+        }
+      }
+
+      :root:has(#bane_fount [value="drun"]:checked) .fount-row:has(.drun) {
+        grid-template-columns: minmax(0, 1fr) auto 51px;
+
+        &::after {
+          content: "−1";
+          order: 1;
+          color: var(--drun);
+          font-size: 13px;
+          font-weight: 750;
+        }
+
+        & > .numeric {
+          order: 2;
+        }
+      }
+
+      :root:has(
+          #primary_fount [value="veyra"]:checked,
+          #primary_fount_2 [value="veyra"]:checked
+        )
+        .fount-row:has(.veyra) {
+        grid-template-columns: minmax(0, 1fr) auto 51px;
+
+        &::after {
+          content: var(--boon);
+          order: 1;
+          color: var(--veyra);
+          font-size: 13px;
+          font-weight: 750;
+        }
+
+        & > .numeric {
+          order: 2;
+        }
+      }
+
+      :root:has(#bane_fount [value="veyra"]:checked) .fount-row:has(.veyra) {
+        grid-template-columns: minmax(0, 1fr) auto 51px;
+
+        &::after {
+          content: "−1";
+          order: 1;
+          color: var(--veyra);
+          font-size: 13px;
+          font-weight: 750;
+        }
+
+        & > .numeric {
+          order: 2;
+        }
       }
 
       .points-label {
@@ -384,23 +585,33 @@
         white-space: nowrap;
       }
 
-      :root:has(#primary_fount [value="seron"]:checked) .fount-row:has(.seron) .fount-name {
+      :root:has(#primary_fount [value="seron"]:checked)
+        .fount-row:has(.seron)
+        .fount-name {
         font-weight: 750;
       }
 
-      :root:has(#primary_fount [value="orvik"]:checked) .fount-row:has(.orvik) .fount-name {
+      :root:has(#primary_fount [value="orvik"]:checked)
+        .fount-row:has(.orvik)
+        .fount-name {
         font-weight: 750;
       }
 
-      :root:has(#primary_fount [value="zhark"]:checked) .fount-row:has(.zhark) .fount-name {
+      :root:has(#primary_fount [value="zhark"]:checked)
+        .fount-row:has(.zhark)
+        .fount-name {
         font-weight: 750;
       }
 
-      :root:has(#primary_fount [value="drun"]:checked) .fount-row:has(.drun) .fount-name {
+      :root:has(#primary_fount [value="drun"]:checked)
+        .fount-row:has(.drun)
+        .fount-name {
         font-weight: 750;
       }
 
-      :root:has(#primary_fount [value="veyra"]:checked) .fount-row:has(.veyra) .fount-name {
+      :root:has(#primary_fount [value="veyra"]:checked)
+        .fount-row:has(.veyra)
+        .fount-name {
         font-weight: 750;
       }
 
@@ -431,15 +642,10 @@
         align-items: center;
         gap: 8px;
         min-height: 38px;
-        border-bottom: 1px solid var(--row);
-      }
-
-      .combat-row:last-child {
-        border-bottom: 0;
       }
 
       .combat-label {
-        font-size: 10px;
+        font-size: 9.5px;
         font-weight: 750;
         color: var(--muted);
         text-transform: uppercase;
@@ -470,15 +676,6 @@
       .combat-row .line-input {
         width: 100%;
         flex: 1;
-        min-width: 0;
-        border: 0;
-        border-bottom: 2px solid var(--rule);
-        background: transparent;
-        outline: 0;
-      }
-
-      .combat-row .line-input:focus {
-        border-bottom-color: var(--accent);
       }
 
       .choice {
@@ -535,24 +732,24 @@
         height: 24px;
       }
 
-      .kit-lines {
-        display: grid;
-        gap: 0;
-      }
-
-      .kit-lines input {
+      /* Free-text area that still shows ruled lines (also in print). */
+      .ruled {
         display: block;
         width: 100%;
-        height: 26px;
+        min-height: 130px;
+        field-sizing: content; /* grows with its text; plain resize where unsupported */
+        padding: 0;
+        color: var(--ink);
+        font: inherit;
+        line-height: 26px;
+        resize: vertical;
         border: 0;
-        border-bottom: 2px solid var(--rule);
-        border-radius: 0;
-        background: transparent;
-        outline: none;
-      }
-
-      .kit-lines input:focus {
-        border-bottom-color: var(--accent);
+        outline: 0;
+        background: repeating-linear-gradient(
+            transparent 0 25px,
+            var(--rule) 25px 26px
+          )
+          local;
       }
 
       .notes {
@@ -581,18 +778,8 @@
 
       .notes-row input {
         flex: 1;
-        min-width: 0;
         width: 100%;
-        border: 0;
-        border-bottom: 2px solid var(--rule);
-        border-radius: 0;
-        outline: 0;
-        background: transparent;
         height: 24px;
-      }
-
-      .notes-row input:focus {
-        border-bottom-color: var(--accent);
       }
 
       .foot {
@@ -604,6 +791,33 @@
         letter-spacing: 0.14em;
         font-size: 8px;
         font-weight: 750;
+      }
+
+      /* Wide screens: use the width instead of one long scrolling column. */
+      @media screen and (min-width: 1100px) {
+        .page {
+          width: min(100% - 40px, 1280px);
+          min-height: unset;
+        }
+
+        form {
+          display: grid;
+          grid-template-columns: repeat(3, minmax(0, 1fr));
+          gap: 14px;
+        }
+
+        .cols {
+          display: contents;
+        }
+
+        form > .panel:first-child {
+          grid-column: 1 / -1;
+        }
+
+        .notes {
+          grid-column: span 2;
+          margin-top: 0;
+        }
       }
 
       @media screen and (max-width: 650px) {
@@ -647,6 +861,11 @@
           -webkit-print-color-adjust: exact;
         }
 
+        * {
+          print-color-adjust: exact;
+          -webkit-print-color-adjust: exact;
+        }
+
         .toolbar {
           display: none;
         }
@@ -666,10 +885,11 @@
           box-shadow: none;
         }
 
-        /* Always light-mode Fount icons, no number spinners on paper. */
+        /* Paper: dark symbols on white (saves ink), no number spinners. */
         .fount-row .fount-icon {
-          background: var(--c);
-          color: #fff;
+          background: #fff;
+          color: var(--ink);
+          border: 1.5px solid var(--c);
         }
 
         input[type="number"] {
@@ -714,7 +934,9 @@
         <path d="M12 4 20 19H4z" />
       </symbol>
       <symbol id="sym-veyra" viewBox="0 0 24 24">
-        <path d="M9 9h6v6H9zM9 9V7a2 2 0 1 0-2 2h2M15 9V7a2 2 0 1 1 2 2h-2M9 15v2a2 2 0 1 1-2-2h2M15 15v2a2 2 0 1 0 2-2h-2" />
+        <path
+          d="M9 9h6v6H9zM9 9V7a2 2 0 1 0-2 2h2M15 9V7a2 2 0 1 1 2 2h-2M9 15v2a2 2 0 1 1-2-2h2M15 15v2a2 2 0 1 0 2-2h-2"
+        />
       </symbol>
     </svg>
     <div class="toolbar">
@@ -728,7 +950,6 @@
           <h1>CHROMAFORGE</h1>
           <div class="subtitle">ALPHA / CHARACTER SHEET</div>
         </div>
-        <!-- <div class="page-number">01</div> -->
       </header>
       <form autocomplete="off">
         <section class="panel" aria-labelledby="identity-title">
@@ -746,12 +967,75 @@
               <input name="visible_trait" />
             </label>
             <label class="field">
-              Desire
+              Ancestry
+              <input name="ancestry" list="ancestries" autocomplete="off" />
+              <datalist id="ancestries">
+                <option value="triton"></option>
+                <option value="orog"></option>
+                <option value="tiefling"></option>
+                <option value="elf"></option>
+                <option value="imp"></option>
+                <option value="gnome"></option>
+                <option value="goblin"></option>
+                <option value="genasi"></option>
+                <option value="warforged"></option>
+                <option value="titanborne"></option>
+                <option value="duarling"></option>
+                <option value="dwarf"></option>
+                <option value="human"></option>
+                <option value="centaur"></option>
+                <option value="changeling"></option>
+                <option value="bugbear"></option>
+                <option value="entling"></option>
+                <option value="dragonkin"></option>
+                <option value="lizardfolk"></option>
+                <option value="kobold"></option>
+                <option value="fae"></option>
+                <option value="satyr"></option>
+                <option value="tabaxi"></option>
+                <option value="roo"></option>
+                <option value="apeling"></option>
+                <option value="amazon"></option>
+                <option value="shelled elemental"></option>
+                <option value="etterkin"></option>
+                <option value="kenku"></option>
+                <option value="qualf"></option>
+                <option value="tortle"></option>
+                <option value="moonfolk"></option>
+                <option value="animated armor"></option>
+                <option value="halfling"></option>
+                <option value="hippofolk"></option>
+                <option value="aarakocra"></option>
+              </datalist>
+            </label>
+            <label class="field">
+              <span id="fount_label">Fount</span>
+              <span class="pair">
+                <select id="primary_fount" name="primary_fount">
+                  <option value=""></option>
+                  <option value="seron">ᛄ Seron</option>
+                  <option value="orvik">∵ Orvik</option>
+                  <option value="zhark">ϟ Zhark</option>
+                  <option value="drun">△ Drun</option>
+                  <option value="veyra">⌘ Veyra</option>
+                </select>
+                <select id="primary_fount_2" name="primary_fount_2" hidden>
+                  <option value=""></option>
+                  <option value="seron">ᛄ Seron</option>
+                  <option value="orvik">∵ Orvik</option>
+                  <option value="zhark">ϟ Zhark</option>
+                  <option value="drun">△ Drun</option>
+                  <option value="veyra">⌘ Veyra</option>
+                </select>
+              </span>
+            </label>
+            <label class="field">
+              Desire (why travel with the party?)
               <input name="desire" />
             </label>
             <label class="field">
-              Primary Fount
-              <select id="primary_fount" name="primary_fount">
+              Bane (−1)
+              <select id="bane_fount" name="bane_fount">
                 <option value=""></option>
                 <option value="seron">ᛄ Seron</option>
                 <option value="orvik">∵ Orvik</option>
@@ -760,29 +1044,23 @@
                 <option value="veyra">⌘ Veyra</option>
               </select>
             </label>
-            <label class="field">
-              Why travel with the party?
-              <input name="travel_reason" />
-            </label>
-            <label class="field">
-              Ancestry / bane
-              <input name="ancestry" />
-            </label>
           </div>
         </section>
-        <div class="cols cols-1">
+        <div class="cols">
           <section class="panel" aria-labelledby="fount-title">
             <div class="panel-head">
               <h2 id="fount-title">Founts</h2>
               <small>02 / Power & growth</small>
             </div>
-            <div class="panel-body">
+            <div class="panel-body tight">
               <!-- <div class="fount-header">
                 <span>Fount / Domain</span><span>Score</span>
               </div> -->
               <div class="fount-row">
                 <div class="fount-identity">
-                  <span class="fount-icon seron" aria-hidden="true"><svg><use href="#sym-seron" /></svg></span>
+                  <span class="fount-icon seron" aria-hidden="true">
+                    <svg><use href="#sym-seron" /></svg>
+                  </span>
                   <div>
                     <div class="fount-name">Seron — Integrity</div>
                     <div class="fount-role">Warden</div>
@@ -797,7 +1075,9 @@
               </div>
               <div class="fount-row">
                 <div class="fount-identity">
-                  <span class="fount-icon orvik" aria-hidden="true"><svg><use href="#sym-orvik" /></svg></span>
+                  <span class="fount-icon orvik" aria-hidden="true">
+                    <svg><use href="#sym-orvik" /></svg>
+                  </span>
                   <div>
                     <div class="fount-name">Orvik — Knowledge</div>
                     <div class="fount-role">Medic</div>
@@ -812,7 +1092,9 @@
               </div>
               <div class="fount-row">
                 <div class="fount-identity">
-                  <span class="fount-icon zhark" aria-hidden="true"><svg><use href="#sym-zhark" /></svg></span>
+                  <span class="fount-icon zhark" aria-hidden="true">
+                    <svg><use href="#sym-zhark" /></svg>
+                  </span>
                   <div>
                     <div class="fount-name">Zhark — Change</div>
                     <div class="fount-role">Pathfinder</div>
@@ -827,7 +1109,9 @@
               </div>
               <div class="fount-row">
                 <div class="fount-identity">
-                  <span class="fount-icon drun" aria-hidden="true"><svg><use href="#sym-drun" /></svg></span>
+                  <span class="fount-icon drun" aria-hidden="true">
+                    <svg><use href="#sym-drun" /></svg>
+                  </span>
                   <div>
                     <div class="fount-name">Drun — Fortitude</div>
                     <div class="fount-role">Builder</div>
@@ -842,7 +1126,9 @@
               </div>
               <div class="fount-row">
                 <div class="fount-identity">
-                  <span class="fount-icon veyra" aria-hidden="true"><svg><use href="#sym-veyra" /></svg></span>
+                  <span class="fount-icon veyra" aria-hidden="true">
+                    <svg><use href="#sym-veyra" /></svg>
+                  </span>
                   <div>
                     <div class="fount-name">Veyra — Charm</div>
                     <div class="fount-role">Artisan</div>
@@ -871,7 +1157,7 @@
               <h2 id="combat-title">Combat</h2>
               <small>03 / Survive</small>
             </div>
-            <div class="panel-body">
+            <div class="panel-body tight">
               <div class="combat-row">
                 <label class="combat-label" for="maxhp">Max HP</label>
                 <span class="combat-note">
@@ -883,10 +1169,7 @@
                     type="number"
                   />
                 </span>
-                <label
-                  class="combat-label combat-label-end"
-                  for="currenthp"
-                >
+                <label class="combat-label combat-label-end" for="currenthp">
                   Current
                 </label>
                 <input
@@ -901,15 +1184,15 @@
                 <div class="choices">
                   <label class="choice">
                     <input type="radio" name="armor" value="0" />
-                    None 0
+                    None +0
                   </label>
                   <label class="choice">
                     <input type="radio" name="armor" value="1" />
-                    Light 1
+                    Light +1
                   </label>
                   <label class="choice">
                     <input type="radio" name="armor" value="2" />
-                    Heavy 2
+                    Heavy +2
                   </label>
                 </div>
               </div>
@@ -981,12 +1264,13 @@
               <h2 id="kit-title">Kit & learned abilities</h2>
               <small>05 / Equipment</small>
             </div>
-            <div class="panel-body kit-lines">
-              <input aria-label="Kit or ability 1" name="kit_1" />
-              <input aria-label="Kit or ability 2" name="kit_2" />
-              <input aria-label="Kit or ability 3" name="kit_3" />
-              <input aria-label="Kit or ability 4" name="kit_4" />
-              <input aria-label="Kit or ability 5" name="kit_5" />
+            <div class="panel-body">
+              <textarea
+                class="ruled"
+                aria-label="Kit and learned abilities"
+                name="kit"
+                rows="5"
+              ></textarea>
             </div>
           </section>
         </div>
@@ -1032,7 +1316,63 @@
       } catch (_) {
         /* local storage may be disabled */
       }
+      const races = {
+        triton: { boon: ["veyra", "drun"], bane: "seron" },
+        orog: { boon: ["drun", "orvik"], bane: "seron" },
+        tiefling: { boon: ["orvik"], bane: "drun" },
+        elf: { boon: ["seron"], bane: "veyra" },
+        imp: { boon: ["zhark"], bane: "veyra" },
+        gnome: { boon: ["veyra"], bane: "drun" },
+        goblin: { boon: ["orvik", "zhark"], bane: "seron" },
+        genasi: { boon: ["orvik"], bane: "zhark" },
+        warforged: { boon: ["drun"], bane: "veyra" },
+        titanborne: { boon: ["drun", "seron"], bane: "orvik" },
+        duarling: { boon: ["veyra", "drun"], bane: "seron" },
+        dwarf: { boon: ["drun"], bane: "seron" },
+        human: { boon: ["veyra"], bane: "orvik" },
+        centaur: { boon: ["drun", "orvik"], bane: "zhark" },
+        changeling: { boon: ["veyra"], bane: "seron" },
+        bugbear: { boon: ["drun"], bane: "zhark" },
+        entling: { boon: ["drun"], bane: "orvik" },
+        dragonkin: { boon: ["orvik", "drun"], bane: "zhark" },
+        lizardfolk: { boon: ["orvik", "zhark"], bane: "veyra" },
+        kobold: { boon: ["veyra"], bane: "drun" },
+        fae: { boon: ["veyra", "orvik"], bane: "drun" },
+        satyr: { boon: ["veyra"], bane: "zhark" },
+        tabaxi: { boon: ["zhark"], bane: "veyra" },
+        roo: { boon: ["drun"], bane: "zhark" },
+        apeling: { boon: ["drun", "veyra"], bane: "orvik" },
+        amazon: { boon: ["drun", "veyra"], bane: "seron" },
+        "shelled elemental": { boon: ["veyra", "orvik"], bane: "zhark" },
+        etterkin: { boon: ["zhark"], bane: "veyra" },
+        kenku: { boon: ["zhark"], bane: "drun" },
+        qualf: { boon: ["orvik", "drun"], bane: "seron" },
+        tortle: { boon: ["drun", "orvik"], bane: "zhark" },
+        moonfolk: { boon: ["veyra", "orvik"], bane: "drun" },
+        "animated armor": { boon: ["drun"], bane: "zhark" },
+        halfling: { boon: ["zhark", "veyra"], bane: "drun" },
+        hippofolk: { boon: ["drun", "orvik"], bane: "seron" },
+        aarakocra: { boon: ["seron", "veyra"], bane: "zhark" },
+      };
+      const $ = (id) => document.getElementById(id);
+      const sync2 = () => {
+        const two = !!$("primary_fount_2").value;
+        $("primary_fount_2").hidden = !two;
+        $("fount_label").textContent = two
+          ? "Primary / Secondary Fount"
+          : "Fount";
+      };
+      sync2();
+      form.elements.ancestry.addEventListener("input", (e) => {
+        const r = races[e.target.value.trim().toLowerCase()];
+        if (!r) return;
+        $("primary_fount").value = r.boon[0];
+        $("primary_fount_2").value = r.boon[1] || "";
+        $("bane_fount").value = r.bane;
+        sync2();
+      });
       form.addEventListener("input", () => {
+        sync2();
         const data = {};
         for (const field of form.elements) {
           if (!field.name || (field.type === "radio" && !field.checked))

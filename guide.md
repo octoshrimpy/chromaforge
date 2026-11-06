@@ -18,8 +18,8 @@ One d20, a few d6s, paper, and pencils. That is all.
 
 Founts are laws of being without agency. They cannot want, permit, punish, or plan. People and creatures have motives; a Fount effect has a reliable, discoverable rule.
 
-| Fount | Color  | Domain                              | Common action                     | Canonical overuse cost                         |
-| ----- | ------ | ----------------------------------- | --------------------------------- | ---------------------------------------------- |
+| Fount   | Color  | Domain                              | Common action                     | Canonical overuse cost                         |
+| ------- | ------ | ----------------------------------- | --------------------------------- | ---------------------------------------------- |
 | ᛄ Seron | yellow | Integrity, boundaries, truth        | define, judge, protect a line     | thought stiffens; nuance fades                 |
 | ∵ Orvik | blue   | Knowledge, memory, hidden structure | study, recall, reveal a pattern   | attention narrows                              |
 | ϟ Zhark | red    | Change, rupture, transformation     | alter, improvise, break a pattern | habits and self become less predictable        |
@@ -32,11 +32,11 @@ Rest and appropriate quiet practice ease these costs. White and black are histor
 
 One procedure; no House, Guild, class cap, or second stat roll.
 
-1. **Concept.** Name the character and describe one visible trait and one desire. Pick an ancestry from [the roster](compendium/races.md): choose one of its primary Founts (+1 to that Fount after rolling) and note its bane (disadvantage on that Fount's checks).
-2. **Roll Founts.** Roll one d6 per Fount (ᛄ Seron, ∵ Orvik, ϟ Zhark, △ Drun, ⌘ Veyra): 1–2 gives 1, 3–4 gives 2, 5–6 gives 3. Then add +1 to any one Fount.
+1. **Concept.** Name the character and describe one visible trait and one desire (it also says why you travel with this party). Pick an ancestry from [the roster](compendium/races.md): note its boon and bane. The boon is +2 to its listed Fount, or +1 each when it lists two. The bane is −1 to its bane Fount.
+2. **Roll Founts.** Roll one d6 per Fount (ᛄ Seron, ∵ Orvik, ϟ Zhark, △ Drun, ⌘ Veyra): 1–2 gives 1, 3–4 gives 2, 5–6 gives 3. Then add +1 to any one Fount. Apply your ancestry's boon (added after rolling) and bane (−1 to that Fount's checks, written on the sheet's Bane line).
 3. **Choose an archetype and specialty.** Pick one completed option from [Starting archetypes](compendium/classes.md). Copy its kit and signature ability. Archetype is a beginning, not a restriction.
 4. **Derived values.** Maximum HP is `6 + △ Drun`. Armor is `0` unarmored, `1` light, `2` heavy.
-5. **Finish.** Copy equipment, choose one useful mundane personal item, and answer: “Why are you traveling with this party?”
+5. **Finish.** Copy equipment, choose one useful mundane personal item,.
 
 Example: rolls `6, 2, 4, 1, 5` give Founts `3, 1, 2, 1, 3`; the +1 makes ᛄ Seron 4.
 
@@ -48,10 +48,10 @@ Roll only when outcome is uncertain, risky, and consequential.
 2. Choose the Fount matching the method, not the desired outcome. Players may propose another method.
 3. Roll `d20 + Fount` against difficulty.
 
-| Difficulty | Target | Use                                             |
-| ---------- | -----: | ----------------------------------------------- |
-| risky      |     10 | pressure exists; meaningful uncertainty         |
-| hard       |     15 | expert or strongly opposed task                 |
+| Difficulty | Target | Use                                     |
+| ---------- | -----: | --------------------------------------- |
+| risky      |     10 | pressure exists; meaningful uncertainty |
+| hard       |     15 | expert or strongly opposed task         |
 
 Easy tasks need no roll; extraordinary ones are hard with a cost or a need for preparation.
 
