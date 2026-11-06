@@ -62,3 +62,8 @@ Goal: GM starts in Kathara, follows players off expected path, and returns to ch
 - [ ] Run at a live table and record generation time plus every GM-invented missing decision.
 - [ ] Check all 20 ordered pairs, five primary-only cases, and incompatible-result fallbacks.
 - [ ] Finish full-repository legacy-color audit.
+
+## 6. Magic reconciliation
+
+- [ ] Map V1 spell list (YEL/BLU/PRP/RED/GRN) in [compendium/spells](compendium/spells/readme.md) to Founts, or drop entries that don't fit.
+- [ ] Decide whether V1's "magic as exertion / corruption toward a color" ([rules-v1](_meta/archive/rules-v1.md#magic)) becomes the spell-resource answer in section 4.

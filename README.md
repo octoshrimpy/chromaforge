@@ -15,11 +15,14 @@ No campaign concept or session preparation is required. Record generated facts: 
 ## Fast table links
 
 - [Starting archetypes](compendium/classes/readme.md)
-- [Quick links](quick_links.md)
+- [Fount reference](compendium/colors_houses/readme.md)
+- [DM toolbox](compendium/dm.md)
+- [V1 spell ideas](compendium/spells/readme.md)
+- [Race ideas](compendium/races/readme.md)
+- [Scratch ideas](testing/scratch.md)
 - [Current decisions and backlog](TODO.md)
 - [Archived V1 backlog](_meta/archive/TODO-v1.md)
 - [Legacy-rules notes](_meta/archive/rules-v1.md)
-- [Alpha implementation report](_meta/alpha-implementation-report.md)
 
 ## Status
 

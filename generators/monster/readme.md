@@ -36,7 +36,7 @@ _the Katharra bestiary. Descriptions live in the wiki; drill in for the statbloc
 <!-- ponytail: flat roster - most wiki creatures have no biome assigned yet, so
      biome-keying would mean inventing habitats. Re-key by biome once the wiki
      assigns them. Descriptions/statblocks should migrate from the wiki bestiary
-     into compendium/dm/monsters (which still holds the old generic D&D roster). -->
+     into compendium/dm.md (whose V1 monster pool holds the old generic D&D roster). -->
 
 ### monster_count
 

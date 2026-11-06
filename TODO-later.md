@@ -1,6 +1,0 @@
-- [ ] **Formalize Magic 'Effort' and 'Corruption' Mechanics**: The 'Stamina and Effort' and 'Corruption' mechanics are currently described in flavor text but lack concrete, measurable implementation in the rules. (idea #43)
-- [ ] **Standardize Spell Categorization and Fount Affiliation**: The current spell list lacks explicit links to the Five Founts, making it difficult to determine how magic interacts with the world's fundamental laws. (idea #51)
-- [ ] **Mechanical Conflict: Stamina vs. Spell Slots**: The V1 spell catalog suggests a 'spell per rest' system, while the active rules describe magic as a physical drain similar to lifting weights. (idea #61)
-- [ ] **Resolve Magic Resource Conflict**: The project contains conflicting definitions for magic consumption: one describes magic as requiring 'Stamina and Effort' (physical/mental), while another uses a 'spell/cast per rest' slot system. (idea #81)
-- [ ] **Formalize Spell-Fount Mapping**: The current spell list (BLU, PRP, etc.) lacks direct integration with the Five Founts (Seron, Orvik, Zhark, Drun, Veyra) defined in the guide. (idea #104)
-- [ ] **Reconcile Spell-Fount Alignment for Active Mechanics**: Establish a definitive mapping between the five Founts (Seron, Orvik, Zhark, Drun, Veyra) and the existing spell list (e.g., BLU, PRP) to move from 'inspiration' to 'active mechanics'. (idea #113)
