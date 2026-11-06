@@ -1,46 +1,26 @@
-# Welcome to Chromaforge!
+# ChromaForge alpha
 
-_**A lightweight, no-planning, as-long-as-you-want D&D campaign.**_
+A no-prep tabletop campaign generator for Kathara. One GM, players, ordinary dice, paper, and pencils.
 
-This repository contains everything you need to run anything from a one-shot to a full campaign, short of dice. 
+## Start here
 
-_If you're reading this and a file is mentioned but not linked, or missing, please open an issue, drop a comment, ping me on discord, or reach out in some other way. Thank you for your help!_ :D
+1. Open **[The Alpha Guide](guide.md)**. It contains character creation, checks, combat, magic, recovery, XP, travel, and the GM loop.
+2. Give each player a **[character sheet](assets/character-sheet.md)** and make characters together.
+3. Roll a starting situation with the **[starting-location generator](generators/starting-location.md)**.
+4. Use the **[Katharra alpha pool](compendium/katharra-alpha.md)** when a result needs a known place, person, or creature.
+5. See the **[example session](examples/alpha-session.md)** for opening, detour, offscreen development, and revisit.
 
----
+No campaign concept or session preparation is required. Record generated facts: they become this campaign's canon.
 
-## Getting Started
+## Fast table links
 
-Go through [Player Generation](./generations/player), and get your characters setup. 
+- [Starting archetypes](compendium/classes/readme.md)
+- [Quick links](quick_links.md)
+- [Current decisions and backlog](TODO.md)
+- [Archived V1 backlog](_meta/archive/TODO-v1.md)
+- [Legacy-rules notes](_meta/archive/rules-v1.md)
+- [Alpha implementation report](_meta/alpha-implementation-report.md)
 
-Character sheets are in [/assets](./assets). 
+## Status
 
-You can print the character sheets or open up the html version in [assets/character_sheet.html](./assets/character_sheet.html). It ~~auto-saves~~ will auto-save to your browser on every change, so when you open it again all your data should still be there!
-
----
-
-## Game Master - Running the game
-
-[1d4](https://www.ecosia.org/images?q=dice%204%20sides&tt=0e30b125), 
-[1d6](https://www.ecosia.org/images?q=dice%206%20sides), 
-[1d8](https://www.ecosia.org/images?q=dice%208%20sides), 
-[1d10](https://www.ecosia.org/images?q=dice%2010%20sides), 
-[1d12](https://www.ecosia.org/images?q=dice%2012%20sides), 
-[1d20](https://www.ecosia.org/images?q=dice%2020%20sides), 
-[1d100 (percentile dice, or two d10)](https://www.ecosia.org/images?q=percentile%20dice%20100), 
-coin
-
-Follow along with [DM's Guide](./gameplay/dm_guide.md)
-
-Remember, as a GM you have only two rules: 
-
-1. Take notes. Anything generated or said may be needed later.
-2. Make sure everyone, _including you_, is having fun.
-
----
-
-## Player - Playing the game
-
-I haven't personally been on this end of things, but will take notes when I run a campaign. Running one? Awesome! Make an issue and leave me some comments. Any feedback is greatly appreciated!
-
----
-This whole thing is still very much under maintenance. If something feels unbalanced, or weirdy, please leave me a note. 
+Playable alpha. Rules labeled **Provisional playtest rule** settle only what a session cannot run without; corresponding decisions remain open in [TODO.md](TODO.md). Existing campaigns under [`campaigns/`](campaigns/) remain preserved as historical campaign material.

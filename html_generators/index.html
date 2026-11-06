@@ -1,0 +1,1793 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chromaforge — Generators</title>
+    <style>
+      :root {
+        --paper: #ece3cf;
+        --paper-2: #e3d8bd;
+        --card: #f3ecdb;
+        --ink: #2b2118;
+        --ink-soft: #6b5d49;
+        --rule: #c3b491;
+        --rule-soft: #d8cbaa;
+        --accent: #7a5c34;
+        --danger: #a5402f;
+        --star: #c99a2e;
+        --serif:
+          "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua",
+          Georgia, ui-serif, serif;
+        --sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+        --shadow:
+          0 1px 2px rgba(60, 45, 25, 0.18), 0 2px 8px rgba(60, 45, 25, 0.08);
+        --hex-w: 76px;
+        --hex-h: 88px;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --paper: #1c1a16;
+          --paper-2: #16140f;
+          --card: #262119;
+          --ink: #e6dcc4;
+          --ink-soft: #a99a7d;
+          --rule: #4a4133;
+          --rule-soft: #3a3227;
+          --accent: #c9a86a;
+          --danger: #d2765f;
+          --star: #d9b24a;
+          --shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+        }
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html {
+        color-scheme: light dark;
+      }
+      body {
+        margin: 0;
+        height: 100vh;
+        overflow: hidden;
+        font-family: var(--sans);
+        color: var(--ink);
+        background: var(--paper);
+        background-image:
+          radial-gradient(
+            circle at 20% 30%,
+            rgba(120, 90, 50, 0.05) 0,
+            transparent 45%
+          ),
+          radial-gradient(
+            circle at 80% 70%,
+            rgba(120, 90, 50, 0.05) 0,
+            transparent 45%
+          );
+        display: flex;
+        flex-direction: column;
+      }
+      header {
+        display: flex;
+        align-items: center;
+        gap: 0.7rem;
+        padding: 0.6rem 1rem;
+        border-bottom: 1px solid var(--rule-soft);
+        flex: none;
+      }
+      .mark {
+        width: 1.7rem;
+        height: 1.7rem;
+        flex: none;
+      }
+      h1 {
+        font-family: var(--serif);
+        font-weight: 600;
+        font-size: 1.1rem;
+        margin: 0;
+      }
+      h1 small {
+        display: block;
+        font-size: 0.58rem;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        color: var(--ink-soft);
+        font-weight: 600;
+        font-family: var(--sans);
+      }
+      .modes {
+        display: flex;
+        gap: 0.3rem;
+        margin-left: 1rem;
+      }
+      .modes button {
+        font-family: var(--serif);
+        font-size: 0.85rem;
+        padding: 0.28rem 0.7rem;
+        background: transparent;
+        border: 1px solid transparent;
+        border-radius: 0.35rem;
+        color: var(--ink-soft);
+      }
+      .modes button.active {
+        color: var(--ink);
+        border-color: var(--rule);
+        background: var(--card);
+      }
+      .spacer {
+        margin-left: auto;
+      }
+      button,
+      select {
+        font: inherit;
+        color: var(--ink);
+        cursor: pointer;
+        background: var(--card);
+        border: 1px solid var(--rule);
+        border-radius: 0.35rem;
+        transition:
+          background 0.12s,
+          border-color 0.12s;
+      }
+      button:hover {
+        border-color: var(--accent);
+      }
+      .ghost {
+        background: transparent;
+        border-color: transparent;
+        color: var(--ink-soft);
+        font-size: 0.8rem;
+        padding: 0.28rem 0.55rem;
+      }
+      .ghost:hover {
+        border-color: var(--rule);
+      }
+      .danger-ghost {
+        color: var(--danger);
+      }
+      main {
+        flex: 1;
+        display: flex;
+        min-height: 0;
+      }
+
+      /* ---- sidebar ---- */
+      .index {
+        flex: 0 0 13.5rem;
+        border-right: 1px solid var(--rule-soft);
+        overflow-y: auto;
+        padding: 0.8rem 0.7rem;
+      }
+      .index h2 {
+        font-family: var(--serif);
+        font-size: 0.72rem;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        color: var(--ink-soft);
+        margin: 0.9rem 0 0.35rem;
+        display: flex;
+        align-items: center;
+      }
+      .index h2:first-child {
+        margin-top: 0;
+      }
+      .index h2 .add {
+        margin-left: auto;
+        background: transparent;
+        border: none;
+        color: var(--ink-soft);
+        font-size: 1rem;
+        padding: 0 0.2rem;
+        line-height: 1;
+      }
+      .index .gen,
+      .index .grp {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        text-align: left;
+        font-family: var(--serif);
+        font-size: 0.92rem;
+        padding: 0.28rem 0.5rem;
+        margin-bottom: 0.12rem;
+        background: transparent;
+        border: 1px solid transparent;
+        border-radius: 0.3rem;
+      }
+      .index .gen:hover,
+      .index .grp:hover {
+        background: var(--card);
+        border-color: var(--rule);
+      }
+      .index .grp.active {
+        background: var(--card);
+        border-color: var(--rule);
+      }
+      .index .grp.dragover {
+        border-color: var(--accent);
+        background: color-mix(in srgb, var(--accent) 10%, transparent);
+      }
+      .index .grp .gname {
+        flex: 1;
+        min-width: 0;
+        background: transparent;
+        border: 1px solid transparent;
+        border-radius: 0.25rem;
+        padding: 0.05rem 0.2rem;
+        font: inherit;
+        color: var(--ink);
+      }
+      .index .grp .gname:focus {
+        border-color: var(--rule);
+      }
+      .index .grp .gcount {
+        font-size: 0.72rem;
+        color: var(--ink-soft);
+        margin-left: 0.3rem;
+      }
+      .index .grp .gdel {
+        opacity: 0;
+        background: transparent;
+        border: none;
+        color: var(--ink-soft);
+        padding: 0 0.2rem;
+      }
+      .index .grp:hover .gdel {
+        opacity: 1;
+      }
+      .index hr {
+        border: none;
+        border-top: 1px solid var(--rule);
+        margin: 1rem 0 0.3rem;
+      }
+
+      /* ---- collection / main ---- */
+      .collection {
+        flex: 1;
+        overflow-y: auto;
+        padding: 1rem;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(17rem, 1fr));
+        gap: 0.8rem;
+        align-content: start;
+      }
+      .collection .empty {
+        grid-column: 1/-1;
+        color: var(--ink-soft);
+        font-family: var(--serif);
+        font-size: 1rem;
+        text-align: center;
+        padding: 3rem 0;
+      }
+      .view-head {
+        grid-column: 1/-1;
+        font-family: var(--serif);
+        font-size: 1.05rem;
+        color: var(--ink-soft);
+        margin: 0 0 0.2rem;
+      }
+
+      .card {
+        background: var(--card);
+        border: 1px solid var(--rule);
+        border-left: 3px solid var(--tint, var(--rule));
+        border-radius: 0.4rem;
+        box-shadow: var(--shadow);
+        padding: 0.55rem 0.65rem;
+        align-self: start;
+        cursor: pointer;
+      }
+      .card.dragging {
+        opacity: 0.4;
+      }
+      .card-top {
+        display: flex;
+        align-items: center;
+        gap: 0.4rem;
+        margin-bottom: 0.35rem;
+      }
+      .glyph {
+        width: 1.3rem;
+        height: 1.3rem;
+        flex: none;
+        border-radius: 50%;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-family: var(--serif);
+        font-weight: 700;
+        font-size: 0.78rem;
+        color: var(--tint, var(--ink-soft));
+        border: 1.5px solid var(--tint, var(--rule));
+        background: color-mix(
+          in srgb,
+          var(--tint, var(--rule)) 12%,
+          transparent
+        );
+      }
+      .titles {
+        flex: 1;
+        min-width: 0;
+        line-height: 1.05;
+      }
+      .gen-title {
+        font-family: var(--serif);
+        font-weight: 600;
+        font-size: 0.95rem;
+      }
+      .house-label {
+        font-size: 0.58rem;
+        text-transform: uppercase;
+        letter-spacing: 0.07em;
+        color: var(--tint, var(--ink-soft));
+        font-weight: 700;
+      }
+      .fav-star {
+        color: var(--star);
+        font-size: 0.9rem;
+      }
+      .kebab {
+        background: transparent;
+        border: none;
+        color: var(--ink-soft);
+        font-size: 1.1rem;
+        line-height: 1;
+        padding: 0 0.25rem;
+        min-width: 1.6rem;
+        min-height: 1.6rem;
+        border-radius: 0.3rem;
+      }
+      .kebab:hover {
+        background: var(--paper-2);
+        color: var(--ink);
+      }
+
+      .step {
+        padding: 0.26rem 0;
+        border-top: 1px solid var(--rule-soft);
+      }
+      .step:first-of-type {
+        border-top: none;
+        padding-top: 0.05rem;
+      }
+      .val {
+        font-family: var(--serif);
+        font-size: 0.95rem;
+        line-height: 1.3;
+      }
+      .step.lead .val {
+        font-size: 1.1rem;
+      }
+      .val.error {
+        color: var(--danger);
+        font-family: var(--sans);
+        font-size: 0.85rem;
+      }
+      .val a.gen-link {
+        color: var(--accent);
+      }
+      .cap {
+        display: flex;
+        align-items: center;
+        gap: 0.4rem;
+        margin-top: 0.03rem;
+        font-size: 0.6rem;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        color: var(--ink-soft);
+      }
+      .cap .lab {
+        opacity: 0.5;
+      }
+      .cap .rollv {
+        opacity: 0.5;
+      }
+      .cap .reroll {
+        margin-left: auto;
+        border: none;
+        background: transparent;
+        color: var(--ink-soft);
+        padding: 0 0.3rem;
+        opacity: 0;
+        font-size: 0.8rem;
+        min-height: 1.3rem;
+      }
+      .card:hover .cap .reroll,
+      .step:focus-within .reroll,
+      .modal .cap .reroll {
+        opacity: 0.75;
+      }
+      .cap .reroll:hover {
+        opacity: 1;
+        color: var(--accent);
+      }
+      .drill {
+        margin-top: 0.35rem;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.3rem;
+        font-size: 0.75rem;
+        font-weight: 600;
+        color: var(--accent);
+        background: transparent;
+        border: 1px dashed var(--rule);
+        border-radius: 0.3rem;
+        padding: 0.2rem 0.5rem;
+      }
+      .drill:hover {
+        border-color: var(--accent);
+        background: var(--paper-2);
+      }
+      .subcard {
+        margin-top: 0.4rem;
+        padding: 0.35rem 0.5rem;
+        border: 1px solid var(--rule-soft);
+        border-left: 2px solid var(--tint, var(--rule));
+        border-radius: 0.35rem;
+        background: color-mix(in srgb, var(--card) 70%, var(--paper-2));
+      }
+      .subcard .card-top {
+        margin-bottom: 0.2rem;
+      }
+      .subcard .glyph {
+        width: 1.05rem;
+        height: 1.05rem;
+        font-size: 0.64rem;
+      }
+      .subcard .gen-title {
+        font-size: 0.82rem;
+        flex: 1;
+      }
+      .subcard .val {
+        font-size: 0.85rem;
+      }
+      .subcard .step.lead .val {
+        font-size: 0.92rem;
+      }
+      .subcard .child-reroll {
+        background: transparent;
+        border: none;
+        color: var(--ink-soft);
+        font-size: 0.8rem;
+        padding: 0 0.25rem;
+        opacity: 0;
+      }
+      .subcard:hover > .card-top .child-reroll {
+        opacity: 0.75;
+      }
+
+      /* ---- overflow menu ---- */
+      .menu {
+        position: fixed;
+        z-index: 60;
+        background: var(--card);
+        border: 1px solid var(--rule);
+        border-radius: 0.4rem;
+        box-shadow: 0 6px 24px rgba(30, 20, 10, 0.3);
+        padding: 0.25rem;
+        min-width: 11rem;
+        font-size: 0.85rem;
+      }
+      .menu[hidden] {
+        display: none;
+      }
+      .menu button {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        width: 100%;
+        text-align: left;
+        background: transparent;
+        border: none;
+        padding: 0.35rem 0.5rem;
+        border-radius: 0.3rem;
+        font-family: var(--sans);
+        color: var(--ink);
+      }
+      .menu button:hover {
+        background: var(--paper-2);
+      }
+      .menu .sep {
+        border-top: 1px solid var(--rule-soft);
+        margin: 0.25rem 0;
+        font-size: 0.62rem;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--ink-soft);
+        padding: 0.25rem 0.5rem 0;
+      }
+      .menu .danger {
+        color: var(--danger);
+      }
+
+      /* ---- modal ---- */
+      /* the dim + blur lives on the PAGE layer (a plain filter, which view transitions
+     can capture & cross-fade) — backdrop-filter can't animate inside a VT snapshot */
+      #genView {
+        transition: filter 0.25s ease;
+      }
+      #genView.app-dim {
+        filter: blur(5px) brightness(0.88);
+      }
+      .modal-wrap {
+        position: fixed;
+        inset: 0;
+        z-index: 55;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(16, 11, 6, 0.32);
+        padding: 2rem;
+      }
+      .modal-wrap[hidden] {
+        display: none;
+      }
+      .modal {
+        background: var(--card);
+        border: 1px solid var(--rule);
+        border-left: 4px solid var(--tint, var(--rule));
+        border-radius: 0.5rem;
+        box-shadow: 0 12px 50px rgba(30, 20, 10, 0.4);
+        max-width: 34rem;
+        width: 100%;
+        max-height: 100%;
+        overflow-y: auto;
+        padding: 1.1rem 1.3rem;
+      }
+      .modal .modal-top {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        margin-bottom: 0.7rem;
+      }
+      .modal .gen-title {
+        font-size: 1.3rem;
+      }
+      .modal .step.lead .val {
+        font-size: 1.3rem;
+      }
+      .modal .modal-actions {
+        display: flex;
+        gap: 0.4rem;
+        margin-top: 1rem;
+        padding-top: 0.8rem;
+        border-top: 1px solid var(--rule-soft);
+      }
+      .modal .modal-actions button {
+        font-size: 0.8rem;
+        padding: 0.3rem 0.6rem;
+      }
+      /* card → modal morph (View Transitions API). The card box morphs into the modal;
+     the page dims+blurs via the root cross-fade (old=sharp genView, new=.app-dim genView). */
+      ::view-transition-group(card-morph) {
+        animation-duration: 0.3s;
+        animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      ::view-transition-old(root),
+      ::view-transition-new(root) {
+        animation-duration: 0.3s;
+        animation-timing-function: ease;
+      }
+      @media (prefers-reduced-motion: reduce) {
+        ::view-transition-group(*),
+        ::view-transition-old(*),
+        ::view-transition-new(*) {
+          animation: none !important;
+        }
+      }
+
+      /* ---- map view ---- */
+      #mapView {
+        flex: 1;
+        display: flex;
+        min-height: 0;
+      }
+      #mapView[hidden] {
+        display: none;
+      }
+      .atlas {
+        flex: 1;
+        position: relative;
+        overflow: auto;
+        padding: 2rem;
+      }
+      .canvas {
+        position: relative;
+        margin: auto;
+      }
+      .hex {
+        position: absolute;
+        width: var(--hex-w);
+        height: var(--hex-h);
+        clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        cursor: pointer;
+        user-select: none;
+        transition: transform 0.1s;
+      }
+      .hex:hover {
+        transform: scale(1.04);
+        z-index: 2;
+      }
+      .hex.tile {
+        background: var(--tile, var(--paper-2));
+        box-shadow: inset 0 0 0 2px
+          color-mix(in srgb, var(--tile, var(--rule)) 55%, #000 15%);
+      }
+      .hex.tile .biome {
+        font-family: var(--serif);
+        font-size: 0.72rem;
+        font-weight: 600;
+        color: #241a10;
+        line-height: 1.05;
+        padding: 0 0.5rem;
+        text-shadow: 0 1px 0 rgba(255, 255, 255, 0.25);
+      }
+      .hex.tile .dots {
+        font-size: 0.58rem;
+        color: #241a10;
+        opacity: 0.7;
+        margin-top: 0.15rem;
+      }
+      .hex.tile.sel {
+        box-shadow: inset 0 0 0 3px var(--ink);
+        z-index: 3;
+      }
+      .hex.forge {
+        background: transparent;
+        color: var(--ink-soft);
+        font-size: 1.3rem;
+        background-image: repeating-linear-gradient(
+          0deg,
+          transparent,
+          transparent 6px,
+          color-mix(in srgb, var(--rule) 60%, transparent) 6px,
+          color-mix(in srgb, var(--rule) 60%, transparent) 7px
+        );
+      }
+      .hex.forge:hover {
+        color: var(--accent);
+      }
+      .drawer {
+        flex: 0 0 20rem;
+        border-left: 1px solid var(--rule-soft);
+        background: var(--paper-2);
+        overflow-y: auto;
+        padding: 0.9rem;
+      }
+      .drawer.empty {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--ink-soft);
+        font-family: var(--serif);
+        text-align: center;
+        font-size: 0.95rem;
+      }
+      .crumb {
+        font-size: 0.68rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--ink-soft);
+        margin-bottom: 0.5rem;
+      }
+      .place-title {
+        font-family: var(--serif);
+        font-size: 1.35rem;
+        margin: 0 0 0.1rem;
+      }
+      .place-sub {
+        font-size: 0.72rem;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--tint, var(--ink-soft));
+        font-weight: 700;
+        margin-bottom: 0.7rem;
+      }
+      .drawer-actions {
+        display: flex;
+        gap: 0.3rem;
+        margin-bottom: 0.8rem;
+      }
+      .drawer-actions button {
+        font-size: 0.75rem;
+        padding: 0.25rem 0.5rem;
+      }
+
+      /* confirm overlay */
+      .overlay {
+        position: fixed;
+        inset: 0;
+        z-index: 70;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(16, 11, 6, 0.58);
+        backdrop-filter: blur(4px);
+      }
+      .overlay[hidden] {
+        display: none;
+      }
+      .dialog {
+        background: var(--card);
+        border: 1px solid var(--rule);
+        border-radius: 0.5rem;
+        padding: 1.4rem 1.6rem;
+        max-width: 22rem;
+        text-align: center;
+        box-shadow: 0 8px 40px rgba(30, 20, 10, 0.35);
+      }
+      .dialog .mark {
+        width: 2.2rem;
+        height: 2.2rem;
+        margin-bottom: 0.4rem;
+      }
+      .dialog h2 {
+        font-family: var(--serif);
+        font-weight: 600;
+        font-size: 1.25rem;
+        margin: 0 0 0.4rem;
+      }
+      .dialog p {
+        font-size: 0.85rem;
+        color: var(--ink-soft);
+        line-height: 1.5;
+        margin: 0 0 1.1rem;
+      }
+      .dialog-actions {
+        display: flex;
+        gap: 0.5rem;
+        justify-content: center;
+      }
+      .dialog-actions button {
+        font-family: var(--serif);
+        font-size: 0.9rem;
+        padding: 0.4rem 0.9rem;
+      }
+      .dialog-actions .danger {
+        color: #fff;
+        background: var(--danger);
+        border-color: var(--danger);
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <svg class="mark" viewBox="0 0 100 100" aria-hidden="true">
+        <path
+          d="M50 6 L61 38 L95 38 L67 58 L78 92 L50 72 L22 92 L33 58 L5 38 L39 38 Z"
+          fill="none"
+          stroke="var(--accent)"
+          stroke-width="3"
+          stroke-linejoin="round"
+        />
+      </svg>
+      <h1>Chromaforge<small>DM Aid</small></h1>
+      <div class="modes" id="modes">
+        <button data-mode="gen">Generators</button
+        ><button data-mode="map">World Map</button>
+      </div>
+      <span class="spacer"></span>
+      <button id="newAtlas" class="ghost danger-ghost" hidden>
+        ⟲ new atlas
+      </button>
+    </header>
+    <main>
+      <div id="genView" style="display: flex; flex: 1; min-height: 0">
+        <aside class="index" id="index"></aside>
+        <section class="collection" id="collection"></section>
+      </div>
+      <div id="mapView" hidden>
+        <div class="atlas" id="atlas">
+          <div class="canvas" id="canvas"></div>
+        </div>
+        <aside class="drawer empty" id="drawer">
+          Forge a tile, then select it to explore what grows there.
+        </aside>
+      </div>
+    </main>
+
+    <div class="menu" id="menu" hidden></div>
+    <div class="modal-wrap" id="modalWrap" hidden>
+      <div class="modal" id="modal"></div>
+    </div>
+    <div class="overlay" id="confirm" hidden>
+      <div class="dialog">
+        <svg class="mark" viewBox="0 0 100 100" aria-hidden="true">
+          <path
+            d="M50 6 L61 38 L95 38 L67 58 L78 92 L50 72 L22 92 L33 58 L5 38 L39 38 Z"
+            fill="none"
+            stroke="var(--danger)"
+            stroke-width="3"
+            stroke-linejoin="round"
+          />
+        </svg>
+        <h2 id="confirmTitle"></h2>
+        <p id="confirmBody"></p>
+        <div class="dialog-actions">
+          <button id="confirmCancel">cancel</button
+          ><button id="confirmYes" class="danger">do it</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="app.js"></script>
+    <script>
+      const KEY = "chromaforge_v4";
+      let mdMap = {},
+        state = load();
+
+      const HOUSE = {
+        NTG: {
+          name: "Integrity",
+          fount: "Seron",
+          color: "#d9b94a",
+          symbol: "ᛄ",
+        },
+        KNO: {
+          name: "Knowledge",
+          fount: "Orvik",
+          color: "#4a90d9",
+          symbol: "∵",
+        },
+        CHG: { name: "Change", fount: "Zhark", color: "#c0453f", symbol: "ϟ" },
+        FRT: {
+          name: "Fortitude",
+          fount: "Drun",
+          color: "#4f9d52",
+          symbol: "△",
+        },
+        CHR: { name: "Charm", fount: "Veyra", color: "#8e5bd0", symbol: "⌘" },
+      };
+      const TILE = {
+        yellow: "#d9b94a",
+        blue: "#4a90d9",
+        red: "#c0453f",
+        green: "#4f9d52",
+        purple: "#8e5bd0",
+      };
+      const CODE = {
+        YEL: "yellow",
+        BLU: "blue",
+        RED: "red",
+        GRN: "green",
+        PRP: "purple",
+      };
+      const GROUPS = [
+        { name: "People", ids: ["npc", "player"] },
+        {
+          name: "Places",
+          ids: ["town", "building", "landmark", "dungeon", "name"],
+        },
+        { name: "Encounters", ids: ["monster", "encounter", "group"] },
+        { name: "Findings", ids: ["quest", "shop"] },
+        { name: "World", ids: ["world_tile"] },
+      ];
+      function houseGlyph(c) {
+        return HOUSE[c].symbol;
+      }
+
+      function load() {
+        try {
+          const s = JSON.parse(localStorage.getItem(KEY));
+          if (s)
+            return Object.assign(
+              {
+                mode: "gen",
+                collection: [],
+                groups: [],
+                activeView: "collection",
+                tiles: {},
+                findings: [],
+                selected: null,
+              },
+              s,
+            );
+        } catch {}
+        return {
+          mode: "gen",
+          collection: [],
+          groups: [],
+          activeView: "collection",
+          tiles: {},
+          findings: [],
+          selected: null,
+        };
+      }
+      function save() {
+        try {
+          localStorage.setItem(KEY, JSON.stringify(state));
+        } catch {}
+      }
+      function uidLocal() {
+        return Date.now().toString(36) + Math.random().toString(36).slice(2, 6);
+      }
+      function esc(s) {
+        return (s ?? "")
+          .replace(/&/g, "&amp;")
+          .replace(/</g, "&lt;")
+          .replace(/>/g, "&gt;");
+      }
+      function escAttr(s) {
+        return (s ?? "").replace(/"/g, "&quot;");
+      }
+      function mdLinks(t) {
+        return esc(t).replace(/\[([^\]]*)\]\(([^)]+)\)/g, (_, l, u) => {
+          const g = findGeneratorForHref(u);
+          return g
+            ? `<a href="${u}" class="gen-link" data-gen="${g.id}">${l}</a>`
+            : `<a href="${u}" target="_blank" rel="noopener">${l}</a>`;
+        });
+      }
+      function identity(rolls) {
+        const t = JSON.stringify(rolls);
+        let m = t.match(/\b(NTG|KNO|CHG|FRT|CHR)\b/);
+        if (m)
+          return {
+            code: m[1],
+            color: HOUSE[m[1]].color,
+            label: `${HOUSE[m[1]].fount} · ${HOUSE[m[1]].name}`,
+          };
+        m = t.match(/\b(yellow|blue|red|green|purple)\b/i);
+        if (m)
+          return {
+            code: null,
+            color: TILE[m[1].toLowerCase()],
+            label: m[1].toLowerCase(),
+          };
+        m = t.match(/\b(YEL|BLU|RED|GRN|PRP)\b/);
+        if (m)
+          return { code: null, color: TILE[CODE[m[1]]], label: CODE[m[1]] };
+        return null;
+      }
+      function stepVal(rolls, l) {
+        const r = (rolls || []).find((s) => s.label === l);
+        return r ? r.result : null;
+      }
+
+      // ---- card location + mutation helpers ----
+      function allCards() {
+        return [...state.collection, ...state.groups.flatMap((g) => g.cards)];
+      }
+      function findCard(id) {
+        return allCards().find((c) => c.id === id);
+      }
+      function removeCard(id) {
+        state.collection = state.collection.filter((c) => c.id !== id);
+        for (const g of state.groups)
+          g.cards = g.cards.filter((c) => c.id !== id);
+      }
+      function moveCardTo(id, dest) {
+        const card = findCard(id);
+        if (!card) return;
+        removeCard(id);
+        if (dest === "collection") {
+          state.collection.unshift(card);
+        } else {
+          const g = state.groups.find((x) => x.id === dest);
+          if (g) g.cards.unshift(card);
+          else state.collection.unshift(card);
+        }
+        save();
+      }
+
+      // reroll one step within a rolls array (works for cards and drilled children)
+      function rerollStepIn(genId, rolls, label) {
+        const md = mdMap[genId];
+        if (!md) return;
+        const base = label.replace(/\s\d+$/, "");
+        const step = parseSteps(md).find((s) => s.label === base);
+        if (!step) return;
+        const rolled = rollStep(md, step, priorResultsFromRolls(rolls));
+        const res = resolveDirectives(rolled.result);
+        rolled.result = res.text;
+        rolled.children = res.children.length ? res.children : undefined;
+        rolled.label = label;
+        const i = rolls.findIndex((r) => r.label === label);
+        if (i >= 0) rolls[i] = rolled;
+      }
+
+      // ---- card rendering (shared: collection, group, modal) ----
+      function stepsHtml(rolls, lead) {
+        return rolls
+          .map((r, i) => {
+            const cls = "val" + (r.error ? " error" : "");
+            const html = r.error ? mdLinks(r.error) : mdLinks(r.result ?? "—");
+            const kids = (r.children || []).map(childHtml).join("");
+            const roll =
+              r.rollValue != null ? `${r.die} → ${r.rollValue}` : r.die;
+            return `<div class="step${lead && i === 0 ? " lead" : ""}"><div class="${cls}">${html}</div>
+    <div class="cap"><span class="lab">${esc(r.label)}</span><span class="rollv">${roll}</span>
+    <button class="reroll" data-reroll-step="${escAttr(r.label)}" title="reroll this">↻</button></div>${kids}</div>`;
+          })
+          .join("");
+      }
+      function childHtml(child) {
+        if (!child.expanded)
+          return `<button class="drill" data-expand="${child.id}">▸ generate ${esc(child.genTitle)}</button>`;
+        const id = identity(child.rolls);
+        const style = id ? ` style="--tint:${id.color}"` : "";
+        const glyph =
+          id && id.code
+            ? `<span class="glyph">${houseGlyph(id.code)}</span>`
+            : "";
+        const label = id
+          ? `<div class="house-label">${esc(id.label)}</div>`
+          : "";
+        return `<div class="subcard" data-child-id="${child.id}"${style}><div class="card-top">${glyph}<div class="gen-title">${esc(child.genTitle)}</div>${label}<button class="child-reroll" data-reroll-child title="reroll this whole thing">↻</button></div>${stepsHtml(child.rolls, true)}</div>`;
+      }
+      function cardTopHtml(card) {
+        const id = identity(card.rolls);
+        const glyph =
+          id && id.code
+            ? `<span class="glyph">${houseGlyph(id.code)}</span>`
+            : "";
+        const label = id
+          ? `<div class="house-label">${esc(id.label)}</div>`
+          : "";
+        const star = card.favorite
+          ? '<span class="fav-star" title="favorite">★</span>'
+          : "";
+        return `${glyph}<div class="titles"><div class="gen-title">${esc(card.genTitle)}</div>${label}</div>${star}<button class="kebab" data-menu title="more">⋯</button>`;
+      }
+
+      // ---- main (sidebar + collection) ----
+      function buildSidebar() {
+        const idx = document.getElementById("index");
+        idx.innerHTML = "";
+        for (const grp of GROUPS) {
+          const h = document.createElement("h2");
+          h.textContent = grp.name;
+          idx.appendChild(h);
+          for (const id of grp.ids) {
+            const g = GENERATORS.find((x) => x.id === id);
+            if (!g) continue;
+            const b = document.createElement("button");
+            b.className = "gen";
+            b.textContent = g.title;
+            b.onclick = () => rollGen(id);
+            idx.appendChild(b);
+          }
+        }
+        const hr = document.createElement("hr");
+        idx.appendChild(hr);
+        const gh = document.createElement("h2");
+        gh.innerHTML =
+          'Groups <button class="add" id="addGroup" title="new group">＋</button>';
+        idx.appendChild(gh);
+        const mk = (id, name, count) => {
+          const b = document.createElement("div");
+          b.className = "grp" + (state.activeView === id ? " active" : "");
+          b.dataset.view = id;
+          b.dataset.dropGroup = id;
+          b.innerHTML =
+            (id === "fav" ? '<span style="color:var(--star)">★</span> ' : "") +
+            `<span class="gname" ${id === "fav" || id === "collection" ? "" : 'contenteditable="false"'}>${esc(name)}</span><span class="gcount">${count}</span>` +
+            (id !== "fav" && id !== "collection"
+              ? '<button class="gdel" title="delete group">×</button>'
+              : "");
+          return b;
+        };
+        idx.appendChild(
+          mk("collection", "Loose rolls", state.collection.length),
+        );
+        idx.appendChild(
+          mk("fav", "Favorites", allCards().filter((c) => c.favorite).length),
+        );
+        for (const g of state.groups)
+          idx.appendChild(mk(g.id, g.name, g.cards.length));
+        document.getElementById("addGroup").onclick = (e) => {
+          e.stopPropagation();
+          const g = { id: uidLocal(), name: "New group", cards: [] };
+          state.groups.push(g);
+          state.activeView = g.id;
+          save();
+          buildSidebar();
+          renderCollection();
+        };
+      }
+      function viewCards() {
+        if (state.activeView === "collection") return state.collection;
+        if (state.activeView === "fav")
+          return allCards().filter((c) => c.favorite);
+        const g = state.groups.find((x) => x.id === state.activeView);
+        return g ? g.cards : state.collection;
+      }
+      function viewName() {
+        if (state.activeView === "collection") return "Loose rolls";
+        if (state.activeView === "fav") return "Favorites";
+        const g = state.groups.find((x) => x.id === state.activeView);
+        return g ? g.name : "";
+      }
+      function renderCollection() {
+        const el = document.getElementById("collection");
+        const cards = viewCards();
+        el.innerHTML = "";
+        const head = document.createElement("div");
+        head.className = "view-head";
+        head.textContent = viewName();
+        el.appendChild(head);
+        if (!cards.length) {
+          const e = document.createElement("div");
+          e.className = "empty";
+          e.textContent =
+            state.activeView === "collection"
+              ? "Pick a generator on the left to roll."
+              : "Drag cards here or use ⋯ → Save to.";
+          el.appendChild(e);
+          return;
+        }
+        for (const card of cards) {
+          const d = document.createElement("article");
+          d.className = "card";
+          d.dataset.cardId = card.id;
+          d.draggable = true;
+          const id = identity(card.rolls);
+          if (id) d.style.setProperty("--tint", id.color);
+          d.innerHTML = `<div class="card-top">${cardTopHtml(card)}</div>${stepsHtml(card.rolls, true)}`;
+          el.appendChild(d);
+        }
+      }
+      function rollGen(id) {
+        const g = GENERATORS.find((x) => x.id === id);
+        if (!g) return;
+        const card = {
+          id: uidLocal(),
+          genId: id,
+          genTitle: g.title,
+          rolls: runGenerator(id, mdMap),
+          favorite: false,
+        };
+        state.collection.unshift(card);
+        if (state.activeView !== "collection") state.activeView = "collection";
+        save();
+        buildSidebar();
+        renderCollection();
+      }
+
+      // resolve which rolls-array + genId an in-card action targets (card or a drilled child)
+      function ownerFor(card, el) {
+        const sub = el.closest("[data-child-id]");
+        if (sub) {
+          const c = findChildById(card.rolls, sub.dataset.childId);
+          if (c) return { genId: c.genId, rolls: c.rolls, child: c };
+        }
+        return { genId: card.genId, rolls: card.rolls, child: null };
+      }
+      function refresh() {
+        if (state.mode === "map") {
+          renderMap();
+        } else {
+          buildSidebar();
+          renderCollection();
+        }
+        if (modalCardId) renderModal();
+      }
+
+      // delegated card interactions (collection + modal share this)
+      function cardClick(e) {
+        const link = e.target.closest("a.gen-link");
+        if (link) {
+          e.preventDefault();
+          rollGen(link.dataset.gen);
+          return true;
+        }
+        const cardEl = e.target.closest("[data-card-id]");
+        if (!cardEl) return false;
+        const card = findCard(cardEl.dataset.cardId);
+        if (!card) return false;
+        const exp = e.target.closest("[data-expand]");
+        if (exp) {
+          const c = findChildById(card.rolls, exp.dataset.expand);
+          if (c) {
+            expandChild(c, mdMap);
+            save();
+            refresh();
+          }
+          return true;
+        }
+        const rs = e.target.closest("[data-reroll-step]");
+        if (rs) {
+          const o = ownerFor(card, rs);
+          rerollStepIn(o.genId, o.rolls, rs.dataset.rerollStep);
+          save();
+          refresh();
+          return true;
+        }
+        const rc = e.target.closest("[data-reroll-child]");
+        if (rc) {
+          const sub = rc.closest("[data-child-id]");
+          const c = findChildById(card.rolls, sub.dataset.childId);
+          if (c) {
+            c.rolls = runGenerator(c.genId, mdMap);
+            c.expanded = true;
+            save();
+            refresh();
+          }
+          return true;
+        }
+        const kb = e.target.closest("[data-menu]");
+        if (kb) {
+          openMenu(card.id, kb.getBoundingClientRect());
+          return true;
+        }
+        return { card };
+      }
+      document.getElementById("collection").addEventListener("click", (e) => {
+        const r = cardClick(e);
+        if (r === true || r === false) return;
+        // plain click on a card body → open modal (morph the card into it)
+        if (r && r.card)
+          openModalAnimated(r.card.id, e.target.closest(".card"));
+      });
+
+      // ---- overflow menu ----
+      const menuEl = document.getElementById("menu");
+      let menuCardId = null;
+      function openMenu(cardId, rect) {
+        menuCardId = cardId;
+        const card = findCard(cardId);
+        menuEl.innerHTML = `<button data-mi="fav">${card.favorite ? "★ Unfavorite" : "☆ Favorite"}</button>
+    <button data-mi="drill">⤋ Drill all the way down</button>
+    <div class="sep">Save to</div>${state.groups.map((g) => `<button data-saveto="${g.id}">${esc(g.name)}</button>`).join("")}
+    <button data-mi="newsave">＋ New group…</button>
+    <div class="sep"></div><button class="danger" data-mi="close">× Close (discard)</button>`;
+        menuEl.hidden = false;
+        const mw = menuEl.offsetWidth,
+          mh = menuEl.offsetHeight;
+        let x = rect.right - mw,
+          y = rect.bottom + 4;
+        if (y + mh > innerHeight) y = rect.top - mh - 4;
+        if (x < 4) x = 4;
+        menuEl.style.left = x + "px";
+        menuEl.style.top = y + "px";
+      }
+      function closeMenu() {
+        menuEl.hidden = true;
+        menuCardId = null;
+      }
+      menuEl.addEventListener("click", (e) => {
+        const b = e.target.closest("button");
+        if (!b) return;
+        const card = findCard(menuCardId);
+        if (!card) {
+          closeMenu();
+          return;
+        }
+        if (b.dataset.saveto) {
+          moveCardTo(card.id, b.dataset.saveto);
+          closeMenu();
+          refresh();
+          return;
+        }
+        switch (b.dataset.mi) {
+          case "fav":
+            card.favorite = !card.favorite;
+            save();
+            closeMenu();
+            refresh();
+            break;
+          case "drill":
+            expandAll(card.rolls, mdMap);
+            save();
+            closeMenu();
+            refresh();
+            break;
+          case "newsave": {
+            const g = { id: uidLocal(), name: "New group", cards: [] };
+            state.groups.push(g);
+            moveCardTo(card.id, g.id);
+            closeMenu();
+            refresh();
+            break;
+          }
+          case "close":
+            if (modalCardId === card.id) closeModal();
+            removeCard(card.id);
+            save();
+            closeMenu();
+            refresh();
+            break;
+        }
+      });
+      document.addEventListener("click", (e) => {
+        if (
+          !menuEl.hidden &&
+          !menuEl.contains(e.target) &&
+          !e.target.closest("[data-menu]")
+        )
+          closeMenu();
+      });
+
+      // ---- modal ----
+      const modalWrap = document.getElementById("modalWrap"),
+        modalEl = document.getElementById("modal");
+      let modalCardId = null;
+      const genViewEl = document.getElementById("genView");
+      function openModal(id) {
+        modalCardId = id;
+        renderModal();
+        modalWrap.hidden = false;
+        genViewEl.classList.add("app-dim");
+      }
+      function closeModal() {
+        modalWrap.hidden = true;
+        modalCardId = null;
+        genViewEl.classList.remove("app-dim");
+      }
+      const canMorph = () =>
+        document.startViewTransition &&
+        !matchMedia("(prefers-reduced-motion:reduce)").matches;
+      function openModalAnimated(id, cardEl) {
+        if (!canMorph() || !cardEl) {
+          openModal(id);
+          return;
+        }
+        cardEl.style.viewTransitionName = "card-morph";
+        const vt = document.startViewTransition(() => {
+          cardEl.style.viewTransitionName = "";
+          openModal(id);
+          modalEl.style.viewTransitionName = "card-morph";
+        });
+        vt.finished.finally(() => {
+          modalEl.style.viewTransitionName = "";
+        });
+      }
+      function closeModalAnimated() {
+        const id = modalCardId,
+          cardEl =
+            id &&
+            document.querySelector(
+              '#collection .card[data-card-id="' + id + '"]',
+            );
+        if (!canMorph() || !cardEl) {
+          closeModal();
+          return;
+        }
+        modalEl.style.viewTransitionName = "card-morph";
+        const vt = document.startViewTransition(() => {
+          modalEl.style.viewTransitionName = "";
+          closeModal();
+          cardEl.style.viewTransitionName = "card-morph";
+        });
+        vt.finished.finally(() => {
+          cardEl.style.viewTransitionName = "";
+        });
+      }
+      function renderModal() {
+        const card = findCard(modalCardId);
+        if (!card) {
+          closeModal();
+          return;
+        }
+        const id = identity(card.rolls);
+        modalEl.style.setProperty("--tint", id ? id.color : "var(--rule)");
+        modalEl.dataset.cardId = card.id;
+        modalEl.innerHTML = `<div class="modal-top">${cardTopHtml(card)}</div>${stepsHtml(card.rolls, true)}
+    <div class="modal-actions"><button data-mreroll>↻ reroll everything</button><button data-mall>⤋ drill all</button><button data-mclose class="spacer" style="margin-left:auto">close</button></div>`;
+      }
+      modalEl.addEventListener("click", (e) => {
+        const r = cardClick(e);
+        if (r === true) return;
+        if (e.target.closest("[data-mreroll]")) {
+          const c = findCard(modalCardId);
+          c.rolls = runGenerator(c.genId, mdMap);
+          save();
+          refresh();
+          return;
+        }
+        if (e.target.closest("[data-mall]")) {
+          const c = findCard(modalCardId);
+          expandAll(c.rolls, mdMap);
+          save();
+          refresh();
+          return;
+        }
+        if (e.target.closest("[data-mclose]")) {
+          closeModalAnimated();
+          return;
+        }
+      });
+      modalWrap.addEventListener("click", (e) => {
+        if (e.target === modalWrap) closeModalAnimated();
+      });
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") {
+          if (!menuEl.hidden) closeMenu();
+          else if (!modalWrap.hidden) closeModalAnimated();
+          else if (!confirmEl.hidden) hideConfirm();
+        }
+      });
+
+      // ---- sidebar interactions (view switch, group rename/delete, drop) ----
+      document.getElementById("index").addEventListener("click", (e) => {
+        const del = e.target.closest(".gdel");
+        if (del) {
+          e.stopPropagation();
+          const grpEl = del.closest(".grp");
+          const gid = grpEl.dataset.view;
+          ask("Delete this group?", "Its cards return to Loose rolls.", () => {
+            const g = state.groups.find((x) => x.id === gid);
+            if (g) {
+              state.collection.unshift(...g.cards);
+              state.groups = state.groups.filter((x) => x.id !== gid);
+            }
+            if (state.activeView === gid) state.activeView = "collection";
+            save();
+            refresh();
+          });
+          return;
+        }
+        const grp = e.target.closest(".grp");
+        if (grp && !e.target.closest('.gname[contenteditable="true"]')) {
+          state.activeView = grp.dataset.view;
+          save();
+          buildSidebar();
+          renderCollection();
+        }
+      });
+      document.getElementById("index").addEventListener("dblclick", (e) => {
+        const name = e.target.closest(".grp .gname");
+        const grp = e.target.closest(".grp");
+        if (
+          name &&
+          grp &&
+          grp.dataset.view !== "fav" &&
+          grp.dataset.view !== "collection"
+        ) {
+          name.contentEditable = "true";
+          name.focus();
+          document.execCommand &&
+            document.getSelection().selectAllChildren(name);
+        }
+      });
+      document.getElementById("index").addEventListener(
+        "blur",
+        (e) => {
+          const name = e.target.closest && e.target.closest(".grp .gname");
+          if (name && name.isContentEditable) {
+            const gid = name.closest(".grp").dataset.view;
+            const g = state.groups.find((x) => x.id === gid);
+            if (g) g.name = name.textContent.trim() || g.name;
+            name.contentEditable = "false";
+            save();
+            buildSidebar();
+          }
+        },
+        true,
+      );
+      // drag cards into group entries
+      document.addEventListener("dragstart", (e) => {
+        const c = e.target.closest(".card");
+        if (c) {
+          e.dataTransfer.setData("text/plain", c.dataset.cardId);
+          e.dataTransfer.effectAllowed = "move";
+          c.classList.add("dragging");
+        }
+      });
+      document.addEventListener("dragend", (e) => {
+        const c = e.target.closest(".card");
+        if (c) c.classList.remove("dragging");
+      });
+      document.getElementById("index").addEventListener("dragover", (e) => {
+        const g = e.target.closest("[data-drop-group]");
+        if (g) {
+          e.preventDefault();
+          g.classList.add("dragover");
+        }
+      });
+      document.getElementById("index").addEventListener("dragleave", (e) => {
+        const g = e.target.closest("[data-drop-group]");
+        if (g && !g.contains(e.relatedTarget)) g.classList.remove("dragover");
+      });
+      document.getElementById("index").addEventListener("drop", (e) => {
+        const g = e.target.closest("[data-drop-group]");
+        if (!g) return;
+        e.preventDefault();
+        g.classList.remove("dragover");
+        const id = e.dataTransfer.getData("text/plain");
+        const dest = g.dataset.dropGroup;
+        if (dest === "fav") {
+          const c = findCard(id);
+          if (c) {
+            c.favorite = true;
+            save();
+          }
+        } else moveCardTo(id, dest);
+        refresh();
+      });
+
+      // ---- map view (secondary) ----
+      const SIZE = 44,
+        SQ3 = Math.sqrt(3),
+        DIRS = [
+          [1, 0],
+          [1, -1],
+          [0, -1],
+          [-1, 0],
+          [-1, 1],
+          [0, 1],
+        ],
+        WHEEL = ["yellow", "blue", "red", "green", "purple"];
+      const canvasEl = document.getElementById("canvas"),
+        drawerEl = document.getElementById("drawer");
+      const px = (q, r) => ({ x: SIZE * SQ3 * (q + r / 2), y: SIZE * 1.5 * r }),
+        key = (q, r) => q + "," + r,
+        parseKey = (k) => {
+          const [q, r] = k.split(",").map(Number);
+          return { q, r };
+        };
+      function frontier() {
+        const s = new Set();
+        const ks = Object.keys(state.tiles);
+        if (!ks.length) {
+          s.add("0,0");
+          return [...s];
+        }
+        for (const k of ks) {
+          const { q, r } = parseKey(k);
+          for (const [dq, dr] of DIRS) {
+            const nk = key(q + dq, r + dr);
+            if (!state.tiles[nk]) s.add(nk);
+          }
+        }
+        return [...s];
+      }
+      function wheelDist(a, b) {
+        const i = WHEEL.indexOf(a),
+          j = WHEEL.indexOf(b);
+        if (i < 0 || j < 0) return 2;
+        const d = Math.abs(i - j);
+        return Math.min(d, 5 - d);
+      }
+      function neighborTile(q, r) {
+        for (const [dq, dr] of DIRS) {
+          const t = state.tiles[key(q + dq, r + dr)];
+          if (t) return t;
+        }
+        return null;
+      }
+      function neighborColors(q, r) {
+        const c = [];
+        for (const [dq, dr] of DIRS) {
+          const t = state.tiles[key(q + dq, r + dr)];
+          if (t) {
+            const col = stepVal(t.rolls, "color");
+            if (col) c.push(col);
+          }
+        }
+        return c;
+      }
+      function biasedColor(nb) {
+        if (!nb.length) return WHEEL[Math.floor(Math.random() * 5)];
+        const F = 0.45,
+          FL = 0.15;
+        const w = WHEEL.map(
+          (c) => FL + nb.reduce((s, n) => s + Math.pow(F, wheelDist(c, n)), 0),
+        );
+        let t = w.reduce((a, b) => a + b, 0),
+          x = Math.random() * t;
+        for (let i = 0; i < 5; i++) {
+          x -= w[i];
+          if (x <= 0) return WHEEL[i];
+        }
+        return WHEEL[4];
+      }
+      function resolveSame(rolls, src) {
+        const b = rolls.find((s) => s.label === "biome"),
+          c = rolls.find((s) => s.label === "color");
+        if (!b || !/same/i.test(b.result)) return;
+        if (src) {
+          b.result = stepVal(src.rolls, "biome") || b.result;
+          const sc = stepVal(src.rolls, "color");
+          if (c && sc) c.result = sc;
+          return;
+        }
+        const md = mdMap.world_tile,
+          step = parseSteps(md).find((s) => s.label === "biome"),
+          prior = priorResultsFromRolls(rolls);
+        for (let i = 0; i < 12 && /same/i.test(b.result); i++)
+          b.result = rollStep(md, step, prior).result;
+      }
+      function forge(k) {
+        const { q, r } = parseKey(k);
+        const rolls = runGenerator("world_tile", mdMap);
+        const color = biasedColor(neighborColors(q, r));
+        const cs = rolls.find((s) => s.label === "color");
+        if (cs) cs.result = color;
+        const md = mdMap.world_tile,
+          bs = parseSteps(md).find((s) => s.label === "biome"),
+          bio = rolls.find((s) => s.label === "biome");
+        if (bio) bio.result = rollStep(md, bs, { color }).result;
+        resolveSame(rolls, neighborTile(q, r));
+        state.tiles[k] = { coord: { q, r }, rolls };
+        state.selected = k;
+        save();
+        renderMap();
+      }
+      function renderMap() {
+        const tk = Object.keys(state.tiles),
+          front = frontier();
+        const cells = [
+          ...tk.map((k) => ({ k, tile: true })),
+          ...front.map((k) => ({ k, tile: false })),
+        ];
+        let minX = 1e9,
+          minY = 1e9,
+          maxX = -1e9,
+          maxY = -1e9;
+        for (const c of cells) {
+          const { q, r } = parseKey(c.k);
+          const { x, y } = px(q, r);
+          minX = Math.min(minX, x);
+          minY = Math.min(minY, y);
+          maxX = Math.max(maxX, x);
+          maxY = Math.max(maxY, y);
+        }
+        const W = SQ3 * SIZE,
+          H = 2 * SIZE;
+        canvasEl.style.width = maxX - minX + W + "px";
+        canvasEl.style.height = maxY - minY + H + "px";
+        canvasEl.innerHTML = "";
+        for (const c of cells) {
+          const { q, r } = parseKey(c.k);
+          const { x, y } = px(q, r);
+          const el = document.createElement("div");
+          el.style.left = x - minX + "px";
+          el.style.top = y - minY + "px";
+          if (c.tile) {
+            const tile = state.tiles[c.k];
+            const id = identity(tile.rolls);
+            const biome = stepVal(tile.rolls, "biome") || "tile";
+            const contents = (tile.rolls || []).filter(
+              (s) => /^content/.test(s.label) && (s.children || []).length,
+            );
+            el.className = "hex tile" + (state.selected === c.k ? " sel" : "");
+            if (id) el.style.setProperty("--tile", id.color);
+            el.innerHTML =
+              `<div class="biome">${esc(biome)}</div>` +
+              (contents.length
+                ? `<div class="dots">${"◈".repeat(contents.length)}</div>`
+                : "");
+            el.onclick = () => {
+              state.selected = c.k;
+              save();
+              renderMap();
+            };
+          } else {
+            el.className = "hex forge";
+            el.textContent = "+";
+            el.title = "forge a tile";
+            el.onclick = () => forge(c.k);
+          }
+          canvasEl.appendChild(el);
+        }
+        renderDrawer();
+      }
+      function renderDrawer() {
+        const k = state.selected,
+          tile = k && state.tiles[k];
+        if (!tile) {
+          drawerEl.className = "drawer empty";
+          drawerEl.innerHTML =
+            "Forge a tile, then select it to explore what grows there.";
+          return;
+        }
+        const id = identity(tile.rolls);
+        const { q, r } = parseKey(k);
+        const biome = stepVal(tile.rolls, "biome"),
+          color = stepVal(tile.rolls, "color"),
+          count = stepVal(tile.rolls, "content_count");
+        const rows = (tile.rolls || []).filter((s) => /^content/.test(s.label));
+        drawerEl.className = "drawer";
+        drawerEl.style.setProperty("--tint", id ? id.color : "var(--rule)");
+        drawerEl.innerHTML = `<div class="crumb">Atlas › tile ${q},${r}</div><div class="place-title">${esc(biome || "a tile")}</div><div class="place-sub">${esc(color || "")} land · ${esc(count || "")}</div><div class="drawer-actions"><button data-forge-all>generate all the way down</button><button data-reroll-tile>reroll tile</button></div>${rows.length ? rows.map((rw) => `<div class="step lead"><div class="val">${mdLinks(rw.result)}</div>${(rw.children || []).map(childHtml).join("")}</div>`).join("") : '<p style="color:var(--ink-soft);font-style:italic">empty land — nothing grows here.</p>'}`;
+      }
+      drawerEl.addEventListener("click", (e) => {
+        const link = e.target.closest("a.gen-link");
+        if (link) {
+          e.preventDefault();
+          rollGen(link.dataset.gen);
+          setMode("gen");
+          return;
+        }
+        const exp = e.target.closest("[data-expand]");
+        if (exp) {
+          const c = findChildById(
+            state.tiles[state.selected].rolls,
+            exp.dataset.expand,
+          );
+          if (c) {
+            expandChild(c, mdMap);
+            save();
+            renderMap();
+          }
+          return;
+        }
+        if (e.target.closest("[data-forge-all]")) {
+          expandAll(state.tiles[state.selected].rolls, mdMap);
+          save();
+          renderMap();
+          return;
+        }
+        if (e.target.closest("[data-reroll-tile]")) {
+          state.tiles[state.selected].rolls = runGenerator("world_tile", mdMap);
+          save();
+          renderMap();
+          return;
+        }
+      });
+
+      // ---- mode + confirm ----
+      function setMode(m) {
+        state.mode = m;
+        save();
+        document.getElementById("genView").style.display =
+          m === "gen" ? "flex" : "none";
+        document.getElementById("mapView").hidden = m !== "map";
+        document.getElementById("newAtlas").hidden = m !== "map";
+        for (const b of document.querySelectorAll("#modes button"))
+          b.classList.toggle("active", b.dataset.mode === m);
+        if (m === "map") renderMap();
+        else {
+          buildSidebar();
+          renderCollection();
+        }
+      }
+      document.getElementById("modes").addEventListener("click", (e) => {
+        const b = e.target.closest("button[data-mode]");
+        if (b) setMode(b.dataset.mode);
+      });
+      const confirmEl = document.getElementById("confirm");
+      let confirmAction = null;
+      function ask(title, body, fn) {
+        document.getElementById("confirmTitle").textContent = title;
+        document.getElementById("confirmBody").textContent = body;
+        confirmAction = fn;
+        confirmEl.hidden = false;
+      }
+      function hideConfirm() {
+        confirmEl.hidden = true;
+        confirmAction = null;
+      }
+      document.getElementById("confirmCancel").onclick = hideConfirm;
+      document.getElementById("confirmYes").onclick = () => {
+        if (confirmAction) confirmAction();
+        hideConfirm();
+      };
+      confirmEl.addEventListener("click", (e) => {
+        if (e.target === confirmEl) hideConfirm();
+      });
+      document.getElementById("newAtlas").onclick = () =>
+        ask(
+          "Forge a new atlas?",
+          "This unmakes the current map. It cannot be undone.",
+          () => {
+            state.tiles = {};
+            state.selected = null;
+            save();
+            renderMap();
+          },
+        );
+
+      // ---- boot ----
+      document.getElementById("collection").innerHTML =
+        '<div class="empty">loading…</div>';
+      Promise.all(
+        GENERATORS.map((g) => fetchGenerator(g.path).then((md) => [g.id, md])),
+      )
+        .then((entries) => {
+          mdMap = Object.fromEntries(entries);
+          setMode(state.mode);
+        })
+        .catch((err) => {
+          document.getElementById("collection").innerHTML =
+            `<div class="empty" style="color:var(--danger)">${esc(err.message)}</div>`;
+        });
+    </script>
+  </body>
+</html>

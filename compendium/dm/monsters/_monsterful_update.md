@@ -1,8 +1,7 @@
-
-
-
 ============================
+
 ## to organize below
+
 _ignore this. All this content will come in a future update_
 
 badger
@@ -49,13 +48,11 @@ wasp
 tiny creature
 description
 
-
 ## mythicals
 
 basilisk
 huge mythical
 description
-
 
 wyrm
 large mythical
@@ -108,7 +105,6 @@ description
 gorgon
 large mythical
 description
-
 
 ## magical
 
@@ -234,7 +230,6 @@ wasp
 huge creature
 description
 
-
-scarab beetle   
+scarab beetle  
 huge creature
 description

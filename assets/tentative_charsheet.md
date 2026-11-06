@@ -1,5 +1,3 @@
-
-
 ---
 
 # _generate name here_
@@ -27,33 +25,35 @@ HP  : 15 / 15
 ### notes
 
 ---
+
 ---
 
 # things to track
 
 houses:
-* ranged
-* arcana
-* stealth
-* strength
-* charm
+
+- ranged
+- arcana
+- stealth
+- strength
+- charm
 
 per house:
-* SK      skill points
-* XP      experience points
-* PP      Proficiency points
-* level caps
+
+- SK skill points
+- XP experience points
+- PP Proficiency points
+- level caps
 
 ---
 
-* RP      rupies
-* GP      gold pieces
-* SP      silver pieces
-* CP      copper pieces
+- RP rupies
+- GP gold pieces
+- SP silver pieces
+- CP copper pieces
 
-* ORB     spirit orbs  
+- ORB spirit orbs
+
 ---
-
 
 0/10
-

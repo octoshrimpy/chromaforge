@@ -1,21 +1,50 @@
-
 # Generate Town
 
-town - only generate buildings as players interact
-* tavern - only rumor
-* town hall - only quest
-* shop - [generate shop 🔗](/generators/building/readme.md)
+Only generate buildings as players interact with them:
 
-1d4 - Rumor + quests?
+- tavern - only rumor
+- town hall - only quest
+- shop - [generate shop 🔗](/generators/building/readme.md)
 
-| roll     | rumor | quest |
-|----------|-------|-------|
-| `1`      | no    | yes   |
-| `2`      | yes   | yes   |
-| `3`, `4` | yes   | no    |
+## steps
 
-## building count
-1d10 (+3 above)
+| die    | label          | depends |
+| ------ | -------------- | ------- |
+| `1d1`  | name           |         |
+| `1d10` | culture        |         |
+| `1d4`  | rumor_quest    |         |
+| `1d10` | building_count |         |
 
-## town color
-1d0/2 
+### name
+
+| roll | result        |
+| ---- | ------------- |
+| 1    | {{gen: name}} |
+
+### culture
+
+_the town's dominant fount — its banner color, temple, and civic character (see [colors & houses](/compendium/colors_houses/readme.md))._
+
+| roll  | result                     |
+| ----- | -------------------------- |
+| 1, 2  | yellow — Seron / Integrity |
+| 3, 4  | blue — Orvik / Knowledge   |
+| 5, 6  | red — Zhark / Change       |
+| 7, 8  | green — Drun / Fortitude   |
+| 9, 10 | purple — Veyra / Charm     |
+
+### rumor_quest
+
+| roll | result                 |
+| ---- | ---------------------- |
+| 1    | rumor: no, quest: yes  |
+| 2    | rumor: yes, quest: yes |
+| 3, 4 | rumor: yes, quest: no  |
+
+### building_count
+
+_result + 3 = total buildings_
+
+| roll | result   |
+| ---- | -------- |
+| 1-10 | roll + 3 |

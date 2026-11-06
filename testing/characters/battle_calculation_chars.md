@@ -1,12 +1,12 @@
 kobold BLK
 20 HP
 
-chr +2      // from race
-str 1d8     // from race
+chr +2 // from race
+str 1d8 // from race
 
 strong monk
 
-str +1      // from guild
+str +1 // from guild
 
 strong kobold monk
 
@@ -15,18 +15,17 @@ strong kobold monk
 hippofolk GRN
 25 HP
 
-str +1      // from race
-arc +1      // from race
+str +1 // from race
+arc +1 // from race
 ran 1d8
 
 ranged druid
 
-ran +1      // from guild
+ran +1 // from guild
 
 ranged hippofolk druid
 
 ====================
-
 
 etterkin BLK
 25 HP

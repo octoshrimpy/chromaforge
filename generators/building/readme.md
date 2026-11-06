@@ -1,57 +1,28 @@
-
 # Generate Town Building
 
-01 - 20 `shops` - only sell
-    1. enchanted bookstore
-    2. tailor - rich
-    3. tailor - poor
-    4. rare materials
-    5. oracle
-    6. inn
-    7. bakery
-    8. maps
-    9. oddities
+## steps
 
-21 - 40 `services` - sell, modify
-    1. blacksmith
-    2. carpenter
-    3. fletcher
-    4. leathersmith
-    5. alchemist
-    6. jeweler
-    7. brewery
-    8. armorer
-    9. enchanter
+| die     | label    | depends  |
+| ------- | -------- | -------- |
+| `1d100` | category |          |
+| `1d9`   | building | category |
 
-41 - 60 `entertainment` - can visit, quests
-    1. library
-    2. temple
-    3. adventurer guild
-    4. magic guild
-    5. fight guild
-    6. theater
-    7. sanctuary
-    8. pub
-    9. warehouse
+### category
 
-61 - 80 `decorative` - meeting places
-    1. cafe
-    2. restaurant
-    3. bathhouse
-    4. gardens
-    5. colisseum
-    6. tavern
-    7. pond / lake
-    8. shrine
-    9. flower patch
+| roll     | result                            |
+| -------- | --------------------------------- |
+| `01-20`  | shops - only sell                 |
+| `21-40`  | services - sell, modify           |
+| `41-60`  | entertainment - can visit, quests |
+| `61-80`  | decorative - meeting places       |
+| `81-100` | town services - town basics       |
 
-81 - 100 `town services` - town basics
-    1. school
-    2. customs yard
-    3. police dept
-    4. prison
-    5. barracks
-    6. bank
-    7. church
-    8. hospital
-    9. stables
+### building
+
+| category                          | 1                   | 2             | 3                | 4              | 5           | 6       | 7           | 8        | 9            |
+| --------------------------------- | ------------------- | ------------- | ---------------- | -------------- | ----------- | ------- | ----------- | -------- | ------------ |
+| shops - only sell                 | enchanted bookstore | tailor - rich | tailor - poor    | rare materials | oracle      | inn     | bakery      | maps     | oddities     |
+| services - sell, modify           | blacksmith          | carpenter     | fletcher         | leathersmith   | alchemist   | jeweler | brewery     | armorer  | enchanter    |
+| entertainment - can visit, quests | library             | temple        | adventurer guild | magic guild    | fight guild | theater | sanctuary   | pub      | warehouse    |
+| decorative - meeting places       | cafe                | restaurant    | bathhouse        | gardens        | colisseum   | tavern  | pond / lake | shrine   | flower patch |
+| town services - town basics       | school              | customs yard  | police dept      | prison         | barracks    | bank    | church      | hospital | stables      |

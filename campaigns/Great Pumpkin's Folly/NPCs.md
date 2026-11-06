@@ -1,29 +1,27 @@
-* cilan 
-    * brother fennel
-    * sister parsley
-
-
+- cilan
+  - brother fennel
+  - sister parsley
 
 # swamp village - russian accent
 
-* Berinon 
-    * teal scales
-    * apron
-    * pants
-    * shy, high voice
+- Berinon
+  - teal scales
+  - apron
+  - pants
+  - shy, high voice
 
-* Sadon 
-    * tavern owner
-    * large
-    * low apron, pants
-    * reddish brown scales
-    * low voice, humble
+- Sadon
+  - tavern owner
+  - large
+  - low apron, pants
+  - reddish brown scales
+  - low voice, humble
 
-* viniir 
-    * tavern cook
+- viniir
+  - tavern cook
 
-* Mironwe
-    * yellow scales
-    * old lizard witch
-    * scratchy high voice
-    * knows a lot
+- Mironwe
+  - yellow scales
+  - old lizard witch
+  - scratchy high voice
+  - knows a lot

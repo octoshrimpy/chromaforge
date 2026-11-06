@@ -5,42 +5,52 @@ any/path/below/readme.md
     - traveling
     - combat
       - // advantages: weapon vs situation vs color
-    - levelling
+    - leveling
+    - magic
     - skill_checks
 
-  - generations
-    - dungeon
-    - town
+  - generators
     - building
-    - shop
+    - dungeon
+    - encounter
     - group
-    - quest
-    - npc
+    - landmark
     - monster
+    - name
+    - npc
+    - quest
+    - shop
+    - town
     - player
       - // race
       - // house
       - // class
       - // mods
       - // health scaling
-    - world tile
+    - world_tile
       - // color
       - // biome
       - // content(s)
 
   - compendium
-    - colors & houses
-    - list of spells
-    - list of races
-    - list of classes
+    - classes
+    - colors_houses
+    - money_conversions
+    - races
+    - spells
     - [dm]
-      - list of landmarks
-      - list of monsters
-      - list of biomes
-      - list of world content
-      - list of puzzles
-      - list of riddles
-      - list of links
+      - biomes
+      - landmarks
+      - links
+      - monsters
+      - puzzles_riddles
+      - tile_content
+
+  - campaigns
+    - // one folder per campaign/run, freeform notes
+
+  - assets
+    - // character sheets, printable + html
 
   - testing
     - characters
