@@ -14,11 +14,24 @@
         --white: #fffefa;
         --bar: #eceae6;
         --bg: #dddcd8;
-        --rule: var(--rule);
-        --row: var(--row);
+        --rule: #dedbd7;
+        --row: #e6e3df;
         --field: #fff;
         --edge: #d2cec8;
+        --seron: #e3b332;
+        --orvik: #5593c9;
+        --zhark: #d36055;
+        --drun: #5c9c70;
+        --veyra: #9360b7;
+        --accent: var(--ink); /* neutral until a primary Fount is chosen */
       }
+
+      /* Primary Fount recolors the page's highlights. */
+      :root:has(#primary_fount [value="seron"]:checked) { --accent: var(--seron); }
+      :root:has(#primary_fount [value="orvik"]:checked) { --accent: var(--orvik); }
+      :root:has(#primary_fount [value="zhark"]:checked) { --accent: var(--zhark); }
+      :root:has(#primary_fount [value="drun"]:checked) { --accent: var(--drun); }
+      :root:has(#primary_fount [value="veyra"]:checked) { --accent: var(--veyra); }
 
       /* Dark on screen only; print always uses the light tokens above. */
       @media screen and (prefers-color-scheme: dark) {
@@ -227,6 +240,7 @@
       }
 
       .field input,
+      .field select,
       .field textarea {
         color: var(--ink);
         width: 100%;
@@ -243,13 +257,17 @@
         height: 20px;
       }
 
+      .field select {
+        height: 24px;
+      }
+
       .field textarea {
         height: 26px;
         resize: vertical;
       }
 
-      .field :is(input, textarea):focus {
-        border-bottom-color: #8e64b4;
+      .field :is(input, select, textarea):focus {
+        border-bottom-color: var(--accent);
       }
 
       .cols {
@@ -336,34 +354,54 @@
       }
 
       .seron {
-        --c: #e3b332;
+        --c: var(--seron);
         background: var(--c);
       }
 
       .orvik {
-        --c: #5593c9;
+        --c: var(--orvik);
         background: var(--c);
       }
 
       .zhark {
-        --c: #d36055;
+        --c: var(--zhark);
         background: var(--c);
       }
 
       .drun {
-        --c: #5c9c70;
+        --c: var(--drun);
         background: var(--c);
       }
 
       .veyra {
-        --c: #9360b7;
+        --c: var(--veyra);
         background: var(--c);
       }
 
       .fount-name {
         font-size: 12px;
-        font-weight: 750;
+        font-weight: 400; /* bold only for the primary Fount, below */
         white-space: nowrap;
+      }
+
+      :root:has(#primary_fount [value="seron"]:checked) .fount-row:has(.seron) .fount-name {
+        font-weight: 750;
+      }
+
+      :root:has(#primary_fount [value="orvik"]:checked) .fount-row:has(.orvik) .fount-name {
+        font-weight: 750;
+      }
+
+      :root:has(#primary_fount [value="zhark"]:checked) .fount-row:has(.zhark) .fount-name {
+        font-weight: 750;
+      }
+
+      :root:has(#primary_fount [value="drun"]:checked) .fount-row:has(.drun) .fount-name {
+        font-weight: 750;
+      }
+
+      :root:has(#primary_fount [value="veyra"]:checked) .fount-row:has(.veyra) .fount-name {
+        font-weight: 750;
       }
 
       .fount-role {
@@ -376,6 +414,7 @@
       }
 
       .numeric {
+        font-size: 13px; /* don't inherit from .combat-note */
         width: 100%;
         height: 30px;
         background: var(--field);
@@ -407,6 +446,11 @@
         flex: 0 0 auto;
       }
 
+      .combat-label-end {
+        min-width: 50px;
+        text-align: right;
+      }
+
       .combat-note {
         font-size: 10px;
         flex: 1;
@@ -417,6 +461,10 @@
         width: 63px;
         margin-left: auto;
         flex-shrink: 0;
+      }
+
+      .combat-note .numeric {
+        margin-left: 10px;
       }
 
       .combat-row .line-input {
@@ -430,7 +478,7 @@
       }
 
       .combat-row .line-input:focus {
-        border-bottom-color: #8e64b4;
+        border-bottom-color: var(--accent);
       }
 
       .choice {
@@ -447,7 +495,15 @@
         width: 13px;
         height: 13px;
         margin: 0;
-        accent-color: #8d64b2;
+        appearance: none;
+        border: 1.5px solid var(--muted);
+        border-radius: 50%;
+        background: transparent;
+      }
+
+      .choice input:checked {
+        border-color: var(--accent);
+        background: var(--accent);
       }
 
       .armor-row {
@@ -496,7 +552,7 @@
       }
 
       .kit-lines input:focus {
-        border-bottom-color: #8e64b4;
+        border-bottom-color: var(--accent);
       }
 
       .notes {
@@ -536,7 +592,7 @@
       }
 
       .notes-row input:focus {
-        border-bottom-color: #8e64b4;
+        border-bottom-color: var(--accent);
       }
 
       .foot {
@@ -610,6 +666,23 @@
           box-shadow: none;
         }
 
+        /* Always light-mode Fount icons, no number spinners on paper. */
+        .fount-row .fount-icon {
+          background: var(--c);
+          color: #fff;
+        }
+
+        input[type="number"] {
+          appearance: textfield;
+          -moz-appearance: textfield;
+        }
+
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+          -webkit-appearance: none;
+          margin: 0;
+        }
+
         .panel {
           break-inside: avoid;
         }
@@ -678,7 +751,14 @@
             </label>
             <label class="field">
               Primary Fount
-              <input name="primary_fount" />
+              <select id="primary_fount" name="primary_fount">
+                <option value=""></option>
+                <option value="seron">ᛄ Seron</option>
+                <option value="orvik">∵ Orvik</option>
+                <option value="zhark">ϟ Zhark</option>
+                <option value="drun">△ Drun</option>
+                <option value="veyra">⌘ Veyra</option>
+              </select>
             </label>
             <label class="field">
               Why travel with the party?
@@ -804,14 +884,13 @@
                   />
                 </span>
                 <label
-                  class="combat-label"
+                  class="combat-label combat-label-end"
                   for="currenthp"
-                  style="min-width: 50px; text-align: right"
                 >
                   Current
                 </label>
                 <input
-                  class="numeric small-number"
+                  class="numeric"
                   id="currenthp"
                   name="current_hp"
                   type="number"
