@@ -32,13 +32,13 @@ Rest and appropriate quiet practice ease these costs. White and black are histor
 
 One procedure; no House, Guild, class cap, or second stat roll.
 
-1. **Concept.** Name the character and describe one visible trait and one desire (it also says why you travel with this party). Pick an ancestry from [the roster](compendium/races.md): note its boon and bane. The boon is +2 to its listed Fount, or +1 each when it lists two. The bane is −1 to its bane Fount.
-2. **Roll Founts.** Roll one d6 per Fount (ᛄ Seron, ∵ Orvik, ϟ Zhark, △ Drun, ⌘ Veyra): 1–2 gives 1, 3–4 gives 2, 5–6 gives 3. Then add +1 to any one Fount. Apply your ancestry's boon (added after rolling) and bane (−1 to that Fount's checks, written on the sheet's Bane line).
-3. **Choose an archetype and specialty.** Pick one completed option from [Starting archetypes](compendium/classes.md). Copy its kit and signature ability. Archetype is a beginning, not a restriction.
+1. **Concept.** Name the character and describe one visible trait and one desire (it also says why you travel with this party). Pick an ancestry from [the roster](compendium/races.md): note its boon and bane. The boon is +1 to one of its listed Founts (your choice). The bane is −1 to its bane Fount.
+2. **Roll Founts.** Roll one d6 per Fount (ᛄ Seron, ∵ Orvik, ϟ Zhark, △ Drun, ⌘ Veyra): 1–2 gives 1, 3–4 gives 2, 5–6 gives 3. Then apply your ancestry's boon (+1) and bane (−1) to those Founts; modifiers stack and are added after rolling.
+3. **Choose an archetype and specialty.** Pick one completed option from [Starting archetypes](compendium/classes.md). Copy its kit and signature ability. Your specialty adds +1 to the Fount it is aligned with. Archetype is a beginning, not a restriction.
 4. **Derived values.** Maximum HP is `6 + △ Drun`. Armor is `0` unarmored, `1` light, `2` heavy.
 5. **Finish.** Copy equipment, choose one useful mundane personal item,.
 
-Example: rolls `6, 2, 4, 1, 5` give Founts `3, 1, 2, 1, 3`; the +1 makes ᛄ Seron 4.
+Example: rolls `6, 2, 4, 1, 5` give Founts `3, 1, 2, 1, 3`. An elf (ᛄ Seron boon, ⌘ Veyra bane) who picks a ᛄ Seron specialty ends with ᛄ Seron 5 and ⌘ Veyra 2.
 
 ## Checks
 

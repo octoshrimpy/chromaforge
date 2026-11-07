@@ -4,6 +4,15 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>ChromaForge — Alpha Character Sheet</title>
+    <script>
+      // Theme before first paint: saved choice, else the system setting.
+      try {
+        var theme = localStorage.getItem("chromaforge-theme");
+      } catch (_) {}
+      document.documentElement.dataset.theme =
+        theme ||
+        (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+    </script>
     <style>
       :root {
         color-scheme: light;
@@ -23,6 +32,7 @@
         --zhark: #d36055;
         --drun: #5c9c70;
         --veyra: #9360b7;
+        --shift: black; /* text tint: darker on light, lighter on dark */
         --accent: var(--ink); /* neutral until a primary Fount is chosen */
       }
 
@@ -43,14 +53,10 @@
         --accent: var(--veyra);
       }
 
-      /* Dark on screen only; print always uses the light tokens above. */
-      @media screen and (prefers-color-scheme: dark) {
-        .fount-row .fount-icon {
-          background: color-mix(in srgb, var(--c) 22%, transparent);
-          color: var(--c);
-        }
-
-        :root {
+      /* Dark on screen only (print always uses the light tokens above).
+         data-theme is set by the script in <head> and the toolbar toggle. */
+      @media screen {
+        :root[data-theme="dark"] {
           color-scheme: dark;
           --ink: #e8e6f0;
           --muted: #9a9bb0;
@@ -63,6 +69,47 @@
           --row: #343444;
           --field: #1d1d27;
           --edge: #4a4a5c;
+          --shift: white;
+
+          .fount-row .fount-icon {
+            background: color-mix(in srgb, var(--c) 22%, transparent);
+            color: var(--c);
+          }
+        }
+      }
+
+      /* Fount dropdowns take the chosen Fount's color. */
+      select:is(#primary_fount, #bane_fount) {
+        font-weight: 700;
+        &:has([value="seron"]:checked) {
+          color: color-mix(in srgb, var(--seron), var(--shift) 15%);
+        }
+        &:has([value="orvik"]:checked) {
+          color: color-mix(in srgb, var(--orvik), var(--shift) 15%);
+        }
+        &:has([value="zhark"]:checked) {
+          color: color-mix(in srgb, var(--zhark), var(--shift) 15%);
+        }
+        &:has([value="drun"]:checked) {
+          color: color-mix(in srgb, var(--drun), var(--shift) 15%);
+        }
+        &:has([value="veyra"]:checked) {
+          color: color-mix(in srgb, var(--veyra), var(--shift) 15%);
+        }
+        & [value="seron"] {
+          color: color-mix(in srgb, var(--seron), var(--shift) 15%);
+        }
+        & [value="orvik"] {
+          color: color-mix(in srgb, var(--orvik), var(--shift) 15%);
+        }
+        & [value="zhark"] {
+          color: color-mix(in srgb, var(--zhark), var(--shift) 15%);
+        }
+        & [value="drun"] {
+          color: color-mix(in srgb, var(--drun), var(--shift) 15%);
+        }
+        & [value="veyra"] {
+          color: color-mix(in srgb, var(--veyra), var(--shift) 15%);
         }
       }
 
@@ -97,13 +144,37 @@
         gap: 12px;
       }
 
+      .tools {
+        display: flex;
+        gap: 8px;
+      }
+
       .toolbar button {
+        display: grid;
+        place-items: center;
+        width: 36px;
+        height: 36px;
         border: 1px solid var(--edge);
         border-radius: 6px;
         background: var(--field);
         color: var(--ink);
-        padding: 8px 14px;
         cursor: pointer;
+
+        & svg {
+          width: 18px;
+          height: 18px;
+          fill: none;
+          stroke: currentColor;
+          stroke-width: 2;
+          stroke-linecap: round;
+          stroke-linejoin: round;
+        }
+      }
+
+      /* Show the icon for the theme you would switch to. */
+      :root[data-theme="dark"] .moon,
+      :root:not([data-theme="dark"]) .sun {
+        display: none;
       }
 
       .page {
@@ -218,11 +289,6 @@
         padding-bottom: 4px; /* last row already has its own min-height */
       }
 
-      .pair {
-        display: flex;
-        gap: 8px;
-      }
-
       .identity-grid {
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -243,8 +309,7 @@
         .field input,
         .field select,
         .field textarea,
-        .combat-row .line-input,
-        .notes-row input
+        .combat-row .line-input
       ) {
         color: var(--ink);
         min-width: 0;
@@ -328,186 +393,14 @@
         border-bottom: 0;
       }
 
-      /* Boon/bane: show the modifier beside the affected Fount's score (CSS only). */
-      :root {
-        --boon: "+2";
-      }
-
-      :root:has(#primary_fount_2 option:checked:not([value=""])) {
-        --boon: "+1";
-      }
-
-      :root:has(
-          #primary_fount [value="seron"]:checked,
-          #primary_fount_2 [value="seron"]:checked
-        )
-        .fount-row:has(.seron) {
+      /* Net Fount modifier (ancestry +1, specialty +1, bane −1), set by the script. */
+      .fount-row[data-mod] {
         grid-template-columns: minmax(0, 1fr) auto 51px;
 
         &::after {
-          content: var(--boon);
+          content: attr(data-mod);
           order: 1;
-          color: var(--seron);
-          font-size: 13px;
-          font-weight: 750;
-        }
-
-        & > .numeric {
-          order: 2;
-        }
-      }
-
-      :root:has(#bane_fount [value="seron"]:checked) .fount-row:has(.seron) {
-        grid-template-columns: minmax(0, 1fr) auto 51px;
-
-        &::after {
-          content: "−1";
-          order: 1;
-          color: var(--seron);
-          font-size: 13px;
-          font-weight: 750;
-        }
-
-        & > .numeric {
-          order: 2;
-        }
-      }
-
-      :root:has(
-          #primary_fount [value="orvik"]:checked,
-          #primary_fount_2 [value="orvik"]:checked
-        )
-        .fount-row:has(.orvik) {
-        grid-template-columns: minmax(0, 1fr) auto 51px;
-
-        &::after {
-          content: var(--boon);
-          order: 1;
-          color: var(--orvik);
-          font-size: 13px;
-          font-weight: 750;
-        }
-
-        & > .numeric {
-          order: 2;
-        }
-      }
-
-      :root:has(#bane_fount [value="orvik"]:checked) .fount-row:has(.orvik) {
-        grid-template-columns: minmax(0, 1fr) auto 51px;
-
-        &::after {
-          content: "−1";
-          order: 1;
-          color: var(--orvik);
-          font-size: 13px;
-          font-weight: 750;
-        }
-
-        & > .numeric {
-          order: 2;
-        }
-      }
-
-      :root:has(
-          #primary_fount [value="zhark"]:checked,
-          #primary_fount_2 [value="zhark"]:checked
-        )
-        .fount-row:has(.zhark) {
-        grid-template-columns: minmax(0, 1fr) auto 51px;
-
-        &::after {
-          content: var(--boon);
-          order: 1;
-          color: var(--zhark);
-          font-size: 13px;
-          font-weight: 750;
-        }
-
-        & > .numeric {
-          order: 2;
-        }
-      }
-
-      :root:has(#bane_fount [value="zhark"]:checked) .fount-row:has(.zhark) {
-        grid-template-columns: minmax(0, 1fr) auto 51px;
-
-        &::after {
-          content: "−1";
-          order: 1;
-          color: var(--zhark);
-          font-size: 13px;
-          font-weight: 750;
-        }
-
-        & > .numeric {
-          order: 2;
-        }
-      }
-
-      :root:has(
-          #primary_fount [value="drun"]:checked,
-          #primary_fount_2 [value="drun"]:checked
-        )
-        .fount-row:has(.drun) {
-        grid-template-columns: minmax(0, 1fr) auto 51px;
-
-        &::after {
-          content: var(--boon);
-          order: 1;
-          color: var(--drun);
-          font-size: 13px;
-          font-weight: 750;
-        }
-
-        & > .numeric {
-          order: 2;
-        }
-      }
-
-      :root:has(#bane_fount [value="drun"]:checked) .fount-row:has(.drun) {
-        grid-template-columns: minmax(0, 1fr) auto 51px;
-
-        &::after {
-          content: "−1";
-          order: 1;
-          color: var(--drun);
-          font-size: 13px;
-          font-weight: 750;
-        }
-
-        & > .numeric {
-          order: 2;
-        }
-      }
-
-      :root:has(
-          #primary_fount [value="veyra"]:checked,
-          #primary_fount_2 [value="veyra"]:checked
-        )
-        .fount-row:has(.veyra) {
-        grid-template-columns: minmax(0, 1fr) auto 51px;
-
-        &::after {
-          content: var(--boon);
-          order: 1;
-          color: var(--veyra);
-          font-size: 13px;
-          font-weight: 750;
-        }
-
-        & > .numeric {
-          order: 2;
-        }
-      }
-
-      :root:has(#bane_fount [value="veyra"]:checked) .fount-row:has(.veyra) {
-        grid-template-columns: minmax(0, 1fr) auto 51px;
-
-        &::after {
-          content: "−1";
-          order: 1;
-          color: var(--veyra);
+          color: var(--mod-color);
           font-size: 13px;
           font-weight: 750;
         }
@@ -718,18 +611,32 @@
         justify-content: space-evenly;
       }
 
-      .archetype-grid {
+      .combat-pair {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        gap: 13px 17px;
+        gap: 8px 17px;
+        align-items: end;
+        margin-top: 4px;
       }
 
-      .archetype-grid .wide {
-        grid-column: 1/-1;
+      .combat-pair .combat-row .numeric {
+        margin-left: auto;
       }
 
-      .archetype-grid .field input {
-        height: 24px;
+      .reaction-row {
+        flex-wrap: wrap;
+        gap: 4px 8px;
+      }
+
+      .field.stacked {
+        margin-top: 8px;
+      }
+
+      .sym {
+        font-size: 13px;
+        font-weight: 700;
+        text-transform: none;
+        margin-left: 3px;
       }
 
       /* Free-text area that still shows ruled lines (also in print). */
@@ -754,32 +661,6 @@
 
       .notes {
         margin-top: 14px;
-      }
-
-      .notes-body {
-        padding-top: 3px;
-        padding-bottom: 11px;
-      }
-
-      .notes-row {
-        display: flex;
-        align-items: center;
-        gap: 14px;
-        min-height: 36px;
-      }
-
-      .notes-row label {
-        flex: 0 0 auto;
-        color: var(--muted);
-        text-transform: uppercase;
-        font-weight: 750;
-        font-size: 10px;
-      }
-
-      .notes-row input {
-        flex: 1;
-        width: 100%;
-        height: 24px;
       }
 
       .foot {
@@ -941,7 +822,50 @@
     </svg>
     <div class="toolbar">
       <strong>ChromaForge · Alpha Character Sheet</strong>
-      <button type="button" onclick="window.print()">Print / Save PDF</button>
+      <span class="tools">
+        <button
+          type="button"
+          id="generate"
+          aria-label="Generate a random character"
+          title="Generate a random character"
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <rect x="4" y="4" width="16" height="16" rx="3" />
+            <path
+              d="M8.5 8.5h.01M15.5 8.5h.01M12 12h.01M8.5 15.5h.01M15.5 15.5h.01"
+            />
+          </svg>
+        </button>
+        <button
+          type="button"
+          id="theme-toggle"
+          aria-label="Toggle light/dark theme"
+          title="Toggle light/dark theme"
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path
+              class="moon"
+              d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"
+            />
+            <g class="sun">
+              <circle cx="12" cy="12" r="4" />
+              <path
+                d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"
+              />
+            </g>
+          </svg>
+        </button>
+        <button
+          type="button"
+          onclick="window.print()"
+          aria-label="Print / Save PDF"
+          title="Print / Save PDF"
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M7 9V3h10v6M7 17H4v-7h16v7h-3M7 14h10v7H7z" />
+          </svg>
+        </button>
+      </span>
     </div>
     <main class="page">
       <header class="page-head">
@@ -1009,25 +933,15 @@
               </datalist>
             </label>
             <label class="field">
-              <span id="fount_label">Fount</span>
-              <span class="pair">
-                <select id="primary_fount" name="primary_fount">
-                  <option value=""></option>
-                  <option value="seron">ᛄ Seron</option>
-                  <option value="orvik">∵ Orvik</option>
-                  <option value="zhark">ϟ Zhark</option>
-                  <option value="drun">△ Drun</option>
-                  <option value="veyra">⌘ Veyra</option>
-                </select>
-                <select id="primary_fount_2" name="primary_fount_2" hidden>
-                  <option value=""></option>
-                  <option value="seron">ᛄ Seron</option>
-                  <option value="orvik">∵ Orvik</option>
-                  <option value="zhark">ϟ Zhark</option>
-                  <option value="drun">△ Drun</option>
-                  <option value="veyra">⌘ Veyra</option>
-                </select>
-              </span>
+              Ancestry Fount (+1)
+              <select id="primary_fount" name="primary_fount">
+                <option value=""></option>
+                <option value="seron">ᛄ Seron</option>
+                <option value="orvik">∵ Orvik</option>
+                <option value="zhark">ϟ Zhark</option>
+                <option value="drun">△ Drun</option>
+                <option value="veyra">⌘ Veyra</option>
+              </select>
             </label>
             <label class="field">
               Desire (why travel with the party?)
@@ -1196,79 +1110,113 @@
                   </label>
                 </div>
               </div>
-              <div class="combat-row">
-                <label class="combat-label" for="attack_fount">
-                  Normal attack Fount
+              <div class="combat-pair">
+                <label class="field">
+                  Archetype
+                  <span class="sym" id="arch_sym"></span>
+                  <input
+                    name="archetype"
+                    list="archetypes"
+                    autocomplete="off"
+                  />
+                  <datalist id="archetypes">
+                    <option value="Warden"></option>
+                    <option value="Medic"></option>
+                    <option value="Pathfinder"></option>
+                    <option value="Bulwark"></option>
+                    <option value="Cartographer"></option>
+                    <option value="Paladin"></option>
+                    <option value="Tinkerer"></option>
+                    <option value="Loremaster"></option>
+                    <option value="Duelist"></option>
+                    <option value="Wildcaller"></option>
+                    <option value="Delver"></option>
+                    <option value="Rootbound"></option>
+                    <option value="Bard"></option>
+                    <option value="Envoy"></option>
+                    <option value="Trickster"></option>
+                  </datalist>
                 </label>
-                <input
-                  class="line-input"
-                  id="attack_fount"
-                  name="attack_fount"
-                />
-              </div>
-              <div class="combat-row">
-                <label class="combat-label" for="weapon">Weapon</label>
-                <input class="line-input" id="weapon" name="weapon" />
-              </div>
-              <div class="combat-row">
-                <label class="combat-label" for="damage">Damage</label>
-                <span class="combat-note">d6 + Fount (+1 heavy)</span>
-                <input
-                  class="numeric"
-                  id="damage"
-                  name="damage"
-                  type="number"
-                />
-              </div>
-              <div class="combat-row">
-                <span class="combat-label">Reaction used?</span>
-                <label class="choice">
-                  <input type="radio" name="reaction" value="yes" />
-                  Yes
-                </label>
-                <label class="choice">
-                  <input type="radio" name="reaction" value="no" />
-                  No
+                <label class="field">
+                  Specialty
+                  <span class="sym" id="spec_sym"></span>
+                  <input
+                    name="specialty"
+                    list="specialties"
+                    autocomplete="off"
+                  />
+                  <datalist id="specialties"></datalist>
+                  <input
+                    type="hidden"
+                    id="specialty_fount"
+                    name="specialty_fount"
+                  />
                 </label>
               </div>
-            </div>
-          </section>
-        </div>
-        <div class="cols cols-2">
-          <section class="panel" aria-labelledby="archetype-title">
-            <div class="panel-head">
-              <h2 id="archetype-title">Archetype</h2>
-              <small>04 / Your path</small>
-            </div>
-            <div class="panel-body archetype-grid">
-              <label class="field">
-                Starting archetype
-                <input name="archetype" />
-              </label>
-              <label class="field">
-                Specialty
-                <input name="specialty" />
-              </label>
-              <label class="field wide">
+              <div class="combat-pair">
+                <div class="combat-row">
+                  <label
+                    class="combat-label"
+                    for="damage"
+                    title="d6 + Fount (+1 heavy), minus armor"
+                  >
+                    Damage
+                  </label>
+                  <input
+                    class="numeric"
+                    id="damage"
+                    name="damage"
+                    type="number"
+                  />
+                </div>
+                <div class="combat-row reaction-row">
+                  <span class="combat-label">Reaction used?</span>
+                  <label class="choice">
+                    <input type="radio" name="reaction" value="yes" />
+                    Yes
+                  </label>
+                  <label class="choice">
+                    <input type="radio" name="reaction" value="no" />
+                    No
+                  </label>
+                </div>
+              </div>
+              <label class="field stacked">
                 Signature ability
                 <input name="signature_ability" />
               </label>
-              <label class="field wide">
+              <label class="field stacked">
                 Specialty ability
                 <input name="specialty_ability" />
               </label>
             </div>
           </section>
+        </div>
+        <div class="cols cols-2">
           <section class="panel" aria-labelledby="kit-title">
             <div class="panel-head">
-              <h2 id="kit-title">Kit & learned abilities</h2>
-              <small>05 / Equipment</small>
+              <h2 id="kit-title">Inventory</h2>
+              <small>04 / Equipment</small>
             </div>
             <div class="panel-body">
               <textarea
                 class="ruled"
-                aria-label="Kit and learned abilities"
+                aria-label="Inventory"
                 name="kit"
+                rows="5"
+              ></textarea>
+            </div>
+          </section>
+          <section class="panel" aria-labelledby="cond-title">
+            <div class="panel-head">
+              <h2 id="cond-title">Conditions</h2>
+              <small>05 / Consequences</small>
+            </div>
+            <div class="panel-body">
+              <textarea
+                class="ruled"
+                aria-label="Conditions"
+                name="conditions"
                 rows="5"
               ></textarea>
             </div>
@@ -1276,26 +1224,16 @@
         </div>
         <section class="panel notes" aria-labelledby="notes-title">
           <div class="panel-head">
-            <h2 id="notes-title">Conditions & Notes</h2>
-            <small>06 / Consequences & connections</small>
+            <h2 id="notes-title">Notes</h2>
+            <small>06 / People, promises & leads</small>
           </div>
-          <div class="panel-body notes-body">
-            <div class="notes-row">
-              <label for="overuse">Fount overuse</label>
-              <input id="overuse" name="fount_overuse" />
-            </div>
-            <div class="notes-row">
-              <label for="promises">People / promises</label>
-              <input id="promises" name="people_promises" />
-            </div>
-            <div class="notes-row">
-              <label for="leads">Leads</label>
-              <input id="leads" name="leads" />
-            </div>
-            <div class="notes-row">
-              <label for="other">Other</label>
-              <input id="other" name="other" />
-            </div>
+          <div class="panel-body">
+            <textarea
+              class="ruled"
+              aria-label="Notes"
+              name="notes"
+              rows="4"
+            ></textarea>
           </div>
         </section>
       </form>
@@ -1303,6 +1241,14 @@
     </main>
     <script>
       // Keep entered information in the current browser between page reloads.
+      document.getElementById("theme-toggle").addEventListener("click", () => {
+        const root = document.documentElement;
+        root.dataset.theme = root.dataset.theme === "dark" ? "light" : "dark";
+        try {
+          localStorage.setItem("chromaforge-theme", root.dataset.theme);
+        } catch (_) {}
+      });
+
       const form = document.querySelector("form");
       const storageKey = "chromaforge-alpha-character-sheet";
       try {
@@ -1355,24 +1301,555 @@
         aarakocra: { boon: ["seron", "veyra"], bane: "zhark" },
       };
       const $ = (id) => document.getElementById(id);
-      const sync2 = () => {
-        const two = !!$("primary_fount_2").value;
-        $("primary_fount_2").hidden = !two;
-        $("fount_label").textContent = two
-          ? "Primary / Secondary Fount"
-          : "Fount";
+      // Net modifier per Fount: ancestry +1, specialty +1, bane −1.
+      const syncMods = () => {
+        const v = (n) => form.elements[n].value;
+        for (const row of document.querySelectorAll(".fount-row")) {
+          const icon = row.querySelector(".fount-icon");
+          const f = icon && icon.classList[1];
+          const n =
+            (v("primary_fount") === f) +
+            (v("specialty_fount") === f) -
+            (v("bane_fount") === f);
+          if (f && n) {
+            row.dataset.mod = (n > 0 ? "+" : "−") + Math.abs(n);
+            row.style.setProperty("--mod-color", `var(--${f})`);
+          } else delete row.dataset.mod;
+        }
       };
-      sync2();
-      form.elements.ancestry.addEventListener("input", (e) => {
-        const r = races[e.target.value.trim().toLowerCase()];
+      const raceOf = () =>
+        races[form.elements.ancestry.value.trim().toLowerCase()];
+      // Ancestry Fount can only be one of the race's listed Founts.
+      const limitBoon = () => {
+        const r = raceOf();
+        for (const o of form.elements.primary_fount.options)
+          o.disabled = !!r && !!o.value && !r.boon.includes(o.value);
+      };
+      limitBoon();
+      syncMods();
+      form.elements.ancestry.addEventListener("input", () => {
+        limitBoon();
+        const r = raceOf();
         if (!r) return;
-        $("primary_fount").value = r.boon[0];
-        $("primary_fount_2").value = r.boon[1] || "";
-        $("bane_fount").value = r.bane;
-        sync2();
+        form.elements.primary_fount.value =
+          r.boon.length === 1 ? r.boon[0] : ""; // two listed: you choose
+        form.elements.bane_fount.value = r.bane;
       });
+      const archetypes = {
+        warden: {
+          signature:
+            "Hold the Line — reaction: step between an ally and the attack, take the hit.",
+          kit: "light armor, standard bow, light sidearm, chalk line, 20 feet of cord",
+          specialties: {
+            "Shield Wall":
+              "Shield Wall — action: brace; allies behind you count +1 armor until your next turn.",
+
+            "Boundary Keeper":
+              "Boundary Keeper — mark a line; first enemy to cross takes d6 + ᛄ Seron.",
+            "Oath Escort":
+              "Oath Escort — +2 on the first check to reach a shared destination together.",
+          },
+        },
+        medic: {
+          signature:
+            "Field Treatment — action: heal an adjacent target d6, once per scene.",
+          kit: "light armor, light staff or blade, bandages, splint, bitter antiseptic, notebook",
+          specialties: {
+            "Radical Cure":
+              "Radical Cure — once per scene, action: gamble on an untested remedy on an adjacent target; roll d6: 1–2 deals 1 damage, 3–6 heals d6.",
+
+            "Pattern Diagnostician":
+              "Pattern Diagnostician — after a minute of study, ask the GM one question.",
+            "Keep Breathing":
+              "Keep Breathing — reaction: a downed ally can't be moved or further harmed by a hazard until your next turn.",
+          },
+        },
+        pathfinder: {
+          signature:
+            "Find Another Way — once per scene, the GM reveals a costly alternate route.",
+          kit: "light armor, standard blade or shortbow, climbing hook, 30 feet of rope, hooded lantern",
+          specialties: {
+            Trailwise:
+              "Trailwise — after a minute at a route or campsite, ask the GM what passed along it recently.",
+
+            Wardbreaker:
+              "Wardbreaker — +2 to alter, bypass, or redirect a known magical trigger.",
+            "Underworld Contact":
+              "Underworld Contact — once per settlement, name illicit help; the GM supplies a contact.",
+          },
+        },
+        bulwark: {
+          signature:
+            "Shore It Up — once per scene, reaction: reduce damage to a nearby ally or structure by d6.",
+          kit: "light armor, heavy maul, shield or planks, tool roll, 50 feet of rope",
+          specialties: {
+            "Hold the Door":
+              "Hold the Door — action: hold a chokepoint; enemies must go through you to pass until your next turn.",
+
+            "Keep Standing":
+              "Keep Standing — once per rest, ignore the first hit that would drop you to 0 HP; drop to 1 instead.",
+            "Load Bearer":
+              "Load Bearer — carry heavy loads or an ally without penalty; hold a collapsing structure for a turn.",
+          },
+        },
+        cartographer: {
+          signature:
+            "Fix the Bounds — once per scene, name a nearby area; the GM states its true edges, exits, and one hidden hazard.",
+          kit: "light armor, surveyor's staff (heavy, ᛄ Seron), chalk and charcoal, measuring cord, map case",
+          specialties: {
+            "Claim Ground":
+              "Claim Ground — action: declare a nearby zone yours; allies in it have advantage on the first check to defend it until your next turn.",
+            "True North":
+              "True North — you cannot be lost; ask the GM the way to any place you have seen on a map.",
+            "Border Talk":
+              "Border Talk — at a border or checkpoint, ask the GM what the guards will accept for passage.",
+          },
+        },
+        paladin: {
+          signature:
+            "Sworn Word — once per scene, swear to protect or reach one thing; checks that directly serve the oath have advantage until the scene ends or you break it.",
+          kit: "heavy armor, heavy blade (heavy, ᛄ Seron), banner or holy symbol, oath token",
+          specialties: {
+            "Smite the False":
+              "Smite the False — action: strike an enemy that broke a promise or lied to you; deal d6 + ᛄ Seron + 1, minus armor.",
+            Unbroken:
+              "Unbroken — once per rest, ignore a penalty from fear, pain, or charm until the scene ends.",
+            "Voice of Law":
+              "Voice of Law — when you openly state a rule or claim, NPCs who hear it must answer it before acting on a conflicting one.",
+          },
+        },
+        tinkerer: {
+          signature:
+            "Jury Device — once per scene, action: build a small gadget from scrap that does one simple thing for the scene.",
+          kit: "light armor, spring-gun (∵ Orvik), toolkit, springs and wire, hooded lantern",
+          specialties: {
+            "Trap Sense":
+              "Trap Sense — after a minute of study, ask the GM whether a device or area is trapped and how.",
+            Overclock:
+              "Overclock — action: push a device past its limits for one use at +1 effect; it breaks afterward.",
+            "Mender's Hands":
+              "Mender's Hands — repair a broken mundane tool or door in a minute with no check.",
+          },
+        },
+        loremaster: {
+          signature:
+            "I Read About This — once per scene, ask the GM one fact about a creature, place, or custom; the answer is true.",
+          kit: "light armor, quarterstaff or dagger (∵ Orvik), travel library, ink and quill, scroll case",
+          specialties: {
+            "Perfect Recall":
+              "Perfect Recall — once per scene, ask the GM to repeat any fact or clue you witnessed.",
+            Tongues:
+              "Tongues — understand and be understood in any language you have heard for a minute.",
+            "Cold Reading":
+              "Cold Reading — after a minute, learn whether a person or document is truthful about its stated claim.",
+          },
+        },
+        duelist: {
+          signature:
+            "Break the Pattern — once per round, reaction when an enemy attacks you: step aside and reduce that damage by d6 (minimum 0).",
+          kit: "light armor, rapier or fine blade (ϟ Zhark), dueling cloak, whetstone",
+          specialties: {
+            Riposte:
+              "Riposte — after Break the Pattern, strike the attacker if adjacent.",
+            Flourish:
+              "Flourish — when you win a clear exchange in public, bystanders respect or fear you (GM names which).",
+            "Quick Study":
+              "Quick Study — after one round of fighting a foe, ask the GM its habit or weakness.",
+          },
+        },
+        wildcaller: {
+          signature:
+            "Loose the Storm — once per scene, action: unleash a burst on a nearby zone; creatures there take d6 + ϟ Zhark, minus armor, and you and the GM agree one side effect.",
+          kit: "light armor, focus staff (ϟ Zhark), flint, pouch of volatile reagents",
+          specialties: {
+            "Chain Spark":
+              "Chain Spark — your attacks also hit a second adjacent target for d6, minus armor.",
+            "Storm Reader":
+              "Storm Reader — sense weather and unstable magic nearby; know when a surge is coming.",
+            "Contain It":
+              "Contain It — once per rest, take the backlash of your own failed cast instead of its cost.",
+          },
+        },
+        delver: {
+          signature:
+            "Dig Through — action: open or close a passage in earth or stone for the scene, wide enough for one person.",
+          kit: "light armor, pick or hammer (heavy, △ Drun), lantern, 50 feet of rope, chalk",
+          specialties: {
+            Tremorsense:
+              "Tremorsense — feel vibrations nearby; the GM tells you what is moving in a nearby zone.",
+            "Pit Fighter":
+              "Pit Fighter — advantage on checks in cramped or underground spaces.",
+            "Cave-in":
+              "Cave-in — once per scene, collapse an unstable ceiling or ledge you can reach.",
+          },
+        },
+        rootbound: {
+          signature:
+            "Take Root — once per scene, action: through living plants, heal a nearby ally d6 or give them 1 armor until your next turn.",
+          kit: "light armor, staff or club (△ Drun), seed pouch, water skin, herb bundle",
+          specialties: {
+            "Green Sense":
+              "Green Sense — know what plants and animals nearby are doing; ask the GM what passed here recently.",
+            "Slow Burn": "Slow Burn — regain 1 HP at the start of each scene.",
+            Entangle:
+              "Entangle — action: roots hold a nearby creature until it succeeds a risky check to break free.",
+          },
+        },
+        bard: {
+          signature:
+            "Rally the Room — once per scene, reaction: give an ally advantage on their next check.",
+          kit: "light armor, dagger or rapier (⌘ Veyra), instrument, songbook, bright cloak",
+          specialties: {
+            "Captivating Performance":
+              "Captivating Performance — action: nearby listeners are held until something disturbs them.",
+            "Songs of Memory":
+              "Songs of Memory — recall a tale or ballad about a person or place; the GM supplies one true fact.",
+            "Battle Hymn":
+              "Battle Hymn — once per scene, allies who hear you ignore the first point of damage they take.",
+          },
+        },
+        envoy: {
+          signature:
+            "Fair Trade — once per settlement, the GM names a fair price or favor for anything you want arranged.",
+          kit: "light armor, sidearm or sword (⌘ Veyra), letters of passage, seal, formal clothes",
+          specialties: {
+            "Silver Tongue":
+              "Silver Tongue — once per scene, reroll a failed persuasion check, keeping the second result.",
+            "Crowd Reader":
+              "Crowd Reader — on meeting a group, ask the GM who holds power and what they want.",
+            "Open Hand":
+              "Open Hand — hostile NPCs who have not attacked will hear you out before acting.",
+          },
+        },
+        trickster: {
+          signature:
+            "Borrowed Face — once per scene, action: pass as a plausible person or role to NPCs who have not met you, until questioned or tested.",
+          kit: "light armor, dagger or sling (⌘ Veyra), disguise kit, loaded dice, spare keys",
+          specialties: {
+            "Light Fingers":
+              "Light Fingers — take or plant a small item unnoticed.",
+            "Smooth Exit":
+              "Smooth Exit — once per scene, talk your way out of a tight spot; the GM names a cost.",
+            "Sharp Eye":
+              "Sharp Eye — notice the lie, forgery, or con in a short exchange.",
+          },
+        },
+      };
+      const specialtyFount = {
+        "Boundary Keeper": "seron",
+        "Oath Escort": "veyra",
+        "Pattern Diagnostician": "orvik",
+        "Keep Breathing": "drun",
+        Wardbreaker: "zhark",
+        "Underworld Contact": "veyra",
+        "Keep Standing": "drun",
+        "Claim Ground": "seron",
+        "True North": "orvik",
+        "Border Talk": "veyra",
+        "Smite the False": "seron",
+        Unbroken: "drun",
+        "Voice of Law": "veyra",
+        "Trap Sense": "orvik",
+        Overclock: "zhark",
+        "Mender's Hands": "drun",
+        "Perfect Recall": "orvik",
+        Tongues: "veyra",
+        "Cold Reading": "seron",
+        Riposte: "zhark",
+        Flourish: "veyra",
+        "Quick Study": "orvik",
+        "Chain Spark": "zhark",
+        "Storm Reader": "orvik",
+        "Contain It": "drun",
+        Tremorsense: "orvik",
+        "Pit Fighter": "drun",
+        "Cave-in": "zhark",
+        "Green Sense": "orvik",
+        "Slow Burn": "drun",
+        Entangle: "zhark",
+        "Captivating Performance": "veyra",
+        "Songs of Memory": "orvik",
+        "Battle Hymn": "drun",
+        "Silver Tongue": "veyra",
+        "Crowd Reader": "orvik",
+        "Open Hand": "seron",
+        "Light Fingers": "zhark",
+        "Smooth Exit": "veyra",
+        "Sharp Eye": "orvik",
+        "Shield Wall": "drun",
+        "Radical Cure": "zhark",
+        Trailwise: "orvik",
+        "Hold the Door": "seron",
+
+        "Load Bearer": "drun",
+      };
+      const specialties = $("specialties");
+      const listSpecialties = () => {
+        const a =
+          archetypes[form.elements.archetype.value.trim().toLowerCase()];
+        specialties.replaceChildren(
+          ...Object.keys(a ? a.specialties : {}).map((n) => new Option(n)),
+        );
+      };
+      listSpecialties();
+      form.elements.archetype.addEventListener("input", (e) => {
+        // A new archetype means a new specialty: clear the old one.
+        form.elements.specialty.value = "";
+        form.elements.specialty_fount.value = "";
+        form.elements.specialty_ability.value = "";
+        listSpecialties();
+        const a = archetypes[e.target.value.trim().toLowerCase()];
+        if (!a) return;
+        form.elements.signature_ability.value = a.signature;
+        if (!form.elements.kit.value) form.elements.kit.value = a.kit;
+      });
+      form.elements.specialty.addEventListener("input", (e) => {
+        const a =
+          archetypes[form.elements.archetype.value.trim().toLowerCase()];
+        const text = a && a.specialties[e.target.value.trim()];
+        if (!text) return;
+        form.elements.specialty_ability.value = text;
+        form.elements.specialty_fount.value =
+          specialtyFount[e.target.value.trim()];
+      });
+      const fountName = {
+        seron: "ᛄ Seron",
+        orvik: "∵ Orvik",
+        zhark: "ϟ Zhark",
+        drun: "△ Drun",
+        veyra: "⌘ Veyra",
+      };
+      // Archetype Fount (also the normal attack Fount) and weapon weight.
+      const loadouts = {
+        warden: { attack: "seron", heavy: 1 },
+        medic: { attack: "orvik", heavy: 0 },
+        pathfinder: {
+          attack: "zhark",
+          heavy: 1,
+        },
+        bulwark: { attack: "drun", heavy: 1 },
+        cartographer: { attack: "seron", heavy: 1 },
+        paladin: { attack: "seron", heavy: 1 },
+        tinkerer: { attack: "orvik", heavy: 0 },
+        loremaster: {
+          attack: "orvik",
+          heavy: 0,
+        },
+        duelist: { attack: "zhark", heavy: 0 },
+        wildcaller: { attack: "zhark", heavy: 0 },
+        delver: { attack: "drun", heavy: 1 },
+        rootbound: { attack: "drun", heavy: 0 },
+        bard: { attack: "veyra", heavy: 0 },
+        envoy: { attack: "veyra", heavy: 0 },
+        trickster: { attack: "veyra", heavy: 0 },
+      };
+
+      // Fount symbols beside Archetype and Specialty, in their Fount's color.
+      const showSym = () => {
+        const set = (id, f) => {
+          const el = $(id);
+          el.textContent = f ? fountName[f].split(" ")[0] : "";
+          el.style.color = f
+            ? `color-mix(in srgb, var(--${f}), var(--shift) 15%)`
+            : "";
+        };
+        const l = loadouts[form.elements.archetype.value.trim().toLowerCase()];
+        set("arch_sym", l && l.attack);
+        set("spec_sym", form.elements.specialty_fount.value);
+      };
+      showSym();
+
+      // Roll a whole character: ancestry, archetype, Founts, and derived values.
+      const rand = (a) => a[Math.floor(Math.random() * a.length)];
+      const cap = (t) => t[0].toUpperCase() + t.slice(1);
+      // Tiny fantasy name generator.
+      const nameStarts = [
+        "Ar",
+        "Bel",
+        "Cor",
+        "Dar",
+        "El",
+        "Fen",
+        "Gar",
+        "Hal",
+        "Is",
+        "Jar",
+        "Kel",
+        "Lor",
+        "Mar",
+        "Nor",
+        "Or",
+        "Ren",
+        "Ser",
+        "Tal",
+        "Ul",
+        "Val",
+        "Wen",
+        "Yar",
+        "Zar",
+      ];
+      const nameMiddles = [
+        "a",
+        "e",
+        "i",
+        "o",
+        "u",
+        "an",
+        "en",
+        "ir",
+        "or",
+        "al",
+        "el",
+        "in",
+        "on",
+        "ra",
+        "ri",
+        "va",
+      ];
+      const nameEnds = [
+        "a",
+        "an",
+        "ar",
+        "en",
+        "eth",
+        "ia",
+        "in",
+        "is",
+        "or",
+        "os",
+        "ra",
+        "ric",
+        "rin",
+        "th",
+        "us",
+        "yn",
+      ];
+      const generateName = () =>
+        rand(nameStarts) +
+        (Math.random() < 0.5 ? rand(nameMiddles) : "") +
+        rand(nameEnds);
+
+      const visibleTraits = [
+        "Scar across one eyebrow",
+        "Missing finger",
+        "Crooked nose",
+        "Heterochromia",
+        "Clouded eye",
+        "Unusually bright eyes",
+        "Gold-flecked irises",
+        "Dark circles under eyes",
+        "Freckles across nose",
+        "Birthmark on cheek",
+        "Vitiligo patches",
+        "Prominent dimples",
+        "Missing tooth",
+        "Sharpened teeth",
+        "Unusually long canines",
+        "Split lip",
+        "Pointed ears",
+        "Notched ear",
+        "Oversized ears",
+        "Small horns",
+        "Broken horn",
+        "Antlers",
+        "Unusually long hair",
+        "Prematurely white hair",
+        "Streak of colored hair",
+        "Completely bald",
+        "Braided beard",
+        "Elaborate facial tattoos",
+        "Geometric tattoos",
+        "Faded ritual markings",
+        "Burn scars on hands",
+        "Claw marks on neck",
+        "Surgical scars",
+        "Calloused hands",
+        "Ink-stained fingers",
+        "Paint-stained clothing",
+        "Always wears gloves",
+        "One mechanical hand",
+        "Wooden prosthetic leg",
+        "Noticeable limp",
+        "Hunched posture",
+        "Unusually tall",
+        "Unusually short",
+        "Broad shoulders",
+        "Extremely slender",
+        "Muscular forearms",
+        "Unusual skin tone",
+        "Scale-like skin patches",
+        "Faintly glowing veins",
+        "Glowing eyes",
+        "Long pointed nails",
+        "Unusually thick eyebrows",
+        "Distinctive facial piercings",
+        "Collection of dangling charms",
+        "Always wears a hood",
+        "Distinctive mismatched boots",
+      ];
+
+      $("generate").addEventListener("click", () => {
+        const filled = [...form.elements].some(
+          (f) =>
+            f.value &&
+            f.type !== "radio" &&
+            !f.defaultValue &&
+            f.tagName !== "SELECT",
+        );
+        if (
+          filled &&
+          !confirm("Replace this sheet with a new random character?")
+        )
+          return;
+        form.reset();
+        const e = form.elements;
+        const raceName = rand(Object.keys(races));
+        const r = races[raceName];
+        const archKey = rand(Object.keys(archetypes));
+        const a = archetypes[archKey];
+        const l = loadouts[archKey];
+        const spec = rand(Object.keys(a.specialties));
+        e.name.value = generateName();
+        e.visible_trait.value = rand(visibleTraits);
+        e.ancestry.value = cap(raceName);
+        e.primary_fount.value = rand(r.boon);
+        e.bane_fount.value = r.bane;
+        e.archetype.value = cap(archKey);
+        e.specialty.value = spec;
+        e.specialty_fount.value = specialtyFount[spec];
+        e.signature_ability.value = a.signature;
+        e.specialty_ability.value = a.specialties[spec];
+        e.kit.value = a.kit;
+        e.armor.value = "1"; // every starting kit is light armor
+        e.points.value = 0;
+        // One d6 per Fount: 1–2 gives 1, 3–4 gives 2, 5–6 gives 3.
+        const final = {};
+        for (const f of Object.keys(fountName)) {
+          const roll = Math.ceil((1 + Math.floor(Math.random() * 6)) / 2);
+          e[f + "_score"].value = roll;
+          final[f] =
+            roll +
+            (e.primary_fount.value === f) +
+            (e.specialty_fount.value === f) -
+            (e.bane_fount.value === f);
+        }
+        e.max_hp.value = e.current_hp.value = 6 + final.drun;
+        e.damage.value = final[l.attack] + l.heavy;
+        limitBoon();
+        listSpecialties();
+        form.dispatchEvent(new Event("input"));
+      });
+
+      // Open the suggestion list on focus (showPicker on datalist inputs: recent Chromium).
+      for (const input of form.querySelectorAll("input[list]"))
+        input.addEventListener("focus", () => {
+          try {
+            input.showPicker();
+          } catch (_) {}
+        });
       form.addEventListener("input", () => {
-        sync2();
+        syncMods();
+        showSym();
         const data = {};
         for (const field of form.elements) {
           if (!field.name || (field.type === "radio" && !field.checked))

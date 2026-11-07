@@ -4,49 +4,39 @@
 
 - **Name:**
 - **Visible trait:**
-- **Desire:**
-- **Bond:**
-- **Why travel with party:**
-- **Ancestry / description (no alpha modifier):**
+- **Ancestry:**
+- **Ancestry Fount** (boon, +1):
+- **Desire** (why travel with the party?):
+- **Bane Fount** (−1):
 
 ## Founts
 
-| Fount             | Color  | Score | Stored XP |
-| ----------------- | ------ | ----: | --------: |
-| ᛄ Seron — Integrity | yellow |       |           |
-| ∵ Orvik — Knowledge | blue   |       |           |
-| ϟ Zhark — Change    | red    |       |           |
-| △ Drun — Fortitude  | green  |       |           |
-| ⌘ Veyra — Charm     | purple |       |           |
+| Fount               | Color  | Score |
+| ------------------- | ------ | ----: |
+| ᛄ Seron — Integrity | yellow |       |
+| ∵ Orvik — Knowledge | blue   |       |
+| ϟ Zhark — Change    | red    |       |
+| △ Drun — Fortitude  | green  |       |
+| ⌘ Veyra — Charm     | purple |       |
+
+Unspent points:
 
 ## Combat
 
-- **Maximum HP:** `10 + △ Drun` =
+- **Maximum HP:** `6 + △ Drun` =
 - **Current HP:**
-- **Armor:** none `+0` / light `+2` / heavy `+4`
-- **Defense (provisional):** `4 + △ Drun + armor` =
-- **Normal attack Fount:**
-- **Attack bonus (provisional):** `floor(Fount / 3)` =
-- **Weapon and damage die:**
+- **Armor:** none `0` / light `1` / heavy `2`
+- **Archetype** (with its Fount symbol):
+- **Specialty** (with its Fount symbol; +1 to that Fount):
+- **Damage:** `d6 + archetype Fount` (+1 heavy) − target armor
 - **Reaction used this round?** yes / no
-
-## Archetype
-
-- **Starting archetype:**
-- **Specialty:**
 - **Signature ability:**
 - **Specialty ability:**
 
-## Kit and learned abilities
+## Inventory
 
--
--
--
--
+## Conditions
 
-## Conditions and notes
+## Notes
 
-- **Fount overuse:**
-- **People / promises:**
-- **Leads:**
-- **Other:**
+People, promises, and leads.
