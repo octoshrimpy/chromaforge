@@ -1,6 +1,6 @@
 # Starting archetypes
 
-Archetypes are starting training, not classes or caps. Characters may learn any specialty or ability through play. Each Fount has three archetypes; each archetype supplies one kit, one signature ability, and three specialties aligned with different Founts. Choosing a specialty gives +1 to its Fount.
+Archetypes are starting training, not classes or caps. Characters may learn any specialty or ability through play. Each Fount has three archetypes; each archetype supplies one kit, one signature ability, and three specialties aligned with different Founts. Your archetype gives +1 to its Fount; specialties give no stat bonus.
 
 ## Warden — completed
 

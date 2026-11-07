@@ -26,8 +26,8 @@ Unspent points:
 - **Maximum HP:** `6 + △ Drun` =
 - **Current HP:**
 - **Armor:** none `0` / light `1` / heavy `2`
-- **Archetype** (with its Fount symbol):
-- **Specialty** (with its Fount symbol; +1 to that Fount):
+- **Archetype** (with its Fount symbol; +1 to that Fount):
+- **Specialty** (with its Fount symbol):
 - **Damage:** `d6 + archetype Fount` (+1 heavy) − target armor
 - **Reaction used this round?** yes / no
 - **Signature ability:**
