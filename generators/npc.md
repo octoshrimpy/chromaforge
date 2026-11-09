@@ -33,19 +33,19 @@ _one race from the rolled bracket._
 
 | roll       | result                                                                              |
 | ---------- | ----------------------------------------------------------------------------------- |
-| 00-11, 100 | {{pick: Triton \| Orog \| Tiefling \| Elf}}                                         |
-| 12-22      | {{pick: Imp \| Gnome \| Goblin \| Genasi (earth/water/fire/air)}}                   |
-| 23-33      | {{pick: Warforged (acid/water/fire/lightning) \| Titanborne \| Duarling \| Dwarf}}  |
-| 34-44      | {{pick: Human \| Centaur \| Changeling \| Bugbear}}                                 |
-| 45-55      | {{pick: Entling \| Dragonkin \| Lizardfolk \| Kobold}}                              |
-| 56-66      | {{pick: Fae \| Satyr \| Tabaxi \| Roo}}                                             |
+| 00-11, 100 | {{pick: Tiefling \| Elf \| Kethrai}}                                                |
+| 12-22      | {{pick: Imp \| Gnome \| Goblin \| Iskari}}                                          |
+| 23-33      | {{pick: Titanborne \| Duarling \| Dwarf \| Ravuun}}                                 |
+| 34-44      | {{pick: Human \| Centaur \| Bugbear}}                                               |
+| 45-55      | {{pick: Entling \| Lizardfolk \| Kobold}}                                           |
+| 56-66      | {{pick: Fae \| Satyr \| Roo}}                                                       |
 | 67-77      | {{pick: Apeling \| Amazon \| Shelled Elemental (earth/water/fire/air) \| Etterkin}} |
-| 78-88      | {{pick: Kenku \| Qualf \| Tortle \| Moonfolk}}                                      |
-| 89-99      | {{pick: Animated Armor \| Halfling \| Hippofolk \| Aarakocra}}                      |
+| 78-88      | {{pick: Qualf \| Moonfolk \| Vessar \| D'varen}}                                    |
+| 89-99      | {{pick: Animated Armor \| Halfling \| Hippofolk}}                                   |
 
 ### class
 
-_a class from the NPC's house (see [classes](/compendium/classes.md))._
+_a class from the NPC's house (see [archetypes](/compendium/archetypes.md))._
 
 | house           | 1-6                |
 | --------------- | ------------------ |

@@ -41,18 +41,16 @@ Races are divided into groups within a 100-digit bracket, read as percentile (`0
 
 | roll       | result                                                                              |
 | ---------- | ----------------------------------------------------------------------------------- |
-| 00-11, 100 | {{pick: Triton \| Orog \| Tiefling \| Elf}}                                         |
-| 12-22      | {{pick: Imp \| Gnome \| Goblin \| Genasi (earth/water/fire/air)}}                   |
-| 23-33      | {{pick: Warforged (acid/water/fire/lightning) \| Titanborne \| Duarling \| Dwarf}}  |
-| 34-44      | {{pick: Human \| Centaur \| Changeling \| Bugbear}}                                 |
-| 45-55      | {{pick: Entling \| Dragonkin \| Lizardfolk \| Kobold}}                              |
-| 56-66      | {{pick: Fae \| Satyr \| Tabaxi \| Roo}}                                             |
+| 00-11, 100 | {{pick: Tiefling \| Elf \| Kethrai}}                                                |
+| 12-22      | {{pick: Imp \| Gnome \| Goblin \| Iskari}}                                          |
+| 23-33      | {{pick: Titanborne \| Duarling \| Dwarf \| Ravuun}}                                 |
+| 34-44      | {{pick: Human \| Centaur \| Bugbear}}                                               |
+| 45-55      | {{pick: Entling \| Lizardfolk \| Kobold}}                                           |
+| 56-66      | {{pick: Fae \| Satyr \| Roo}}                                                       |
 | 67-77      | {{pick: Apeling \| Amazon \| Shelled Elemental (earth/water/fire/air) \| Etterkin}} |
-| 78-88      | {{pick: Kenku \| Qualf \| Tortle \| Moonfolk}}                                      |
-| 89-99      | {{pick: Animated Armor \| Halfling \| Hippofolk \| Aarakocra}}                      |
+| 78-88      | {{pick: Qualf \| Moonfolk \| Vessar \| D'varen}}                                    |
+| 89-99      | {{pick: Animated Armor \| Halfling \| Hippofolk}}                                   |
 
-<!-- races reconciled to compendium/races (the canonical list) — every option above exists there.
-     elemental subtype (earth/water/fire/air) left as flavor text for the DM to pick. -->
 
 ### house
 
@@ -79,8 +77,6 @@ Your **House** gives you things you're good at (pros); your **Guild** gives you 
 | NTG - Integrity            | Warden               |
 | CHR - Charm                | Artisan              |
 | choose manually, or reroll | choose a house first |
-
-<!-- @todo these numbers need verifying -->
 
 - House gets +4 extra levels to work towards, and +2 PP
 - Guild gets +3 extra levels to work towards, and +1 PP

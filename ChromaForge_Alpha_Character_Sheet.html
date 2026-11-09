@@ -170,6 +170,89 @@
         stroke-linejoin: round;
       }
 
+      [hidden] {
+        display: none !important;
+      }
+
+      .tools {
+        align-items: center;
+      }
+
+      /* Sheet-only tools disappear on the info pages. */
+      body:not([data-view="sheet"]) .toolbar .sheet-tool {
+        display: none;
+      }
+
+      #drawer {
+        margin: 0;
+        inset: 0 auto 0 0;
+        width: min(260px, 80vw);
+        height: 100dvh;
+        padding: 64px 12px 12px;
+        border: 0;
+        background: var(--white);
+        color: var(--ink);
+        box-shadow: 4px 0 24px #0004;
+
+        &::backdrop {
+          background: #0004;
+        }
+
+        & a {
+          display: block;
+          padding: 10px 12px;
+          border-radius: 6px;
+          color: inherit;
+          font-weight: 700;
+          text-decoration: none;
+        }
+
+        & a[aria-current] {
+          background: var(--bar);
+        }
+      }
+
+      /* Info pages: a grid of the same panels the sheet uses. */
+      .info {
+        min-height: unset;
+      }
+
+      .cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+        gap: 14px;
+        padding-bottom: 14px;
+      }
+
+      .cards .panel-head h2 {
+        text-transform: capitalize;
+      }
+
+      .cards .panel-body {
+        display: grid;
+        gap: 8px;
+      }
+
+      .cards img {
+        border-radius: 8px;
+      }
+
+      .cards p {
+        margin: 0;
+      }
+
+      .cards .muted {
+        color: var(--muted);
+        font-size: 11px;
+        font-weight: 700;
+        text-transform: uppercase;
+      }
+
+      .fount-card .sym svg {
+        width: 20px;
+        height: 20px;
+      }
+
       /* Show the icon for the theme you would switch to. */
       :root[data-theme="dark"] .moon,
       :root:not([data-theme="dark"]) .sun {
@@ -926,6 +1009,11 @@
           break-inside: avoid;
         }
 
+        .page.info {
+          height: auto;
+          display: block;
+        }
+
         /* Spinners are gone on paper, so combat number boxes can be narrower. */
         .combat-row .numeric {
           width: 2rem;
@@ -1018,11 +1106,29 @@
         />
       </symbol>
     </svg>
+    <nav id="drawer" popover aria-label="Pages">
+      <a href="#sheet">Character sheet</a>
+      <a href="#races">Races</a>
+      <a href="#founts">Founts</a>
+    </nav>
     <div class="toolbar">
-      <strong>ChromaForge · Alpha Character Sheet</strong>
       <span class="tools">
         <button
           type="button"
+          popovertarget="drawer"
+          aria-label="Menu"
+          title="Menu"
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M4 7h16M4 12h16M4 17h16" />
+          </svg>
+        </button>
+        <strong>ChromaForge · Alpha Character Sheet</strong>
+      </span>
+      <span class="tools">
+        <button
+          type="button"
+          class="sheet-tool"
           id="generate"
           aria-label="Generate a random character"
           title="Generate a random character"
@@ -1035,7 +1141,7 @@
           </svg>
         </button>
         <label
-          class="lock-btn"
+          class="lock-btn sheet-tool"
           title="Locked: identity, max HP/mana, Founts, archetype and specialty. Click to edit."
         >
           <input type="checkbox" id="unlock" aria-label="Unlock protected fields" />
@@ -1046,6 +1152,7 @@
         </label>
         <button
           type="button"
+          class="sheet-tool"
           id="clear"
           aria-label="Clear character sheet"
           title="Clear character sheet"
@@ -1085,7 +1192,7 @@
         </button>
       </span>
     </div>
-    <main class="page">
+    <main class="page" data-view="sheet">
       <header class="page-head">
         <div class="brandmark" aria-hidden="true"></div>
         <div>
@@ -1454,145 +1561,138 @@
       </form>
       <footer class="foot"></footer>
     </main>
+    <main class="page info" data-view="races" hidden>
+      <header class="page-head">
+        <h1>RACES</h1>
+      </header>
+      <div class="cards" id="race-cards"></div>
+    </main>
+    <main class="page info" data-view="founts" hidden>
+      <header class="page-head">
+        <h1>FOUNTS</h1>
+      </header>
+      <div class="cards" id="fount-cards"></div>
+    </main>
     <script>
       // ---- Data ----
 
       const races = {
-        triton: {
-          boon: ["veyra", "drun"],
-          bane: "seron",
-          desc: "Medium. Aquatic creatures. Merfolk with legs.",
-        },
-        orog: {
-          boon: ["drun", "orvik"],
-          bane: "seron",
-          desc: "Large. Really smart orc. Taller, stronger.",
-        },
         tiefling: {
           boon: ["orvik"],
           bane: "drun",
-          desc: "Medium. Horned brows. Red, purple, otherwise dark skin.",
+          size: "Medium",
+          desc: "Horned brows. Red, purple, otherwise dark skin.",
         },
         elf: {
           boon: ["seron"],
           bane: "veyra",
-          desc: "Medium. Slender, graceful, quiet.",
+          size: "Medium",
+          desc: "Slender, graceful, quiet.",
         },
         imp: {
           boon: ["zhark"],
           bane: "veyra",
-          desc: "Small. Tiny devils. Impervious to magic.",
+          size: "Small",
+          desc: "Tiny devils. Impervious to magic.",
         },
         gnome: {
           boon: ["veyra"],
           bane: "drun",
-          desc: "Small. Always busy, always curious.",
+          size: "Small",
+          desc: "Always busy, always curious.",
         },
         goblin: {
           boon: ["orvik", "zhark"],
           bane: "seron",
-          desc: "Small. Weak, crafty, stealthy.",
-        },
-        genasi: {
-          boon: ["orvik"],
-          bane: "zhark",
-          desc:
-            "Medium. Resemble humans, touched by elemental power. 1d4: earth/water/fire/air.",
-        },
-        warforged: {
-          boon: ["drun"],
-          bane: "veyra",
-          desc:
-            "Medium. Human-like figure, sentient machines made of wood and metal. 1d4: acid/water/fire/lightning.",
+          size: "Small",
+          desc: "Weak, crafty, stealthy.",
         },
         titanborne: {
           boon: ["drun", "seron"],
           bane: "orvik",
+          size: "Large",
           desc:
-            "Large. Giants in human form, with grooved tattoos on their thick skin.",
+            "Giants in human form, with grooved tattoos on their thick skin.",
         },
         duarling: {
           boon: ["veyra", "drun"],
           bane: "seron",
-          desc: "Small. Short like a halfling, strong like a dwarf.",
+          size: "Small",
+          desc: "Short like a halfling, strong like a dwarf.",
         },
         dwarf: {
-          boon: ["drun"],
+          boon: ["drun", "orvik"],
           bane: "seron",
-          desc: "Small. Short, stout beings, fond of alcohols.",
+          size: "Small",
+          desc: "Short, stout beings, fond of alcohols.",
         },
         human: {
           boon: ["veyra"],
           bane: "orvik",
-          desc: "Medium. Your average run-of-the-mill person.",
+          size: "Medium",
+          desc: "Your average run-of-the-mill person.",
         },
         centaur: {
           boon: ["drun", "orvik"],
           bane: "zhark",
-          desc: "Large. Half human, half horse.",
-        },
-        changeling: {
-          boon: ["veyra"],
-          bane: "seron",
-          desc:
-            "Medium. Use a hard ⌘ Veyra check to change appearance without changing stats.",
+          size: "Large",
+          desc: "Half human, half horse.",
         },
         bugbear: {
           boon: ["drun"],
           bane: "zhark",
-          desc: "Large. Chewbacca + orc = bugbear.",
+          size: "Large",
+          desc: "Chewbacca + orc = bugbear.",
         },
         entling: {
           boon: ["drun"],
           bane: "orvik",
-          desc: "Large. I am groot.",
-        },
-        dragonkin: {
-          boon: ["orvik", "drun"],
-          bane: "zhark",
-          desc: "Medium. Humanoid dragons, cousins to dragonborn.",
+          size: "Large",
+          desc: "I am groot.",
         },
         lizardfolk: {
           boon: ["orvik", "zhark"],
           bane: "veyra",
-          desc: "Medium. Lizard humanoids, averse to smoothskins.",
+          size: "Medium",
+          desc: "Lizard humanoids, averse to smoothskins.",
         },
         kobold: {
           boon: ["veyra"],
           bane: "drun",
-          desc: "Small. A humanoid dragon with mouse-like features.",
+          size: "Small",
+          desc: "A humanoid dragon with mouse-like features.",
         },
         fae: {
           boon: ["veyra", "orvik"],
           bane: "drun",
-          desc: "Medium. Human-like in looks, originated from the feywild.",
+          size: "Medium",
+          desc: "Human-like in looks, originated from the feywild.",
         },
         satyr: {
-          boon: ["veyra"],
-          bane: "zhark",
-          desc: "Medium. Half man, half goat.",
-        },
-        tabaxi: {
-          boon: ["zhark"],
-          bane: "veyra",
-          desc: "Medium. Feline humanoids, resembling leopards or jaguars.",
+          boon: ["veyra", "zhark"],
+          bane: "orvik",
+          size: "Medium",
+          desc: "Half man, half goat.",
         },
         roo: {
-          boon: ["drun"],
+          boon: ["drun", "seron"],
           bane: "zhark",
-          desc: "Medium. Guardians of sacred places, kangaroo humanoids.",
+          size: "Medium",
+          desc: "Guardians of sacred places, kangaroo humanoids.",
         },
         apeling: {
           boon: ["drun", "veyra"],
           bane: "orvik",
+          size: "Large",
           desc:
-            "Large. Descendants of the Monkey King, humanoids with monkey traits.",
+            "Descendants of the Monkey King, humanoids with monkey traits.",
         },
         amazon: {
-          boon: ["drun", "veyra"],
-          bane: "seron",
+          boon: ["drun", "seron"],
+          bane: "orvik",
+          size: "Medium",
           desc:
-            "Medium. Well-built female humanoids, with white/black/silver hair.",
+            "Well-built female humanoids, with white/black/silver hair.",
         },
         "shelled elemental": {
           boon: ["veyra", "orvik"],
@@ -1603,51 +1703,70 @@
         etterkin: {
           boon: ["zhark"],
           bane: "veyra",
-          desc: "Medium. Humanesque with spider eyes, and 3-fingered hands.",
-        },
-        kenku: {
-          boon: ["zhark"],
-          bane: "drun",
-          desc:
-            "Medium. Humanoid crows. Cannot fly or speak, only use mimicry.",
+          size: "Medium",
+          desc: "Humanesque with spider eyes, and 3-fingered hands.",
         },
         qualf: {
-          boon: ["orvik", "drun"],
+          boon: ["orvik", "zhark"],
           bane: "seron",
-          desc: "Small. Four-armed, short and slender. Tinkerers.",
-        },
-        tortle: {
-          boon: ["drun", "orvik"],
-          bane: "zhark",
-          desc:
-            "Medium. Turtle humanoid. Slow, wise, and friendly survivalist.",
+          size: "Small",
+          desc: "Four-armed, short and slender. Tinkerers.",
         },
         moonfolk: {
           boon: ["veyra", "orvik"],
           bane: "drun",
-          desc: "Small. Rabbit-like humanoid, with large rabbit ears and feet.",
+          size: "Small",
+          desc: "Rabbit-like humanoid, with large rabbit ears and feet.",
         },
         "animated armor": {
-          boon: ["drun"],
+          boon: ["drun", "seron"],
           bane: "zhark",
+          size: "Large",
           desc:
-            "Large. Armor brought to life by magic, has a soul. Loud and strong.",
+            "Armor brought to life by magic, has a soul. Loud and strong.",
         },
         halfling: {
           boon: ["zhark", "veyra"],
           bane: "drun",
+          size: "Small",
           desc:
-            "Small. Friendly, cheerful humans, no taller than your average waist.",
+            "Friendly, cheerful humans, no taller than your average waist.",
         },
         hippofolk: {
           boon: ["drun", "orvik"],
           bane: "seron",
-          desc: "Medium. Human-like hippos, generous and friendly.",
+          size: "Medium",
+          desc: "Human-like hippos, generous and friendly.",
         },
-        aarakocra: {
-          boon: ["seron", "veyra"],
+        kethrai: {
+          boon: ["zhark"],
+          bane: "veyra",
+          size: "Medium",
+          desc: "Tall (6½–8 ft), angular, gray-green, with four-fingered hands and wide ringed irises. Gill-like folds behind the ears sense humidity and airborne chemicals, and change color with emotion, so they cannot hide how they feel. They sometimes remember events that have not happened yet, and their culture values reversible decisions.",
+        },
+        "d'varen": {
+          boon: ["seron"],
           bane: "zhark",
-          desc: "Medium. Winged birdfolk with talons on their feet.",
+          size: "Large",
+          desc: "Broad and heavily armored, with overlapping keratin plates that grow for life and are carved with family history. They prefer mineral-rich land and migrate between it. They move deliberately, and unannounced aggression is dishonorable.",
+        },
+        vessar: {
+          boon: ["orvik"],
+          bane: "drun",
+          size: "Medium",
+          desc: "Slender and pale, with large dark eyes and flat ears. They feel footsteps, voices, weather and the rhythm of a structure through surfaces. They build flexible elevated settlements that carry vibrations between walkways as communication.",
+        },
+        iskari: {
+          boon: ["seron"],
+          bane: "zhark",
+          size: "Medium",
+          desc: "Tall, slender and gold-skinned, with fine glowing lines across the wrists, brow and neck that brighten at boundaries and when they hear a deliberate lie. They treat a spoken promise as a physical obligation. Found in border towns, trade routes, courts and archives as surveyors, arbiters, notaries and sworn protectors.",
+        },
+        ravuun: {
+          boon: ["zhark"],
+          bane: "seron",
+          size: "Medium",
+          desc: "Nonhuman and asymmetrical. Each serious injury, hardship or ordeal leaves a permanent functional change, such as an extra joint, a reinforced shoulder or an altered limb, so no two look alike. They build in unstable places (fault lines, volcanic regions, burned forests), celebrate major changes with renewal rituals, and work as demolition crews, salvagers, disaster responders and repairers.",
         },
       };
 
@@ -2025,12 +2144,38 @@
         },
       };
 
-      const fountName = {
-        seron: "ᛄ Seron",
-        orvik: "∵ Orvik",
-        zhark: "ϟ Zhark",
-        drun: "△ Drun",
-        veyra: "⌘ Veyra",
+      // From guide.md, "The Five Founts". Founts are laws, not agents.
+      const founts = {
+        seron: {
+          name: "ᛄ Seron",
+          color: "yellow",
+          domain: "Integrity, boundaries, truth",
+          action: "define, judge, protect a line",
+        },
+        orvik: {
+          name: "∵ Orvik",
+          color: "blue",
+          domain: "Knowledge, memory, hidden structure",
+          action: "study, recall, reveal a pattern",
+        },
+        zhark: {
+          name: "ϟ Zhark",
+          color: "red",
+          domain: "Change, rupture, transformation",
+          action: "alter, improvise, break a pattern",
+        },
+        drun: {
+          name: "△ Drun",
+          color: "green",
+          domain: "Fortitude, endurance, regrowth",
+          action: "endure, heal, carry, persist",
+        },
+        veyra: {
+          name: "⌘ Veyra",
+          color: "purple",
+          domain: "Charm, bonds, social pull",
+          action: "persuade, perform, connect, untie",
+        },
       };
 
       // Tiny fantasy name generator.
@@ -2202,8 +2347,8 @@
         if (!archFount) $("wpn_val").textContent = "";
       };
       const showRaceDesc = () => {
-        $("race_desc").textContent =
-          raceOf()?.desc ?? "";
+        const r = raceOf();
+        $("race_desc").textContent = r ? `${r.size}. ${r.desc}` : "";
       };
       const raceOf = () =>
         races[form.elements.ancestry.value.trim().toLowerCase()];
@@ -2240,6 +2385,82 @@
         ["archetypes", Object.keys(archetypes).map(cap)],
       ])
         $(id).replaceChildren(...names.map((n) => new Option(n)));
+      // Pages: #sheet (default), #races, #founts.
+      const h = (tag, cls, ...kids) => {
+        const el = document.createElement(tag);
+        if (cls) el.className = cls;
+        el.append(...kids);
+        return el;
+      };
+      const tint = (f) => `color-mix(in srgb, var(--${f}), var(--shift) 15%)`;
+      const fountChip = (f, sign) => {
+        const chip = h("span", "", sign + founts[f].name);
+        chip.style.color = tint(f);
+        chip.style.fontWeight = 700;
+        return chip;
+      };
+      const card = (title, tag, ...body) =>
+        h(
+          "section",
+          "panel",
+          h("div", "panel-head", h("h2", "", title), h("small", "", tag)),
+          h("div", "panel-body", ...body),
+        );
+      $("race-cards").append(
+        ...Object.entries(races).map(([name, r]) => {
+          const body = [];
+          if (r.img) {
+            const img = h("img");
+            img.src = r.img;
+            img.alt = name;
+            img.loading = "lazy";
+            body.push(img);
+          }
+          body.push(
+            h("p", "", r.desc),
+            h(
+              "p",
+              "",
+              "Boon: ",
+              ...r.boon.flatMap((f, i) => [i ? " or " : "", fountChip(f, "+")]),
+            ),
+            h("p", "", "Bane: ", fountChip(r.bane, "−")),
+          );
+          return card(name, r.size, ...body);
+        }),
+      );
+      $("fount-cards").append(
+        ...Object.entries(founts).map(([f, d]) => {
+          const sym = h("span", "sym");
+          sym.innerHTML = `<svg viewBox="0 0 24 24"><use href="#sym-${f}" /></svg>`;
+          sym.style.color = tint(f);
+          const row = (label, text) =>
+            h("p", "", h("span", "muted", label + " "), text);
+          const c = card(
+            d.name.slice(2),
+            d.color,
+            row("Domain", d.domain),
+            row("Common action", d.action),
+          );
+          c.classList.add("fount-card");
+          c.querySelector("h2").prepend(sym, " ");
+          return c;
+        }),
+      );
+      const pages = [...document.querySelectorAll("main[data-view]")];
+      const route = () => {
+        const want = location.hash.slice(1);
+        const name = pages.some((p) => p.dataset.view === want) ? want : "sheet";
+        for (const p of pages) p.hidden = p.dataset.view !== name;
+        document.body.dataset.view = name;
+        for (const a of $("drawer").querySelectorAll("a"))
+          a.toggleAttribute("aria-current", a.hash === "#" + name);
+      };
+      addEventListener("hashchange", route);
+      $("drawer").addEventListener("click", (e) => {
+        if (e.target.closest("a")) $("drawer").hidePopover();
+      });
+      route();
       const specialties = $("specialties");
       const listSpecialties = () => {
         const a =
@@ -2345,7 +2566,7 @@
           .slice(0, 5)
           .sort(() => Math.random() - 0.5);
         const final = {};
-        for (const [i, f] of Object.keys(fountName).entries()) {
+        for (const [i, f] of Object.keys(founts).entries()) {
           const roll = dice[i];
           e[f + "_score"].value = roll;
           final[f] =
