@@ -1,133 +1,213 @@
 # Starting archetypes
 
-Archetypes are starting training, not classes or caps. Characters may learn any specialty or ability through play. Each Fount has three archetypes; each archetype supplies one kit, one signature ability, and three specialties aligned with different Founts. Your archetype gives +1 to its Fount; specialties give no stat bonus.
+Archetypes are starting training, not classes or caps. Characters may learn any specialty or ability through play. Each Fount has three archetypes; each archetype supplies one kit, one archetype ability, and three specialties: one of its own Fount and one of each of the two Founts opposite it on the wheel (yellow, blue, red, green, purple). Your archetype gives +1 to its Fount; specialties give no stat bonus.
 
-## Warden — completed
+## ᛄ Warden
 
-- **Kit:** light armor, standard bow (heavy, ᛄ Seron), light sidearm, chalk line, 20 feet of cord.
-- **Signature — Hold the Line:** once per round, reaction when a nearby ally would take damage: move between them and source; attack targets Warden instead. If movement is impossible, no effect.
-- **ᛄ Seron specialty — Boundary Keeper:** action to mark a nearby clear line. First enemy crossing it before Warden's next turn takes `d6 + ᛄ Seron` damage, minus armor.
-- **⌘ Veyra specialty — Oath Escort:** when Warden and willing ally state one immediate shared destination, both gain `+2` on first check made to reach it together.
-- **△ Drun specialty — Shield Wall:** action: brace; allies behind you count +1 armor until your next turn.
+- **Kit:** light armor, standard bow (heavy), light sidearm, chalk line, 20 feet of cord.
+- **Archetype ability — Hold the Line:** reaction when a nearby ally would take damage: move between them and source; attack targets Warden instead. If movement is impossible, no effect.
 
-## Medic — completed
+<br>
 
-- **Kit:** light armor, light staff or blade (∵ Orvik), bandages, splint, bitter antiseptic, notebook.
-- **Signature — Field Treatment:** once per character per scene, action restores `d6` HP to adjacent living target. Cannot raise target above maximum HP.
-- **∵ Orvik specialty — Pattern Diagnostician:** after observing injury, illness, or phenomenon for a minute, ask GM one: “What worsens it?”, “What relieves it?”, or “What happened most recently?” Answer truthfully.
-- **△ Drun specialty — Keep Breathing:** reaction when nearby ally is downed; ally remains down but cannot be moved or further harmed by an unattended environmental hazard until Medic's next turn.
-- **ϟ Zhark specialty — Radical Cure:** once per scene, action: gamble on an untested remedy on an adjacent target; roll `d6`: 1–2 deals 1 damage, 3–6 heals `d6`.
+- **Marchwarden**
+  - **Boundary Keeper:** action to mark a nearby clear line. First enemy crossing it before Warden's next turn takes `d6 + ᛄ Seron` damage, minus armor.
+- **Snarer**
+  - **Pin Down:** action: a nearby creature is held in place until it succeeds a risky check to break free.
+- **Shieldbearer**
+  - **Shield Wall:** action: brace; allies behind you count +1 armor until your next turn.
 
-## Pathfinder — completed
+## ∵ Medic
 
-- **Kit:** light armor, standard blade or shortbow (heavy, ϟ Zhark), climbing hook, 30 feet of rope, hooded lantern.
-- **Signature — Find Another Way:** once per scene after route is blocked, GM reveals one costly, risky, or slow alternate route that currently exists.
-- **ϟ Zhark specialty — Wardbreaker:** `+2` on checks to alter, bypass, or redirect a magical trigger after its rule has been discovered.
-- **⌘ Veyra specialty — Underworld Contact:** once per settlement, name a kind of illicit help. GM introduces someone who can provide it and names their price or obligation.
-- **∵ Orvik specialty — Trailwise:** after a minute at a route or campsite, ask the GM what passed along it recently.
+- **Kit:** light armor, light staff or blade, bandages, splint, bitter antiseptic, notebook.
+- **Archetype ability — Field Treatment:** once per short rest, action restores `d6` HP to adjacent living target. Cannot raise target above maximum HP.
 
-## Bulwark — completed
+<br>
 
-- **Kit:** light armor, heavy maul (heavy, △ Drun), shield or planks, tool roll, 50 feet of rope.
-- **Signature — Shore It Up:** once per scene, reaction when a nearby ally or structure would take damage: reduce it by `d6`.
-- **△ Drun specialty — Keep Standing:** once per rest, ignore the first hit that would drop Bulwark to 0 HP; HP drops to 1 instead.
-- **△ Drun specialty — Load Bearer:** carry heavy loads or an ally without penalty; hold a collapsing structure for a turn.
-- **ᛄ Seron specialty — Hold the Door:** action: hold a chokepoint; enemies must go through you to pass until your next turn.
+- **Physician**
+  - **Pattern Diagnostician:** study an injury, illness, or phenomenon closely; you learn what worsens it, what relieves it, or what happened to it most recently. Once per short rest.
+- **Stretcher-Bearer**
+  - **Keep Breathing:** reaction when nearby ally is downed; ally remains down but cannot be moved or further harmed by an unattended environmental hazard until Medic's next turn.
+- **Bedside Counselor**
+  - **Doctor's Word:** when you state a medical order, NPCs who hear it must answer it before acting on a conflicting one.
 
-## Cartographer — completed
+## ϟ Pathfinder
 
-- **Kit:** light armor, surveyor's staff (heavy, ᛄ Seron), chalk and charcoal, measuring cord, map case.
-- **Signature — Fix the Bounds:** once per scene, name a nearby area; the GM states its true edges, exits, and one hidden hazard.
-- **ᛄ Seron specialty — Claim Ground:** action: declare a nearby zone yours; allies in it have advantage on the first check to defend it until your next turn.
-- **∵ Orvik specialty — True North:** you cannot be lost; ask the GM the way to any place you have seen on a map.
-- **⌘ Veyra specialty — Border Talk:** at a border or checkpoint, ask the GM what the guards will accept for passage.
+- **Kit:** light armor, standard blade or shortbow (heavy), climbing hook, 30 feet of rope, hooded lantern.
+- **Archetype ability — Find Another Way:** once per short rest, after a route is blocked, you spot one costly, risky, or slow alternate route that exists.
 
-## Paladin — completed
+<br>
 
-- **Kit:** heavy armor, heavy blade (heavy, ᛄ Seron), banner or holy symbol, oath token.
-- **Signature — Sworn Word:** once per scene, swear to protect or reach one thing; checks that directly serve the oath have advantage until the scene ends or you break it.
-- **ᛄ Seron specialty — Smite the False:** action: strike an enemy that broke a promise or lied to you; deal `d6 + ᛄ Seron + 1`, minus armor.
-- **△ Drun specialty — Unbroken:** once per rest, ignore a penalty from fear, pain, or charm until the scene ends.
-- **⌘ Veyra specialty — Voice of Law:** when you openly state a rule or claim, NPCs who hear it must answer it before acting on a conflicting one.
+- **Trailbreaker**
+  - **Wardbreaker:** `+2` on checks to alter, bypass, or redirect a magical trigger after its rule has been discovered.
+- **Smuggler**
+  - **Underworld Contact:** once per day, name illicit help; you know someone nearby who can provide it, and their price or obligation.
+- **Waymarker**
+  - **Waypoint:** once per day, mark a place you have reached; the party can return to it by the shortest known route.
 
-## Tinkerer — completed
+## △ Bulwark
 
-- **Kit:** light armor, spring-gun (∵ Orvik), toolkit, springs and wire, hooded lantern.
-- **Signature — Jury Device:** once per scene, action: build a small gadget from scrap that does one simple thing for the scene.
-- **∵ Orvik specialty — Trap Sense:** after a minute of study, ask the GM whether a device or area is trapped and how.
-- **ϟ Zhark specialty — Overclock:** action: push a device past its limits for one use at +1 effect; it breaks afterward.
-- **△ Drun specialty — Mender's Hands:** repair a broken mundane tool or door in a minute with no check.
+- **Kit:** light armor, heavy maul (heavy), shield or planks, tool roll, 50 feet of rope.
+- **Archetype ability — Shore It Up:** once per short rest, reaction when a nearby ally or structure would take damage: reduce it by `d6`.
 
-## Loremaster — completed
+<br>
 
-- **Kit:** light armor, quarterstaff or dagger (∵ Orvik), travel library, ink and quill, scroll case.
-- **Signature — I Read About This:** once per scene, ask the GM one fact about a creature, place, or custom; the answer is true.
-- **∵ Orvik specialty — Perfect Recall:** once per scene, ask the GM to repeat any fact or clue you witnessed.
-- **⌘ Veyra specialty — Tongues:** understand and be understood in any language you have heard for a minute.
-- **ᛄ Seron specialty — Cold Reading:** after a minute, learn whether a person or document is truthful about its stated claim.
+- **Stalwart**
+  - **Keep Standing:** once per long rest, ignore the first hit that would drop Bulwark to 0 HP; HP drops to 1 instead.
+- **Veteran**
+  - **Read the Charge:** after one round of fighting a foe, you can tell which of your allies it means to hit next.
+- **Gatekeeper**
+  - **Hold the Door:** action: hold a chokepoint; enemies must go through you to pass until your next turn.
 
-## Duelist — completed
+## ᛄ Cartographer
 
-- **Kit:** light armor, rapier or fine blade (ϟ Zhark), dueling cloak, whetstone.
-- **Signature — Break the Pattern:** once per round, reaction when an enemy attacks you: step aside and reduce that damage by `d6` (minimum 0).
-- **ϟ Zhark specialty — Riposte:** after Break the Pattern, strike the attacker if adjacent.
-- **⌘ Veyra specialty — Flourish:** when you win a clear exchange in public, bystanders respect or fear you (GM names which).
-- **∵ Orvik specialty — Quick Study:** after one round of fighting a foe, ask the GM its habit or weakness.
+- **Kit:** light armor, surveyor's staff (heavy), chalk and charcoal, measuring cord, map case.
+- **Archetype ability — Fix the Bounds:** once per short rest, study a nearby area; you know its true edges, exits, and one hidden hazard.
 
-## Wildcaller — completed
+<br>
 
-- **Kit:** light armor, focus staff (ϟ Zhark), flint, pouch of volatile reagents.
-- **Signature — Loose the Storm:** once per scene, action: unleash a burst on a nearby zone; creatures there take `d6 + ϟ Zhark`, minus armor, and you and the GM agree one side effect.
-- **ϟ Zhark specialty — Chain Spark:** your attacks also hit a second adjacent target for `d6`, minus armor.
-- **∵ Orvik specialty — Storm Reader:** sense weather and unstable magic nearby; know when a surge is coming.
-- **△ Drun specialty — Contain It:** once per rest, take the backlash of your own failed cast instead of its cost.
+- **Surveyor**
+  - **Claim Ground:** action: declare a nearby zone yours; allies in it have advantage on the first check to defend it until your next turn.
+- **Pioneer**
+  - **Cave-in:** once per short rest, collapse an unstable ceiling or ledge you can reach.
+- **Packmaster**
+  - **Load Bearer:** carry heavy loads or an ally without penalty; hold a collapsing structure for a turn.
 
-## Delver — completed
+## ᛄ Paladin
 
-- **Kit:** light armor, pick or hammer (heavy, △ Drun), lantern, 50 feet of rope, chalk.
-- **Signature — Dig Through:** action: open or close a passage in earth or stone for the scene, wide enough for one person.
-- **∵ Orvik specialty — Tremorsense:** feel vibrations nearby; the GM tells you what is moving in a nearby zone.
-- **△ Drun specialty — Pit Fighter:** advantage on checks in cramped or underground spaces.
-- **ϟ Zhark specialty — Cave-in:** once per scene, collapse an unstable ceiling or ledge you can reach.
+- **Kit:** heavy armor, heavy blade (heavy), banner or holy symbol, oath token.
+- **Archetype ability — Sworn Word:** once per short rest, swear to protect or reach one thing; checks that directly serve the oath have advantage until it is fulfilled or you break it.
 
-## Rootbound — completed
+<br>
 
-- **Kit:** light armor, staff or club (△ Drun), seed pouch, water skin, herb bundle.
-- **Signature — Take Root:** once per scene, action: through living plants, heal a nearby ally `d6` or give them 1 armor until your next turn.
-- **∵ Orvik specialty — Green Sense:** know what plants and animals nearby are doing; ask the GM what passed here recently.
-- **△ Drun specialty — Slow Burn:** regain 1 HP at the start of each scene.
-- **ϟ Zhark specialty — Entangle:** action: roots hold a nearby creature until it succeeds a risky check to break free.
+- **Inquisitor**
+  - **Smite the False:** action: strike an enemy that broke a promise or lied to you; deal `d6 + ᛄ Seron + 1`, minus armor.
+- **Crusader**
+  - **Unbroken:** once per long rest, ignore a penalty from fear, pain, or charm until the scene ends.
+- **Zealot**
+  - **Zeal:** once per long rest, when an ally is downed, make an immediate attack.
 
-## Bard — completed
+## ∵ Tinkerer
 
-- **Kit:** light armor, dagger or rapier (⌘ Veyra), instrument, songbook, bright cloak.
-- **Signature — Rally the Room:** once per scene, reaction: give an ally advantage on their next check.
-- **⌘ Veyra specialty — Captivating Performance:** action: nearby listeners are held until something disturbs them.
-- **∵ Orvik specialty — Songs of Memory:** recall a tale or ballad about a person or place; the GM supplies one true fact.
-- **△ Drun specialty — Battle Hymn:** once per scene, allies who hear you ignore the first point of damage they take.
+- **Kit:** light armor, spring-gun, toolkit, springs and wire, hooded lantern.
+- **Archetype ability — Jury Device:** once per short rest, action: build a small gadget from scrap that does one simple thing until your next rest.
 
-## Envoy — completed
+<br>
 
-- **Kit:** light armor, sidearm or sword (⌘ Veyra), letters of passage, seal, formal clothes.
-- **Signature — Fair Trade:** once per settlement, the GM names a fair price or favor for anything you want arranged.
-- **⌘ Veyra specialty — Silver Tongue:** once per scene, reroll a failed persuasion check, keeping the second result.
-- **∵ Orvik specialty — Crowd Reader:** on meeting a group, ask the GM who holds power and what they want.
-- **ᛄ Seron specialty — Open Hand:** hostile NPCs who have not attacked will hear you out before acting.
+- **Trapsmith**
+  - **Trap Sense:** study a device or area closely; you know whether it is trapped and how.
+- **Peddler**
+  - **Haggle Parts:** once per day, name a part or device; you know a seller nearby and their price.
+- **Mender**
+  - **Mender's Hands:** repair a broken mundane tool or door in a minute with no check.
 
-## Trickster — completed
+## ∵ Loremaster
 
-- **Kit:** light armor, dagger or sling (⌘ Veyra), disguise kit, loaded dice, spare keys.
-- **Signature — Borrowed Face:** once per scene, action: pass as a plausible person or role to NPCs who have not met you, until questioned or tested.
-- **ϟ Zhark specialty — Light Fingers:** take or plant a small item unnoticed.
-- **⌘ Veyra specialty — Smooth Exit:** once per scene, talk your way out of a tight spot; the GM names a cost.
-- **∵ Orvik specialty — Sharp Eye:** notice the lie, forgery, or con in a short exchange.
+- **Kit:** light armor, quarterstaff or dagger, travel library, ink and quill, scroll case.
+- **Archetype ability — I Read About This:** once per short rest, name a creature, place, or custom; you recall one true fact about it.
 
-| Fount   | Color  | Archetypes                      |
-| ------- | ------ | ------------------------------- |
-| ᛄ Seron | yellow | Warden, Cartographer, Paladin   |
-| ∵ Orvik | blue   | Medic, Tinkerer, Loremaster     |
-| ϟ Zhark | red    | Pathfinder, Duelist, Wildcaller |
-| △ Drun  | green  | Bulwark, Delver, Rootbound      |
-| ⌘ Veyra | purple | Bard, Envoy, Trickster          |
+<br>
 
-Symbols mark archetypes on paper generator output.
+- **Archivist**
+  - **Perfect Recall:** once per short rest, recall any fact or clue you witnessed, exactly as it was.
+- **Linguist**
+  - **Tongues:** understand and be understood in any language you have heard for a minute.
+- **Spellbinder**
+  - **Contain It:** once per long rest, cast a spell without spending mana.
+
+## ϟ Duelist
+
+- **Kit:** light armor, rapier or fine blade, dueling cloak, whetstone.
+- **Archetype ability — Break the Pattern:** reaction when an enemy attacks you: step aside and reduce that damage by `d6` (minimum 0).
+
+<br>
+
+- **Fencer**
+  - **Riposte:** after Break the Pattern, strike the attacker if adjacent.
+- **Showman**
+  - **Flourish:** when you win a clear exchange in public, bystanders react with respect or fear, as the moment fits.
+- **Champion**
+  - **Challenge:** action: name one enemy in sight; until your next turn it must target you or have disadvantage on its attacks.
+
+## ϟ Wildcaller
+
+- **Kit:** light armor, focus staff, flint, pouch of volatile reagents.
+- **Archetype ability — Loose the Storm:** once per short rest, action: unleash a burst on a nearby zone; creatures there take `d6 + ϟ Zhark`, minus armor, and it leaves one fitting side effect on the zone.
+
+<br>
+
+- **Stormcaller**
+  - **Chain Spark:** your attacks also hit a second adjacent target for `d6`, minus armor.
+- **Beastmaster**
+  - **Leash:** once per short rest, a spell or creature you called obeys one simple command exactly as stated.
+- **Whisperer**
+  - **Talk Down:** when a creature you called turns on someone, a word from you stops it for a round.
+
+## △ Delver
+
+- **Kit:** light armor, pick or hammer (heavy), lantern, 50 feet of rope, chalk.
+- **Archetype ability — Dig Through:** action: open or close a passage in earth or stone until your next rest, wide enough for one person.
+
+<br>
+
+- **Burrower**
+  - **Tremorsense:** feel vibrations nearby; you sense what is moving in a nearby zone.
+- **Brawler**
+  - **Pit Fighter:** advantage on checks in cramped or underground spaces.
+- **Sapper**
+  - **Sound the Rock:** study a ceiling, wall, or floor closely; you know whether it will hold weight and for how long.
+
+## △ Rootbound
+
+- **Kit:** light armor, staff or club, seed pouch, water skin, herb bundle.
+- **Archetype ability — Take Root:** once per short rest, action: through living plants, heal a nearby ally `d6` or give them 1 armor until your next turn.
+
+<br>
+
+- **Greenseer**
+  - **Green Sense:** know what plants and animals nearby are doing, and read from them what passed here recently.
+- **Hearthroot**
+  - **Slow Burn:** regain 1 extra HP whenever you finish a short rest.
+- **Thornwarden**
+  - **Boundary Seed:** action: plant a ring of seeds nearby; creatures crossing it must stop.
+
+## ⌘ Bard
+
+- **Kit:** light armor, dagger or rapier, instrument, songbook, bright cloak.
+- **Archetype ability — Rally the Room:** once per short rest, reaction: give an ally advantage on their next check.
+
+<br>
+
+- **Minstrel**
+  - **Captivating Performance:** action: nearby listeners are held until something disturbs them.
+- **Chronicler**
+  - **Songs of Memory:** recall a tale or ballad about a person or place; it holds one true fact.
+- **Provocateur**
+  - **Discordant Note:** action: sound a jarring note; nearby enemies lose their reaction until your next turn.
+
+## ⌘ Envoy
+
+- **Kit:** light armor, sidearm or sword, letters of passage, seal, formal clothes.
+- **Archetype ability — Fair Trade:** once per day, name anything you want arranged; you know the fair price or favor it would cost.
+
+<br>
+
+- **Diplomat**
+  - **Silver Tongue:** once per short rest, reroll a failed persuasion check, keeping the second result.
+- **Courtier**
+  - **Crowd Reader:** on meeting a group, you can tell who holds power and what they want.
+- **Fixer**
+  - **Bold Lie:** once per short rest, state a bold lie; the first NPC who hears it accepts it unless they hold proof.
+
+## ⌘ Trickster
+
+- **Kit:** light armor, dagger or sling, disguise kit, loaded dice, spare keys.
+- **Archetype ability — Borrowed Face:** once per short rest, action: pass as a plausible person or role to NPCs who have not met you, until questioned or tested.
+
+<br>
+
+- **Cutpurse**
+  - **Light Fingers:** take or plant a small item unnoticed.
+- **Escape Artist**
+  - **Smooth Exit:** once per short rest, talk your way out of a tight spot at the price of something you leave behind.
+- **Appraiser**
+  - **Sharp Eye:** notice the lie, forgery, or con in a short exchange.

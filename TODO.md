@@ -6,7 +6,7 @@ Goal: GM starts in Kathara, follows players off expected path, and returns to ch
 
 ## 1. Reconcile Founts and colors
 
-- [x] Establish one active reference for Fount names, colors, domains, manifestations, and overuse costs.
+- [x] Establish one active reference for Fount names, colors, domains, manifestations, and manifestations.
 - [x] Use Seron/yellow/Integrity, Orvik/blue/Knowledge, Zhark/red/Change, Drun/green/Fortitude, Veyra/purple/Charm.
 - [ ] Finish auditing every legacy white/black and misclassified old color entry. Preserve historical labels only in archive material.
 - [x] State that Founts are laws without agency; motives belong to people and creatures.
@@ -32,23 +32,22 @@ Goal: GM starts in Kathara, follows players off expected path, and returns to ch
 ## 4. Playable rules and generation
 
 - [x] Consolidate character creation: 6d6 individually, highest five assigned, lowest die as bonus points.
-- [x] Use five Founts as core stats and HP `10 + △ Drun`.
+- [x] Use five Founts as core stats and HP `6 + △ Drun`.
 - [x] Turn Warden, Medic, and Pathfinder into starting archetypes with kits, signature abilities, and Fount specialties.
-- [ ] Complete Builder and Artisan alpha archetypes.
 - [x] Remove active alpha House/Guild rolls, proficiency, class caps, and ancestry modifiers.
-- [x] Use d20 + relevant Fount against 8/12/16/20; natural 1/20 are critical failure/success.
+- [x] Use d20 + relevant Fount against 10 (risky) or 15 (hard); natural 1/20 are critical failure/success.
 - [x] Use same check system for risky spellcasting.
-- [ ] Decide whether spells consume a resource. Alpha no-resource consequence rule remains provisional.
+- [x] Spells cost mana: max `3 + ∵ Orvik`, cost drops at Fount 4+/6+, short rest +1, long rest full.
 - [x] Alternate party/enemy group turns; each character has move, action, reaction, and available bonus action.
-- [x] Roll damage immediately; strictly below half Defense misses, otherwise full damage.
-- [ ] Finalize Attack, Defense, armor, and weapon formulas. Alpha formulas remain provisional.
+- [x] Attacks always land: `d6 + Fount` minus target armor.
+- [ ] Finalize armor and weapon formulas. Alpha formulas remain provisional.
 - [x] Simulate provisional combat values to avoid long miss strings.
 - [x] At 0 HP character is down and can be rescued; safe night restores all HP.
-- [ ] Decide whether rescue requires healing. Alpha action-only rescue remains provisional.
-- [x] Award 2/4/6 obstacle XP independent of approach; split half to used Fount and half by player choice.
-- [x] Raising Fount costs XP equal to new score.
-- [ ] Decide general versus Fount-specific unused XP. Alpha per-Fount storage remains provisional.
-- [ ] Define Fount ability thresholds and unlocks.
+- [x] Rescue needs no healing: an adjacent ally spends an action to raise a downed character to 1 HP. Revisit after playtest if downed characters carry no risk.
+- [x] Award 1/2/3 obstacle points independent of approach; spend on any Fount.
+- [x] Raising a Fount costs points equal to its new score.
+- [x] Unspent points are general and carry over.
+- [ ] Define Fount ability thresholds and unlocks. Deferred until playtest shows which scores players reach; 4 and 6 are the natural breakpoints (match mana cost drops).
 - [x] Add one GM procedure for entering, investigating, resolving, advancing time, and revisiting.
 - [x] Preserve essential clues while checks determine cost, speed, safety, or leverage.
 - [x] Add starting-location generator: Founts, terrain, immediate problem, coin reveal, two leads, offscreen consequence.
@@ -65,5 +64,5 @@ Goal: GM starts in Kathara, follows players off expected path, and returns to ch
 
 ## 6. Magic reconciliation
 
-- [ ] Map V1 spell list (YEL/BLU/PRP/RED/GRN) in [compendium/spells](compendium/spells.md) to Founts, or drop entries that don't fit.
-- [ ] Decide whether V1's "magic as exertion / corruption toward a color" ([rules-v1](_meta/archive/rules-v1.md#magic)) becomes the spell-resource answer in section 4.
+- [x] Map V1 spell list (YEL/BLU/PRP/RED/GRN) in [compendium/spells](compendium/spells.md) to Founts, or drop entries that don't fit.
+- [x] Mana is the spell-resource answer; V1 corruption idea not used.

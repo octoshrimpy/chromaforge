@@ -78,7 +78,7 @@ Stats use [alpha enemy bands](../guide.md#enemies-and-encounter-size). Wildlife 
 
 - **Canon:** Multi-horned cliff herbivore leaving nutrient-rich trails; seen on Old Oasis Road.
 - **Behavior (play detail):** herd blocks narrow path while licking mineral seam. Retreats if given room; charges only when crowded or young approached.
-- **Stats:** capable, HP 10, Defense 10, horn `d8 + 1`.
+- **Stats:** capable, HP 10, armor 1, horn `d8 + 1`.
 - **End combat:** party backs out of lane, offers mineral-rich vegetation, or opens alternate route.
 - **Lead:** fresh green growth follows herd trail toward water.
 
@@ -86,7 +86,7 @@ Stats use [alpha enemy bands](../guide.md#enemies-and-encounter-size). Wildlife 
 
 - **Canon:** Migratory carrion bird; seen overhead on Old Oasis Road.
 - **Behavior (play detail):** circles recent death and follows wounded travelers. Lands only when safe.
-- **Stats:** fragile, HP 6, Defense 8, beak `d6`; groups use swarm rule.
+- **Stats:** fragile, HP 6, armor 0, beak `d6`; groups use swarm rule.
 - **End combat:** move away from carcass, cover blood scent, or frighten flock once.
 - **Lead:** flight circle marks a hidden carcass, camp, or downed traveler.
 
@@ -94,7 +94,7 @@ Stats use [alpha enemy bands](../guide.md#enemies-and-encounter-size). Wildlife 
 
 - **Canon:** Desert-and-oasis scavenger feeding on bone and carrion. Exact Vis'Rodan placement is generated, not canon.
 - **Behavior (play detail):** strips loose dead material, including exposed old bone; curls and clicks when threatened.
-- **Stats:** fragile, HP 6, Defense 8, mandibles `d6`; two beetles act as one group attack.
+- **Stats:** fragile, HP 6, armor 0, mandibles `d6`; two beetles act as one group attack.
 - **End combat:** stop touching feeding site, distract with carrion, or isolate desired object.
 - **Lead:** beetles expose seams between natural bone and worked cache cover.
 

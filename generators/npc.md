@@ -40,7 +40,7 @@ _one race from the rolled bracket._
 | 45-55      | {{pick: Entling \| Lizardfolk \| Kobold}}                                           |
 | 56-66      | {{pick: Fae \| Satyr \| Roo}}                                                       |
 | 67-77      | {{pick: Apeling \| Amazon \| Shelled Elemental (earth/water/fire/air) \| Etterkin}} |
-| 78-88      | {{pick: Qualf \| Moonfolk \| Vessar \| D'varen}}                                    |
+| 78-88      | {{pick: Qualf \| Moonfolk \| Ommel \| D'varen}}                                    |
 | 89-99      | {{pick: Animated Armor \| Halfling \| Hippofolk}}                                   |
 
 ### class

@@ -14,10 +14,10 @@ No campaign concept or session preparation is required. Record generated facts: 
 
 ## Fast table links
 
-- [Starting archetypes](compendium/classes.md)
+- [Starting archetypes](compendium/archetypes.md)
 - [Fount reference](compendium/colors_houses.md)
 - [DM toolbox](compendium/dm.md)
-- [V1 spell ideas](compendium/spells.md)
+- [Spells](compendium/spells.md)
 - [Race ideas](compendium/races.md)
 - [Scratch ideas](testing/scratch.md)
 - [Current decisions and backlog](TODO.md)

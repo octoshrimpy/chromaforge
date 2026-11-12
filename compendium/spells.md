@@ -1,61 +1,109 @@
-> **V1 spell catalog, not active mechanics.** Use [alpha magic](../guide.md#magic). Entries are inspiration until reconciled with a Fount. V1 magic concept: [rules-v1](../_meta/archive/rules-v1.md#magic).
-
 # Spells
 
-`L` = caster level. Default range 30'; duration L × 10 min. Colors are V1 labels. Mapping them to Founts is open in [TODO](../TODO.md).
+Active alpha spells. Rules for casting, mana, and rests are in the [guide](../guide.md#magic).
 
-## YEL
+- **Starting spells:** a new character knows 1 or 2 spells. More are learned through play.
+- **Cost:** base mana cost in brackets. It drops by 1 if you cast with a Fount score of 4+ and by 2 at 6+, never below 1.
+- **Defaults:** range nearby (about 30 ft), duration 5 minutes. Larger scope, distance, duration, or unwilling targets are harder.
+- **Check:** a risky cast rolls `d20 + Fount` for the spell's Fount. A failed cast still spends its mana.
 
-- **Telekinesis**: move up to L ungrounded objects; more objects shortens the duration.
-- **Vibe check**: finger guns at a target, both roll d20. Caster higher: learns intent, and if hostile the target's next attack deals half damage. Tie: they're vibin' and can't attack each other.
-- **Force shield**: a bubble covering 1 person per 2 L (L3 = 1 large, or 1 medium + 1 small).
-- **Healing touch**: removes negative effects or heals for a Knowledge check.
-- **Reveal path**: know the way to anything or anyone seen in person or in any picture, even an unrecognizable one.
-- **Control light**: turn nearby light sources on or off.
+## ᛄ Seron
 
-## BLU
+- **Force shield (2):** a bubble covers you and one nearby ally; damage to them is reduced by `d6` until your next turn.
+- **Reveal path (1):** you know the way to anything or anyone you have seen in person or in a picture, even an unrecognizable one.
+- **Seal (2):** name a door, container, or line; it cannot be opened or crossed until you leave or end it.
+- **Ironbane (2):** iron that touches you disintegrates for 5 minutes.
+- **Cast fog (1):** fog in a color of your choice fills a nearby zone.
+- **Telekinesis (2):** move unattended objects nearby, up to your **ᛄ** *Seron* score in number. Heavier or more numerous loads make it a risky check.
 
-- **Elemental hand**: control air, earth, water, or fire (Knowledge < 3: roll d4 for the element).
-- **Wizard mark**: touch to coat a target in paint only wizards can see, even through walls.
-- **Mirror image**: L uncontrolled clones that share your mindset.
-- **Thaumaturgic anchor**: an enchanted item draws any magic aimed at something else.
-- **Illusion**: an illusion aimed at one of a target's five senses.
-- **Simplify problem**: reveals clues and makes a hard task easier.
+## ∵ Orvik
 
-## PRP
+- **Simplify problem (1):** reveals a clue and makes one hard task risky instead.
+- **Wizard mark (1):** touch to coat a target in paint only casters can see, even through walls.
+- **Thaumaturgic anchor (2):** an enchanted item draws any magic aimed at something else nearby.
+- **Illusion (2):** an illusion aimed at one of a target's five senses.
+- **Mirror image (3):** clones of you appear, as many as your **∵** *Orvik* score. You do not control them, and they share your mindset.
+- **Question rock (1):** ask an object or non-verbal creature one question about what it has witnessed. Only you hear the answer, and it is always true.
 
-- **Dread presence**: creatures within L × 5' that haven't noticed you turn anxious and skittish.
-- **Babble**: the target must loudly repeat your thoughts and is otherwise mute.
-- **Defy death**: the target's HP can't drop below 1.
-- **Cast fog**: fog in a color of your choice, L × 5' radius (Knowledge ≥ 5: center it anywhere within 30').
-- **Time jump**: a touched item vanishes and reappears L minutes later at the same spot with the same momentum.
-- **Ironbane**: iron that touches you disintegrates.
+## ϟ Zhark
 
-## RED
+- **Filch (1):** a visible item nearby teleports to your hand.
+- **Gravity shift (2):** change gravity's direction for yourself, with no fall damage.
+- **Flesh warp (3):** a touched creature doubles or halves in size.
+- **Elemental hand (2):** control air, earth, water, or fire nearby. With a **ϟ** *Zhark* score of 2 or less, roll `1d4` for the element.
+- **Summon thing (2):** real items you have seen recently appear in your hand, up to your **ϟ** *Zhark* score in number.
+- **Time jump (2):** a touched item vanishes and reappears at the same spot, after a number of minutes equal to your **ϟ** *Zhark* score, with the same momentum.
+- **No u (2):** reaction: flip a coin. Heads: an attack has the opposite effect. Tails: it hits the attacker.
+- **Polymorph (3):** a touched willing creature takes another form of about its size until you end it or 5 minutes pass.
 
-- **Summon thing**: L real items you've seen recently appear in your hand.
-- **Embolden**: the target gets an L × 1 perk to one house until it's used.
-- **Gravity shift**: change gravity's direction for yourself every 10 − L seconds, with no fall damage.
-- **Leather carapace**: the target's skin hardens like steel and can't be pierced.
-- **Flesh warp**: a touched creature doubles or halves in size.
-- **Filch**: a visible item teleports to your hand.
+## △ Drun
 
-## GRN
+- **Healing touch (2):** heal a touched ally `d6`, or remove one negative effect.
+- **Defy death (3):** a touched ally's HP cannot drop below 1 until your next short rest.
+- **Leather carapace (2):** a target's skin hardens like steel (+1 armor) until your next short rest.
+- **Embolden (1):** a touched ally gets +1 to their next check.
+- **Ghost of pets past (2):** a ghostly familiar absorbs `d6` + **△** *Drun* damage until it is used up or 5 minutes pass.
 
-- **Boogie bomb**: the target dances and can't otherwise move.
-- **Improv sesh**: the target forgets what it was thinking and doing for L minutes.
-- **Ghost of pets past**: a ghostly familiar absorbs L × d4 damage until the battle ends.
-- **No u**: flip a coin. Heads: an attack has the opposite effect. Tails: it hits the attacker.
-- **Charm**: L targets are drawn to an object or creature you choose.
-- **Question rock**: ask an object or non-verbal creature a question. Only you hear the answer, which may be wrong or a lie.
+## ⌘ Veyra
+
+- **Charm (2):** targets are drawn to an object or creature you choose, up to your **⌘** *Veyra* score in number.
+- **Dread presence (1):** creatures nearby that have not noticed you turn anxious and skittish.
+- **Improv sesh (2):** the target forgets what it was thinking and doing for the last 5 minutes.
+- **Vibe check (1):** name a nearby creature; you learn its intent toward you, and if it is hostile its next attack deals half damage.
+- **Babble (1):** the target must loudly repeat your thoughts and is otherwise mute.
+- **Boogie bomb (2):** the target dances and cannot otherwise move until 5 minutes pass or it is hurt.
 
 ## Cantrips
 
-Range self to 15'; duration L × 5 min. V1 borrowed standard d20 cantrips. Only the names and color picks are kept:
+Cantrips are effortless expressions of a Fount. They cost no mana and need no roll, so they can be cast freely. Their effects are small, brief, and harmless: range self to 15 ft, duration 1 minute unless stated; effects that record or encode something last as stated. They cannot directly inflict or prevent damage, restore health, impose mechanical conditions, or compel another creature's actions. They cannot stack with themselves, bypass a significant obstacle, permanently change a creature, or do what a spell does. Names come from V1.
 
-- YEL: dancing lights, chill touch, decompose
-- BLU: encode thoughts, guidance, message
-- PRP: acid splash, eldritch blast, poison spray
-- RED: shocking grasp, shillelagh, booming blade
-- GRN: blade ward, friends
-- Unplaced candidates: prestidigitation (charm), mage hand (arcana), spare the dying (change), vicious mockery (charm), thaumaturgy, infestation, druidcraft, polymorph
+A cantrip can still have indirect results in the fiction: a small light may expose a hidden creature, and a noise may distract a guard. Cantrips manipulate details; spells change outcomes. A cantrip gives one useful way to approach a problem; it does not solve a whole encounter.
+
+### ᛄ Seron
+
+- **Blade ward:** a held shield or weapon shows its nicks, cracks, and weak points in faint light. It does not change how well it protects or cuts.
+- **Guidance:** for a task you state, a relevant direction or visible detail glows briefly. It does not tell you the right choice.
+- **Thaumaturgy:** a harmless sign of power: a tremor, a louder voice, a flickering flame.
+- **Mark boundary:** draw a glowing line up to 10 ft long.
+- **Threshold sense:** mark a doorway or opening; you are warned if something crosses it while you are nearby.
+- **Steady hand:** hold a small object perfectly motionless where it is, or keep your own hand perfectly steady during delicate work, for 1 minute.
+
+### ∵ Orvik
+
+- **Encode thoughts:** turn a short message into a cipher only you can read. The cipher lasts until you undo it.
+- **Message:** whisper a short message to a creature you can see; it can whisper a reply.
+- **Mage hand:** move an unattended object of 1 lb or less. It cannot attack or work a complex mechanism.
+- **Read pattern:** reveal a simple repeating pattern in an object, inscription, or mechanism.
+- **Memory mark:** keep one brief sight or sound for exact recall later. You hold one mark at a time; a new one replaces it.
+
+### ϟ Zhark
+
+- **Chill touch:** leave a pattern of harmless frost on a surface.
+- **Shocking grasp:** produce a harmless static discharge.
+- **Acid splash:** dissolve a tiny amount of harmless residue.
+- **Eldritch blast:** a brief pulse that moves dust or lightweight debris.
+- **Booming blade:** make a held object ring with a deep, resonant tone.
+- **Dancing lights:** a few small, harmless moving lights.
+- **Prestidigitation:** a minor trick: clean or soil a small object, warm or chill it, or give it a flavor or scent.
+- **See-through:** make one layer of a small unattended object transparent for 1 minute. It does not defeat structural barriers, locks, or restraints.
+- **Reshape:** soften, harden, or bend a small unattended object of about 1 lb; it returns to its form after 1 minute. It does not defeat structural barriers, locks, or restraints.
+
+### △ Drun
+
+- **Poison spray:** a tiny visible cloud with an unpleasant scent.
+- **Shillelagh:** a wooden object feels unusually rigid for a minute. Its combat use does not change.
+- **Druidcraft:** a tiny natural effect, such as opening a flower or moving a few leaves, or knowing whether rain is coming within the hour.
+- **Decompose:** speed decay in a tiny amount of dead organic matter.
+- **Seed wake:** a viable seed sprouts a little, or a small plant recovers from mild wilting.
+- **Spare the dying:** sense whether a creature is alive, stable, or dying. It does not stabilize or heal them.
+- **Root hold:** a small loose object or patch of soil stays put against ordinary movement.
+- **Vital spark:** ease minor fatigue or discomfort. It heals no injury.
+
+### ⌘ Veyra
+
+- **Vicious mockery:** your voice carries an unsettling emotional quality.
+- **Friends:** a wary or indifferent creature will hear you out for a minute before deciding anything. It does not compel agreement or end established hostility.
+- **Echo:** repeat a short sound or phrase you have heard yourself.
+- **Emotional tint:** convey a simple emotion through voice or gesture, even without a shared language.
+- **Soothing voice:** your voice steadies a willing creature's breathing. It feels calmer, but nothing else changes.
+- **Shared rhythm:** you and one willing creature fall into step, keeping an even pace together while walking, rowing, or working for 1 minute.

@@ -18,27 +18,25 @@ One d20, a few d6s, paper, and pencils. That is all.
 
 Founts are laws of being without agency. They cannot want, permit, punish, or plan. People and creatures have motives; a Fount effect has a reliable, discoverable rule.
 
-| Fount   | Color  | Domain                              | Common action                     | Canonical overuse cost                         |
-| ------- | ------ | ----------------------------------- | --------------------------------- | ---------------------------------------------- |
-| ᛄ Seron | yellow | Integrity, boundaries, truth        | define, judge, protect a line     | thought stiffens; nuance fades                 |
-| ∵ Orvik | blue   | Knowledge, memory, hidden structure | study, recall, reveal a pattern   | attention narrows                              |
-| ϟ Zhark | red    | Change, rupture, transformation     | alter, improvise, break a pattern | habits and self become less predictable        |
-| △ Drun  | green  | Fortitude, endurance, regrowth      | endure, heal, carry, persist      | choices become rigid; small signals are missed |
-| ⌘ Veyra | purple | Charm, bonds, social pull           | persuade, perform, connect, untie | autonomy thins under others' pull              |
-
-Rest and appropriate quiet practice ease these costs. White and black are historical labels only: active yellow is ᛄ Seron and active purple is ⌘ Veyra.
+| Fount   | Color  | Domain                              | Common action                     |
+| ------- | ------ | ----------------------------------- | --------------------------------- |
+| ᛄ Seron | yellow | Integrity, boundaries, truth        | define, judge, protect a line     |
+| ∵ Orvik | blue   | Knowledge, memory, hidden structure | study, recall, reveal a pattern   |
+| ϟ Zhark | red    | Spark, rupture, transformation      | alter, improvise, break a pattern |
+| △ Drun  | green  | Fortitude, endurance, regrowth      | endure, heal, carry, persist      |
+| ⌘ Veyra | purple | Charm, bonds, social pull           | persuade, perform, connect, untie |
 
 ## Character creation
 
 One procedure; no House, Guild, class cap, or second stat roll.
 
 1. **Concept.** Name the character and describe one visible trait and one desire (it also says why you travel with this party). Pick an ancestry from [the roster](compendium/races.md): note its boon and bane. The boon is +1 to one of its listed Founts (your choice). The bane is −1 to its bane Fount.
-2. **Roll Founts.** Roll one d6 per Fount (ᛄ Seron, ∵ Orvik, ϟ Zhark, △ Drun, ⌘ Veyra): 1–2 gives 1, 3–4 gives 2, 5–6 gives 3. Then apply your ancestry's boon (+1) and bane (−1) to those Founts; modifiers stack and are added after rolling.
-3. **Choose an archetype and specialty.** Pick one completed option from [Starting archetypes](compendium/classes.md). Copy its kit and signature ability. Your archetype adds +1 to its Fount, which is also its normal attack Fount. Your specialty gives no stat bonus; its Fount is the one it uses for checks. Archetype is a beginning, not a restriction.
-4. **Derived values.** Maximum HP is `6 + △ Drun`. Armor is `0` unarmored, `1` light, `2` heavy.
-5. **Finish.** Copy equipment, choose one useful mundane personal item,.
+2. **Roll Founts.** Roll 6d6 and drop the lowest. Halve each remaining die, rounding up (1–2 is 1, 3–4 is 2, 5–6 is 3). Assign the five values to your Founts (ᛄ Seron, ∵ Orvik, ϟ Zhark, △ Drun, ⌘ Veyra) however you like. Then apply your ancestry's boon (+1) and bane (−1). Step 3 adds the archetype's +1; all modifiers stack and are added after assigning.
+3. **Choose an archetype and specialty.** Pick one archetype and one of its specialties from [Starting archetypes](compendium/archetypes.md). Copy its kit and archetype ability. Your archetype adds +1 to its Fount, which is also its normal attack Fount. Your specialty gives no stat bonus; its ability text names any Fount it uses. Archetype is a beginning, not a restriction.
+4. **Derived values.** Maximum HP is `6 + △ Drun`. Maximum mana is `3 + ∵ Orvik`. Armor value is `0` unarmored, `1` light, `2` heavy.
+5. **Finish.** Copy equipment, choose one useful mundane personal item.
 
-Example: rolls `6, 2, 4, 1, 5` give Founts `3, 1, 2, 1, 3`. An elf (ᛄ Seron boon, ⌘ Veyra bane) who picks a ᛄ Seron archetype (Warden) ends with ᛄ Seron 5 and ⌘ Veyra 2.
+Example: rolls `6, 2, 4, 1, 5, 3` drop the 1 and halve to `3, 1, 2, 3, 2`; assigned as ᛄ Seron 3, ∵ Orvik 2, ϟ Zhark 1, △ Drun 2, ⌘ Veyra 3. An elf (ᛄ Seron boon, ⌘ Veyra bane) who picks a ᛄ Seron archetype (Warden) ends with ᛄ Seron 5 and ⌘ Veyra 2.
 
 ## Checks
 
@@ -71,7 +69,7 @@ Use combat only when sides cannot or will not settle the conflict another way. E
 - Alternate the whole party turn and the whole enemy-group turn.
 - During party turn, each player chooses their own order and action. GM orders enemy actions.
 - Each character gets one move, one action, one reaction, and any bonus action granted by an ability.
-- One move crosses a nearby zone or about 30 feet. Action attacks, casts, helps, rescues, uses an item, or attempts another consequential task. One reaction responds to a clear trigger.
+- One move crosses a nearby zone or about 30 feet. Action attacks, casts, helps, rescues, uses an item, or attempts another consequential task. One reaction responds to a clear trigger; it refreshes at the start of the party's turn.
 
 ### Attacks and damage
 
@@ -102,7 +100,11 @@ At 0 HP, a character is down: unable to act, but available to rescue. If every p
 
 ## Recovery
 
-A safe night's rest restores all HP. A night is safe when shelter, watch, and immediate threats are handled. Unsafe sleep advances time but does not restore all HP. Food and rations are not tracked.
+- **Short rest:** about an hour of safe, quiet downtime. Restores 1 mana and refreshes abilities that work once per short rest.
+- **Long rest:** an undisturbed night: shelter, watch, and immediate threats handled. Restores all HP and mana and refreshes abilities that work once per short rest or once per long rest. Unsafe sleep advances time but is not a long rest.
+- **Day:** dawn to the next dawn. Abilities that work once per day refresh at dawn.
+
+Food and rations are not tracked.
 
 ## Magic
 
@@ -110,9 +112,9 @@ Magic expresses one or more Founts; it does not give a Fount motives. Describe i
 
 A spell cannot erase an established clue or fact. Larger scope, distance, duration, or unwilling targets increase difficulty. Damage spells roll `d6 + Fount` (+1 for large scale), minus armor.
 
-**Playtest rule: casting cost.** Alpha uses no spell-point or slot resource. On a failed risky cast, apply the relevant Fount's overuse cost until the character rests or takes a scene of restorative practice; repeated failure intensifies its fictional consequence. Reason: this permits magic while resource design remains open. Whether spells consume a resource remains unresolved.
+**Mana.** Each spell has a base mana cost in [spells](compendium/spells.md). The cost drops by 1 if you cast with a Fount score of 4 or more and by 2 at 6 or more, never below 1. A failed cast still spends its mana, and a natural 1 has its usual consequence. Minor effects with no risk are cantrips: no roll, no mana. With no mana left, you cannot cast spells.
 
-Existing spells in [`compendium/spells/`](compendium/spells.md) are inspiration, not additional active mechanics.
+A new character knows 1 or 2 spells of their choice. Further spells are learned through play.
 
 ## Advancement
 

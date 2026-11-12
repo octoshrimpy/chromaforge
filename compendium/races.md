@@ -1,6 +1,6 @@
 # Races
 
-_Boon: +1 to one listed Fount (your choice). Bane: −1 to checks with that Fount. Some races get a 1d4 choice on top._
+_Boon: +1 to one listed Fount (your choice). Bane: −1 to that Fount's score, so it affects every check, attack, and spell that uses it. Some races get a 1d4 choice on top._
 
 | race              | size   | boon (pick one)  | bane    | notes                                                                                          |
 | ----------------- | ------ | ---------------- | ------- | ---------------------------------------------------------------------------------------------- |
@@ -30,8 +30,8 @@ _Boon: +1 to one listed Fount (your choice). Bane: −1 to checks with that Foun
 | animated armor    | large  | △ Drun, ᛄ Seron  | ϟ Zhark | Armor brought to life by magic, has a soul. Loud and strong.                                   |
 | halfling          | small  | ϟ Zhark, ⌘ Veyra | △ Drun  | Friendly, cheerful humans, no taller than your average waist.                                  |
 | hippofolk         | medium | △ Drun, ∵ Orvik  | ᛄ Seron | Human-like hippos, generous and friendly.                                                      |
-| kethrai           | medium | ϟ Zhark          | ⌘ Veyra | Tall, angular, gray-green; gill-like folds behind the ears change color with emotion. Sometimes remember events that have not happened yet. |
-| d'varen           | large  | ᛄ Seron          | ϟ Zhark | Broad, heavily armored; keratin plates grow for life, carved with family history. Deliberate movers. Unannounced aggression is dishonorable. |
-| vessar            | medium | ∵ Orvik          | △ Drun  | Slender, pale; feel footsteps, voices, weather and structures through surfaces. Build flexible elevated settlements. |
-| iskari            | medium | ᛄ Seron          | ϟ Zhark | Tall, gold-skinned; glowing lines brighten at boundaries and at deliberate lies. Treat spoken promises as physical obligations. |
-| ravuun            | medium | ϟ Zhark          | ᛄ Seron | Asymmetrical; each serious injury or ordeal leaves a permanent functional change. Live in unstable places and rebuild. |
+| kethrai           | medium | ϟ Zhark          | ⌘ Veyra | Round-headed, with sensory gills and occasional memories of possible futures. |
+| d'varen           | large  | ᛄ Seron          | ϟ Zhark | Large and keratin-plated, with personal histories carved into their bodies. |
+| ommel             | medium | ∵ Orvik          | △ Drun  | Slender, with oversized feet that sense vibrations through surfaces. |
+| iskari            | medium | ᛄ Seron          | ϟ Zhark | Living amber-colored stone, with geometric bodies and glowing lines. |
+| ravuun            | medium | ϟ Zhark          | ᛄ Seron | Strikingly asymmetrical, with mismatched limbs and irregular features. |

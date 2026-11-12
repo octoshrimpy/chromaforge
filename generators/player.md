@@ -1,119 +1,87 @@
-> **V1 random generator, not active alpha character creation.** Use the single procedure in [the alpha guide](../guide.md#character-creation). This page remains for generator compatibility and historical ancestry tables.
-
 # Player Generation
 
-Unlike most roleplaying games, in The Forge you don't have to make many choices to get a character up and running. All it takes is a couple of dice rolls and a few choices and your whole character is created!
+A quick random character: a couple of dice rolls and a few choices. This generator follows the [alpha guide](../guide.md#character-creation); if they differ, the guide wins.
 
-There are Races, Race Modifiers, House, Guild, and Classes.
-
-- **Race** is the kind of creature you are: Human, Goblin, Centaur.
-- **House** is the style of knowledge your Class falls under.
-- **Guild** is for a few perks, and character background.
-- **Class** dictates what kind of fighting you're good at (or not!).
-
-_Generating a character before a campaign. You can follow the instructions below or manually create a character that matches the template._
+_Generating a character before a campaign. You can follow the instructions below or manually create a character that matches the [sheet](../assets/character-sheet.md)._
 
 **requires:**
 
-- 2 d6
-- 1d100 (or 1d10 + 1 percentile die, or 2d10)
+- 1d100
+- 1d15
+- 6d6
 
 ### instructions
 
 1. roll `1d100`, choose a race from its bracket (if the race has a `1d4` tweak, roll that too)
-2. choose one race modifier
-3. roll `1d6` twice — first roll is your House, second is your Guild (on a 6, reroll or choose manually)
-4. take the Class assigned to your House
+2. pick one of the race's boon Founts (+1); its bane Fount is −1
+3. roll `6d6`, drop the lowest, halve each remaining die (round up), and assign the five values to your Founts however you like
+4. roll `1d15` for an archetype; the specialty is picked from its three (see [archetypes](../compendium/archetypes.md))
+5. add +1 to the archetype's Fount, then copy its kit and abilities
+6. choose 1 or 2 starting spells from [spells](../compendium/spells.md)
 
 ---
 
 ## steps
 
-| die     | label | depends |
-| ------- | ----- | ------- |
-| `1d100` | race  |         |
-| `1d6`   | house |         |
-| `1d6`   | class | house   |
+| die     | label     | depends |
+| ------- | --------- | ------- |
+| `1d100` | race      |         |
+| `6d6`   | Founts    | race    |
+| `1d15`  | archetype |         |
 
 ### race
 
-Races are divided into groups within a 100-digit bracket, read as percentile (`00`-`99`) — a natural roll of 100 reads as `00`. Roll `1d100`; the tool picks one race from the matching bracket (reroll the step for a different one, or check [compendium/races](../compendium/races.md) to choose deliberately).
+Races are divided into groups within a 100-digit bracket, read as percentile (`00`-`99`) — a natural roll of 100 reads as `00`. Roll `1d100` and pick one race from the matching group, or check [compendium/races](../compendium/races.md) to choose deliberately.
 
-| roll       | result                                                                              |
-| ---------- | ----------------------------------------------------------------------------------- |
-| 00-11, 100 | {{pick: Tiefling \| Elf \| Kethrai}}                                                |
-| 12-22      | {{pick: Imp \| Gnome \| Goblin \| Iskari}}                                          |
-| 23-33      | {{pick: Titanborne \| Duarling \| Dwarf \| Ravuun}}                                 |
-| 34-44      | {{pick: Human \| Centaur \| Bugbear}}                                               |
-| 45-55      | {{pick: Entling \| Lizardfolk \| Kobold}}                                           |
-| 56-66      | {{pick: Fae \| Satyr \| Roo}}                                                       |
-| 67-77      | {{pick: Apeling \| Amazon \| Shelled Elemental (earth/water/fire/air) \| Etterkin}} |
-| 78-88      | {{pick: Qualf \| Moonfolk \| Vessar \| D'varen}}                                    |
-| 89-99      | {{pick: Animated Armor \| Halfling \| Hippofolk}}                                   |
+- 00-11, 100: Tiefling, Elf, or Kethrai
+- 12-22: Imp, Gnome, Goblin, or Iskari
+- 23-33: Titanborne, Duarling, Dwarf, or Ravuun
+- 34-44: Human, Centaur, or Bugbear
+- 45-55: Entling, Lizardfolk, or Kobold
+- 56-66: Fae, Satyr, or Roo
+- 67-77: Apeling, Amazon, Shelled Elemental (earth/water/fire/air), or Etterkin
+- 78-88: Qualf, Moonfolk, Ommel, or D'varen
+- 89-99: Animated Armor, Halfling, or Hippofolk
 
+### Founts
 
-### house
+Roll `6d6` and drop the lowest. Halve each remaining die, rounding up (1–2 is 1, 3–4 is 2, 5–6 is 3). Assign the five values to ᛄ Seron, ∵ Orvik, ϟ Zhark, △ Drun, and ⌘ Veyra. Then apply the race's boon (+1 to one listed Fount) and bane (−1), and the archetype's +1. All modifiers stack and are added after assigning.
 
-_roll this step twice: first roll is your House, second is your Guild. On a 6, reroll or choose manually._
+### archetype
 
-| roll | result                     |
-| ---- | -------------------------- |
-| 1    | FRT - Fortitude            |
-| 2    | CHG - Change               |
-| 3    | KNO - Knowledge            |
-| 4    | NTG - Integrity            |
-| 5    | CHR - Charm                |
-| 6    | choose manually, or reroll |
+_Roll `1d15`, then pick one of the three specialties._
 
-Your **House** gives you things you're good at (pros); your **Guild** gives you things you're bad at (cons). Each House has one Class (see [compendium/classes](../compendium/classes.md)).
+1. ᛄ Warden: Marchwarden, Snarer, or Shieldbearer
+2. ∵ Medic: Physician, Stretcher-Bearer, or Bedside Counselor
+3. ϟ Pathfinder: Trailbreaker, Smuggler, or Waymarker
+4. △ Bulwark: Stalwart, Veteran, or Gatekeeper
+5. ᛄ Cartographer: Surveyor, Pioneer, or Packmaster
+6. ᛄ Paladin: Inquisitor, Crusader, or Zealot
+7. ∵ Tinkerer: Trapsmith, Peddler, or Mender
+8. ∵ Loremaster: Archivist, Linguist, or Spellbinder
+9. ϟ Duelist: Fencer, Showman, or Champion
+10. ϟ Wildcaller: Stormcaller, Beastmaster, or Whisperer
+11. △ Delver: Burrower, Brawler, or Sapper
+12. △ Rootbound: Greenseer, Hearthroot, or Thornwarden
+13. ⌘ Bard: Minstrel, Chronicler, or Provocateur
+14. ⌘ Envoy: Diplomat, Courtier, or Fixer
+15. ⌘ Trickster: Cutpurse, Escape Artist, or Appraiser
 
-### class
-
-| house                      | 1-6                  |
-| -------------------------- | -------------------- |
-| FRT - Fortitude            | Builder              |
-| CHG - Change               | Pathfinder           |
-| KNO - Knowledge            | Medic                |
-| NTG - Integrity            | Warden               |
-| CHR - Charm                | Artisan              |
-| choose manually, or reroll | choose a house first |
-
-- House gets +4 extra levels to work towards, and +2 PP
-- Guild gets +3 extra levels to work towards, and +1 PP
-
-### House Proficiency Points
-
-Whenever you level up, you can exchange 3XP for a House Proficiency Point. These points are permanently added to your rolls whenever you do a skill check within that house.
+The archetype gives +1 to its Fount, which is also its normal attack Fount. Copy its kit, archetype ability, and specialty ability from [archetypes](../compendium/archetypes.md).
 
 ---
 
-## size and health
+## derived values
 
-Each character starts with 3 levels. Each character level is worth 4, 5, or 6 HP depending on size.
+- **Maximum HP:** `6 + △ Drun`
+- **Maximum mana:** `3 + ∵ Orvik`
+- **Spells:** 1 or 2 known (more are learned through play)
+- **Armor:** `0` unarmored, `1` light, `2` heavy
 
-| size   | HP/level | min - max HP |
-| ------ | -------- | ------------ |
-| small  | 4        | 12 - 180     |
-| medium | 5        | 15 - 225     |
-| large  | 6        | 18 - 270     |
-
-## personality and background
-
-Forge doesn't have built-in alignment charts, however now that you have your character built you can pick one if you'd like.
-
-## inventory & equipment
-
-All players start with:
-
-- 1 Spirit Orb
-- 2 Silver Pieces
-
-Inventory is simple: you have unlimited inventory slots, and can carry unlimited items or weight, _to a reasonable limit_. Your pack can't carry a whole dragon's gold stash, but you could feasibly use it to sneak a couple dragon eggs away from their clutch.
-
-Equipment is much the same way as inventory. Sensible real-world logic and physics apply, unless there is a magical explanation.
+Choose one useful mundane personal item and describe one visible trait and one desire (why you travel with this party).
 
 ---
 
-## Final character
+## final character
 
-Put together everything you just did in this order: `{guild} {race} {class} of {House} house`
+Put together everything you just did in this order: `{race} {archetype} ({specialty})`

@@ -15,7 +15,7 @@
 | ------------------- | ------ | ----: |
 | ᛄ Seron — Integrity | yellow |       |
 | ∵ Orvik — Knowledge | blue   |       |
-| ϟ Zhark — Change    | red    |       |
+| ϟ Zhark — Spark     | red    |       |
 | △ Drun — Fortitude  | green  |       |
 | ⌘ Veyra — Charm     | purple |       |
 
@@ -25,12 +25,12 @@ Unspent points:
 
 - **Maximum HP:** `6 + △ Drun` =
 - **Current HP:**
-- **Armor:** none `0` / light `1` / heavy `2`
+- **Mana:** current / maximum (`3 + ∵ Orvik`)
+- **Armor:** name and armor value (none `0` / light `1` / heavy `2`)
 - **Archetype** (with its Fount symbol; +1 to that Fount):
-- **Specialty** (with its Fount symbol):
-- **Damage:** `d6 + archetype Fount` (+1 heavy) − target armor
-- **Reaction used this round?** yes / no
-- **Signature ability:**
+- **Specialty:**
+- **Weapon:** name, weapon bonus, and the attack Fount (`d6 + bonus + Fount` − target armor)
+- **Archetype ability:**
 - **Specialty ability:**
 
 ## Inventory
