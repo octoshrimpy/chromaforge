@@ -1,14 +1,14 @@
 # Races
 
-_Boon and bane measure a people's resonance with a Fount, not intelligence, charm, or morality. Size: large peoples can block passages, carry heavy loads, and reach farther but cannot fit narrow gaps; small peoples fit tight spaces and can be carried. Size gives no stat bonus. Traits in the notes column are biology, not required personality.
+_Boon and bane measure a people's resonance with a Fount, not intelligence, charm, or morality. Size: large peoples can block passages, carry heavy loads, and reach farther but cannot fit narrow gaps (size never changes attack range unless an ability says so); small peoples fit tight spaces and can be carried. Size gives no stat bonus. Traits in the notes column are biology, not required personality.
 
-_Boon: +1 to one listed Fount (your choice). Bane: −1 to that Fount's score, so it affects every check, attack, and spell that uses it. Some races get a 1d4 choice on top._
+_Boon: +1 to one listed Fount (your choice). Bane: −1 to that Fount's score, so it affects every check, attack, and spell that uses it. Shelled elemental also rolls `1d4` for its element, which gives no stat bonus._
 
 | race              | size   | boon (pick one)  | bane    | notes                                                                                          |
 | ----------------- | ------ | ---------------- | ------- | ---------------------------------------------------------------------------------------------- |
 | tiefling          | medium | ∵ Orvik          | △ Drun  | Horned brows. Red, purple, otherwise dark skin.                                                |
 | elf               | medium | ᛄ Seron          | ⌘ Veyra | Slender, graceful, quiet.                                                                      |
-| imp               | small  | ϟ Zhark          | ⌘ Veyra | Tiny devils. Magic slides off them: a spell aimed at an imp is a hard cast, and effects that need no check simply fail on it. Ambient effects still work.                                                              |
+| imp               | small  | ϟ Zhark          | ⌘ Veyra | Tiny devils. Magic slides off them: any spell aimed directly at an imp, friendly ones too, is a hard cast, even one that needs no check; a success works normally. Ambient effects still work.                                                              |
 | gnome             | small  | ⌘ Veyra          | △ Drun  | Always busy, always curious.                                                                   |
 | goblin            | small  | ∵ Orvik, ϟ Zhark | ᛄ Seron | Weak, crafty, stealthy.                                                                        |
 | titanborne        | large  | △ Drun, ᛄ Seron  | ∵ Orvik | Giants in human form, with grooved tattoos on their thick skin.                                |
@@ -29,7 +29,7 @@ _Boon: +1 to one listed Fount (your choice). Bane: −1 to that Fount's score, s
 | etterkin          | medium | ϟ Zhark          | ⌘ Veyra | humanesque with spider eyes, and 3-fingered hands.                                             |
 | qualf             | small  | ∵ Orvik, ϟ Zhark | ᛄ Seron | Four-armed, short and slender. Tinkerers. Extra arms help with grip and tools but never add actions or attacks.                                                      |
 | moonfolk          | small  | ⌘ Veyra, ∵ Orvik | △ Drun  | Rabbit-like humanoid, with large rabbit ears and feet.                                         |
-| animated armor    | large  | △ Drun, ᛄ Seron  | ϟ Zhark | Armor brought to life by magic, has a soul. Loud and strong. Does not eat, sleep or breathe; mended with tools, not medicine.                                   |
+| animated armor    | large  | △ Drun, ᛄ Seron  | ϟ Zhark | Armor brought to life by magic, has a soul. Loud and strong. Does not eat, sleep or breathe. Recovers HP normally in rests; magical healing works, and physical repair needs only minimal tools and materials, with no check: an action restores `d6` HP, once per short rest. Ordinary medicine does not.                                   |
 | halfling          | small  | ϟ Zhark, ⌘ Veyra | △ Drun  | Friendly, cheerful humans, no taller than your average waist.                                  |
 | hippofolk         | medium | △ Drun, ∵ Orvik  | ᛄ Seron | Human-like hippos, generous and friendly.                                                      |
 | kethrai           | medium | ϟ Zhark          | ⌘ Veyra | Round-headed, with sensory gills and occasional memories of possible futures. The flashes are fragmentary and may be wrong; the GM decides when one surfaces. |

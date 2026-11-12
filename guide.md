@@ -125,9 +125,11 @@ Food and rations are not tracked.
 
 Magic expresses one or more Founts; it does not give a Fount motives. Describe intended effect and method. GM chooses the relevant Fount, scope, difficulty, and failure consequence. Risky casting uses the same `d20 + Fount` check and natural 1/20 rules. Minor effects with no risk need no roll.
 
+**When to roll.** A spell used exactly as written on a willing creature or an unattended object, within its normal scope, is automatic. Roll when the circumstances are difficult or the use is unusual. A spell that controls, disables, or erases an unwilling creature is a hard cast; on success it lasts up to a minute or until the creature is hurt, and the creature may try a risky check at the end of each of its turns to shake it off. Stretching duration, range, or scope raises difficulty by one step or adds 1 mana, GM's choice. Anything beyond what the spell fundamentally does is not possible.
+
 A spell cannot erase an established clue or fact. Larger scope, distance, duration, or unwilling targets increase difficulty. Damage spells roll `d6 + Fount` (+1 for large scale), minus armor.
 
-**Mana.** Each spell has a base mana cost in [spells](compendium/spells.md). The cost drops by 1 if you cast with a Fount score of 4 or more and by 2 at 6 or more, never below 1. A failed cast still spends its mana, and a natural 1 has its usual consequence. Minor effects with no risk are cantrips: no roll, no mana. With no mana left, you cannot cast spells.
+**Mana.** Each spell has a base mana cost in [spells](compendium/spells.md). The cost drops by 1 if you cast with a Fount score of 4 or more and by 2 at 6 or more, never below 1 (never below 2 for a base-3 spell). A failed cast still spends its mana, and a natural 1 has its usual consequence. Minor effects with no risk are cantrips: no roll, no mana. With no mana left, you cannot cast spells.
 
 A new character knows 1 or 2 spells of their choice. Further spells are learned through play.
 
