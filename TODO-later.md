@@ -7,4 +7,4 @@
 - [ ] **Stackable inspiration**: let players bank and give away inspiration. Needs a roleplay reward first; advantage from help is the nearest rule today.
 - [ ] **Resurrection difficulty**: each resurrection makes the next harder. No resurrection in the rules yet.
 - [ ] **Fate tokens (3 strikes)**: turn a failure into success for a shared token; 3 tokens trigger a GM consequence. Could trivialize risky checks, so try only if playtest shows frustrating fails.
-- [ ] **Add a Scars field to the HTML sheet** to match [assets/character-sheet.md](assets/character-sheet.md).
+- [x] Scars, knack and spells fields added to the HTML sheet; verify one-page print layout.
