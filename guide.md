@@ -51,7 +51,7 @@ Roll only when outcome is uncertain, risky, and consequential.
 | risky      |     10 | pressure exists; meaningful uncertainty |
 | hard       |     15 | expert or strongly opposed task         |
 
-Easy tasks need no roll; extraordinary ones are hard with a cost or a need for preparation. **Take 10:** with time and no pressure, skip the roll and count it as a 10. **Take 20:** if there is unlimited time and failure costs nothing, the task succeeds.
+Easy tasks need no roll; extraordinary ones are hard with a cost or a need for preparation. **Take 10:** with time and no pressure, skip the roll and count it as a 10.
 
 Natural 1 is a critical failure: consequence is worse or creates a new danger. Natural 20 is a critical success: succeed and gain an extra advantage. These override the total.
 
@@ -98,18 +98,22 @@ At 0 HP, a character is down: unable to act, but available to rescue. If every p
 
 **Playtest rule: rescue.** An adjacent ally spends an action to get a downed character to 1 HP; medicine or magic explains how when available but is not required. Reason: downed play must be recoverable before spell resources and healing requirements are settled. Decided for alpha: rescue needs no healing.
 
-**Maiming.** Instead of waiting to be rescued, a downed character may take a scar to rise at 1 HP immediately (no action). Roll d6; the scar is permanent, and long rests do not heal it.
+**Maiming.** Instead of waiting to be rescued, a downed character may take a scar to rise at 1 HP immediately (no action). Roll 2d6 (below); the scar is permanent, and long rests do not heal it.
 
-| d6 | Scar | Effect |
-| -: | ---- | ------ |
-| 1 | lost eye | −1 to checks that rely on sight |
-| 2 | maimed hand | −1 to checks that need fine handling |
-| 3 | bad leg | −1 to checks that rely on speed or balance |
-| 4 | ringing ears | −1 to checks that rely on hearing or voice |
-| 5 | disfiguring mark | −1 to checks that rely on first impressions |
-| 6 | haunted mind | −1 to checks made while frightened or alone |
+Roll 2d6. The first die is the injury, the second the body part.
 
-If a scar already applies, the player picks any one other row. The GM may waive a scar that does not fit the fiction. Rescue stays free and carries no scar.
+| d6 | Injury | | d6 | Body part | −1 to checks that rely on |
+| -: | ------ | - | -: | --------- | ------------------------- |
+| 1 | Lost | | 1 | left arm | two hands or a steady grip |
+| 2 | Maimed | | 2 | right arm | fine handling or a strong swing |
+| 3 | Ringing | | 3 | left leg | speed or balance |
+| 4 | Disfigured | | 4 | right leg | running, climbing, or kicking |
+| 5 | Haunted | | 5 | torso | endurance or bracing |
+| 6 | Scarred | | 6 | head | sight, hearing, or wits |
+
+The injury is fiction; the body part sets the −1. Read the injury to fit the part: lost left arm is an amputation, ringing head is tinnitus, ringing left leg is painful phantom vibrations, haunted left arm is trembling, scarred head is a facial scar. The mechanical penalty is the same whatever the injury, so the player and GM may play a lost limb as harsher in the story.
+
+Each body part can be maimed once: four limbs, torso, head. If the part rolled is already maimed, the player picks any unmaimed part and keeps the injury rolled. The GM may waive a scar that does not fit the fiction. Rescue stays free and carries no scar. A character can keep adventuring with up to five maims; at six the character cannot continue adventuring. Retire them or let the GM decide their fate.
 
 ## Recovery
 

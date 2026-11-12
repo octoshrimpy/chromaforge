@@ -24,7 +24,7 @@ Active alpha spells. Rules for casting, mana, and rests are in the [guide](../gu
 - **Wizard mark (1):** touch to coat a target in paint only casters can see, even through walls.
 - **Thaumaturgic anchor (2):** an enchanted item draws the next spell or magical effect aimed at something else nearby, then goes inert.
 - **Illusion (2):** an illusion aimed at one of a target's five senses.
-- **Mirror image (3):** physical clones of you appear, as many as your **∵** *Orvik* score, for 5 minutes. They have your mindset and act on their own, have your normal physical capabilities, cannot cast spells or use abilities that cost mana, and vanish if hit once. They move and act independently, but only one clone can attack each round, dealing `d6 − 2` (minimum 1).
+- **Mirror image (3):** physical clones of you appear, as many as your **∵** *Orvik* score, for 5 minutes. They have your mindset and act on their own, have your normal physical capabilities, cannot cast spells or use abilities that cost mana, and vanish if hit once. They carry no copy of your inventory, gear, or tools; clones cannot use consumables. They move and act independently, but only one clone can attack each round, dealing `d6 − 2` (minimum 1).
 - **Question rock (1):** ask an object or non-verbal creature one question about what it has plausibly perceived. Only you hear the answer, and it is always true but may be partial.
 
 ## ϟ Zhark
