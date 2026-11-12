@@ -34,7 +34,7 @@ One procedure; no House, Guild, class cap, or second stat roll.
 2. **Roll Founts.** Roll 6d6 and drop the lowest. Halve each remaining die, rounding up (1–2 is 1, 3–4 is 2, 5–6 is 3). Assign the five values to your Founts (ᛄ Seron, ∵ Orvik, ϟ Zhark, △ Drun, ⌘ Veyra) however you like. Then apply your ancestry's boon (+1) and bane (−1). Step 3 adds the archetype's +1; all modifiers stack and are added after assigning.
 3. **Choose an archetype and specialty.** Pick one archetype and one of its specialties from [Starting archetypes](compendium/archetypes.md). Copy its kit and archetype ability. Your archetype adds +1 to its Fount, which is also its normal attack Fount. Your specialty gives no stat bonus; its ability text names any Fount it uses. Archetype is a beginning, not a restriction.
 4. **Derived values.** Maximum HP is `6 + △ Drun`. Maximum mana is `3 + ∵ Orvik`. Armor value is `0` unarmored, `1` light, `2` heavy.
-5. **Finish.** Copy equipment, choose one useful mundane personal item.
+5. **Finish.** Copy equipment, choose one useful mundane personal item, and one mundane knack (cooking, knots, card tricks, a song). A knack gives no bonus, but you never need a roll to do it well and the GM uses it in the fiction.
 
 Example: rolls `6, 2, 4, 1, 5, 3` drop the 1 and halve to `3, 1, 2, 3, 2`; assigned as ᛄ Seron 3, ∵ Orvik 2, ϟ Zhark 1, △ Drun 2, ⌘ Veyra 3. An elf (ᛄ Seron boon, ⌘ Veyra bane) who picks a ᛄ Seron archetype (Warden) ends with ᛄ Seron 5 and ⌘ Veyra 2.
 
@@ -51,7 +51,7 @@ Roll only when outcome is uncertain, risky, and consequential.
 | risky      |     10 | pressure exists; meaningful uncertainty |
 | hard       |     15 | expert or strongly opposed task         |
 
-Easy tasks need no roll; extraordinary ones are hard with a cost or a need for preparation.
+Easy tasks need no roll; extraordinary ones are hard with a cost or a need for preparation. **Take 10:** with time and no pressure, skip the roll and count it as a 10. **Take 20:** if there is unlimited time and failure costs nothing, the task succeeds.
 
 Natural 1 is a critical failure: consequence is worse or creates a new danger. Natural 20 is a critical success: succeed and gain an extra advantage. These override the total.
 
@@ -96,7 +96,20 @@ For a first party, use at most one capable enemy per character. Replace two capa
 
 At 0 HP, a character is down: unable to act, but available to rescue. If every party member is down, GM follows enemy motives—capture, theft, abandonment, or rescue are better alpha outcomes than an unexplained total-party death.
 
-**Playtest rule: rescue.** An adjacent ally spends an action to get a downed character to 1 HP; medicine or magic explains how when available but is not required. Reason: downed play must be recoverable before spell resources and healing requirements are settled. Whether rescue ultimately requires healing remains open.
+**Playtest rule: rescue.** An adjacent ally spends an action to get a downed character to 1 HP; medicine or magic explains how when available but is not required. Reason: downed play must be recoverable before spell resources and healing requirements are settled. Decided for alpha: rescue needs no healing.
+
+**Maiming.** Instead of waiting to be rescued, a downed character may take a scar to rise at 1 HP immediately (no action). Roll d6; the scar is permanent, and long rests do not heal it.
+
+| d6 | Scar | Effect |
+| -: | ---- | ------ |
+| 1 | lost eye | −1 to checks that rely on sight |
+| 2 | maimed hand | −1 to checks that need fine handling |
+| 3 | bad leg | −1 to checks that rely on speed or balance |
+| 4 | ringing ears | −1 to checks that rely on hearing or voice |
+| 5 | disfiguring mark | −1 to checks that rely on first impressions |
+| 6 | haunted mind | −1 to checks made while frightened or alone |
+
+If a scar already applies, the player picks any one other row. The GM may waive a scar that does not fit the fiction. Rescue stays free and carries no scar.
 
 ## Recovery
 
@@ -105,6 +118,8 @@ At 0 HP, a character is down: unable to act, but available to rescue. If every p
 - **Day:** dawn to the next dawn. Abilities that work once per day refresh at dawn.
 
 Food and rations are not tracked.
+
+**Shared meal.** During a short or long rest, one character cooks (no roll; a cooking knack makes it memorable). Everyone who eats picks one: recover 1 mana, or gain advantage on one check before the next rest. A character gets one meal benefit per rest.
 
 ## Magic
 

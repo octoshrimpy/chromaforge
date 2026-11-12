@@ -12,7 +12,7 @@ Archetypes are starting training, not classes or caps. Characters may learn any 
 - **Marchwarden**
   - **Boundary Keeper:** action to mark a nearby clear line. First enemy crossing it before Warden's next turn takes `d6 + ᛄ Seron` damage, minus armor.
 - **Snarer**
-  - **Pin Down:** action: a nearby creature is held in place until it succeeds a risky check to break free.
+  - **Pin Down:** action: with a snare, net, or cord, a nearby creature is held in place until it succeeds a risky check to break free.
 - **Shieldbearer**
   - **Shield Wall:** action: brace; allies behind you count +1 armor until your next turn.
 
@@ -75,7 +75,7 @@ Archetypes are starting training, not classes or caps. Characters may learn any 
 ## ᛄ Paladin
 
 - **Kit:** heavy armor, heavy blade (heavy), banner or holy symbol, oath token.
-- **Archetype ability — Sworn Word:** once per short rest, swear to protect or reach one thing; checks that directly serve the oath have advantage until it is fulfilled or you break it.
+- **Archetype ability — Sworn Word:** once per short rest, swear to protect or reach one thing; your next important check that directly serves the oath has advantage. Breaking the oath ends it.
 
 <br>
 
@@ -112,7 +112,7 @@ Archetypes are starting training, not classes or caps. Characters may learn any 
 - **Linguist**
   - **Tongues:** understand and be understood in any language you have heard for a minute.
 - **Spellbinder**
-  - **Contain It:** once per long rest, cast a spell without spending mana.
+  - **Contain It:** once per long rest, cast one spell with a base cost of 2 or less without spending mana.
 
 ## ϟ Duelist
 
@@ -136,7 +136,7 @@ Archetypes are starting training, not classes or caps. Characters may learn any 
 <br>
 
 - **Stormcaller**
-  - **Chain Spark:** your attacks also hit a second adjacent target for `d6`, minus armor.
+  - **Chain Spark:** once per short rest, one attack also hits a second adjacent target for `d6`, minus armor.
 - **Beastmaster**
   - **Leash:** once per short rest, a spell or creature you called obeys one simple command exactly as stated.
 - **Whisperer**
@@ -145,7 +145,7 @@ Archetypes are starting training, not classes or caps. Characters may learn any 
 ## △ Delver
 
 - **Kit:** light armor, pick or hammer (heavy), lantern, 50 feet of rope, chalk.
-- **Archetype ability — Dig Through:** action: open or close a passage in earth or stone until your next rest, wide enough for one person.
+- **Archetype ability — Dig Through:** once per short rest, action: open or close a passage in earth, loose rock, or crude masonry up to about 5 feet thick, wide enough for one person, until your next rest. Solid bedrock and warded or metal barriers resist it.
 
 <br>
 
@@ -168,7 +168,7 @@ Archetypes are starting training, not classes or caps. Characters may learn any 
 - **Hearthroot**
   - **Slow Burn:** regain 1 extra HP whenever you finish a short rest.
 - **Thornwarden**
-  - **Boundary Seed:** action: plant a ring of seeds nearby; creatures crossing it must stop.
+  - **Boundary Seed:** once per short rest, action: plant a ring of seeds nearby; the first creature to cross it each turn must stop, then may continue next turn. The ring lasts one scene.
 
 ## ⌘ Bard
 
@@ -178,7 +178,7 @@ Archetypes are starting training, not classes or caps. Characters may learn any 
 <br>
 
 - **Minstrel**
-  - **Captivating Performance:** action: nearby listeners are held until something disturbs them.
+  - **Captivating Performance:** once per short rest, action: nearby listeners are held for about a minute or until something disturbs them; harm or a loud threat breaks it.
 - **Chronicler**
   - **Songs of Memory:** recall a tale or ballad about a person or place; it holds one true fact.
 - **Provocateur**
@@ -196,7 +196,7 @@ Archetypes are starting training, not classes or caps. Characters may learn any 
 - **Courtier**
   - **Crowd Reader:** on meeting a group, you can tell who holds power and what they want.
 - **Fixer**
-  - **Bold Lie:** once per short rest, state a bold lie; the first NPC who hears it accepts it unless they hold proof.
+  - **Bold Lie:** once per short rest, state a bold lie; the first NPC who hears it believes it until they get proof or a reason to doubt.
 
 ## ⌘ Trickster
 
@@ -206,7 +206,7 @@ Archetypes are starting training, not classes or caps. Characters may learn any 
 <br>
 
 - **Cutpurse**
-  - **Light Fingers:** take or plant a small item unnoticed.
+  - **Light Fingers:** take or plant a hand-sized item unnoticed when the target is unaware; if the target is alert or the item guarded, it needs a risky check.
 - **Escape Artist**
   - **Smooth Exit:** once per short rest, talk your way out of a tight spot at the price of something you leave behind.
 - **Appraiser**

@@ -4,3 +4,7 @@
 - [ ] **Undefined Scaling for KNO-based Spellcasting**: The relationship between KNO level and spell availability is mathematically inconsistent and lacks a clear implementation rule. (idea #134)
 - [ ] **Resolve Resource Conflict: Stamina vs. Fount Corruption**: The system currently lacks a clear link between the 'Stamina and Effort' required to cast spells and the 'Corruption' caused by irresponsible use of Founts. (idea #136)
 - [ ] **Formalize Spellcasting Resource Scaling**: The relationship between KNO (Knowledge) level and spellcasting capacity is currently undefined and inconsistent across documents. (idea #140)
+- [ ] **Stackable inspiration**: let players bank and give away inspiration. Needs a roleplay reward first; advantage from help is the nearest rule today.
+- [ ] **Resurrection difficulty**: each resurrection makes the next harder. No resurrection in the rules yet.
+- [ ] **Fate tokens (3 strikes)**: turn a failure into success for a shared token; 3 tokens trigger a GM consequence. Could trivialize risky checks, so try only if playtest shows frustrating fails.
+- [ ] **Add a Scars field to the HTML sheet** to match [assets/character-sheet.md](assets/character-sheet.md).
