@@ -32,7 +32,7 @@ Unspent points:
 - **Archetype** (with its Fount symbol; +1 to that Fount):
 - **Specialty:**
 - **Weapon:** name, weapon bonus, and the attack Fount (`d6 + bonus + Fount` − target armor)
-- **Spells known** (name and mana cost):
+- **Spells known** (name and mana cost; mark practiced spells, up to your ∵ Orvik):
 - **Archetype ability:**
 - **Specialty ability:**
 

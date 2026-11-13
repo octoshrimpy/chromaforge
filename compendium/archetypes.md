@@ -1,6 +1,6 @@
 # Starting archetypes
 
-Archetypes are starting training, not classes or caps. Characters may learn any specialty or ability through play. Each Fount has three archetypes; each archetype supplies one kit, one archetype ability, and three specialties: one of its own Fount and one of each of the two Founts opposite it on the wheel (yellow, blue, red, green, purple). Your archetype gives +1 to its Fount; specialties give no stat bonus.
+Archetypes are starting training, not classes or caps. Characters may learn any specialty or ability through play. Each Fount has three archetypes; each archetype supplies one kit, one archetype ability, and three specialties: one of its own Fount and one of each of the two Founts opposite it on the wheel (yellow, blue, red, purple, green). Your archetype gives +1 to its Fount; specialties give no stat bonus.
 
 ## ᛄ Warden
 

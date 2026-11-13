@@ -2,8 +2,9 @@
 
 Active alpha spells. Rules for casting, mana, and rests are in the [guide](../guide.md#magic).
 
+- **Custom spells and potions:** mid-to-late game, see [spell components](spell-components.md).
 - **Starting spells:** a new character knows 1 or 2 spells. More are learned through play.
-- **Cost:** base mana cost in brackets. It drops by 1 if you cast with a Fount score of 4+ and by 2 at 6+, never below 1 (never below 2 for a base-3 spell).
+- **Cost:** base mana cost in brackets. The guide's Magic section gives the full rule: wheel distance adds mana, Fount score 4+/6+ and practiced spells lower it, never below 1 (never below 2 for a base-3 spell).
 - **Defaults:** range nearby (about 30 ft), duration 5 minutes. Larger scope, distance, duration, or unwilling targets are harder.
 - **Stacking:** the same spell does not stack with itself; the newer replaces the older. Different spells stack, but spells never raise armor above 3.
 - **Unwilling targets:** Charm, Babble, Boogie bomb, Improv sesh, and any other spell that controls, disables, or erases an unwilling creature follow the hard-cast rule in the guide.

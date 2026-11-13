@@ -66,3 +66,4 @@ Goal: GM starts in Kathara, follows players off expected path, and returns to ch
 
 - [x] Map V1 spell list (YEL/BLU/PRP/RED/GRN) in [compendium/spells](compendium/spells.md) to Founts, or drop entries that don't fit.
 - [x] Mana is the spell-resource answer; V1 corruption idea not used.
+- [ ] Playtest [spell components](compendium/spell-components.md): costs, two-Effect rule, potion price; open questions listed there.

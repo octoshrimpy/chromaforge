@@ -34,7 +34,7 @@ One procedure; no House, Guild, class cap, or second stat roll.
 2. **Roll Founts.** Roll 6d6 and drop the lowest. Halve each remaining die, rounding up (1–2 is 1, 3–4 is 2, 5–6 is 3). Assign the five values to your Founts (ᛄ Seron, ∵ Orvik, ϟ Zhark, △ Drun, ⌘ Veyra) however you like. Then apply your ancestry's boon (+1) and bane (−1). Step 3 adds the archetype's +1; all modifiers stack and are added after assigning.
 3. **Choose an archetype and specialty.** Pick one archetype and one of its specialties from [Starting archetypes](compendium/archetypes.md). Copy its kit and archetype ability. Your archetype adds +1 to its Fount, which is also its normal attack Fount. Your specialty gives no stat bonus; its ability text names any Fount it uses. Archetype is a beginning, not a restriction.
 4. **Derived values.** Maximum HP is `6 + △ Drun`. Maximum mana is `3 + ∵ Orvik`. Armor value is `0` unarmored, `1` light, `2` heavy.
-5. **Finish.** Copy equipment, choose one useful mundane personal item, and one mundane knack (cooking, knots, card tricks, a song). A knack gives no bonus, but you never need a roll to do it well and the GM uses it in the fiction.
+5. **Finish.** Copy equipment, choose one useful mundane personal item, and one mundane knack (cooking, knots, card tricks, a song). You never need a roll to do your knack well, and the GM uses it in the fiction. The GM may grant advantage or a bonus when it fits, but you can't plan on one. A knack can reinforce your archetype (drawing for a Cartographer).
 
 Example: rolls `6, 2, 4, 1, 5, 3` drop the 1 and halve to `3, 1, 2, 3, 2`; assigned as ᛄ Seron 3, ∵ Orvik 2, ϟ Zhark 1, △ Drun 2, ⌘ Veyra 3. An elf (ᛄ Seron boon, ⌘ Veyra bane) who picks a ᛄ Seron archetype (Warden) ends with ᛄ Seron 5 and ⌘ Veyra 2.
 
@@ -133,7 +133,15 @@ Magic expresses one or more Founts; it does not give a Fount motives. Describe i
 
 A spell cannot erase an established clue or fact. Larger scope, distance, duration, or unwilling targets increase difficulty. Damage spells roll `d6 + Fount` (+1 for large scale), minus armor.
 
-**Mana.** Each spell has a base mana cost in [spells](compendium/spells.md). The cost drops by 1 if you cast with a Fount score of 4 or more and by 2 at 6 or more, never below 1 (never below 2 for a base-3 spell). A failed cast still spends its mana, and a natural 1 has its usual consequence. Minor effects with no risk are cantrips: no roll, no mana. With no mana left, you cannot cast spells.
+**Mana.** Each spell has a base mana cost in [spells](compendium/spells.md). Work out the cost in this order: base cost, **plus the wheel distance**, then **minus** your reductions; never below 1 (never below 2 for a base-3 spell).
+
+- **Wheel distance.** The Founts sit on a wheel: ᛄ Seron, ∵ Orvik, ϟ Zhark, ⌘ Veyra, △ Drun, then back to ᛄ Seron, running clockwise from yellow at the top. A Fount's two "opposites" are the two Founts two steps away. Your home Founts are your archetype's Fount and your ancestry boon Fount. Count the steps from the nearest home Fount to the spell's Fount: the same Fount adds 0, one step adds 1, two steps adds 2.
+- **Fount reductions.** The cost drops by 1 if you cast with a Fount score of 4 or more and by 2 at 6 or more. Raising that Fount with points lowers the cost this way.
+- **Practiced spells.** You can keep a number of spells practiced equal to your ∵ Orvik score. A practiced spell costs 1 less. Changing your practiced list takes a few days of downtime.
+
+Alpha numbers: playtest will balance wheel distance and practice.
+
+A failed cast still spends its mana, and a natural 1 has its usual consequence. Minor effects with no risk are cantrips: no roll, no mana. With no mana left, you cannot cast spells.
 
 A new character knows 1 or 2 spells of their choice. Further spells are learned through play.
 
@@ -148,6 +156,8 @@ Award an obstacle once when its immediate stakes are settled, regardless of figh
 | critical |      3 | settlement, faction, or campaign-changing stakes |
 
 Spend points on any Fount. Raising a Fount costs its new level: 1→2 costs 2, 2→3 costs 3, 3→4 costs 4. Unspent points carry over.
+
+**Call on a Fount.** Before rolling a check, spend 1 unspent point to gain advantage on it. The check must use that Fount and the point is gone. Use it sparingly: the same points raise your Founts.
 
 Higher scores will unlock abilities, but thresholds are not defined. Starting archetype and specialty abilities are not threshold unlocks.
 

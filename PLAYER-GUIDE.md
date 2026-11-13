@@ -26,7 +26,7 @@ One procedure; no House, Guild, class cap, or second stat roll.
 2. **Roll Founts.** Roll 6d6 and drop the lowest. Halve each remaining die, rounding up (1–2 is 1, 3–4 is 2, 5–6 is 3). Assign the five values to your Founts (ᛄ Seron, ∵ Orvik, ϟ Zhark, △ Drun, ⌘ Veyra) however you like. Then apply your ancestry's boon (+1) and bane (−1). Step 3 adds the archetype's +1; all modifiers stack and are added after assigning.
 3. **Choose an archetype and specialty.** Pick one archetype and one of its specialties from Starting archetypes. Copy its kit and archetype ability. Your archetype adds +1 to its Fount, which is also its normal attack Fount. Your specialty gives no stat bonus; its ability text names any Fount it uses. Archetype is a beginning, not a restriction.
 4. **Derived values.** Maximum HP is `6 + △ Drun`. Maximum mana is `3 + ∵ Orvik`. Armor value is `0` unarmored, `1` light, `2` heavy.
-5. **Finish.** Copy equipment, choose one useful mundane personal item, and one mundane knack (cooking, knots, card tricks, a song). A knack gives no bonus, but you never need a roll to do it well and the GM uses it in the fiction.
+5. **Finish.** Copy equipment, choose one useful mundane personal item, and one mundane knack (cooking, knots, card tricks, a song). You never need a roll to do your knack well, and the GM uses it in the fiction. The GM may grant advantage or a bonus when it fits, but you can't plan on one. A knack can reinforce your archetype (drawing for a Cartographer).
 
 Example: rolls `6, 2, 4, 1, 5, 3` drop the 1 and halve to `3, 1, 2, 3, 2`; assigned as ᛄ Seron 3, ∵ Orvik 2, ϟ Zhark 1, △ Drun 2, ⌘ Veyra 3. An elf (ᛄ Seron boon, ⌘ Veyra bane) who picks a ᛄ Seron archetype (Warden) ends with ᛄ Seron 5 and ⌘ Veyra 2.
 
@@ -115,7 +115,15 @@ Magic expresses one or more Founts; it does not give a Fount motives. Describe i
 
 A spell cannot erase an established clue or fact. Larger scope, distance, duration, or unwilling targets increase difficulty. Damage spells roll `d6 + Fount` (+1 for large scale), minus armor.
 
-**Mana.** Each spell has a base mana cost in spells. The cost drops by 1 if you cast with a Fount score of 4 or more and by 2 at 6 or more, never below 1 (never below 2 for a base-3 spell). A failed cast still spends its mana, and a natural 1 has its usual consequence. Minor effects with no risk are cantrips: no roll, no mana. With no mana left, you cannot cast spells.
+**Mana.** Each spell has a base mana cost in spells. Work out the cost in this order: base cost, **plus the wheel distance**, then **minus** your reductions; never below 1 (never below 2 for a base-3 spell).
+
+- **Wheel distance.** The Founts sit on a wheel: ᛄ Seron, ∵ Orvik, ϟ Zhark, ⌘ Veyra, △ Drun, then back to ᛄ Seron, running clockwise from yellow at the top. A Fount's two "opposites" are the two Founts two steps away. Your home Founts are your archetype's Fount and your ancestry boon Fount. Count the steps from the nearest home Fount to the spell's Fount: the same Fount adds 0, one step adds 1, two steps adds 2.
+- **Fount reductions.** The cost drops by 1 if you cast with a Fount score of 4 or more and by 2 at 6 or more. Raising that Fount with points lowers the cost this way.
+- **Practiced spells.** You can keep a number of spells practiced equal to your ∵ Orvik score. A practiced spell costs 1 less. Changing your practiced list takes a few days of downtime.
+
+Alpha numbers: playtest will balance wheel distance and practice.
+
+A failed cast still spends its mana, and a natural 1 has its usual consequence. Minor effects with no risk are cantrips: no roll, no mana. With no mana left, you cannot cast spells.
 
 A new character knows 1 or 2 spells of their choice. Further spells are learned through play.
 
@@ -130,6 +138,8 @@ Award an obstacle once when its immediate stakes are settled, regardless of figh
 | critical |      3 | settlement, faction, or campaign-changing stakes |
 
 Spend points on any Fount. Raising a Fount costs its new level: 1→2 costs 2, 2→3 costs 3, 3→4 costs 4. Unspent points carry over.
+
+**Call on a Fount.** Before rolling a check, spend 1 unspent point to gain advantage on it. The check must use that Fount and the point is gone. Use it sparingly: the same points raise your Founts.
 
 Higher scores will unlock abilities, but thresholds are not defined. Starting archetype and specialty abilities are not threshold unlocks.
 
@@ -176,7 +186,7 @@ Boon and bane measure a people's resonance with a Fount, not intelligence, charm
 
 ## Starting archetypes
 
-Archetypes are starting training, not classes or caps. Characters may learn any specialty or ability through play. Each Fount has three archetypes; each archetype supplies one kit, one archetype ability, and three specialties: one of its own Fount and one of each of the two Founts opposite it on the wheel (yellow, blue, red, green, purple). Your archetype gives +1 to its Fount; specialties give no stat bonus.
+Archetypes are starting training, not classes or caps. Characters may learn any specialty or ability through play. Each Fount has three archetypes; each archetype supplies one kit, one archetype ability, and three specialties: one of its own Fount and one of each of the two Founts opposite it on the wheel (yellow, blue, red, purple, green). Your archetype gives +1 to its Fount; specialties give no stat bonus.
 
 ### ᛄ Warden
 
@@ -502,3 +512,112 @@ A cantrip can still have indirect results in the fiction: a small light may expo
 - **Emotional tint:** convey a simple emotion through voice or gesture, even without a shared language.
 - **Soothing voice:** your voice steadies a willing creature's breathing. It feels calmer, but nothing else changes.
 - **Shared rhythm:** you and one willing creature fall into step, keeping an even pace together while walking, rowing, or working for 1 minute.
+
+## Items and prices
+
+Gear for alpha. Prices use the money table: `1 gp = 10 sp = 100 cp`, and `1 rp = 20 gp`. Archetype kits are free at character creation; prices matter for anything bought later. Prices are provisional and will change after playtest.
+
+**How gear works.** Gear gives a method, not a number. Having the right tool means the task is possible and a failed check does not ruin it; lacking it can make the task impossible or hard. Only weapons and armor change numbers. Food and rations are not tracked.
+
+**Quality.** Shoddy items cost half and show it. Common is listed price. Fine costs double. Exceptional costs four times and has a quirk of the GM's choosing. Quality changes looks, reliability, and story, not numbers.
+
+### Weapons
+
+Attack is `d6 + Fount − armor`. Weapons add nothing except the heavy bonus.
+
+| Item | Bonus | Hands | Price | Notes |
+| ---- | ----: | ----- | ----: | ----- |
+| Light weapon (dagger, sling, light sidearm) | +0 | one | 5 sp | easy to hide |
+| Standard weapon (sword, rapier or fine blade, spear, axe) | +0 | one | 2 gp | |
+| Staff (light staff, quarterstaff, focus staff, club) | +0 | one or two | 5 sp | a focus staff can channel a spell |
+| Standard bow or shortbow (heavy) | +1 | two | 4 gp | nearby range |
+| Heavy weapon (maul, heavy blade, pick or hammer, surveyor's staff) | +1 | two | 5 gp | |
+| Spring-gun | +0 | one | 8 gp | reloading uses your move |
+
+Ammunition is not tracked.
+
+### Armor
+
+Armor value is subtracted from damage. Total armor never exceeds 3, counting spells and abilities.
+
+| Item | Armor | Price | Notes |
+| ---- | ----: | ----: | ----- |
+| Clothes, no armor | 0 | 1 gp | |
+| Light armor (leather, padded) | 1 | 10 gp | |
+| Heavy armor (mail, plate) | 2 | 40 gp | noisy |
+| Shield or planks | +1 | 3 gp | one hand, so no two-handed weapon; armor total stays at most 2 from gear |
+
+### Kits and tools
+
+| Item | Price | What it does |
+| ---- | ----: | ------------ |
+| Toolkit or tool roll | 3 gp | repairs, locks, and mechanisms; the minimal tools for repairing animated armor |
+| Healer's kit (bandages, splint, antiseptic) | 1 gp | medicine that explains a rescue; lets ordinary treatment work |
+| Disguise kit | 5 gp | pass as anyone of your size; as someone of a different size, checks against you get a bonus. No time limit; it holds until questioned or tested |
+| Climbing hook and rope (30 ft) | 8 sp | climbing and hauling |
+| Rope, 50 ft | 5 sp | |
+| Cord (20 ft), measuring cord, or chalk line | 2 sp | |
+| Springs and wire | 2 sp | parts for a gadget or a repair |
+| Notebook, songbook | 3 sp | |
+| Hooded lantern | 1 gp | light that can be shuttered |
+| Lantern | 5 sp | plain light |
+| Flint and tinder | 1 sp | |
+| Instrument | 2 gp | performance |
+| Travel library | 10 gp | reference books; research and recall |
+| Ink, quill, and scroll case | 5 sp | |
+| Map case, chalk, and charcoal | 4 sp | |
+| Seed pouch or herb bundle | 3 sp | |
+| Pouch of volatile reagents | 2 gp | fuel for a spell or a spectacle; the GM decides what it can do |
+| Alchemy kit | 10 gp | brew potions (see spell components); needs a few hours of safe work |
+| Loaded dice, spare keys | 1 gp | |
+| Letters of passage and a seal | 3 gp | open doors that need paperwork |
+| Formal clothes | 5 gp | |
+| Banner, holy symbol, or oath token | 5 sp | |
+| Bright cloak | 5 sp | |
+| Dueling cloak, whetstone | 1 gp | |
+| Water skin, pack, bedroll | 5 sp | |
+
+### Supplies and services
+
+| Item | Price |
+| ---- | ----: |
+| Meal at an inn | 5 cp |
+| Night at an inn | 1 sp |
+| Healing draught (heals `d6` HP, nothing above max) | 5 gp |
+| Pack mule | 15 gp |
+| Riding horse | 30 gp |
+
+Mounts are beasts, not gear: they have motives and limits. A mount lets the party cross a long journey faster, but the travel table still applies.
+
+### Shop stock
+
+Roll when the party browses a notable shop: what is in stock, how good it is, and what is odd about it. Price comes from the tables above; quality sets the multiplier.
+
+| d10 | Item |
+| --: | ---- |
+| 1 | a weapon: blade, bow, hafted, or hidden |
+| 2 | armor or a shield |
+| 3 | a potion or draught |
+| 4 | a tool or kit for a trade |
+| 5 | a book, map, or sealed letter |
+| 6 | jewelry or a small trinket |
+| 7 | fine clothing or a disguise |
+| 8 | a mount, beast, or familiar |
+| 9 | raw material: ore, hide, reagents, or lumber |
+| 10 | an oddity even the seller cannot explain |
+
+| d6 | Quality | Price |
+| -: | ------- | ----: |
+| 1 | shoddy: cheap, and it shows | half |
+| 2–3 | common: fair price, does the job | listed |
+| 4–5 | fine: well-made | double |
+| 6 | exceptional: rare, and dear | four times |
+
+| d6 | Quirk |
+| -: | ----- |
+| 1 | the seller won't say where it came from |
+| 2 | it's not actually theirs to sell |
+| 3 | there's exactly one, and someone else wants it |
+| 4 | it comes with a condition |
+| 5 | it's slightly wrong in a way you can't place |
+| 6 | nothing's wrong with it, which is suspicious |
