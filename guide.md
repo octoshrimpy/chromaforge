@@ -34,7 +34,7 @@ One procedure; no House, Guild, class cap, or second stat roll.
 2. **Roll Founts.** Roll 6d6 and drop the lowest. Halve each remaining die, rounding up (1–2 is 1, 3–4 is 2, 5–6 is 3). Assign the five values to your Founts (ᛄ Seron, ∵ Orvik, ϟ Zhark, △ Drun, ⌘ Veyra) however you like. Then apply your ancestry's boon (+1) and bane (−1). Step 3 adds the archetype's +1; all modifiers stack and are added after assigning.
 3. **Choose an archetype and specialty.** Pick one archetype and one of its specialties from [Starting archetypes](compendium/archetypes.md). Copy its kit and archetype ability. Your archetype adds +1 to its Fount, which is also its normal attack Fount. Your specialty gives no stat bonus; its ability text names any Fount it uses. Archetype is a beginning, not a restriction.
 4. **Derived values.** Maximum HP is `6 + △ Drun`. Maximum mana is `3 + ∵ Orvik`. Armor value is `0` unarmored, `1` light, `2` heavy.
-5. **Finish.** Copy equipment, choose one useful mundane personal item, and one mundane knack (cooking, knots, card tricks, a song). You never need a roll to do your knack well, and the GM uses it in the fiction. The GM may grant advantage or a bonus when it fits, but you can't plan on one. A knack can reinforce your archetype (drawing for a Cartographer).
+5. **Finish.** Copy equipment, choose one useful mundane personal item, and one mundane knack (cooking, knots, card tricks, a song; humans pick two; see [knacks](compendium/knacks.md)). You never need a roll to do your knack well, and the GM uses it in the fiction. The GM may grant advantage or a bonus when it fits, but you can't plan on one. A knack can reinforce your archetype (drawing for a Cartographer).
 
 Example: rolls `6, 2, 4, 1, 5, 3` drop the 1 and halve to `3, 1, 2, 3, 2`; assigned as ᛄ Seron 3, ∵ Orvik 2, ϟ Zhark 1, △ Drun 2, ⌘ Veyra 3. An elf (ᛄ Seron boon, ⌘ Veyra bane) who picks a ᛄ Seron archetype (Warden) ends with ᛄ Seron 5 and ⌘ Veyra 2.
 
@@ -143,7 +143,7 @@ Alpha numbers: playtest will balance wheel distance and practice.
 
 A failed cast still spends its mana, and a natural 1 has its usual consequence. Minor effects with no risk are cantrips: no roll, no mana. With no mana left, you cannot cast spells.
 
-A new character knows 1 or 2 spells of their choice. Further spells are learned through play.
+A new character knows 1 or 2 spells of their choice. Further spells are learned through play. Cantrips may come from your ancestry boon Fount, your archetype's Fount, or your specialty's Fount.
 
 ## Advancement
 
