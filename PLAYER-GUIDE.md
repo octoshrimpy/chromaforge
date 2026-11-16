@@ -26,7 +26,7 @@ One procedure; no House, Guild, class cap, or second stat roll.
 2. **Roll Founts.** Roll 6d6 and drop the lowest. Halve each remaining die, rounding up (1–2 is 1, 3–4 is 2, 5–6 is 3). Assign the five values to your Founts (ᛄ Seron, ∵ Orvik, ϟ Zhark, △ Drun, ⌘ Veyra) however you like. Then apply your ancestry's boon (+1) and bane (−1). Step 3 adds the archetype's +1; all modifiers stack and are added after assigning.
 3. **Choose an archetype and specialty.** Pick one archetype and one of its specialties from Starting archetypes. Copy its kit and archetype ability. Your archetype adds +1 to its Fount, which is also its normal attack Fount. Your specialty gives no stat bonus; its ability text names any Fount it uses. Archetype is a beginning, not a restriction.
 4. **Derived values.** Maximum HP is `6 + △ Drun`. Maximum mana is `3 + ∵ Orvik`. Armor value is `0` unarmored, `1` light, `2` heavy.
-5. **Finish.** Copy equipment, choose one useful mundane personal item, and one mundane knack (cooking, knots, card tricks, a song). You never need a roll to do your knack well, and the GM uses it in the fiction. The GM may grant advantage or a bonus when it fits, but you can't plan on one. A knack can reinforce your archetype (drawing for a Cartographer).
+5. **Finish.** Copy equipment, choose one useful mundane personal item, and one mundane knack (cooking, knots, card tricks, a song; humans pick two; see Knacks). You never need a roll to do your knack well, and the GM uses it in the fiction. The GM may grant advantage or a bonus when it fits, but you can't plan on one. A knack can reinforce your archetype (drawing for a Cartographer).
 
 Example: rolls `6, 2, 4, 1, 5, 3` drop the 1 and halve to `3, 1, 2, 3, 2`; assigned as ᛄ Seron 3, ∵ Orvik 2, ϟ Zhark 1, △ Drun 2, ⌘ Veyra 3. An elf (ᛄ Seron boon, ⌘ Veyra bane) who picks a ᛄ Seron archetype (Warden) ends with ᛄ Seron 5 and ⌘ Veyra 2.
 
@@ -125,7 +125,7 @@ Alpha numbers: playtest will balance wheel distance and practice.
 
 A failed cast still spends its mana, and a natural 1 has its usual consequence. Minor effects with no risk are cantrips: no roll, no mana. With no mana left, you cannot cast spells.
 
-A new character knows 1 or 2 spells of their choice. Further spells are learned through play.
+A new character knows 1 or 2 spells of their choice. Further spells are learned through play. Cantrips may come from your ancestry boon Fount, your archetype's Fount, or your specialty's Fount.
 
 ## Advancement
 
@@ -150,39 +150,47 @@ Boon and bane measure a people's resonance with a Fount, not intelligence, charm
 
 *Boon: +1 to one listed Fount (your choice). Bane: −1 to that Fount's score, so it affects every check, attack, and spell that uses it. Shelled elemental also rolls `1d4` for its element, which gives no stat bonus.*
 
-| race              | size   | boon (pick one)  | bane    | notes                                                                                          |
+| race              | size   | boon (choose)  | bane    | notes                                                                                          |
 | ----------------- | ------ | ---------------- | ------- | ---------------------------------------------------------------------------------------------- |
-| tiefling          | medium | ∵ Orvik          | △ Drun  | Horned brows. Red, purple, otherwise dark skin.                                                |
-| elf               | medium | ᛄ Seron          | ⌘ Veyra | Slender, graceful, quiet.                                                                      |
+| hornborn          | medium | ∵ Orvik          | △ Drun  | Horned brows. Red, purple, otherwise dark skin. Unbothered by heat and smoke; advantage against fire and smoke. |
+| elf               | medium | ᛄ Seron          | ⌘ Veyra | Slender, graceful, quiet. A few hours of meditation replace sleep; stays aware while resting. |
 | imp               | small  | ϟ Zhark          | ⌘ Veyra | Tiny devils. Magic slides off them: any spell aimed directly at an imp, friendly ones too, is a hard cast, even one that needs no check; a success works normally. Ambient effects still work.                                                              |
-| gnome             | small  | ⌘ Veyra          | △ Drun  | Always busy, always curious.                                                                   |
-| goblin            | small  | ∵ Orvik, ϟ Zhark | ᛄ Seron | Weak, crafty, stealthy.                                                                        |
-| titanborne        | large  | △ Drun, ᛄ Seron  | ∵ Orvik | Giants in human form, with grooved tattoos on their thick skin.                                |
-| duarling          | small  | ⌘ Veyra, △ Drun  | ᛄ Seron | Short like a halfling, strong like a dwarf.                                                    |
-| dwarf             | small  | △ Drun, ∵ Orvik  | ᛄ Seron | Short, stout beings, fond of alcohols.                                                         |
-| human             | medium | ⌘ Veyra          | ∵ Orvik | Your average run-of-the-mill person.                                                           |
+| gnome             | small  | ⌘ Veyra          | △ Drun  | Always busy, always curious. Once per rest, coax a broken small device into one more use. |
+| goblin            | small  | ∵ Orvik, ϟ Zhark | ᛄ Seron | Weak, crafty, stealthy. Advantage on hiding in clutter, cramped or dark spaces. |
+| titanborne        | large  | △ Drun, ᛄ Seron  | ∵ Orvik | Giants in human form, with grooved tattoos on their thick skin. Can't be shoved or knocked down by anything its size or smaller. |
+| duarling          | small  | ⌘ Veyra, △ Drun  | ᛄ Seron | Short like a halfling, strong like a dwarf. Advantage to stay on its feet when shoved or tripped. |
+| dwarf             | small  | △ Drun, ∵ Orvik  | ᛄ Seron | Short, stout beings, fond of alcohols. Advantage against drink and swallowed poison; sees fine in dim light. |
+| human             | medium | ⌘ Veyra          | ∵ Orvik | Your average run-of-the-mill person. Pick a second knack. |
 | centaur           | large  | △ Drun, ∵ Orvik  | ϟ Zhark | Half human, half horse. Carries riders and heavy loads easily; cannot climb ladders or fit through narrow gaps.                                                                        |
-| bugbear           | large  | △ Drun           | ϟ Zhark | Chewbacca + orc = bugbear.                                                                     |
-| entling           | large  | △ Drun           | ∵ Orvik | I am groot.                                                                                    |
-| lizardfolk        | medium | ∵ Orvik, ϟ Zhark | ⌘ Veyra | Lizard humanoids, averse to smoothskins.                                                       |
-| kobold            | small  | ⌘ Veyra          | △ Drun  | A humanoid dragon with mouse-like features.                                                    |
-| fae               | medium | ⌘ Veyra, ∵ Orvik | △ Drun  | Human-like in looks, originated from the feywild.                                              |
-| satyr             | medium | ⌘ Veyra, ϟ Zhark | ∵ Orvik | Half man, half goat.                                                                           |
-| roo               | medium | △ Drun, ᛄ Seron  | ϟ Zhark | Guardians of sacred places, kangaroo humanoids.                                                |
-| apeling           | large  | △ Drun, ⌘ Veyra  | ∵ Orvik | Descendants of the Monkey King, humanoids with monkey traits.                                  |
-| amazon            | medium | △ Drun, ᛄ Seron  | ∵ Orvik | Well-built female humanoids, with white/black/silver hair.                                     |
-| shelled elemental | small  | ⌘ Veyra, ∵ Orvik | ϟ Zhark | Elemental wants to be "people", covered in protective layer. `1d4`: earth/water/fire/air.      |
-| etterkin          | medium | ϟ Zhark          | ⌘ Veyra | humanesque with spider eyes, and 3-fingered hands.                                             |
+| bugbear           | large  | △ Drun           | ϟ Zhark | Huge, shaggy brutes out of old bogey tales; quieter than they look. No stealth penalty for being large. |
+| barkling           | large  | △ Drun           | ∵ Orvik | Walking tree-folk, slow to speak and slower to forget. Standing still among trees, it counts as hidden. |
+| lizardfolk        | medium | ∵ Orvik, ϟ Zhark | ⌘ Veyra | Lizard humanoids, averse to smoothskins. Holds breath for 15 minutes; swims as fast as it walks. |
+| kobold            | small  | ⌘ Veyra          | △ Drun  | A humanoid dragon with mouse-like features. Digs through loose earth at walking pace. |
+| fae               | medium | ⌘ Veyra, ∵ Orvik | △ Drun  | Human-like in looks, came from across the rift. Never lost: always knows the way back to anywhere it has been. |
+| satyr             | medium | ⌘ Veyra, ϟ Zhark | ∵ Orvik | Half man, half goat. Sure-footed on steep or broken ground; headbutt deals `d4`. |
+| roo               | medium | △ Drun, ᛄ Seron  | ϟ Zhark | Guardians of sacred places, kangaroo humanoids. Jumps a full zone from standing. |
+| apeling           | large  | △ Drun, ⌘ Veyra  | ∵ Orvik | Descendants of the Monkey King, humanoids with monkey traits. Climbs as fast as it runs. |
+| amazon            | medium | △ Drun, ᛄ Seron  | ∵ Orvik | Well-built female humanoids, with white/black/silver hair. Advantage against fear and intimidation. |
+| shelled elemental | small  | ⌘ Veyra, ∵ Orvik | ϟ Zhark | Elemental wants to be "people", covered in protective layer. `1d4`: earth/water/fire/air. By element: earth can't be shoved; water breathes water; fire ignores ordinary flame; air falls slowly. |
+| etterkin          | medium | ϟ Zhark          | ⌘ Veyra | humanesque with spider eyes and many-fingered hands. Many fingers: advantage on fine work (locks, knots, sleight of hand); sees in dim light. |
 | qualf             | small  | ∵ Orvik, ϟ Zhark | ᛄ Seron | Four-armed, short and slender. Tinkerers. Extra arms help with grip and tools but never add actions or attacks.                                                      |
-| moonfolk          | small  | ⌘ Veyra, ∵ Orvik | △ Drun  | Rabbit-like humanoid, with large rabbit ears and feet.                                         |
-| animated armor    | large  | △ Drun, ᛄ Seron  | ϟ Zhark | Armor brought to life by magic, has a soul. Loud and strong. Does not eat, sleep or breathe. Recovers HP normally in rests; magical healing works, and physical repair needs only minimal tools and materials, with no check: an action restores `d6` HP, once per short rest. Ordinary medicine does not.                                   |
-| halfling          | small  | ϟ Zhark, ⌘ Veyra | △ Drun  | Friendly, cheerful humans, no taller than your average waist.                                  |
-| hippofolk         | medium | △ Drun, ∵ Orvik  | ᛄ Seron | Human-like hippos, generous and friendly.                                                      |
+| moonfolk          | small  | ⌘ Veyra, ∵ Orvik | △ Drun  | Rabbit-like humanoid, with large rabbit ears and feet. Hears quiet sounds through doors and thin walls. |
+| animated armor    | large  | △ Drun, ᛄ Seron  | ϟ Zhark | Armor brought to life, with a soul. Loud and strong; does not eat, sleep or breathe. Cannot wear armor. |
+| halfling          | small  | ϟ Zhark, ⌘ Veyra | △ Drun  | Friendly, cheerful humans, no taller than your average waist. Goes unnoticed in a crowd until it acts. |
+| hippofolk         | medium | △ Drun, ∵ Orvik  | ᛄ Seron | Human-like hippos, generous and friendly. Holds breath for 15 minutes; can walk along the bottom of rivers and lakes. |
 | kethrai           | medium | ϟ Zhark          | ⌘ Veyra | Round-headed, with sensory gills and occasional memories of possible futures. The flashes are fragmentary and may be wrong; the GM decides when one surfaces. |
-| d'varen           | large  | ᛄ Seron          | ϟ Zhark | Large and keratin-plated, with personal histories carved into their bodies. |
-| ommel             | medium | ∵ Orvik          | △ Drun  | Slender, with oversized feet that sense vibrations through surfaces. Senses movement in a nearby zone through ground it touches; walls and distance blur it to movement only. |
-| iskari            | medium | ᛄ Seron          | ϟ Zhark | Living amber-colored stone, with geometric bodies and glowing lines. |
-| ravuun            | medium | ϟ Zhark          | ᛄ Seron | Strikingly asymmetrical, with mismatched limbs and irregular features. |
+| d'varen           | large  | ᛄ Seron          | ϟ Zhark | Large and keratin-plated, with personal histories carved into their bodies. Once per session, recall something useful from an ancestor's history carved into its body. |
+| ommel             | medium | ∵ Orvik          | △ Drun  | Slender, with oversized feet that sense vibration. Senses movement through the ground nearby. Sighted. |
+| iskari            | medium | ᛄ Seron          | ϟ Zhark | Living amber-colored stone, with geometric bodies and glowing lines. Doesn't breathe; can make its lines glow as a dim light. |
+| ravuun            | medium | ϟ Zhark          | ᛄ Seron | Strikingly asymmetrical, with mismatched limbs and irregular features. Hard to read: advantage against attempts to read its intent or spot its lies. |
+
+<!--
+### Ancestry details
+
+**Animated armor.** Armor brought to life by magic, has a soul. Loud and strong. Does not eat, sleep or breathe. Recovers HP normally in rests; magical healing works, and physical repair needs only minimal tools and materials, with no check: an action restores `d6` HP, once per short rest. Ordinary medicine does not. Cannot wear armor. Hollow: can carry one willing small or medium creature inside. Perceives without eyes, through sound and vibration, so darkness does not blind it. Can replace its own parts with new materials through a sync ceremony; the roll to see if the part takes is made with advantage.
+
+**Ommel.** Slender, with oversized feet whose fatty heel pads, wired to a very sensitive nervous system, pick up vibrations the way an elephant's do. Senses movement in a nearby zone through ground it touches; walls and distance blur it to movement only. Others' footsteps sharpen the picture. Rising onto tiptoe lifts the pads and dulls the sense, useful when the ground is too loud. Sighted: the feet add to the eyes, they do not replace them.
+-->
 
 ## Starting archetypes
 
@@ -192,8 +200,6 @@ Archetypes are starting training, not classes or caps. Characters may learn any 
 
 - **Kit:** light armor, standard bow (heavy), light sidearm, chalk line, 20 feet of cord.
 - **Archetype ability — Hold the Line:** reaction when a nearby ally would take damage: move between them and source; attack targets Warden instead. If movement is impossible, no effect.
-
-<br>
 
 - **Marchwarden**
   - **Boundary Keeper:** action to mark a nearby clear line. First enemy crossing it before Warden's next turn takes `d6 + ᛄ Seron` damage, minus armor.
@@ -207,8 +213,6 @@ Archetypes are starting training, not classes or caps. Characters may learn any 
 - **Kit:** light armor, light staff or blade, bandages, splint, bitter antiseptic, notebook.
 - **Archetype ability — Field Treatment:** once per short rest, action restores `d6` HP to adjacent living target. Cannot raise target above maximum HP.
 
-<br>
-
 - **Physician**
   - **Pattern Diagnostician:** study an injury, illness, or phenomenon closely; you learn what worsens it, what relieves it, or what happened to it most recently. Once per short rest.
 - **Stretcher-Bearer**
@@ -220,8 +224,6 @@ Archetypes are starting training, not classes or caps. Characters may learn any 
 
 - **Kit:** light armor, standard blade or shortbow (heavy), climbing hook, 30 feet of rope, hooded lantern.
 - **Archetype ability — Find Another Way:** once per short rest, after a route is blocked, you spot one costly, risky, or slow alternate route that exists.
-
-<br>
 
 - **Trailbreaker**
   - **Wardbreaker:** `+2` on checks to alter, bypass, or redirect a magical trigger after its rule has been discovered.
@@ -235,8 +237,6 @@ Archetypes are starting training, not classes or caps. Characters may learn any 
 - **Kit:** light armor, heavy maul (heavy), shield or planks, tool roll, 50 feet of rope.
 - **Archetype ability — Shore It Up:** once per short rest, reaction when a nearby ally or structure would take damage: reduce it by `d6`.
 
-<br>
-
 - **Stalwart**
   - **Keep Standing:** once per long rest, ignore the first hit that would drop Bulwark to 0 HP; HP drops to 1 instead.
 - **Veteran**
@@ -246,10 +246,8 @@ Archetypes are starting training, not classes or caps. Characters may learn any 
 
 ### ᛄ Cartographer
 
-- **Kit:** light armor, surveyor's staff (heavy), chalk and charcoal, measuring cord, map case.
+- **Kit:** light armor, surveyor's staff, chalk and charcoal, measuring cord, map case.
 - **Archetype ability — Fix the Bounds:** once per short rest, study a nearby area; you know its true edges, exits, and one hidden hazard.
-
-<br>
 
 - **Surveyor**
   - **Claim Ground:** action: declare a nearby zone yours; allies in it have advantage on the first check to defend it until your next turn.
@@ -263,8 +261,6 @@ Archetypes are starting training, not classes or caps. Characters may learn any 
 - **Kit:** heavy armor, heavy blade (heavy), banner or holy symbol, oath token.
 - **Archetype ability — Sworn Word:** once per short rest, swear to protect or reach one thing; your next important check that directly serves the oath has advantage. Breaking the oath ends it.
 
-<br>
-
 - **Inquisitor**
   - **Smite the False:** action: strike an enemy that broke a promise or lied to you; deal `d6 + ᛄ Seron + 1`, minus armor.
 - **Crusader**
@@ -276,8 +272,6 @@ Archetypes are starting training, not classes or caps. Characters may learn any 
 
 - **Kit:** light armor, spring-gun, toolkit, springs and wire, hooded lantern.
 - **Archetype ability — Jury Device:** once per short rest, action: build a small gadget from scrap that does one simple thing until your next rest.
-
-<br>
 
 - **Trapsmith**
   - **Trap Sense:** study a device or area closely; you know whether it is trapped and how.
@@ -291,8 +285,6 @@ Archetypes are starting training, not classes or caps. Characters may learn any 
 - **Kit:** light armor, quarterstaff or dagger, travel library, ink and quill, scroll case.
 - **Archetype ability — I Read About This:** once per short rest, name a creature, place, or custom; you recall one true fact about it.
 
-<br>
-
 - **Archivist**
   - **Perfect Recall:** once per short rest, recall any fact or clue you witnessed, exactly as it was.
 - **Linguist**
@@ -304,8 +296,6 @@ Archetypes are starting training, not classes or caps. Characters may learn any 
 
 - **Kit:** light armor, rapier or fine blade, dueling cloak, whetstone.
 - **Archetype ability — Break the Pattern:** reaction when an enemy attacks you: step aside and reduce that damage by `d6` (minimum 0).
-
-<br>
 
 - **Fencer**
   - **Riposte:** after Break the Pattern, strike the attacker if adjacent.
@@ -319,8 +309,6 @@ Archetypes are starting training, not classes or caps. Characters may learn any 
 - **Kit:** light armor, focus staff, flint, pouch of volatile reagents.
 - **Archetype ability — Loose the Storm:** once per short rest, action: unleash a burst on a nearby zone; creatures there take `d6 + ϟ Zhark`, minus armor, and it leaves one fitting side effect on the zone.
 
-<br>
-
 - **Stormcaller**
   - **Chain Spark:** once per short rest, one attack also hits a second adjacent target for `d6`, minus armor.
 - **Beastmaster**
@@ -332,8 +320,6 @@ Archetypes are starting training, not classes or caps. Characters may learn any 
 
 - **Kit:** light armor, pick or hammer (heavy), lantern, 50 feet of rope, chalk.
 - **Archetype ability — Dig Through:** once per short rest, action: open or close a passage in earth, loose rock, or crude masonry up to about 5 feet thick, wide enough for one person, until your next rest. Solid bedrock and warded or metal barriers resist it.
-
-<br>
 
 - **Burrower**
   - **Tremorsense:** feel vibrations nearby; you sense what is moving in a nearby zone.
@@ -347,8 +333,6 @@ Archetypes are starting training, not classes or caps. Characters may learn any 
 - **Kit:** light armor, staff or club, seed pouch, water skin, herb bundle.
 - **Archetype ability — Take Root:** once per short rest, action: through living plants, heal a nearby ally `d6` or give them 1 armor until your next turn.
 
-<br>
-
 - **Greenseer**
   - **Green Sense:** know what plants and animals nearby are doing, and read from them what passed here recently.
 - **Hearthroot**
@@ -360,8 +344,6 @@ Archetypes are starting training, not classes or caps. Characters may learn any 
 
 - **Kit:** light armor, dagger or rapier, instrument, songbook, bright cloak.
 - **Archetype ability — Rally the Room:** once per short rest, reaction: give an ally advantage on their next check.
-
-<br>
 
 - **Minstrel**
   - **Captivating Performance:** once per short rest, action: nearby listeners are held for about a minute or until something disturbs them; harm or a loud threat breaks it.
@@ -375,8 +357,6 @@ Archetypes are starting training, not classes or caps. Characters may learn any 
 - **Kit:** light armor, sidearm or sword, letters of passage, seal, formal clothes.
 - **Archetype ability — Fair Trade:** once per day, name anything you want arranged; you know the fair price or favor it would cost.
 
-<br>
-
 - **Diplomat**
   - **Silver Tongue:** once per short rest, reroll a failed persuasion check, keeping the second result.
 - **Courtier**
@@ -388,8 +368,6 @@ Archetypes are starting training, not classes or caps. Characters may learn any 
 
 - **Kit:** light armor, dagger or sling, disguise kit, loaded dice, spare keys.
 - **Archetype ability — Borrowed Face:** once per short rest, action: pass as a plausible person or role to NPCs who have not met you, until questioned or tested.
-
-<br>
 
 - **Cutpurse**
   - **Light Fingers:** take or plant a hand-sized item unnoticed when the target is unaware; if the target is alert or the item guarded, it needs a risky check.
@@ -406,7 +384,7 @@ Active alpha spells. Rules for casting, mana, and rests are in the guide.
 - **Cost:** base mana cost in brackets. It drops by 1 if you cast with a Fount score of 4+ and by 2 at 6+, never below 1 (never below 2 for a base-3 spell).
 - **Defaults:** range nearby (about 30 ft), duration 5 minutes. Larger scope, distance, duration, or unwilling targets are harder.
 - **Stacking:** the same spell does not stack with itself; the newer replaces the older. Different spells stack, but spells never raise armor above 3.
-- **Unwilling targets:** Charm, Babble, Boogie bomb, Improv sesh, and any other spell that controls, disables, or erases an unwilling creature follow the hard-cast rule in the guide.
+- **Unwilling targets:** Charm, Babble, Mad jig, Improv sesh, and any other spell that controls, disables, or erases an unwilling creature follow the hard-cast rule in the guide.
 - **Check:** see when to roll. A risky cast rolls `d20 + Fount` for the spell's Fount. A failed cast still spends its mana.
 
 ### ᛄ Seron
@@ -456,11 +434,11 @@ Active alpha spells. Rules for casting, mana, and rests are in the guide.
 - **Improv sesh (2):** the target cannot recall what it was thinking and doing for the last 5 minutes, until it sleeps or is shown strong proof.
 - **Vibe check (1):** name a nearby creature; you learn its intent toward you, and if it is hostile its next attack deals half damage.
 - **Babble (1):** the target must loudly repeat your thoughts and is otherwise mute. Casting spells does not require speech, so this does not stop it.
-- **Boogie bomb (2):** the target dances and cannot otherwise move for 1 minute or until it is hurt.
+- **Mad jig (2):** the target dances and cannot otherwise move for 1 minute or until it is hurt.
 
 ### Cantrips
 
-Cantrips are effortless expressions of a Fount. They cost no mana and need no roll, so they can be cast freely. Their effects are small, brief, and harmless: range self to 15 ft, duration 1 minute unless stated; effects that record or encode something last as stated. They cannot directly inflict or prevent damage, restore health, impose mechanical conditions, or compel another creature's actions. They cannot stack with themselves, bypass a significant obstacle, permanently change a creature, or do what a spell does. Names come from V1.
+Cantrips are effortless expressions of a Fount. They cost no mana and need no roll, so they can be cast freely. Their effects are small, brief, and harmless: range self to 15 ft, duration 1 minute unless stated; effects that record or encode something last as stated. They cannot directly inflict or prevent damage, restore health, impose mechanical conditions, or compel another creature's actions. They cannot stack with themselves, bypass a significant obstacle, permanently change a creature, or do what a spell does.
 
 A cantrip can still have indirect results in the fiction: a small light may expose a hidden creature, and a noise may distract a guard. Cantrips manipulate details; spells change outcomes. A cantrip gives one useful way to approach a problem; it does not solve a whole encounter.
 
@@ -528,10 +506,10 @@ Attack is `d6 + Fount − armor`. Weapons add nothing except the heavy bonus.
 | Item | Bonus | Hands | Price | Notes |
 | ---- | ----: | ----- | ----: | ----- |
 | Light weapon (dagger, sling, light sidearm) | +0 | one | 5 sp | easy to hide |
-| Standard weapon (sword, rapier or fine blade, spear, axe) | +0 | one | 2 gp | |
-| Staff (light staff, quarterstaff, focus staff, club) | +0 | one or two | 5 sp | a focus staff can channel a spell |
+| Standard weapon (sword, rapier, spear, axe) | +0 | one | 2 gp | |
+| Staff (light staff, quarterstaff, focus staff, surveyor's staff, club) | +0 | one or two | 5 sp | a focus staff can channel a spell |
 | Standard bow or shortbow (heavy) | +1 | two | 4 gp | nearby range |
-| Heavy weapon (maul, heavy blade, pick or hammer, surveyor's staff) | +1 | two | 5 gp | |
+| Heavy weapon (maul, heavy blade, pick or hammer) | +1 | two | 5 gp | |
 | Spring-gun | +0 | one | 8 gp | reloading uses your move |
 
 Ammunition is not tracked.
@@ -549,11 +527,11 @@ Armor value is subtracted from damage. Total armor never exceeds 3, counting spe
 
 ### Kits and tools
 
-| Item | Price | What it does |
+| Item | Price | Description |
 | ---- | ----: | ------------ |
 | Toolkit or tool roll | 3 gp | repairs, locks, and mechanisms; the minimal tools for repairing animated armor |
-| Healer's kit (bandages, splint, antiseptic) | 1 gp | medicine that explains a rescue; lets ordinary treatment work |
-| Disguise kit | 5 gp | pass as anyone of your size; as someone of a different size, checks against you get a bonus. No time limit; it holds until questioned or tested |
+| Healer's kit | 1 gp | medicine that explains a rescue; lets ordinary treatment work |
+| Disguise kit | 5 gp | pass as a kind of person (guard, noble, priest) with no roll and no time limit. When someone looks closely or questions you, make a risky ⌘ Veyra check; it is hard to copy a specific person, someone of a different size, or to fool someone who knows who you claim to be |
 | Climbing hook and rope (30 ft) | 8 sp | climbing and hauling |
 | Rope, 50 ft | 5 sp | |
 | Cord (20 ft), measuring cord, or chalk line | 2 sp | |
@@ -621,3 +599,37 @@ Roll when the party browses a notable shop: what is in stock, how good it is, an
 | 4 | it comes with a condition |
 | 5 | it's slightly wrong in a way you can't place |
 | 6 | nothing's wrong with it, which is suspicious |
+
+## Knacks
+
+Every character picks one mundane knack at creation (humans pick two). You never roll to do your knack well, and the GM works it into the fiction. A knack is a skill, not magic. The GM may grant advantage or a bonus when it fits, but you can't plan on one. Pick from the list, roll `d100`, or make up your own of the same size.
+
+| d100 | Knack | d100 | Knack | d100 | Knack | d100 | Knack |
+| ---- | ----- | ---- | ----- | ---- | ----- | ---- | ----- |
+| 01 | cooking | 26 | fishing | 51 | running long distances | 76 | shadow plays |
+| 02 | brewing and distilling | 27 | foraging | 52 | smithing small things | 77 | whistling |
+| 03 | baking | 28 | birdcalls | 53 | carpentry | 78 | drumming |
+| 04 | knots and rope | 29 | herding and handling animals | 54 | masonry | 79 | chess and board games |
+| 05 | card tricks | 30 | weather reading | 55 | basket weaving | 80 | riddles |
+| 06 | dice and gambling | 31 | stargazing and navigation | 56 | weaving cloth | 81 | remembering faces and names |
+| 07 | singing | 32 | swimming | 57 | dyeing | 82 | counting and quick sums |
+| 08 | an instrument (pick one) | 33 | climbing | 58 | candle and soap making | 83 | appraising coins and trinkets |
+| 09 | dancing | 34 | juggling and tumbling | 59 | glassblowing | 84 | fortune telling (pretend) |
+| 10 | storytelling | 35 | map drawing | 60 | jewelry and beadwork | 85 | reciting law and custom |
+| 11 | jokes and impressions | 36 | keeping records and ledgers | 61 | tinkering with locks and clocks | 86 | religious rites and prayers |
+| 12 | poetry | 37 | butchery | 62 | hairdressing and grooming | 87 | heraldry and family trees |
+| 13 | whittling | 38 | cheesemaking | 63 | makeup and face paint | 88 | old songs and folklore |
+| 14 | sewing and mending | 39 | pickling and preserving | 64 | tattooing | 89 | local history |
+| 15 | leatherwork | 40 | tea blending | 65 | perfume making | 90 | mimicking accents |
+| 16 | pottery | 41 | beekeeping | 66 | first aid and splints | 91 | sign language |
+| 17 | painting | 42 | gardening | 67 | midwifery | 92 | writing letters for others |
+| 18 | calligraphy | 43 | farming | 68 | setting traps | 93 | reading people at a table |
+| 19 | haggling | 44 | horse riding | 69 | skinning and tanning | 94 | bartending |
+| 20 | gossip and rumors | 45 | carting and driving teams | 70 | bird and beast taxidermy | 95 | innkeeping |
+| 21 | etiquette and manners | 46 | sailing and boat handling | 71 | falconry | 96 | cleaning and housekeeping |
+| 22 | forging signatures | 47 | rowing | 72 | dog training | 97 | fire making and camp setup |
+| 23 | lip reading | 48 | knife throwing | 73 | sketching faces | 98 | comfy rest anywhere |
+| 24 | a second language or dialect | 49 | archery at targets | 74 | sculpting | 99 | bargain shopping |
+| 25 | tracking animals | 50 | wrestling for sport | 75 | puppetry | 00 | finding your way in cities |
+
+**What a knack does.** It lets you do the thing well, quickly and without a roll: a cook makes a memorable meal, a knot-tyer's knots hold, a gossip knows the local rumor. It does not make you good at nearby things: a singer is not a better liar, a climber still checks to climb a sheer wall in a storm.

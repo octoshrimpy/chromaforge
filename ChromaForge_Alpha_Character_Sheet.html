@@ -186,7 +186,8 @@
       #drawer {
         margin: 0;
         inset: 0 auto 0 0;
-        width: min(260px, 80vw);
+        width: min(320px, 85vw);
+        overflow-y: auto;
         height: 100dvh;
         padding: 64px 12px 12px;
         border: 0;
@@ -246,6 +247,83 @@
         font-size: 11px;
         font-weight: 700;
         text-transform: uppercase;
+      }
+
+      #search {
+        width: 100%;
+        margin-bottom: 8px;
+      }
+
+      #results {
+        & a {
+          font-weight: 400;
+          font-size: 13px;
+        }
+
+        & b {
+          display: block;
+          font-size: 11px;
+          color: var(--muted);
+          text-transform: uppercase;
+        }
+
+        &:not(:empty) {
+          border-bottom: 1px solid var(--row);
+          margin-bottom: 8px;
+        }
+      }
+
+      #results mark {
+        background: color-mix(in srgb, var(--accent) 30%, transparent);
+        color: inherit;
+        border-radius: 2px;
+      }
+
+      .hit {
+        outline: 3px solid var(--accent);
+        outline-offset: 2px;
+        transition: outline-color 1.5s;
+      }
+
+      /* Rules pages generated from PLAYER-GUIDE.md. */
+      .guide {
+        line-height: 1.5;
+
+        & h2 {
+          border-bottom: 1px solid var(--row);
+          margin: 22px 0 6px;
+        }
+
+        & h3 {
+          margin: 16px 0 4px;
+        }
+
+        & table {
+          display: block;
+          overflow-x: auto;
+          border-collapse: collapse;
+          margin: 8px 0;
+        }
+
+        & th,
+        & td {
+          border: 1px solid var(--edge);
+          padding: 3px 7px;
+          text-align: left;
+          vertical-align: top;
+        }
+
+        & th {
+          background: var(--bar);
+        }
+
+        & code {
+          white-space: nowrap;
+        }
+
+        & li > p {
+          margin: 0;
+        }
       }
 
       .fount-card .sym svg {
@@ -983,6 +1061,11 @@
           display: none;
         }
 
+        .page.info {
+          height: auto !important;
+          display: block !important;
+        }
+
         .page {
           width: 8.5in;
           min-height: unset;
@@ -1117,9 +1200,18 @@
       </symbol>
     </svg>
     <nav id="drawer" popover aria-label="Pages">
+      <input type="search" id="search" placeholder="Search anything…" aria-label="Search races, Founts and rules" />
+      <div id="results"></div>
       <a href="#sheet">Character sheet</a>
       <a href="#races">Races</a>
       <a href="#founts">Founts</a>
+      <!-- guide-nav:start -->
+<a href="#rules">Rules</a>
+<a href="#archetypes">Archetypes</a>
+<a href="#spells">Spells</a>
+<a href="#items">Items</a>
+<a href="#knacks">Knacks</a>
+<!-- guide-nav:end -->
     </nav>
     <div class="toolbar">
       <span class="tools">
@@ -1148,6 +1240,18 @@
             <path
               d="M8.5 8.5h.01M15.5 8.5h.01M12 12h.01M8.5 15.5h.01M15.5 15.5h.01"
             />
+          </svg>
+        </button>
+        <button
+          type="button"
+          class="sheet-tool"
+          id="undo"
+          aria-label="Undo roll"
+          title="Undo roll"
+          hidden
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M9 14 4 9l5-5M4 9h10.5a5.5 5.5 0 0 1 0 11H11" />
           </svg>
         </button>
         <label
@@ -1597,21 +1701,1305 @@
       </header>
       <div class="cards" id="fount-cards"></div>
     </main>
+    <!-- Rules pages below are generated from PLAYER-GUIDE.md by build.py; edit the guide, not this. -->
+    <!-- guide:start -->
+<main class="page info guide" data-view="rules" hidden>
+<header class="page-head"><h1>RULES</h1></header>
+<h2>What you need</h2>
+<p>One d20, a few d6s, paper, and pencils. That is all.</p>
+<h2>Character creation</h2>
+<p>One procedure; no House, Guild, class cap, or second stat roll.</p>
+<ol>
+<li><strong>Concept.</strong> Name the character and describe one visible trait and one desire (it also says why you travel with this party). Pick an ancestry from the roster: note its boon and bane. The boon is +1 to one of its listed Founts (your choice). The bane is −1 to its bane Fount.</li>
+<li><strong>Roll Founts.</strong> Roll 6d6 and drop the lowest. Halve each remaining die, rounding up (1–2 is 1, 3–4 is 2, 5–6 is 3). Assign the five values to your Founts (ᛄ&nbsp;Seron, ∵&nbsp;Orvik, ϟ&nbsp;Zhark, △&nbsp;Drun, ⌘&nbsp;Veyra) however you like. Then apply your ancestry's boon (+1) and bane (−1). Step 3 adds the archetype's +1; all modifiers stack and are added after assigning.</li>
+<li><strong>Choose an archetype and specialty.</strong> Pick one archetype and one of its specialties from Starting archetypes. Copy its kit and archetype ability. Your archetype adds +1 to its Fount, which is also its normal attack Fount. Your specialty gives no stat bonus; its ability text names any Fount it uses. Archetype is a beginning, not a restriction.</li>
+<li><strong>Derived values.</strong> Maximum HP is <code>6 + △&nbsp;Drun</code>. Maximum mana is <code>3 + ∵&nbsp;Orvik</code>. Armor value is <code>0</code> unarmored, <code>1</code> light, <code>2</code> heavy.</li>
+<li><strong>Finish.</strong> Copy equipment, choose one useful mundane personal item, and one mundane knack (cooking, knots, card tricks, a song; humans pick two; see Knacks). You never need a roll to do your knack well, and the GM uses it in the fiction. The GM may grant advantage or a bonus when it fits, but you can't plan on one. A knack can reinforce your archetype (drawing for a Cartographer).</li>
+</ol>
+<p>Example: rolls <code>6, 2, 4, 1, 5, 3</code> drop the 1 and halve to <code>3, 1, 2, 3, 2</code>; assigned as ᛄ&nbsp;Seron 3, ∵&nbsp;Orvik 2, ϟ&nbsp;Zhark 1, △&nbsp;Drun 2, ⌘&nbsp;Veyra 3. An elf (ᛄ&nbsp;Seron boon, ⌘&nbsp;Veyra bane) who picks a ᛄ&nbsp;Seron archetype (Warden) ends with ᛄ&nbsp;Seron 5 and ⌘&nbsp;Veyra 2.</p>
+<h2>Checks</h2>
+<p>Roll only when outcome is uncertain, risky, and consequential.</p>
+<ol>
+<li>GM names the risk and consequence before the roll.</li>
+<li>Choose the Fount matching the method, not the desired outcome. Players may propose another method.</li>
+<li>Roll <code>d20 + Fount</code> against difficulty.</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>Difficulty</th>
+<th style="text-align: right;">Target</th>
+<th>Use</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>risky</td>
+<td style="text-align: right;">10</td>
+<td>pressure exists; meaningful uncertainty</td>
+</tr>
+<tr>
+<td>hard</td>
+<td style="text-align: right;">15</td>
+<td>expert or strongly opposed task</td>
+</tr>
+</tbody>
+</table>
+<p>Easy tasks need no roll; extraordinary ones are hard with a cost or a need for preparation. <strong>Take 10:</strong> with time and no pressure, skip the roll and count it as a 10.</p>
+<p>Natural 1 is a critical failure: consequence is worse or creates a new danger. Natural 20 is a critical success: succeed and gain an extra advantage. These override the total.</p>
+<p>NPCs do not make opposed rolls. Set difficulty from the situation. Helping requires a concrete action; useful help or good preparation gives <strong>advantage</strong>: roll 2d20, keep the higher. The helper shares the consequence.</p>
+<p><strong>Clues:</strong> Correct investigation always reveals the essential clue. A check decides speed, safety, completeness, or extra leverage—never whether play stops.</p>
+<h2>Combat</h2>
+<p>Use combat only when sides cannot or will not settle the conflict another way. Enemies need a motive and a condition that ends the fight.</p>
+<h3>Start and turns</h3>
+<ul>
+<li>If one side surprises the other, that side starts. Otherwise roll a d6 once: odd means party starts, even means enemy group starts.</li>
+<li>Alternate the whole party turn and the whole enemy-group turn.</li>
+<li>During party turn, each player chooses their own order and action. GM orders enemy actions.</li>
+<li>Each character gets one move, one action, one reaction, and any bonus action granted by an ability.</li>
+<li>One move crosses a nearby zone or about 30 feet. Action attacks, casts, helps, rescues, uses an item, or attempts another consequential task. One reaction responds to a clear trigger; it refreshes at the start of the party's turn.</li>
+</ul>
+<h3>Attacks and damage</h3>
+<p>Attacks always land unless fiction prevents them. No attack roll, no Defense.</p>
+<ol>
+<li>Roll <code>d6 + attack Fount</code> (+1 for a heavy two-handed weapon).</li>
+<li>Subtract target armor (minimum 0). The rest is HP damage.</li>
+</ol>
+<p>The archetype kit names its normal attack Fount; unusual methods use the Fount agreed before rolling. Improvised harmless objects deal <code>d6 − 2</code> (minimum 1). Fiction can make an attack impossible or remove cover before damage is rolled.</p>
+<p>Alpha has no separate intellect score: use ∵&nbsp;Orvik for risky knowledge, memory, or analysis.</p>
+<h3>Downed and rescue</h3>
+<p>At 0 HP, a character is down: unable to act, but available to rescue. If every party member is down, GM follows enemy motives—capture, theft, abandonment, or rescue are better alpha outcomes than an unexplained total-party death.</p>
+<p><strong>Playtest rule: rescue.</strong> An adjacent ally spends an action to get a downed character to 1 HP; medicine or magic explains how when available but is not required. Reason: downed play must be recoverable before spell resources and healing requirements are settled. Decided for alpha: rescue needs no healing.</p>
+<p><strong>Maiming.</strong> Instead of waiting to be rescued, a downed character may take a scar to rise at 1 HP immediately (no action). Roll 2d6 (below); the scar is permanent, and long rests do not heal it.</p>
+<p>Roll 2d6. The first die is the injury, the second the body part.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;">d6</th>
+<th>Injury</th>
+<th></th>
+<th style="text-align: right;">d6</th>
+<th>Body part</th>
+<th>−1 to checks that rely on</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">1</td>
+<td>Lost</td>
+<td></td>
+<td style="text-align: right;">1</td>
+<td>left arm</td>
+<td>two hands or a steady grip</td>
+</tr>
+<tr>
+<td style="text-align: right;">2</td>
+<td>Maimed</td>
+<td></td>
+<td style="text-align: right;">2</td>
+<td>right arm</td>
+<td>fine handling or a strong swing</td>
+</tr>
+<tr>
+<td style="text-align: right;">3</td>
+<td>Ringing</td>
+<td></td>
+<td style="text-align: right;">3</td>
+<td>left leg</td>
+<td>speed or balance</td>
+</tr>
+<tr>
+<td style="text-align: right;">4</td>
+<td>Disfigured</td>
+<td></td>
+<td style="text-align: right;">4</td>
+<td>right leg</td>
+<td>running, climbing, or kicking</td>
+</tr>
+<tr>
+<td style="text-align: right;">5</td>
+<td>Haunted</td>
+<td></td>
+<td style="text-align: right;">5</td>
+<td>torso</td>
+<td>endurance or bracing</td>
+</tr>
+<tr>
+<td style="text-align: right;">6</td>
+<td>Scarred</td>
+<td></td>
+<td style="text-align: right;">6</td>
+<td>head</td>
+<td>sight, hearing, or wits</td>
+</tr>
+</tbody>
+</table>
+<p>The injury is fiction; the body part sets the −1. Read the injury to fit the part: lost left arm is an amputation, ringing head is tinnitus, ringing left leg is painful phantom vibrations, haunted left arm is trembling, scarred head is a facial scar. The mechanical penalty is the same whatever the injury, so the player and GM may play a lost limb as harsher in the story.</p>
+<p>Each body part can be maimed once: four limbs, torso, head. If the part rolled is already maimed, the player picks any unmaimed part and keeps the injury rolled. The GM may waive a scar that does not fit the fiction. Rescue stays free and carries no scar. A character can keep adventuring with up to five maims; at six the character cannot continue adventuring. Retire them or let the GM decide their fate.</p>
+<h2>Recovery</h2>
+<ul>
+<li><strong>Short rest:</strong> about an hour of safe, quiet downtime. Restores 1 mana and refreshes abilities that work once per short rest.</li>
+<li><strong>Long rest:</strong> an undisturbed night: shelter, watch, and immediate threats handled. Restores all HP and mana and refreshes abilities that work once per short rest or once per long rest. Unsafe sleep advances time but is not a long rest.</li>
+<li><strong>Day:</strong> dawn to the next dawn. Abilities that work once per day refresh at dawn.</li>
+</ul>
+<p>Food and rations are not tracked.</p>
+<p><strong>Shared meal.</strong> During a short or long rest, one character cooks (no roll; a cooking knack makes it memorable). Everyone who eats picks one: recover 1 mana, or gain advantage on one check before the next rest. A character gets one meal benefit per rest.</p>
+<h2>Magic</h2>
+<p>Magic expresses one or more Founts; it does not give a Fount motives. Describe intended effect and method. GM chooses the relevant Fount, scope, difficulty, and failure consequence. Risky casting uses the same <code>d20 + Fount</code> check and natural 1/20 rules. Minor effects with no risk need no roll.</p>
+<p><strong>When to roll.</strong> A spell used exactly as written on a willing creature or an unattended object, within its normal scope, is automatic. Roll when the circumstances are difficult or the use is unusual. A spell that controls, disables, or erases an unwilling creature is a hard cast; on success it lasts up to a minute or until the creature is hurt, and the creature may try a risky check at the end of each of its turns to shake it off. Stretching duration, range, or scope raises difficulty by one step or adds 1 mana, GM's choice. Anything beyond what the spell fundamentally does is not possible.</p>
+<p>A spell cannot erase an established clue or fact. Larger scope, distance, duration, or unwilling targets increase difficulty. Damage spells roll <code>d6 + Fount</code> (+1 for large scale), minus armor.</p>
+<p><strong>Mana.</strong> Each spell has a base mana cost in spells. Work out the cost in this order: base cost, <strong>plus the wheel distance</strong>, then <strong>minus</strong> your reductions; never below 1 (never below 2 for a base-3 spell).</p>
+<ul>
+<li><strong>Wheel distance.</strong> The Founts sit on a wheel: ᛄ&nbsp;Seron, ∵&nbsp;Orvik, ϟ&nbsp;Zhark, ⌘&nbsp;Veyra, △&nbsp;Drun, then back to ᛄ&nbsp;Seron, running clockwise from yellow at the top. A Fount's two "opposites" are the two Founts two steps away. Your home Founts are your archetype's Fount and your ancestry boon Fount. Count the steps from the nearest home Fount to the spell's Fount: the same Fount adds 0, one step adds 1, two steps adds 2.</li>
+<li><strong>Fount reductions.</strong> The cost drops by 1 if you cast with a Fount score of 4 or more and by 2 at 6 or more. Raising that Fount with points lowers the cost this way.</li>
+<li><strong>Practiced spells.</strong> You can keep a number of spells practiced equal to your ∵&nbsp;Orvik score. A practiced spell costs 1 less. Changing your practiced list takes a few days of downtime.</li>
+</ul>
+<p>Alpha numbers: playtest will balance wheel distance and practice.</p>
+<p>A failed cast still spends its mana, and a natural 1 has its usual consequence. Minor effects with no risk are cantrips: no roll, no mana. With no mana left, you cannot cast spells.</p>
+<p>A new character knows 1 or 2 spells of their choice. Further spells are learned through play. Cantrips may come from your ancestry boon Fount, your archetype's Fount, or your specialty's Fount.</p>
+<h2>Advancement</h2>
+<p>Award an obstacle once when its immediate stakes are settled, regardless of fighting, negotiation, stealth, magic, retreat, or another approach.</p>
+<table>
+<thead>
+<tr>
+<th>Obstacle</th>
+<th style="text-align: right;">Points</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>minor</td>
+<td style="text-align: right;">1</td>
+<td>one risky scene or local cost</td>
+</tr>
+<tr>
+<td>major</td>
+<td style="text-align: right;">2</td>
+<td>several scenes or serious lasting stakes</td>
+</tr>
+<tr>
+<td>critical</td>
+<td style="text-align: right;">3</td>
+<td>settlement, faction, or campaign-changing stakes</td>
+</tr>
+</tbody>
+</table>
+<p>Spend points on any Fount. Raising a Fount costs its new level: 1→2 costs 2, 2→3 costs 3, 3→4 costs 4. Unspent points carry over.</p>
+<p><strong>Call on a Fount.</strong> Before rolling a check, spend 1 unspent point to gain advantage on it. The check must use that Fount and the point is gone. Use it sparingly: the same points raise your Founts.</p>
+<p>Higher scores will unlock abilities, but thresholds are not defined. Starting archetype and specialty abilities are not threshold unlocks.</p>
+</main>
+<main class="page info guide" data-view="archetypes" hidden>
+<header class="page-head"><h1>ARCHETYPES</h1></header>
+
+<p>Archetypes are starting training, not classes or caps. Characters may learn any specialty or ability through play. Each Fount has three archetypes; each archetype supplies one kit, one archetype ability, and three specialties: one of its own Fount and one of each of the two Founts opposite it on the wheel (yellow, blue, red, purple, green). Your archetype gives +1 to its Fount; specialties give no stat bonus.</p>
+<h3>ᛄ Warden</h3>
+<ul>
+<li><strong>Kit:</strong> light armor, standard bow (heavy), light sidearm, chalk line, 20 feet of cord.</li>
+<li>
+<p><strong>Archetype ability — Hold the Line:</strong> reaction when a nearby ally would take damage: move between them and source; attack targets Warden instead. If movement is impossible, no effect.</p>
+</li>
+<li>
+<p><strong>Marchwarden</strong></p>
+<ul>
+<li><strong>Boundary Keeper:</strong> action to mark a nearby clear line. First enemy crossing it before Warden's next turn takes <code>d6 + ᛄ&nbsp;Seron</code> damage, minus armor.</li>
+</ul>
+</li>
+<li><strong>Snarer</strong><ul>
+<li><strong>Pin Down:</strong> action: with a snare, net, or cord, a nearby creature is held in place until it succeeds a risky check to break free.</li>
+</ul>
+</li>
+<li><strong>Shieldbearer</strong><ul>
+<li><strong>Shield Wall:</strong> action: brace; allies behind you count +1 armor until your next turn.</li>
+</ul>
+</li>
+</ul>
+<h3>∵ Medic</h3>
+<ul>
+<li><strong>Kit:</strong> light armor, light staff or blade, bandages, splint, bitter antiseptic, notebook.</li>
+<li>
+<p><strong>Archetype ability — Field Treatment:</strong> once per short rest, action restores <code>d6</code> HP to adjacent living target. Cannot raise target above maximum HP.</p>
+</li>
+<li>
+<p><strong>Physician</strong></p>
+<ul>
+<li><strong>Pattern Diagnostician:</strong> study an injury, illness, or phenomenon closely; you learn what worsens it, what relieves it, or what happened to it most recently. Once per short rest.</li>
+</ul>
+</li>
+<li><strong>Stretcher-Bearer</strong><ul>
+<li><strong>Keep Breathing:</strong> reaction when nearby ally is downed; ally remains down but cannot be moved or further harmed by an unattended environmental hazard until Medic's next turn.</li>
+</ul>
+</li>
+<li><strong>Bedside Counselor</strong><ul>
+<li><strong>Doctor's Word:</strong> when you state a medical order, NPCs who hear it must answer it before acting on a conflicting one.</li>
+</ul>
+</li>
+</ul>
+<h3>ϟ Pathfinder</h3>
+<ul>
+<li><strong>Kit:</strong> light armor, standard blade or shortbow (heavy), climbing hook, 30 feet of rope, hooded lantern.</li>
+<li>
+<p><strong>Archetype ability — Find Another Way:</strong> once per short rest, after a route is blocked, you spot one costly, risky, or slow alternate route that exists.</p>
+</li>
+<li>
+<p><strong>Trailbreaker</strong></p>
+<ul>
+<li><strong>Wardbreaker:</strong> <code>+2</code> on checks to alter, bypass, or redirect a magical trigger after its rule has been discovered.</li>
+</ul>
+</li>
+<li><strong>Smuggler</strong><ul>
+<li><strong>Underworld Contact:</strong> once per day, name illicit help; you know someone nearby who can provide it, and their price or obligation.</li>
+</ul>
+</li>
+<li><strong>Waymarker</strong><ul>
+<li><strong>Waypoint:</strong> once per day, mark a place you have reached; the party can return to it by the shortest known route.</li>
+</ul>
+</li>
+</ul>
+<h3>△ Bulwark</h3>
+<ul>
+<li><strong>Kit:</strong> light armor, heavy maul (heavy), shield or planks, tool roll, 50 feet of rope.</li>
+<li>
+<p><strong>Archetype ability — Shore It Up:</strong> once per short rest, reaction when a nearby ally or structure would take damage: reduce it by <code>d6</code>.</p>
+</li>
+<li>
+<p><strong>Stalwart</strong></p>
+<ul>
+<li><strong>Keep Standing:</strong> once per long rest, ignore the first hit that would drop Bulwark to 0 HP; HP drops to 1 instead.</li>
+</ul>
+</li>
+<li><strong>Veteran</strong><ul>
+<li><strong>Read the Charge:</strong> after one round of fighting a foe, you can tell which of your allies it means to hit next.</li>
+</ul>
+</li>
+<li><strong>Gatekeeper</strong><ul>
+<li><strong>Hold the Door:</strong> action: hold a chokepoint; enemies must go through you to pass until your next turn.</li>
+</ul>
+</li>
+</ul>
+<h3>ᛄ Cartographer</h3>
+<ul>
+<li><strong>Kit:</strong> light armor, surveyor's staff, chalk and charcoal, measuring cord, map case.</li>
+<li>
+<p><strong>Archetype ability — Fix the Bounds:</strong> once per short rest, study a nearby area; you know its true edges, exits, and one hidden hazard.</p>
+</li>
+<li>
+<p><strong>Surveyor</strong></p>
+<ul>
+<li><strong>Claim Ground:</strong> action: declare a nearby zone yours; allies in it have advantage on the first check to defend it until your next turn.</li>
+</ul>
+</li>
+<li><strong>Pioneer</strong><ul>
+<li><strong>Cave-in:</strong> once per short rest, collapse an unstable ceiling or ledge you can reach.</li>
+</ul>
+</li>
+<li><strong>Packmaster</strong><ul>
+<li><strong>Load Bearer:</strong> carry heavy loads or an ally without penalty; hold a collapsing structure for a turn.</li>
+</ul>
+</li>
+</ul>
+<h3>ᛄ Paladin</h3>
+<ul>
+<li><strong>Kit:</strong> heavy armor, heavy blade (heavy), banner or holy symbol, oath token.</li>
+<li>
+<p><strong>Archetype ability — Sworn Word:</strong> once per short rest, swear to protect or reach one thing; your next important check that directly serves the oath has advantage. Breaking the oath ends it.</p>
+</li>
+<li>
+<p><strong>Inquisitor</strong></p>
+<ul>
+<li><strong>Smite the False:</strong> action: strike an enemy that broke a promise or lied to you; deal <code>d6 + ᛄ&nbsp;Seron + 1</code>, minus armor.</li>
+</ul>
+</li>
+<li><strong>Crusader</strong><ul>
+<li><strong>Unbroken:</strong> once per long rest, ignore a penalty from fear, pain, or charm until the scene ends.</li>
+</ul>
+</li>
+<li><strong>Zealot</strong><ul>
+<li><strong>Zeal:</strong> once per long rest, when an ally is downed, make an immediate attack.</li>
+</ul>
+</li>
+</ul>
+<h3>∵ Tinkerer</h3>
+<ul>
+<li><strong>Kit:</strong> light armor, spring-gun, toolkit, springs and wire, hooded lantern.</li>
+<li>
+<p><strong>Archetype ability — Jury Device:</strong> once per short rest, action: build a small gadget from scrap that does one simple thing until your next rest.</p>
+</li>
+<li>
+<p><strong>Trapsmith</strong></p>
+<ul>
+<li><strong>Trap Sense:</strong> study a device or area closely; you know whether it is trapped and how.</li>
+</ul>
+</li>
+<li><strong>Peddler</strong><ul>
+<li><strong>Haggle Parts:</strong> once per day, name a part or device; you know a seller nearby and their price.</li>
+</ul>
+</li>
+<li><strong>Mender</strong><ul>
+<li><strong>Mender's Hands:</strong> repair a broken mundane tool or door in a minute with no check.</li>
+</ul>
+</li>
+</ul>
+<h3>∵ Loremaster</h3>
+<ul>
+<li><strong>Kit:</strong> light armor, quarterstaff or dagger, travel library, ink and quill, scroll case.</li>
+<li>
+<p><strong>Archetype ability — I Read About This:</strong> once per short rest, name a creature, place, or custom; you recall one true fact about it.</p>
+</li>
+<li>
+<p><strong>Archivist</strong></p>
+<ul>
+<li><strong>Perfect Recall:</strong> once per short rest, recall any fact or clue you witnessed, exactly as it was.</li>
+</ul>
+</li>
+<li><strong>Linguist</strong><ul>
+<li><strong>Tongues:</strong> understand and be understood in any language you have heard for a minute.</li>
+</ul>
+</li>
+<li><strong>Spellbinder</strong><ul>
+<li><strong>Contain It:</strong> once per long rest, cast one spell with a base cost of 2 or less without spending mana.</li>
+</ul>
+</li>
+</ul>
+<h3>ϟ Duelist</h3>
+<ul>
+<li><strong>Kit:</strong> light armor, rapier or fine blade, dueling cloak, whetstone.</li>
+<li>
+<p><strong>Archetype ability — Break the Pattern:</strong> reaction when an enemy attacks you: step aside and reduce that damage by <code>d6</code> (minimum 0).</p>
+</li>
+<li>
+<p><strong>Fencer</strong></p>
+<ul>
+<li><strong>Riposte:</strong> after Break the Pattern, strike the attacker if adjacent.</li>
+</ul>
+</li>
+<li><strong>Showman</strong><ul>
+<li><strong>Flourish:</strong> when you win a clear exchange in public, bystanders react with respect or fear, as the moment fits.</li>
+</ul>
+</li>
+<li><strong>Champion</strong><ul>
+<li><strong>Challenge:</strong> action: name one enemy in sight; until your next turn it must target you or have disadvantage on its attacks.</li>
+</ul>
+</li>
+</ul>
+<h3>ϟ Wildcaller</h3>
+<ul>
+<li><strong>Kit:</strong> light armor, focus staff, flint, pouch of volatile reagents.</li>
+<li>
+<p><strong>Archetype ability — Loose the Storm:</strong> once per short rest, action: unleash a burst on a nearby zone; creatures there take <code>d6 + ϟ&nbsp;Zhark</code>, minus armor, and it leaves one fitting side effect on the zone.</p>
+</li>
+<li>
+<p><strong>Stormcaller</strong></p>
+<ul>
+<li><strong>Chain Spark:</strong> once per short rest, one attack also hits a second adjacent target for <code>d6</code>, minus armor.</li>
+</ul>
+</li>
+<li><strong>Beastmaster</strong><ul>
+<li><strong>Leash:</strong> once per short rest, a spell or creature you called obeys one simple command exactly as stated.</li>
+</ul>
+</li>
+<li><strong>Whisperer</strong><ul>
+<li><strong>Talk Down:</strong> when a creature you called turns on someone, a word from you stops it for a round.</li>
+</ul>
+</li>
+</ul>
+<h3>△ Delver</h3>
+<ul>
+<li><strong>Kit:</strong> light armor, pick or hammer (heavy), lantern, 50 feet of rope, chalk.</li>
+<li>
+<p><strong>Archetype ability — Dig Through:</strong> once per short rest, action: open or close a passage in earth, loose rock, or crude masonry up to about 5 feet thick, wide enough for one person, until your next rest. Solid bedrock and warded or metal barriers resist it.</p>
+</li>
+<li>
+<p><strong>Burrower</strong></p>
+<ul>
+<li><strong>Tremorsense:</strong> feel vibrations nearby; you sense what is moving in a nearby zone.</li>
+</ul>
+</li>
+<li><strong>Brawler</strong><ul>
+<li><strong>Pit Fighter:</strong> advantage on checks in cramped or underground spaces.</li>
+</ul>
+</li>
+<li><strong>Sapper</strong><ul>
+<li><strong>Sound the Rock:</strong> study a ceiling, wall, or floor closely; you know whether it will hold weight and for how long.</li>
+</ul>
+</li>
+</ul>
+<h3>△ Rootbound</h3>
+<ul>
+<li><strong>Kit:</strong> light armor, staff or club, seed pouch, water skin, herb bundle.</li>
+<li>
+<p><strong>Archetype ability — Take Root:</strong> once per short rest, action: through living plants, heal a nearby ally <code>d6</code> or give them 1 armor until your next turn.</p>
+</li>
+<li>
+<p><strong>Greenseer</strong></p>
+<ul>
+<li><strong>Green Sense:</strong> know what plants and animals nearby are doing, and read from them what passed here recently.</li>
+</ul>
+</li>
+<li><strong>Hearthroot</strong><ul>
+<li><strong>Slow Burn:</strong> regain 1 extra HP whenever you finish a short rest.</li>
+</ul>
+</li>
+<li><strong>Thornwarden</strong><ul>
+<li><strong>Boundary Seed:</strong> once per short rest, action: plant a ring of seeds nearby; the first creature to cross it each turn must stop, then may continue next turn. The ring lasts one scene.</li>
+</ul>
+</li>
+</ul>
+<h3>⌘ Bard</h3>
+<ul>
+<li><strong>Kit:</strong> light armor, dagger or rapier, instrument, songbook, bright cloak.</li>
+<li>
+<p><strong>Archetype ability — Rally the Room:</strong> once per short rest, reaction: give an ally advantage on their next check.</p>
+</li>
+<li>
+<p><strong>Minstrel</strong></p>
+<ul>
+<li><strong>Captivating Performance:</strong> once per short rest, action: nearby listeners are held for about a minute or until something disturbs them; harm or a loud threat breaks it.</li>
+</ul>
+</li>
+<li><strong>Chronicler</strong><ul>
+<li><strong>Songs of Memory:</strong> recall a tale or ballad about a person or place; it holds one true fact.</li>
+</ul>
+</li>
+<li><strong>Provocateur</strong><ul>
+<li><strong>Discordant Note:</strong> action: sound a jarring note; nearby enemies lose their reaction until your next turn.</li>
+</ul>
+</li>
+</ul>
+<h3>⌘ Envoy</h3>
+<ul>
+<li><strong>Kit:</strong> light armor, sidearm or sword, letters of passage, seal, formal clothes.</li>
+<li>
+<p><strong>Archetype ability — Fair Trade:</strong> once per day, name anything you want arranged; you know the fair price or favor it would cost.</p>
+</li>
+<li>
+<p><strong>Diplomat</strong></p>
+<ul>
+<li><strong>Silver Tongue:</strong> once per short rest, reroll a failed persuasion check, keeping the second result.</li>
+</ul>
+</li>
+<li><strong>Courtier</strong><ul>
+<li><strong>Crowd Reader:</strong> on meeting a group, you can tell who holds power and what they want.</li>
+</ul>
+</li>
+<li><strong>Fixer</strong><ul>
+<li><strong>Bold Lie:</strong> once per short rest, state a bold lie; the first NPC who hears it believes it until they get proof or a reason to doubt.</li>
+</ul>
+</li>
+</ul>
+<h3>⌘ Trickster</h3>
+<ul>
+<li><strong>Kit:</strong> light armor, dagger or sling, disguise kit, loaded dice, spare keys.</li>
+<li>
+<p><strong>Archetype ability — Borrowed Face:</strong> once per short rest, action: pass as a plausible person or role to NPCs who have not met you, until questioned or tested.</p>
+</li>
+<li>
+<p><strong>Cutpurse</strong></p>
+<ul>
+<li><strong>Light Fingers:</strong> take or plant a hand-sized item unnoticed when the target is unaware; if the target is alert or the item guarded, it needs a risky check.</li>
+</ul>
+</li>
+<li><strong>Escape Artist</strong><ul>
+<li><strong>Smooth Exit:</strong> once per short rest, talk your way out of a tight spot at the price of something you leave behind.</li>
+</ul>
+</li>
+<li><strong>Appraiser</strong><ul>
+<li><strong>Sharp Eye:</strong> notice the lie, forgery, or con in a short exchange.</li>
+</ul>
+</li>
+</ul>
+</main>
+<main class="page info guide" data-view="spells" hidden>
+<header class="page-head"><h1>SPELLS</h1></header>
+
+<p>Active alpha spells. Rules for casting, mana, and rests are in the guide.</p>
+<ul>
+<li><strong>Starting spells:</strong> a new character knows 1 or 2 spells. More are learned through play.</li>
+<li><strong>Cost:</strong> base mana cost in brackets. It drops by 1 if you cast with a Fount score of 4+ and by 2 at 6+, never below 1 (never below 2 for a base-3 spell).</li>
+<li><strong>Defaults:</strong> range nearby (about 30 ft), duration 5 minutes. Larger scope, distance, duration, or unwilling targets are harder.</li>
+<li><strong>Stacking:</strong> the same spell does not stack with itself; the newer replaces the older. Different spells stack, but spells never raise armor above 3.</li>
+<li><strong>Unwilling targets:</strong> Charm, Babble, Mad jig, Improv sesh, and any other spell that controls, disables, or erases an unwilling creature follow the hard-cast rule in the guide.</li>
+<li><strong>Check:</strong> see when to roll. A risky cast rolls <code>d20 + Fount</code> for the spell's Fount. A failed cast still spends its mana.</li>
+</ul>
+<h3>ᛄ&nbsp;Seron</h3>
+<ul>
+<li><strong>Force shield (2):</strong> a bubble covers you and one nearby ally; damage to them is reduced by <code>d6</code> until your next turn.</li>
+<li><strong>Reveal path (1):</strong> you know the direction and rough distance to anything or anyone you have seen in person or in a picture, even an unrecognizable one. It shows no obstacles or dangers, and wards can block it.</li>
+<li><strong>Seal (2):</strong> name a door, container, or line; it cannot be opened or crossed until you leave or end it. Forcing it takes a hard check.</li>
+<li><strong>Ironbane (2):</strong> for 5 minutes, the first iron weapon or tool to touch you disintegrates, then the spell ends. Iron bars, structures, and armor are not affected.</li>
+<li><strong>Cast fog (1):</strong> fog in a color of your choice fills a nearby zone.</li>
+<li><strong>Telekinesis (2):</strong> move unattended objects nearby, up to your <strong>ᛄ</strong> <em>Seron</em> score in number. Heavier or more numerous loads make it a risky check.</li>
+</ul>
+<h3>∵&nbsp;Orvik</h3>
+<ul>
+<li><strong>Simplify problem (1):</strong> reveals a clue and makes one hard task risky instead.</li>
+<li><strong>Wizard mark (1):</strong> touch to coat a target in paint only casters can see, even through walls.</li>
+<li><strong>Thaumaturgic anchor (2):</strong> an enchanted item draws the next spell or magical effect aimed at something else nearby, then goes inert.</li>
+<li><strong>Illusion (2):</strong> an illusion aimed at one of a target's five senses.</li>
+<li><strong>Mirror image (3):</strong> physical clones of you appear, as many as your <strong>∵</strong> <em>Orvik</em> score, for 5 minutes. They have your mindset and act on their own, have your normal physical capabilities, cannot cast spells or use abilities that cost mana, and vanish if hit once. They carry no copy of your inventory, gear, or tools; clones cannot use consumables. They move and act independently, but only one clone can attack each round, dealing <code>d6 − 2</code> (minimum 1).</li>
+<li><strong>Question rock (1):</strong> ask an object or non-verbal creature one question about what it has plausibly perceived. Only you hear the answer, and it is always true but may be partial.</li>
+</ul>
+<h3>ϟ&nbsp;Zhark</h3>
+<ul>
+<li><strong>Filch (1):</strong> a visible unattended item nearby teleports to your hand. An item someone holds or wears makes it a hard cast.</li>
+<li><strong>Gravity shift (2):</strong> choose a direction for gravity to pull you, with no fall damage, for 5 minutes. Changing the direction takes your move.</li>
+<li><strong>Flesh warp (3):</strong> a touched creature doubles or halves in size for 5 minutes. Doubled: physical reach (not attack range) and carrying improve and it deals +1 damage, but it cannot fit narrow gaps. Halved: it fits tight spaces and deals −1 damage.</li>
+<li><strong>Elemental hand (2):</strong> control air, earth, water, or fire nearby. With a <strong>ϟ</strong> <em>Zhark</em> score of 2 or less, roll <code>1d4</code> for the element.</li>
+<li><strong>Summon thing (2):</strong> real items you have seen within the last day, small enough to hold in one hand, appear in your hand, up to your <strong>ϟ</strong> <em>Zhark</em> score in number. They are moved from where they were, not copied, and return when the spell ends unless used up. An item someone holds or guards makes it a hard cast.</li>
+<li><strong>Time jump (2):</strong> a touched item vanishes and reappears at the same spot, after a number of minutes equal to your <strong>ϟ</strong> <em>Zhark</em> score, with the same momentum. If the spot is occupied, it appears in the nearest free space.</li>
+<li><strong>No u (2):</strong> reaction: flip a coin. Heads: the attack hits the attacker instead. Tails: it hits you as usual, with +1 damage.</li>
+<li><strong>Polymorph (3):</strong> a touched willing creature takes another form of about its size until you end it or 5 minutes pass.</li>
+</ul>
+<h3>△&nbsp;Drun</h3>
+<ul>
+<li><strong>Healing touch (2):</strong> heal a touched ally <code>d6</code>, or remove one negative effect.</li>
+<li><strong>Defy death (3):</strong> the next hit that would drop a touched ally to 0 HP leaves them at 1 HP instead. It ends then, or at your next short rest.</li>
+<li><strong>Leather carapace (2):</strong> a target's skin hardens like steel (+1 armor) until your next short rest.</li>
+<li><strong>Embolden (1):</strong> a touched ally gets +1 to their next check.</li>
+<li><strong>Ghost of pets past (2):</strong> a ghostly familiar absorbs <code>d6</code> + <strong>△</strong> <em>Drun</em> damage until it is used up or 5 minutes pass.</li>
+<li><strong>Rooted path (1):</strong> the ground firms up for the party: mud, ice, rubble, and loose scree become safe to cross for 5 minutes.</li>
+<li><strong>Shelter (2):</strong> plants and earth shape a lean-to or low wall nearby for up to six people; those inside count +1 armor until you leave or end it.</li>
+<li><strong>Tireless (2):</strong> until your next long rest, a touched ally ignores one hardship you name: fatigue, thirst, or ordinary weather.</li>
+</ul>
+<h3>⌘&nbsp;Veyra</h3>
+<ul>
+<li><strong>Charm (2):</strong> targets are drawn to an object or creature you choose, up to your <strong>⌘</strong> <em>Veyra</em> score in number. They approach it and fix their attention on it, but will not walk into obvious danger or attack because of it.</li>
+<li><strong>Dread presence (1):</strong> creatures nearby that have not noticed you turn anxious and skittish.</li>
+<li><strong>Improv sesh (2):</strong> the target cannot recall what it was thinking and doing for the last 5 minutes, until it sleeps or is shown strong proof.</li>
+<li><strong>Vibe check (1):</strong> name a nearby creature; you learn its intent toward you, and if it is hostile its next attack deals half damage.</li>
+<li><strong>Babble (1):</strong> the target must loudly repeat your thoughts and is otherwise mute. Casting spells does not require speech, so this does not stop it.</li>
+<li><strong>Mad jig (2):</strong> the target dances and cannot otherwise move for 1 minute or until it is hurt.</li>
+</ul>
+<h3>Cantrips</h3>
+<p>Cantrips are effortless expressions of a Fount. They cost no mana and need no roll, so they can be cast freely. Their effects are small, brief, and harmless: range self to 15 ft, duration 1 minute unless stated; effects that record or encode something last as stated. They cannot directly inflict or prevent damage, restore health, impose mechanical conditions, or compel another creature's actions. They cannot stack with themselves, bypass a significant obstacle, permanently change a creature, or do what a spell does.</p>
+<p>A cantrip can still have indirect results in the fiction: a small light may expose a hidden creature, and a noise may distract a guard. Cantrips manipulate details; spells change outcomes. A cantrip gives one useful way to approach a problem; it does not solve a whole encounter.</p>
+<h3>ᛄ&nbsp;Seron</h3>
+<ul>
+<li><strong>Blade ward:</strong> a held shield or weapon shows its nicks, cracks, and weak points in faint light. It does not change how well it protects or cuts.</li>
+<li><strong>Guidance:</strong> for a task you state, a relevant direction or visible detail glows briefly. It does not tell you the right choice.</li>
+<li><strong>Thaumaturgy:</strong> a harmless sign of power: a tremor, a louder voice, a flickering flame.</li>
+<li><strong>Mark boundary:</strong> draw a glowing line up to 10 ft long.</li>
+<li><strong>Threshold sense:</strong> mark a doorway or opening; you are warned if something crosses it while you are nearby.</li>
+<li><strong>Steady hand:</strong> hold a small object perfectly motionless where it is, or keep your own hand perfectly steady during delicate work, for 1 minute.</li>
+</ul>
+<h3>∵&nbsp;Orvik</h3>
+<ul>
+<li><strong>Encode thoughts:</strong> turn a short message into a cipher only you can read. The cipher lasts until you undo it.</li>
+<li><strong>Message:</strong> whisper a short message to a creature you can see; it can whisper a reply.</li>
+<li><strong>Mage hand:</strong> move an unattended object of 1 lb or less. It cannot attack or work a complex mechanism.</li>
+<li><strong>Read pattern:</strong> reveal a simple repeating pattern in an object, inscription, or mechanism.</li>
+<li><strong>Memory mark:</strong> keep one brief sight or sound for exact recall later. You hold one mark at a time; a new one replaces it.</li>
+</ul>
+<h3>ϟ&nbsp;Zhark</h3>
+<ul>
+<li><strong>Chill touch:</strong> leave a pattern of harmless frost on a surface.</li>
+<li><strong>Shocking grasp:</strong> produce a harmless static discharge.</li>
+<li><strong>Acid splash:</strong> dissolve a tiny amount of harmless residue.</li>
+<li><strong>Eldritch blast:</strong> a brief pulse that moves dust or lightweight debris.</li>
+<li><strong>Booming blade:</strong> make a held object ring with a deep, resonant tone.</li>
+<li><strong>Dancing lights:</strong> a few small, harmless moving lights.</li>
+<li><strong>Prestidigitation:</strong> a minor trick: clean or soil a small object, warm or chill it, or give it a flavor or scent.</li>
+<li><strong>See-through:</strong> make one layer of a small unattended object transparent for 1 minute. It does not defeat structural barriers, locks, or restraints.</li>
+<li><strong>Reshape:</strong> soften, harden, or bend a small unattended object of about 1 lb; it returns to its form after 1 minute. It does not defeat structural barriers, locks, or restraints.</li>
+</ul>
+<h3>△&nbsp;Drun</h3>
+<ul>
+<li><strong>Poison spray:</strong> a tiny visible cloud with an unpleasant scent.</li>
+<li><strong>Shillelagh:</strong> a wooden object feels unusually rigid for a minute. Its combat use does not change.</li>
+<li><strong>Druidcraft:</strong> a tiny natural effect, such as opening a flower or moving a few leaves, or knowing whether rain is coming within the hour.</li>
+<li><strong>Decompose:</strong> speed decay in a tiny amount of dead organic matter.</li>
+<li><strong>Seed wake:</strong> a viable seed sprouts a little, or a small plant recovers from mild wilting.</li>
+<li><strong>Spare the dying:</strong> sense whether a creature is alive, stable, or dying. It does not stabilize or heal them.</li>
+<li><strong>Root hold:</strong> a small loose object or patch of soil stays put against ordinary movement.</li>
+<li><strong>Vital spark:</strong> ease minor fatigue or discomfort. It heals no injury.</li>
+</ul>
+<h3>⌘&nbsp;Veyra</h3>
+<ul>
+<li><strong>Vicious mockery:</strong> your voice carries an unsettling emotional quality.</li>
+<li><strong>Friends:</strong> a wary or indifferent creature will hear you out for a minute before deciding anything. It does not compel agreement or end established hostility.</li>
+<li><strong>Echo:</strong> repeat a short sound or phrase you have heard yourself.</li>
+<li><strong>Emotional tint:</strong> convey a simple emotion through voice or gesture, even without a shared language.</li>
+<li><strong>Soothing voice:</strong> your voice steadies a willing creature's breathing. It feels calmer, but nothing else changes.</li>
+<li><strong>Shared rhythm:</strong> you and one willing creature fall into step, keeping an even pace together while walking, rowing, or working for 1 minute.</li>
+</ul>
+</main>
+<main class="page info guide" data-view="items" hidden>
+<header class="page-head"><h1>ITEMS</h1></header>
+
+<p>Gear for alpha. Prices use the money table: <code>1 gp = 10 sp = 100 cp</code>, and <code>1 rp = 20 gp</code>. Archetype kits are free at character creation; prices matter for anything bought later. Prices are provisional and will change after playtest.</p>
+<p><strong>How gear works.</strong> Gear gives a method, not a number. Having the right tool means the task is possible and a failed check does not ruin it; lacking it can make the task impossible or hard. Only weapons and armor change numbers. Food and rations are not tracked.</p>
+<p><strong>Quality.</strong> Shoddy items cost half and show it. Common is listed price. Fine costs double. Exceptional costs four times and has a quirk of the GM's choosing. Quality changes looks, reliability, and story, not numbers.</p>
+<h3>Weapons</h3>
+<p>Attack is <code>d6 + Fount − armor</code>. Weapons add nothing except the heavy bonus.</p>
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th style="text-align: right;">Bonus</th>
+<th>Hands</th>
+<th style="text-align: right;">Price</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Light weapon (dagger, sling, light sidearm)</td>
+<td style="text-align: right;">+0</td>
+<td>one</td>
+<td style="text-align: right;">5 sp</td>
+<td>easy to hide</td>
+</tr>
+<tr>
+<td>Standard weapon (sword, rapier, spear, axe)</td>
+<td style="text-align: right;">+0</td>
+<td>one</td>
+<td style="text-align: right;">2 gp</td>
+<td></td>
+</tr>
+<tr>
+<td>Staff (light staff, quarterstaff, focus staff, surveyor's staff, club)</td>
+<td style="text-align: right;">+0</td>
+<td>one or two</td>
+<td style="text-align: right;">5 sp</td>
+<td>a focus staff can channel a spell</td>
+</tr>
+<tr>
+<td>Standard bow or shortbow (heavy)</td>
+<td style="text-align: right;">+1</td>
+<td>two</td>
+<td style="text-align: right;">4 gp</td>
+<td>nearby range</td>
+</tr>
+<tr>
+<td>Heavy weapon (maul, heavy blade, pick or hammer)</td>
+<td style="text-align: right;">+1</td>
+<td>two</td>
+<td style="text-align: right;">5 gp</td>
+<td></td>
+</tr>
+<tr>
+<td>Spring-gun</td>
+<td style="text-align: right;">+0</td>
+<td>one</td>
+<td style="text-align: right;">8 gp</td>
+<td>reloading uses your move</td>
+</tr>
+</tbody>
+</table>
+<p>Ammunition is not tracked.</p>
+<h3>Armor</h3>
+<p>Armor value is subtracted from damage. Total armor never exceeds 3, counting spells and abilities.</p>
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th style="text-align: right;">Armor</th>
+<th style="text-align: right;">Price</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Clothes, no armor</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1 gp</td>
+<td></td>
+</tr>
+<tr>
+<td>Light armor (leather, padded)</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">10 gp</td>
+<td></td>
+</tr>
+<tr>
+<td>Heavy armor (mail, plate)</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">40 gp</td>
+<td>noisy</td>
+</tr>
+<tr>
+<td>Shield or planks</td>
+<td style="text-align: right;">+1</td>
+<td style="text-align: right;">3 gp</td>
+<td>one hand, so no two-handed weapon; armor total stays at most 2 from gear</td>
+</tr>
+</tbody>
+</table>
+<h3>Kits and tools</h3>
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th style="text-align: right;">Price</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Toolkit or tool roll</td>
+<td style="text-align: right;">3 gp</td>
+<td>repairs, locks, and mechanisms; the minimal tools for repairing animated armor</td>
+</tr>
+<tr>
+<td>Healer's kit</td>
+<td style="text-align: right;">1 gp</td>
+<td>medicine that explains a rescue; lets ordinary treatment work</td>
+</tr>
+<tr>
+<td>Disguise kit</td>
+<td style="text-align: right;">5 gp</td>
+<td>pass as a kind of person (guard, noble, priest) with no roll and no time limit. When someone looks closely or questions you, make a risky ⌘&nbsp;Veyra check; it is hard to copy a specific person, someone of a different size, or to fool someone who knows who you claim to be</td>
+</tr>
+<tr>
+<td>Climbing hook and rope (30 ft)</td>
+<td style="text-align: right;">8 sp</td>
+<td>climbing and hauling</td>
+</tr>
+<tr>
+<td>Rope, 50 ft</td>
+<td style="text-align: right;">5 sp</td>
+<td></td>
+</tr>
+<tr>
+<td>Cord (20 ft), measuring cord, or chalk line</td>
+<td style="text-align: right;">2 sp</td>
+<td></td>
+</tr>
+<tr>
+<td>Springs and wire</td>
+<td style="text-align: right;">2 sp</td>
+<td>parts for a gadget or a repair</td>
+</tr>
+<tr>
+<td>Notebook, songbook</td>
+<td style="text-align: right;">3 sp</td>
+<td></td>
+</tr>
+<tr>
+<td>Hooded lantern</td>
+<td style="text-align: right;">1 gp</td>
+<td>light that can be shuttered</td>
+</tr>
+<tr>
+<td>Lantern</td>
+<td style="text-align: right;">5 sp</td>
+<td>plain light</td>
+</tr>
+<tr>
+<td>Flint and tinder</td>
+<td style="text-align: right;">1 sp</td>
+<td></td>
+</tr>
+<tr>
+<td>Instrument</td>
+<td style="text-align: right;">2 gp</td>
+<td>performance</td>
+</tr>
+<tr>
+<td>Travel library</td>
+<td style="text-align: right;">10 gp</td>
+<td>reference books; research and recall</td>
+</tr>
+<tr>
+<td>Ink, quill, and scroll case</td>
+<td style="text-align: right;">5 sp</td>
+<td></td>
+</tr>
+<tr>
+<td>Map case, chalk, and charcoal</td>
+<td style="text-align: right;">4 sp</td>
+<td></td>
+</tr>
+<tr>
+<td>Seed pouch or herb bundle</td>
+<td style="text-align: right;">3 sp</td>
+<td></td>
+</tr>
+<tr>
+<td>Pouch of volatile reagents</td>
+<td style="text-align: right;">2 gp</td>
+<td>fuel for a spell or a spectacle; the GM decides what it can do</td>
+</tr>
+<tr>
+<td>Alchemy kit</td>
+<td style="text-align: right;">10 gp</td>
+<td>brew potions (see spell components); needs a few hours of safe work</td>
+</tr>
+<tr>
+<td>Loaded dice, spare keys</td>
+<td style="text-align: right;">1 gp</td>
+<td></td>
+</tr>
+<tr>
+<td>Letters of passage and a seal</td>
+<td style="text-align: right;">3 gp</td>
+<td>open doors that need paperwork</td>
+</tr>
+<tr>
+<td>Formal clothes</td>
+<td style="text-align: right;">5 gp</td>
+<td></td>
+</tr>
+<tr>
+<td>Banner, holy symbol, or oath token</td>
+<td style="text-align: right;">5 sp</td>
+<td></td>
+</tr>
+<tr>
+<td>Bright cloak</td>
+<td style="text-align: right;">5 sp</td>
+<td></td>
+</tr>
+<tr>
+<td>Dueling cloak, whetstone</td>
+<td style="text-align: right;">1 gp</td>
+<td></td>
+</tr>
+<tr>
+<td>Water skin, pack, bedroll</td>
+<td style="text-align: right;">5 sp</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3>Supplies and services</h3>
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th style="text-align: right;">Price</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Meal at an inn</td>
+<td style="text-align: right;">5 cp</td>
+</tr>
+<tr>
+<td>Night at an inn</td>
+<td style="text-align: right;">1 sp</td>
+</tr>
+<tr>
+<td>Healing draught (heals <code>d6</code> HP, nothing above max)</td>
+<td style="text-align: right;">5 gp</td>
+</tr>
+<tr>
+<td>Pack mule</td>
+<td style="text-align: right;">15 gp</td>
+</tr>
+<tr>
+<td>Riding horse</td>
+<td style="text-align: right;">30 gp</td>
+</tr>
+</tbody>
+</table>
+<p>Mounts are beasts, not gear: they have motives and limits. A mount lets the party cross a long journey faster, but the travel table still applies.</p>
+<h3>Shop stock</h3>
+<p>Roll when the party browses a notable shop: what is in stock, how good it is, and what is odd about it. Price comes from the tables above; quality sets the multiplier.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;">d10</th>
+<th>Item</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">1</td>
+<td>a weapon: blade, bow, hafted, or hidden</td>
+</tr>
+<tr>
+<td style="text-align: right;">2</td>
+<td>armor or a shield</td>
+</tr>
+<tr>
+<td style="text-align: right;">3</td>
+<td>a potion or draught</td>
+</tr>
+<tr>
+<td style="text-align: right;">4</td>
+<td>a tool or kit for a trade</td>
+</tr>
+<tr>
+<td style="text-align: right;">5</td>
+<td>a book, map, or sealed letter</td>
+</tr>
+<tr>
+<td style="text-align: right;">6</td>
+<td>jewelry or a small trinket</td>
+</tr>
+<tr>
+<td style="text-align: right;">7</td>
+<td>fine clothing or a disguise</td>
+</tr>
+<tr>
+<td style="text-align: right;">8</td>
+<td>a mount, beast, or familiar</td>
+</tr>
+<tr>
+<td style="text-align: right;">9</td>
+<td>raw material: ore, hide, reagents, or lumber</td>
+</tr>
+<tr>
+<td style="text-align: right;">10</td>
+<td>an oddity even the seller cannot explain</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;">d6</th>
+<th>Quality</th>
+<th style="text-align: right;">Price</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">1</td>
+<td>shoddy: cheap, and it shows</td>
+<td style="text-align: right;">half</td>
+</tr>
+<tr>
+<td style="text-align: right;">2–3</td>
+<td>common: fair price, does the job</td>
+<td style="text-align: right;">listed</td>
+</tr>
+<tr>
+<td style="text-align: right;">4–5</td>
+<td>fine: well-made</td>
+<td style="text-align: right;">double</td>
+</tr>
+<tr>
+<td style="text-align: right;">6</td>
+<td>exceptional: rare, and dear</td>
+<td style="text-align: right;">four times</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;">d6</th>
+<th>Quirk</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">1</td>
+<td>the seller won't say where it came from</td>
+</tr>
+<tr>
+<td style="text-align: right;">2</td>
+<td>it's not actually theirs to sell</td>
+</tr>
+<tr>
+<td style="text-align: right;">3</td>
+<td>there's exactly one, and someone else wants it</td>
+</tr>
+<tr>
+<td style="text-align: right;">4</td>
+<td>it comes with a condition</td>
+</tr>
+<tr>
+<td style="text-align: right;">5</td>
+<td>it's slightly wrong in a way you can't place</td>
+</tr>
+<tr>
+<td style="text-align: right;">6</td>
+<td>nothing's wrong with it, which is suspicious</td>
+</tr>
+</tbody>
+</table>
+</main>
+<main class="page info guide" data-view="knacks" hidden>
+<header class="page-head"><h1>KNACKS</h1></header>
+
+<p>Every character picks one mundane knack at creation (humans pick two). You never roll to do your knack well, and the GM works it into the fiction. A knack is a skill, not magic. The GM may grant advantage or a bonus when it fits, but you can't plan on one. Pick from the list, roll <code>d100</code>, or make up your own of the same size.</p>
+<table>
+<thead>
+<tr>
+<th>d100</th>
+<th>Knack</th>
+<th>d100</th>
+<th>Knack</th>
+<th>d100</th>
+<th>Knack</th>
+<th>d100</th>
+<th>Knack</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>01</td>
+<td>cooking</td>
+<td>26</td>
+<td>fishing</td>
+<td>51</td>
+<td>running long distances</td>
+<td>76</td>
+<td>shadow plays</td>
+</tr>
+<tr>
+<td>02</td>
+<td>brewing and distilling</td>
+<td>27</td>
+<td>foraging</td>
+<td>52</td>
+<td>smithing small things</td>
+<td>77</td>
+<td>whistling</td>
+</tr>
+<tr>
+<td>03</td>
+<td>baking</td>
+<td>28</td>
+<td>birdcalls</td>
+<td>53</td>
+<td>carpentry</td>
+<td>78</td>
+<td>drumming</td>
+</tr>
+<tr>
+<td>04</td>
+<td>knots and rope</td>
+<td>29</td>
+<td>herding and handling animals</td>
+<td>54</td>
+<td>masonry</td>
+<td>79</td>
+<td>chess and board games</td>
+</tr>
+<tr>
+<td>05</td>
+<td>card tricks</td>
+<td>30</td>
+<td>weather reading</td>
+<td>55</td>
+<td>basket weaving</td>
+<td>80</td>
+<td>riddles</td>
+</tr>
+<tr>
+<td>06</td>
+<td>dice and gambling</td>
+<td>31</td>
+<td>stargazing and navigation</td>
+<td>56</td>
+<td>weaving cloth</td>
+<td>81</td>
+<td>remembering faces and names</td>
+</tr>
+<tr>
+<td>07</td>
+<td>singing</td>
+<td>32</td>
+<td>swimming</td>
+<td>57</td>
+<td>dyeing</td>
+<td>82</td>
+<td>counting and quick sums</td>
+</tr>
+<tr>
+<td>08</td>
+<td>an instrument (pick one)</td>
+<td>33</td>
+<td>climbing</td>
+<td>58</td>
+<td>candle and soap making</td>
+<td>83</td>
+<td>appraising coins and trinkets</td>
+</tr>
+<tr>
+<td>09</td>
+<td>dancing</td>
+<td>34</td>
+<td>juggling and tumbling</td>
+<td>59</td>
+<td>glassblowing</td>
+<td>84</td>
+<td>fortune telling (pretend)</td>
+</tr>
+<tr>
+<td>10</td>
+<td>storytelling</td>
+<td>35</td>
+<td>map drawing</td>
+<td>60</td>
+<td>jewelry and beadwork</td>
+<td>85</td>
+<td>reciting law and custom</td>
+</tr>
+<tr>
+<td>11</td>
+<td>jokes and impressions</td>
+<td>36</td>
+<td>keeping records and ledgers</td>
+<td>61</td>
+<td>tinkering with locks and clocks</td>
+<td>86</td>
+<td>religious rites and prayers</td>
+</tr>
+<tr>
+<td>12</td>
+<td>poetry</td>
+<td>37</td>
+<td>butchery</td>
+<td>62</td>
+<td>hairdressing and grooming</td>
+<td>87</td>
+<td>heraldry and family trees</td>
+</tr>
+<tr>
+<td>13</td>
+<td>whittling</td>
+<td>38</td>
+<td>cheesemaking</td>
+<td>63</td>
+<td>makeup and face paint</td>
+<td>88</td>
+<td>old songs and folklore</td>
+</tr>
+<tr>
+<td>14</td>
+<td>sewing and mending</td>
+<td>39</td>
+<td>pickling and preserving</td>
+<td>64</td>
+<td>tattooing</td>
+<td>89</td>
+<td>local history</td>
+</tr>
+<tr>
+<td>15</td>
+<td>leatherwork</td>
+<td>40</td>
+<td>tea blending</td>
+<td>65</td>
+<td>perfume making</td>
+<td>90</td>
+<td>mimicking accents</td>
+</tr>
+<tr>
+<td>16</td>
+<td>pottery</td>
+<td>41</td>
+<td>beekeeping</td>
+<td>66</td>
+<td>first aid and splints</td>
+<td>91</td>
+<td>sign language</td>
+</tr>
+<tr>
+<td>17</td>
+<td>painting</td>
+<td>42</td>
+<td>gardening</td>
+<td>67</td>
+<td>midwifery</td>
+<td>92</td>
+<td>writing letters for others</td>
+</tr>
+<tr>
+<td>18</td>
+<td>calligraphy</td>
+<td>43</td>
+<td>farming</td>
+<td>68</td>
+<td>setting traps</td>
+<td>93</td>
+<td>reading people at a table</td>
+</tr>
+<tr>
+<td>19</td>
+<td>haggling</td>
+<td>44</td>
+<td>horse riding</td>
+<td>69</td>
+<td>skinning and tanning</td>
+<td>94</td>
+<td>bartending</td>
+</tr>
+<tr>
+<td>20</td>
+<td>gossip and rumors</td>
+<td>45</td>
+<td>carting and driving teams</td>
+<td>70</td>
+<td>bird and beast taxidermy</td>
+<td>95</td>
+<td>innkeeping</td>
+</tr>
+<tr>
+<td>21</td>
+<td>etiquette and manners</td>
+<td>46</td>
+<td>sailing and boat handling</td>
+<td>71</td>
+<td>falconry</td>
+<td>96</td>
+<td>cleaning and housekeeping</td>
+</tr>
+<tr>
+<td>22</td>
+<td>forging signatures</td>
+<td>47</td>
+<td>rowing</td>
+<td>72</td>
+<td>dog training</td>
+<td>97</td>
+<td>fire making and camp setup</td>
+</tr>
+<tr>
+<td>23</td>
+<td>lip reading</td>
+<td>48</td>
+<td>knife throwing</td>
+<td>73</td>
+<td>sketching faces</td>
+<td>98</td>
+<td>comfy rest anywhere</td>
+</tr>
+<tr>
+<td>24</td>
+<td>a second language or dialect</td>
+<td>49</td>
+<td>archery at targets</td>
+<td>74</td>
+<td>sculpting</td>
+<td>99</td>
+<td>bargain shopping</td>
+</tr>
+<tr>
+<td>25</td>
+<td>tracking animals</td>
+<td>50</td>
+<td>wrestling for sport</td>
+<td>75</td>
+<td>puppetry</td>
+<td>00</td>
+<td>finding your way in cities</td>
+</tr>
+</tbody>
+</table>
+<p><strong>What a knack does.</strong> It lets you do the thing well, quickly and without a roll: a cook makes a memorable meal, a knot-tyer's knots hold, a gossip knows the local rumor. It does not make you good at nearby things: a singer is not a better liar, a climber still checks to climb a sheer wall in a storm.</p></main>
+
+<!-- guide:end -->
     <script>
       // ---- Data ----
 
       const races = {
-        tiefling: {
+        hornborn: {
           boon: ["orvik"],
           bane: "drun",
           size: "Medium",
-          desc: "Horned brows. Red, purple, otherwise dark skin.",
+          desc: "Horned brows. Red, purple, otherwise dark skin. Unbothered by heat and smoke; advantage against fire and smoke.",
         },
         elf: {
           boon: ["seron"],
           bane: "veyra",
           size: "Medium",
-          desc: "Slender, graceful, quiet.",
+          desc: "Slender, graceful, quiet. A few hours of meditation replace sleep; stays aware while resting.",
         },
         imp: {
           boon: ["zhark"],
@@ -1623,38 +3011,38 @@
           boon: ["veyra"],
           bane: "drun",
           size: "Small",
-          desc: "Always busy, always curious.",
+          desc: "Always busy, always curious. Once per rest, coax a broken small device into one more use.",
         },
         goblin: {
           boon: ["orvik", "zhark"],
           bane: "seron",
           size: "Small",
-          desc: "Weak, crafty, stealthy.",
+          desc: "Weak, crafty, stealthy. Advantage on hiding in clutter, cramped or dark spaces.",
         },
         titanborne: {
           boon: ["drun", "seron"],
           bane: "orvik",
           size: "Large",
           desc:
-            "Giants in human form, with grooved tattoos on their thick skin.",
+            "Giants in human form, with grooved tattoos on their thick skin. Can't be shoved or knocked down by anything its size or smaller.",
         },
         duarling: {
           boon: ["veyra", "drun"],
           bane: "seron",
           size: "Small",
-          desc: "Short like a halfling, strong like a dwarf.",
+          desc: "Short like a halfling, strong like a dwarf. Advantage to stay on its feet when shoved or tripped.",
         },
         dwarf: {
           boon: ["drun", "orvik"],
           bane: "seron",
           size: "Small",
-          desc: "Short, stout beings, fond of alcohols.",
+          desc: "Short, stout beings, fond of alcohols. Advantage against drink and swallowed poison; sees fine in dim light.",
         },
         human: {
           boon: ["veyra"],
           bane: "orvik",
           size: "Medium",
-          desc: "Your average run-of-the-mill person.",
+          desc: "Your average run-of-the-mill person. Pick a second knack.",
         },
         centaur: {
           boon: ["drun", "orvik"],
@@ -1666,70 +3054,70 @@
           boon: ["drun"],
           bane: "zhark",
           size: "Large",
-          desc: "Chewbacca + orc = bugbear.",
+          desc: "Huge, shaggy brutes out of old bogey tales; quieter than they look. No stealth penalty for being large.",
         },
-        entling: {
+        barkling: {
           boon: ["drun"],
           bane: "orvik",
           size: "Large",
-          desc: "I am groot.",
+          desc: "Walking tree-folk, slow to speak and slower to forget. Standing still among trees, it counts as hidden.",
         },
         lizardfolk: {
           boon: ["orvik", "zhark"],
           bane: "veyra",
           size: "Medium",
-          desc: "Lizard humanoids, averse to smoothskins.",
+          desc: "Lizard humanoids, averse to smoothskins. Holds breath for 15 minutes; swims as fast as it walks.",
         },
         kobold: {
           boon: ["veyra"],
           bane: "drun",
           size: "Small",
-          desc: "A humanoid dragon with mouse-like features.",
+          desc: "A humanoid dragon with mouse-like features. Digs through loose earth at walking pace.",
         },
         fae: {
           boon: ["veyra", "orvik"],
           bane: "drun",
           size: "Medium",
-          desc: "Human-like in looks, originated from the feywild.",
+          desc: "Human-like in looks, came from across the rift. Never lost: always knows the way back to anywhere it has been.",
         },
         satyr: {
           boon: ["veyra", "zhark"],
           bane: "orvik",
           size: "Medium",
-          desc: "Half man, half goat.",
+          desc: "Half man, half goat. Sure-footed on steep or broken ground; headbutt deals d4.",
         },
         roo: {
           boon: ["drun", "seron"],
           bane: "zhark",
           size: "Medium",
-          desc: "Guardians of sacred places, kangaroo humanoids.",
+          desc: "Guardians of sacred places, kangaroo humanoids. Jumps a full zone from standing.",
         },
         apeling: {
           boon: ["drun", "veyra"],
           bane: "orvik",
           size: "Large",
           desc:
-            "Descendants of the Monkey King, humanoids with monkey traits.",
+            "Descendants of the Monkey King, humanoids with monkey traits. Climbs as fast as it runs.",
         },
         amazon: {
           boon: ["drun", "seron"],
           bane: "orvik",
           size: "Medium",
           desc:
-            "Well-built female humanoids, with white/black/silver hair.",
+            "Well-built female humanoids, with white/black/silver hair. Advantage against fear and intimidation.",
         },
         "shelled elemental": {
           boon: ["veyra", "orvik"],
           bane: "zhark",
           size: "Small",
           desc:
-            "Elemental wants to be \"people\", covered in protective layer. 1d4: earth/water/fire/air.",
+            "Elemental wants to be \"people\", covered in protective layer. 1d4: earth/water/fire/air. By element: earth can't be shoved; water breathes water; fire ignores ordinary flame; air falls slowly.",
         },
         etterkin: {
           boon: ["zhark"],
           bane: "veyra",
           size: "Medium",
-          desc: "Humanesque with spider eyes, and 3-fingered hands.",
+          desc: "Humanesque with spider eyes and many-fingered hands. Many fingers: advantage on fine work (locks, knots, sleight of hand); sees in dim light.",
         },
         qualf: {
           boon: ["orvik", "zhark"],
@@ -1741,27 +3129,27 @@
           boon: ["veyra", "orvik"],
           bane: "drun",
           size: "Small",
-          desc: "Rabbit-like humanoid, with large rabbit ears and feet.",
+          desc: "Rabbit-like humanoid, with large rabbit ears and feet. Hears quiet sounds through doors and thin walls.",
         },
         "animated armor": {
           boon: ["drun", "seron"],
           bane: "zhark",
           size: "Large",
           desc:
-            "Armor brought to life by magic, has a soul. Loud and strong. Does not eat, sleep or breathe. Recovers HP normally in rests; magical healing works, and physical repair needs only minimal tools and materials, with no check: an action restores `d6` HP, once per short rest. Ordinary medicine does not.",
+            "Armor brought to life, with a soul. Loud and strong; does not eat, sleep or breathe. Cannot wear armor.",
         },
         halfling: {
           boon: ["zhark", "veyra"],
           bane: "drun",
           size: "Small",
           desc:
-            "Friendly, cheerful humans, no taller than your average waist.",
+            "Friendly, cheerful humans, no taller than your average waist. Goes unnoticed in a crowd until it acts.",
         },
         hippofolk: {
           boon: ["drun", "orvik"],
           bane: "seron",
           size: "Medium",
-          desc: "Human-like hippos, generous and friendly.",
+          desc: "Human-like hippos, generous and friendly. Holds breath for 15 minutes; can walk along the bottom of rivers and lakes.",
         },
         kethrai: {
           boon: ["zhark"],
@@ -1773,25 +3161,25 @@
           boon: ["seron"],
           bane: "zhark",
           size: "Large",
-          desc: "Large and keratin-plated, with personal histories carved into their bodies.",
+          desc: "Large and keratin-plated, with personal histories carved into their bodies. Once per session, recall something useful from an ancestor's history carved into its body.",
         },
         ommel: {
           boon: ["orvik"],
           bane: "drun",
           size: "Medium",
-          desc: "Slender, with oversized feet that sense vibrations through surfaces. Senses movement in a nearby zone through ground it touches; walls and distance blur it to movement only.",
+          desc: "Slender, with oversized feet that sense vibration. Senses movement through the ground nearby. Sighted.",
         },
         iskari: {
           boon: ["seron"],
           bane: "zhark",
           size: "Medium",
-          desc: "Living amber-colored stone, with geometric bodies and glowing lines.",
+          desc: "Living amber-colored stone, with geometric bodies and glowing lines. Doesn't breathe; can make its lines glow as a dim light.",
         },
         ravuun: {
           boon: ["zhark"],
           bane: "seron",
           size: "Medium",
-          desc: "Strikingly asymmetrical, with mismatched limbs and irregular features.",
+          desc: "Strikingly asymmetrical, with mismatched limbs and irregular features. Hard to read: advantage against attempts to read its intent or spot its lies.",
         },
       };
 
@@ -1886,11 +3274,11 @@
         },
         cartographer: {
           attack: "seron", // Archetype Fount, also the normal attack Fount
-          heavy: 1, // 1 = heavy two-handed weapon
+          heavy: 0, // 1 = heavy two-handed weapon
           signature:
             "Fix the Bounds — once per short rest, study a nearby area; you know its true edges, exits, and one hidden hazard.",
           kit:
-            "light armor, surveyor's staff (heavy), chalk and charcoal, measuring cord, map case",
+            "light armor, surveyor's staff, chalk and charcoal, measuring cord, map case",
           specialties: {
             Surveyor: {
               text:
@@ -2304,6 +3692,11 @@
       } catch (_) {
         /* local storage may be disabled */
       }
+      // ponytail: renamed ancestries in old saves; drop once players have reloaded.
+      const renamed = { tiefling: "Hornborn", entling: "Barkling" }[
+        form.elements.ancestry.value.trim().toLowerCase()
+      ];
+      if (renamed) form.elements.ancestry.value = renamed;
       const $ = (id) => document.getElementById(id);
       // Net modifier per Fount: ancestry +1, archetype +1, bane −1.
       let archFount = ""; // set by showSym
@@ -2441,6 +3834,76 @@
         if (e.target.closest("a")) $("drawer").hidePopover();
       });
       route();
+
+      // Search: every card and every rules paragraph, list item, row, and heading.
+      // ponytail: linear scan over a few hundred blocks per keystroke; index it if the guide grows 10x.
+      const blocks = [
+        ...document.querySelectorAll(
+          "main.info .panel, main.guide :is(h2, h3, p, li, tr)",
+        ),
+      ].filter((el) => !(el.matches("p, li") && el.closest(".panel")));
+      const results = $("results");
+      $("search").addEventListener("input", (e) => {
+        const words = e.target.value.toLowerCase().split(/\s+/).filter(Boolean);
+        if (!words.length) return results.replaceChildren();
+        const hits = blocks
+          .filter((el) => {
+            const t = el.textContent.toLowerCase();
+            return words.every((w) => t.includes(w));
+          })
+          // Headers first (sections, card titles), then subheaders, then named
+          // entries (a spell or ability's bold name), then body text. Stable sort.
+          .map((el) => {
+            const has = (n) => {
+              const t = n?.textContent.toLowerCase() ?? "";
+              return words.some((w) => t.includes(w));
+            };
+            const rank = el.matches("h2") || has(el.querySelector(".panel-head h2"))
+              ? 0
+              : el.matches("h3")
+                ? 1
+                : has(el.querySelector(":scope > strong:first-child, :scope > p:first-child > strong:first-child"))
+                  ? 2
+                  : 3;
+            return [rank, el];
+          })
+          .sort((a, b) => a[0] - b[0])
+          .map(([, el]) => el)
+          .slice(0, 30);
+        const re = new RegExp(
+          "(" + words.map((w) => w.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")).join("|") + ")",
+          "gi",
+        );
+        results.replaceChildren(
+          ...(hits.length ? hits : [null]).map((el) => {
+            if (!el) return h("p", "", "No matches.");
+            const page = el.closest("main");
+            const text = el.textContent.replace(/\s+/g, " ").trim();
+            const i = Math.max(0, text.toLowerCase().indexOf(words[0]) - 40);
+            const a = h(
+              "a",
+              "",
+              h("b", "", page.querySelector("h1").textContent),
+              ...((i ? "…" : "") + text.slice(i, i + 120))
+                .split(re)
+                .map((s, k) => (k % 2 ? h("mark", "", s) : s)),
+            );
+            a.href = "#" + page.dataset.view;
+            a.addEventListener("click", (ev) => {
+              ev.preventDefault();
+              location.hash = page.dataset.view;
+              route();
+              el.scrollIntoView({ block: "center" });
+              el.classList.add("hit");
+              setTimeout(() => el.classList.remove("hit"), 2000);
+            });
+            return a;
+          }),
+        );
+      });
+      $("search").addEventListener("keydown", (e) => {
+        if (e.key === "Enter") results.querySelector("a")?.click();
+      });
       const specialties = $("specialties");
       const listSpecialties = () => {
         const a =
@@ -2515,6 +3978,11 @@
           !confirm("Replace this sheet with a new random character?")
         )
           return;
+        // ponytail: one level of undo; a stack if players want to walk back several rolls.
+        undoSnap = [...form.elements].map((f) =>
+          f.type === "radio" || f.type === "checkbox" ? f.checked : f.value,
+        );
+        $("undo").hidden = false;
         form.reset();
         const e = form.elements;
         const raceName = rand(Object.keys(races));
@@ -2554,6 +4022,20 @@
         e.max_hp.value = e.current_hp.value = 6 + final.drun;
         e.max_mana.value = e.current_mana.value = 3 + final.orvik;
         e.weapon_bonus.value = a.heavy;
+        limitBoon();
+        listSpecialties();
+        form.dispatchEvent(new Event("input"));
+      });
+
+      let undoSnap = null;
+      $("undo").addEventListener("click", () => {
+        if (!undoSnap) return;
+        [...form.elements].forEach((f, i) => {
+          if (f.type === "radio" || f.type === "checkbox") f.checked = undoSnap[i];
+          else f.value = undoSnap[i];
+        });
+        undoSnap = null;
+        $("undo").hidden = true;
         limitBoon();
         listSpecialties();
         form.dispatchEvent(new Event("input"));
