@@ -33,11 +33,11 @@ _Generating a character before a campaign. You can follow the instructions below
 
 Races are divided into groups within a 100-digit bracket, read as percentile (`00`-`99`) — a natural roll of 100 reads as `00`. Roll `1d100` and pick one race from the matching group, or check [compendium/races](../compendium/races.md) to choose deliberately.
 
-- 00-11, 100: Tiefling, Elf, or Kethrai
+- 00-11, 100: Hornborn, Elf, or Kethrai
 - 12-22: Imp, Gnome, Goblin, or Iskari
 - 23-33: Titanborne, Duarling, Dwarf, or Ravuun
 - 34-44: Human, Centaur, or Bugbear
-- 45-55: Entling, Lizardfolk, or Kobold
+- 45-55: Barkling, Lizardfolk, or Kobold
 - 56-66: Fae, Satyr, or Roo
 - 67-77: Apeling, Amazon, Shelled Elemental (earth/water/fire/air), or Etterkin
 - 78-88: Qualf, Moonfolk, Ommel, or D'varen
