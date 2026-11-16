@@ -7,7 +7,7 @@ Active alpha spells. Rules for casting, mana, and rests are in the [guide](../gu
 - **Cost:** base mana cost in brackets. The guide's Magic section gives the full rule: wheel distance adds mana, Fount score 4+/6+ and practiced spells lower it, never below 1 (never below 2 for a base-3 spell).
 - **Defaults:** range nearby (about 30 ft), duration 5 minutes. Larger scope, distance, duration, or unwilling targets are harder.
 - **Stacking:** the same spell does not stack with itself; the newer replaces the older. Different spells stack, but spells never raise armor above 3.
-- **Unwilling targets:** Charm, Babble, Boogie bomb, Improv sesh, and any other spell that controls, disables, or erases an unwilling creature follow the hard-cast rule in the guide.
+- **Unwilling targets:** Charm, Babble, Mad jig, Improv sesh, and any other spell that controls, disables, or erases an unwilling creature follow the hard-cast rule in the guide.
 - **Check:** see [when to roll](../guide.md#magic). A risky cast rolls `d20 + Fount` for the spell's Fount. A failed cast still spends its mana.
 
 ## ᛄ Seron
@@ -57,11 +57,11 @@ Active alpha spells. Rules for casting, mana, and rests are in the [guide](../gu
 - **Improv sesh (2):** the target cannot recall what it was thinking and doing for the last 5 minutes, until it sleeps or is shown strong proof.
 - **Vibe check (1):** name a nearby creature; you learn its intent toward you, and if it is hostile its next attack deals half damage.
 - **Babble (1):** the target must loudly repeat your thoughts and is otherwise mute. Casting spells does not require speech, so this does not stop it.
-- **Boogie bomb (2):** the target dances and cannot otherwise move for 1 minute or until it is hurt.
+- **Mad jig (2):** the target dances and cannot otherwise move for 1 minute or until it is hurt.
 
 ## Cantrips
 
-Cantrips are effortless expressions of a Fount. They cost no mana and need no roll, so they can be cast freely. Their effects are small, brief, and harmless: range self to 15 ft, duration 1 minute unless stated; effects that record or encode something last as stated. They cannot directly inflict or prevent damage, restore health, impose mechanical conditions, or compel another creature's actions. They cannot stack with themselves, bypass a significant obstacle, permanently change a creature, or do what a spell does. Names come from V1.
+Cantrips are effortless expressions of a Fount. They cost no mana and need no roll, so they can be cast freely. Their effects are small, brief, and harmless: range self to 15 ft, duration 1 minute unless stated; effects that record or encode something last as stated. They cannot directly inflict or prevent damage, restore health, impose mechanical conditions, or compel another creature's actions. They cannot stack with themselves, bypass a significant obstacle, permanently change a creature, or do what a spell does. Cantrips may come from your ancestry boon Fount, your archetype's Fount, or your specialty's Fount.
 
 A cantrip can still have indirect results in the fiction: a small light may expose a hidden creature, and a noise may distract a guard. Cantrips manipulate details; spells change outcomes. A cantrip gives one useful way to approach a problem; it does not solve a whole encounter.
 

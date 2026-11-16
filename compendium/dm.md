@@ -43,12 +43,12 @@ Generic fantasy creatures from before the [monster generator](../generators/mons
 
 - **Ranged**: bat, hawk, eagle, acolyte, flying sword, guard (calls reinforcements), sentient locust swarm, faerie/baby/adult dragon
 - **Arcana**: cultist, hag, vampire (shapeshifter, magic-immune, spawn), elemental, archmage, lich
-- **Stealth**: snake, cat, bandit, deep gnome, tiger, assassin, troglodyte, sabertooth, gnoll, sahuagin
+- **Stealth**: snake, cat, bandit, deep dweller, tiger, assassin, troglodyte, sabertooth, gnoll, shark-folk raider
 - **Strength**: commoner, zombie, thug, knight, bugbear, gladiator, gargoyle, hobgoblin, cyclops
-- **Social**: ape, baboon, scarecrow, doppelganger, awakened tree, intellect devourer, sphinx, beholder, tengu
+- **Social**: ape, baboon, scarecrow, doppelganger, awakened tree, brain crawler, sphinx, floating eye-orb, tengu
 - **Beasts**: badger, banshee, brown/black bear, boar, crab, crocodile, wolf, direwolf, octopus, wasp
 - **Mythical**: basilisk, wyrm, giant, griffon, harpy, hellhound, hippogriff, hydra, manticore, kraken, geist, wyvern, chimera, gorgon
-- **Magical**: slime, drake, gelatinous cube, reanimated skeleton, crawling claw, drow, ettercap, iron golem, mummy, owlbear, shadow, specter, ghost, wight, mimic, homunculus
+- **Magical**: slime, drake, corridor jelly, reanimated skeleton, crawling hand, dusk elf, ettercap, iron golem, mummy, feathered bear, shadow, specter, ghost, wight, mimic, homunculus
 - **Gigantism** (huge version of a small thing): slug, slime, snail, spider, beetle, rat, centipede, bat, crab, frog, lizard, octopus, scorpion, wasp, scarab
 
 ## External links
