@@ -1,6 +1,6 @@
 # Generate Monster
 
-Creatures are Katharra's own fauna (see the wiki bestiary, `entities/fauna_and_beasts`). Per canon, wildlife exploits thaumic laws _biologically_ — they don't channel Founts — so they're rolled by creature, not by house. If any PC level is higher than 20, generate multiple (see `monster_count`).
+Creatures are Katharra's own fauna (see the wiki bestiary, `entities/fauna_and_beasts`). Per canon, wildlife exploits thaumic laws _biologically_ — they don't channel Founts — so they're rolled by creature, not by house.
 
 ## steps
 
@@ -8,7 +8,7 @@ Creatures are Katharra's own fauna (see the wiki bestiary, `entities/fauna_and_b
 | ------ | ----------------- | ------- |
 | `1d10` | encounter_purpose |         |
 | `1d10` | creature          |         |
-| `1d20` | monster_count     |         |
+| `1d6`  | threat            |         |
 
 ### encounter_purpose
 
@@ -38,36 +38,13 @@ _the Katharra bestiary. Descriptions live in the wiki; drill in for the statbloc
      assigns them. Descriptions/statblocks should migrate from the wiki bestiary
      into compendium/dm.md (whose V1 monster pool holds the old generic D&D roster). -->
 
-### monster_count
+### threat
 
-_1d20 for difficulty scale. To have lower difficulty, use a smaller die, down to 1d6._
+_how many, and how tough. Stats for each tier (HP, armor, damage) are in the [GM guide](/GM-GUIDE.md). For a first party, never more than one capable enemy per character._
 
-| roll  | result    |
-| ----- | --------- |
-| 1-5   | 4 + 1d4   |
-| 6-10  | 6 + 1d6   |
-| 11-14 | 8 + 1d8   |
-| 15-17 | 10 + 1d10 |
-| 18-19 | 12 + 1d12 |
-| 20    | 20 + 1d20 |
-
-- **lone** — just the one generated creature
-- **group** — 3 + 1d6
-- **horde** — 15 + 1d10
-
-## monster attack
-
-| level  | roll for atk dmg |
-| ------ | ---------------- |
-| 1, 2   | 1d4              |
-| 3, 4   | 1d6              |
-| 5, 6   | 1d8              |
-| 7, 8   | 1d10             |
-| 9, 10  | 1d10 + 4         |
-| 11, 12 | 1d12 + 6         |
-| 13, 14 | 1d20 + 8         |
-| 15, 16 | 1d10 + 10        |
-| 17, 18 | 1d12 + 12        |
-| 19, 20 | 1d20 + 20        |
-
-This goes until halfway up the level scale (max 50), after which creatures start spawning in groups every time.
+| roll | result                                                            |
+| ---- | ----------------------------------------------------------------- |
+| 1-2  | fragile group: one per character + 1d4, acting as one group       |
+| 3-4  | capable: one, plus one per two characters                         |
+| 5    | capable: one per character                                        |
+| 6    | dangerous: one, with a fragile group of 1d4                       |

@@ -45,7 +45,7 @@ _rolled once per content_count; each result generates its contents inline._
 | roll     | result                                      |
 | -------- | ------------------------------------------- |
 | `01-20`  | NPC — {{gen: npc}}                          |
-| `21-40`  | camp (leader +2 DEF/ATK) — {{gen: monster}} |
+| `21-40`  | camp, leader one tier tougher — {{gen: monster}} |
 | `41-60`  | {{gen: landmark}}                           |
 | `61-80`  | {{gen: town}}                               |
 | `81-100` | {{gen: dungeon}}                            |

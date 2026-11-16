@@ -54,5 +54,5 @@ _@todo more monsters if this roll is higher within its range_
 
 ## boss
 
-1. `1d10` for color (see [colors & houses](/compendium/colors_houses.md)), generate a random high-difficulty monster of that color
-2. add `1d4` to DEF, `1d4` to ATK
+1. `1d10` for its Fount (as the world tile's color), then generate a monster and make it a dangerous-tier boss with that Fount's trick (see Bosses in the [GM guide](/GM-GUIDE.md))
+2. traps and treasure sizes are in the GM guide
