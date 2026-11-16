@@ -41,6 +41,7 @@ Goal: GM starts in Kathara, follows players off expected path, and returns to ch
 - [x] Alternate party/enemy group turns; each character has move, action, reaction, and available bonus action.
 - [x] Attacks always land: `d6 + Fount` minus target armor.
 - [ ] Finalize armor and weapon formulas. Alpha formulas remain provisional.
+- [ ] Fix Bulwark kit: heavy maul is two-handed but kit also gives shield or planks, which items.md forbids with a two-handed weapon. Swap one, or let planks be set down as cover.
 - [x] Simulate provisional combat values to avoid long miss strings.
 - [x] At 0 HP character is down and can be rescued; safe night restores all HP.
 - [x] Rescue needs no healing: an adjacent ally spends an action to raise a downed character to 1 HP. Revisit after playtest if downed characters carry no risk.

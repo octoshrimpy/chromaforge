@@ -7,8 +7,6 @@ Archetypes are starting training, not classes or caps. Characters may learn any 
 - **Kit:** light armor, standard bow (heavy), light sidearm, chalk line, 20 feet of cord.
 - **Archetype ability — Hold the Line:** reaction when a nearby ally would take damage: move between them and source; attack targets Warden instead. If movement is impossible, no effect.
 
-<br>
-
 - **Marchwarden**
   - **Boundary Keeper:** action to mark a nearby clear line. First enemy crossing it before Warden's next turn takes `d6 + ᛄ Seron` damage, minus armor.
 - **Snarer**
@@ -20,8 +18,6 @@ Archetypes are starting training, not classes or caps. Characters may learn any 
 
 - **Kit:** light armor, light staff or blade, bandages, splint, bitter antiseptic, notebook.
 - **Archetype ability — Field Treatment:** once per short rest, action restores `d6` HP to adjacent living target. Cannot raise target above maximum HP.
-
-<br>
 
 - **Physician**
   - **Pattern Diagnostician:** study an injury, illness, or phenomenon closely; you learn what worsens it, what relieves it, or what happened to it most recently. Once per short rest.
@@ -35,8 +31,6 @@ Archetypes are starting training, not classes or caps. Characters may learn any 
 - **Kit:** light armor, standard blade or shortbow (heavy), climbing hook, 30 feet of rope, hooded lantern.
 - **Archetype ability — Find Another Way:** once per short rest, after a route is blocked, you spot one costly, risky, or slow alternate route that exists.
 
-<br>
-
 - **Trailbreaker**
   - **Wardbreaker:** `+2` on checks to alter, bypass, or redirect a magical trigger after its rule has been discovered.
 - **Smuggler**
@@ -49,8 +43,6 @@ Archetypes are starting training, not classes or caps. Characters may learn any 
 - **Kit:** light armor, heavy maul (heavy), shield or planks, tool roll, 50 feet of rope.
 - **Archetype ability — Shore It Up:** once per short rest, reaction when a nearby ally or structure would take damage: reduce it by `d6`.
 
-<br>
-
 - **Stalwart**
   - **Keep Standing:** once per long rest, ignore the first hit that would drop Bulwark to 0 HP; HP drops to 1 instead.
 - **Veteran**
@@ -60,10 +52,8 @@ Archetypes are starting training, not classes or caps. Characters may learn any 
 
 ## ᛄ Cartographer
 
-- **Kit:** light armor, surveyor's staff (heavy), chalk and charcoal, measuring cord, map case.
+- **Kit:** light armor, surveyor's staff, chalk and charcoal, measuring cord, map case.
 - **Archetype ability — Fix the Bounds:** once per short rest, study a nearby area; you know its true edges, exits, and one hidden hazard.
-
-<br>
 
 - **Surveyor**
   - **Claim Ground:** action: declare a nearby zone yours; allies in it have advantage on the first check to defend it until your next turn.
@@ -77,8 +67,6 @@ Archetypes are starting training, not classes or caps. Characters may learn any 
 - **Kit:** heavy armor, heavy blade (heavy), banner or holy symbol, oath token.
 - **Archetype ability — Sworn Word:** once per short rest, swear to protect or reach one thing; your next important check that directly serves the oath has advantage. Breaking the oath ends it.
 
-<br>
-
 - **Inquisitor**
   - **Smite the False:** action: strike an enemy that broke a promise or lied to you; deal `d6 + ᛄ Seron + 1`, minus armor.
 - **Crusader**
@@ -90,8 +78,6 @@ Archetypes are starting training, not classes or caps. Characters may learn any 
 
 - **Kit:** light armor, spring-gun, toolkit, springs and wire, hooded lantern.
 - **Archetype ability — Jury Device:** once per short rest, action: build a small gadget from scrap that does one simple thing until your next rest.
-
-<br>
 
 - **Trapsmith**
   - **Trap Sense:** study a device or area closely; you know whether it is trapped and how.
@@ -105,8 +91,6 @@ Archetypes are starting training, not classes or caps. Characters may learn any 
 - **Kit:** light armor, quarterstaff or dagger, travel library, ink and quill, scroll case.
 - **Archetype ability — I Read About This:** once per short rest, name a creature, place, or custom; you recall one true fact about it.
 
-<br>
-
 - **Archivist**
   - **Perfect Recall:** once per short rest, recall any fact or clue you witnessed, exactly as it was.
 - **Linguist**
@@ -118,8 +102,6 @@ Archetypes are starting training, not classes or caps. Characters may learn any 
 
 - **Kit:** light armor, rapier or fine blade, dueling cloak, whetstone.
 - **Archetype ability — Break the Pattern:** reaction when an enemy attacks you: step aside and reduce that damage by `d6` (minimum 0).
-
-<br>
 
 - **Fencer**
   - **Riposte:** after Break the Pattern, strike the attacker if adjacent.
@@ -133,8 +115,6 @@ Archetypes are starting training, not classes or caps. Characters may learn any 
 - **Kit:** light armor, focus staff, flint, pouch of volatile reagents.
 - **Archetype ability — Loose the Storm:** once per short rest, action: unleash a burst on a nearby zone; creatures there take `d6 + ϟ Zhark`, minus armor, and it leaves one fitting side effect on the zone.
 
-<br>
-
 - **Stormcaller**
   - **Chain Spark:** once per short rest, one attack also hits a second adjacent target for `d6`, minus armor.
 - **Beastmaster**
@@ -146,8 +126,6 @@ Archetypes are starting training, not classes or caps. Characters may learn any 
 
 - **Kit:** light armor, pick or hammer (heavy), lantern, 50 feet of rope, chalk.
 - **Archetype ability — Dig Through:** once per short rest, action: open or close a passage in earth, loose rock, or crude masonry up to about 5 feet thick, wide enough for one person, until your next rest. Solid bedrock and warded or metal barriers resist it.
-
-<br>
 
 - **Burrower**
   - **Tremorsense:** feel vibrations nearby; you sense what is moving in a nearby zone.
@@ -161,8 +139,6 @@ Archetypes are starting training, not classes or caps. Characters may learn any 
 - **Kit:** light armor, staff or club, seed pouch, water skin, herb bundle.
 - **Archetype ability — Take Root:** once per short rest, action: through living plants, heal a nearby ally `d6` or give them 1 armor until your next turn.
 
-<br>
-
 - **Greenseer**
   - **Green Sense:** know what plants and animals nearby are doing, and read from them what passed here recently.
 - **Hearthroot**
@@ -174,8 +150,6 @@ Archetypes are starting training, not classes or caps. Characters may learn any 
 
 - **Kit:** light armor, dagger or rapier, instrument, songbook, bright cloak.
 - **Archetype ability — Rally the Room:** once per short rest, reaction: give an ally advantage on their next check.
-
-<br>
 
 - **Minstrel**
   - **Captivating Performance:** once per short rest, action: nearby listeners are held for about a minute or until something disturbs them; harm or a loud threat breaks it.
@@ -189,8 +163,6 @@ Archetypes are starting training, not classes or caps. Characters may learn any 
 - **Kit:** light armor, sidearm or sword, letters of passage, seal, formal clothes.
 - **Archetype ability — Fair Trade:** once per day, name anything you want arranged; you know the fair price or favor it would cost.
 
-<br>
-
 - **Diplomat**
   - **Silver Tongue:** once per short rest, reroll a failed persuasion check, keeping the second result.
 - **Courtier**
@@ -202,8 +174,6 @@ Archetypes are starting training, not classes or caps. Characters may learn any 
 
 - **Kit:** light armor, dagger or sling, disguise kit, loaded dice, spare keys.
 - **Archetype ability — Borrowed Face:** once per short rest, action: pass as a plausible person or role to NPCs who have not met you, until questioned or tested.
-
-<br>
 
 - **Cutpurse**
   - **Light Fingers:** take or plant a hand-sized item unnoticed when the target is unaware; if the target is alert or the item guarded, it needs a risky check.
