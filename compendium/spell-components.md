@@ -23,7 +23,7 @@ Each Effect has a base cost of 1 or 2.
 |         | Bind (2)      | make a promise, tie, or condition stick                                 |
 | ∵ Orvik | Sense (1)     | learn something present and close                                       |
 |         | Recall (1)    | bring back a fact someone once knew                                     |
-|         | Unveil (2)    | reveal what is hidden                                                   |
+|         | Unveil (2)    | reveal what is known to be hidden                                                   |
 | ϟ Zhark | Spark (1)     | a burst of heat, light, or force                                        |
 |         | Break (2)     | shatter, loosen, or cut a bond                                          |
 |         | Shift (2)     | change a thing's form or state                                          |
