@@ -54,5 +54,5 @@ _@todo more monsters if this roll is higher within its range_
 
 ## boss
 
-1. `1d10` for its Fount (as the world tile's color), then generate a monster and make it a dangerous-tier boss with that Fount's trick (see Bosses in the [GM guide](/GM-GUIDE.md))
-2. traps and treasure sizes are in the GM guide
+1. `1d10` for its Fount (as the world tile's color), then generate a monster and make it a dangerous-tier boss with that Fount's trick (see Bosses in the [GM handbook](/GM-HANDBOOK.md))
+2. traps and treasure sizes are in the GM handbook

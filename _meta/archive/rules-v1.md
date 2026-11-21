@@ -1,6 +1,6 @@
 # V1 rules notes
 
-Historical reference only. [Alpha guide](../../guide.md) is active. Consolidated from the former `gameplay/` pages; full originals are in git history (`ed39a6e`).
+Historical reference only. [Alpha guide](../../handbook.md) is active. Consolidated from the former `gameplay/` pages; full originals are in git history (`ed39a6e`).
 
 V1 experimented with:
 

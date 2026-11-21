@@ -1,4 +1,4 @@
-# ChromaForge player guide
+# ChromaForge player handbook
 
 Everything you need to make a character and play. Your GM runs the world; you run your character.
 
@@ -26,7 +26,7 @@ One procedure; no House, Guild, class cap, or second stat roll.
 2. **Roll Founts.** Roll 6d6 and drop the lowest. Halve each remaining die, rounding up (1–2 is 1, 3–4 is 2, 5–6 is 3). Assign the five values to your Founts (ᛄ Seron, ∵ Orvik, ϟ Zhark, △ Drun, ⌘ Veyra) however you like. Then apply your ancestry's boon (+1) and bane (−1). Step 3 adds the archetype's +1; all modifiers stack and are added after assigning.
 3. **Choose an archetype and specialty.** Pick one archetype and one of its specialties from Starting archetypes. Copy its kit and archetype ability. Your archetype adds +1 to its Fount, which is also its normal attack Fount. Your specialty gives no stat bonus; its ability text names any Fount it uses. Archetype is a beginning, not a restriction.
 4. **Derived values.** Maximum HP is `6 + △ Drun`. Maximum mana is `3 + ∵ Orvik`. Armor value is `0` unarmored, `1` light, `2` heavy.
-5. **Finish.** Copy equipment, choose one useful mundane personal item, and one mundane knack (cooking, knots, card tricks, a song; humans pick two; see Knacks). You never need a roll to do your knack well, and the GM uses it in the fiction. The GM may grant advantage or a bonus when it fits, but you can't plan on one. A knack can reinforce your archetype (drawing for a Cartographer).
+5. **Finish.** Copy equipment, roll starting coin (1d4 gp + 2d6 sp), choose one useful mundane personal item, and one mundane knack (cooking, knots, card tricks, a song; humans pick two; see Knacks). You never need a roll to do your knack well, and the GM uses it in the fiction. The GM may grant advantage or a bonus when it fits, but you can't plan on one. A knack can reinforce your archetype (drawing for a Cartographer).
 
 Example: rolls `6, 2, 4, 1, 5, 3` drop the 1 and halve to `3, 1, 2, 3, 2`; assigned as ᛄ Seron 3, ∵ Orvik 2, ϟ Zhark 1, △ Drun 2, ⌘ Veyra 3. An elf (ᛄ Seron boon, ⌘ Veyra bane) who picks a ᛄ Seron archetype (Warden) ends with ᛄ Seron 5 and ⌘ Veyra 2.
 
@@ -67,10 +67,10 @@ Use combat only when sides cannot or will not settle the conflict another way. E
 
 Attacks always land unless fiction prevents them. No attack roll, no Defense.
 
-1. Roll `d6 + attack Fount` (+1 for a heavy two-handed weapon).
+1. Roll `weapon die + attack Fount` (light `d4`, standard `d6`, heavy `d8`; see Weapons).
 2. Subtract target armor (minimum 0). The rest is HP damage.
 
-The archetype kit names its normal attack Fount; unusual methods use the Fount agreed before rolling. Improvised harmless objects deal `d6 − 2` (minimum 1). Fiction can make an attack impossible or remove cover before damage is rolled.
+The archetype kit names its normal attack Fount; unusual methods use the Fount agreed before rolling. Improvised objects deal `d4` (minimum 1). Fiction can make an attack impossible or remove cover before damage is rolled.
 
 Alpha has no separate intellect score: use ∵ Orvik for risky knowledge, memory, or analysis.
 
@@ -144,6 +144,8 @@ Spend points on any Fount. Raising a Fount costs its new level: 1→2 costs 2, 2
 Higher scores will unlock abilities, but thresholds are not defined. Starting archetype and specialty abilities are not threshold unlocks.
 
 
+<!-- pagebreak -->
+
 ## Ancestries
 
 Boon and bane measure a people's resonance with a Fount, not intelligence, charm, or morality. Size: large peoples can block passages, carry heavy loads, and reach farther but cannot fit narrow gaps (size never changes attack range unless an ability says so); small peoples fit tight spaces and can be carried. Size gives no stat bonus. Traits in the notes column are biology, not required personality.
@@ -177,6 +179,7 @@ Boon and bane measure a people's resonance with a Fount, not intelligence, charm
 | moonfolk          | small  | ⌘ Veyra, ∵ Orvik | △ Drun  | Rabbit-like humanoid, with large rabbit ears and feet. Hears quiet sounds through doors and thin walls. |
 | animated armor    | large  | △ Drun, ᛄ Seron  | ϟ Zhark | Armor brought to life, with a soul. Loud and strong; does not eat, sleep or breathe. Cannot wear armor. |
 | halfling          | small  | ϟ Zhark, ⌘ Veyra | △ Drun  | Friendly, cheerful humans, no taller than your average waist. Goes unnoticed in a crowd until it acts. |
+| kitkin            | small  | ⌘ Veyra          | △ Drun  | Kitten-cute cat-folk, taller than a halfling but shorter than a human. Lands on its feet: a fall never leaves it prone and deals half damage. |
 | hippofolk         | medium | △ Drun, ∵ Orvik  | ᛄ Seron | Human-like hippos, generous and friendly. Holds breath for 15 minutes; can walk along the bottom of rivers and lakes. |
 | kethrai           | medium | ϟ Zhark          | ⌘ Veyra | Round-headed, with sensory gills and occasional memories of possible futures. The flashes are fragmentary and may be wrong; the GM decides when one surfaces. |
 | d'varen           | large  | ᛄ Seron          | ϟ Zhark | Large and keratin-plated, with personal histories carved into their bodies. Once per session, recall something useful from an ancestor's history carved into its body. |
@@ -192,13 +195,15 @@ Boon and bane measure a people's resonance with a Fount, not intelligence, charm
 **Ommel.** Slender, with oversized feet whose fatty heel pads, wired to a very sensitive nervous system, pick up vibrations the way an elephant's do. Senses movement in a nearby zone through ground it touches; walls and distance blur it to movement only. Others' footsteps sharpen the picture. Rising onto tiptoe lifts the pads and dulls the sense, useful when the ground is too loud. Sighted: the feet add to the eyes, they do not replace them.
 -->
 
+<!-- pagebreak -->
+
 ## Starting archetypes
 
 Archetypes are starting training, not classes or caps. Characters may learn any specialty or ability through play. Each Fount has three archetypes; each archetype supplies one kit, one archetype ability, and three specialties: one of its own Fount and one of each of the two Founts opposite it on the wheel (yellow, blue, red, purple, green). Your archetype gives +1 to its Fount; specialties give no stat bonus.
 
 ### ᛄ Warden
 
-- **Kit:** light armor, standard bow (heavy), light sidearm, chalk line, 20 feet of cord.
+- **Kit:** light armor, standard bow, light sidearm, chalk line, 20 feet of cord.
 - **Archetype ability — Hold the Line:** reaction when a nearby ally would take damage: move between them and source; attack targets Warden instead. If movement is impossible, no effect.
 
 - **Marchwarden**
@@ -222,7 +227,7 @@ Archetypes are starting training, not classes or caps. Characters may learn any 
 
 ### ϟ Pathfinder
 
-- **Kit:** light armor, standard blade or shortbow (heavy), climbing hook, 30 feet of rope, hooded lantern.
+- **Kit:** light armor, standard blade or shortbow, climbing hook, 30 feet of rope, hooded lantern.
 - **Archetype ability — Find Another Way:** once per short rest, after a route is blocked, you spot one costly, risky, or slow alternate route that exists.
 
 - **Trailbreaker**
@@ -234,7 +239,7 @@ Archetypes are starting training, not classes or caps. Characters may learn any 
 
 ### △ Bulwark
 
-- **Kit:** light armor, heavy maul (heavy), shield or planks, tool roll, 50 feet of rope.
+- **Kit:** light armor, axe or mace, shield or planks, tool roll, 50 feet of rope.
 - **Archetype ability — Shore It Up:** once per short rest, reaction when a nearby ally or structure would take damage: reduce it by `d6`.
 
 - **Stalwart**
@@ -258,7 +263,7 @@ Archetypes are starting training, not classes or caps. Characters may learn any 
 
 ### ᛄ Paladin
 
-- **Kit:** heavy armor, heavy blade (heavy), banner or holy symbol, oath token.
+- **Kit:** heavy armor, heavy blade, banner or holy symbol, oath token.
 - **Archetype ability — Sworn Word:** once per short rest, swear to protect or reach one thing; your next important check that directly serves the oath has advantage. Breaking the oath ends it.
 
 - **Inquisitor**
@@ -318,7 +323,7 @@ Archetypes are starting training, not classes or caps. Characters may learn any 
 
 ### △ Delver
 
-- **Kit:** light armor, pick or hammer (heavy), lantern, 50 feet of rope, chalk.
+- **Kit:** light armor, pick or hammer, lantern, 50 feet of rope, chalk.
 - **Archetype ability — Dig Through:** once per short rest, action: open or close a passage in earth, loose rock, or crude masonry up to about 5 feet thick, wide enough for one person, until your next rest. Solid bedrock and warded or metal barriers resist it.
 
 - **Burrower**
@@ -376,6 +381,8 @@ Archetypes are starting training, not classes or caps. Characters may learn any 
 - **Appraiser**
   - **Sharp Eye:** notice the lie, forgery, or con in a short exchange.
 
+<!-- pagebreak -->
+
 ## Spells
 
 Active alpha spells. Rules for casting, mana, and rests are in the guide.
@@ -402,7 +409,7 @@ Active alpha spells. Rules for casting, mana, and rests are in the guide.
 - **Wizard mark (1):** touch to coat a target in paint only casters can see, even through walls.
 - **Thaumaturgic anchor (2):** an enchanted item draws the next spell or magical effect aimed at something else nearby, then goes inert.
 - **Illusion (2):** an illusion aimed at one of a target's five senses.
-- **Mirror image (3):** physical clones of you appear, as many as your **∵** *Orvik* score, for 5 minutes. They have your mindset and act on their own, have your normal physical capabilities, cannot cast spells or use abilities that cost mana, and vanish if hit once. They carry no copy of your inventory, gear, or tools; clones cannot use consumables. They move and act independently, but only one clone can attack each round, dealing `d6 − 2` (minimum 1).
+- **Mirror image (3):** physical clones of you appear, as many as your **∵** *Orvik* score, for 5 minutes. They have your mindset and act on their own, have your normal physical capabilities, cannot cast spells or use abilities that cost mana, and vanish if hit once. They carry no copy of your inventory, gear, or tools; clones cannot use consumables. They move and act independently, but only one clone can attack each round, dealing `d4` (minimum 1).
 - **Question rock (1):** ask an object or non-verbal creature one question about what it has plausibly perceived. Only you hear the answer, and it is always true but may be partial.
 
 ### ϟ Zhark
@@ -491,6 +498,8 @@ A cantrip can still have indirect results in the fiction: a small light may expo
 - **Soothing voice:** your voice steadies a willing creature's breathing. It feels calmer, but nothing else changes.
 - **Shared rhythm:** you and one willing creature fall into step, keeping an even pace together while walking, rowing, or working for 1 minute.
 
+<!-- pagebreak -->
+
 ## Items and prices
 
 Gear for alpha. Prices use the money table: `1 gp = 10 sp = 100 cp`, and `1 rp = 20 gp`. Archetype kits are free at character creation; prices matter for anything bought later. Prices are provisional and will change after playtest.
@@ -501,16 +510,17 @@ Gear for alpha. Prices use the money table: `1 gp = 10 sp = 100 cp`, and `1 rp =
 
 ### Weapons
 
-Attack is `d6 + Fount − armor`. Weapons add nothing except the heavy bonus.
+Attack is `weapon die + Fount − armor`. Each weapon kind has its own die and perk. Heavy weapons and bows take both hands: no shield, and no torch.
 
-| Item | Bonus | Hands | Price | Notes |
-| ---- | ----: | ----- | ----: | ----- |
-| Light weapon (dagger, sling, light sidearm) | +0 | one | 5 sp | easy to hide |
-| Standard weapon (sword, rapier, spear, axe) | +0 | one | 2 gp | |
-| Staff (light staff, quarterstaff, focus staff, surveyor's staff, club) | +0 | one or two | 5 sp | a focus staff can channel a spell |
-| Standard bow or shortbow (heavy) | +1 | two | 4 gp | nearby range |
-| Heavy weapon (maul, heavy blade, pick or hammer) | +1 | two | 5 gp | |
-| Spring-gun | +0 | one | 8 gp | reloading uses your move |
+| Item | Die | Hands | Price | Perk |
+| ---- | --: | ----- | ----: | ---- |
+| Light weapon (dagger, sling, light sidearm) | d4 | one | 5 sp | easy to hide. **Sneaky:** d8 against a target that hasn't noticed you. **Paired:** a light weapon in each hand rolls 2d4, keep the higher. **Thrown:** a dagger reaches nearby range. Perks don't stack; an unaware target is always d8 |
+| Standard weapon (sword, rapier, spear, axe, mace) | d6 | one | 2 gp | **Steady:** reroll a 1 on the damage die, once. A spear can be thrown nearby; an axe hooks a shield away, so the target loses its shield's +1 armor for that hit |
+| Staff (light staff, quarterstaff, focus staff, surveyor's staff, club) | d4 / d6 | one or two | 5 sp | d4 in one hand, d6 in two. A focus staff can channel a spell |
+| Standard bow or shortbow | d6 | two | 4 gp | nearby range. **Aimed:** skip your move to roll d8 |
+| Heavy weapon (maul, heavy blade, pick or hammer) | d8 | two | 5 gp | **Crushing:** on an 8, also shove the target or knock it down |
+| Spring-gun | d6 | one | 8 gp | reloading uses your move. **Punch:** ignores 1 armor |
+| Improvised (a chair leg, a bottle) | d4 | one | – | minimum 1 damage |
 
 Ammunition is not tracked.
 
@@ -531,14 +541,15 @@ Armor value is subtracted from damage. Total armor never exceeds 3, counting spe
 | ---- | ----: | ------------ |
 | Toolkit or tool roll | 3 gp | repairs, locks, and mechanisms; the minimal tools for repairing animated armor |
 | Healer's kit | 1 gp | medicine that explains a rescue; lets ordinary treatment work |
-| Disguise kit | 5 gp | pass as a kind of person (guard, noble, priest) with no roll and no time limit. When someone looks closely or questions you, make a risky ⌘ Veyra check; it is hard to copy a specific person, someone of a different size, or to fool someone who knows who you claim to be |
+| Disguise kit | 5 gp | pass as a kind of person (guard, noble, priest). Close scrutiny needs a risky ⌘ Veyra check; copying a specific person is hard |
 | Climbing hook and rope (30 ft) | 8 sp | climbing and hauling |
 | Rope, 50 ft | 5 sp | |
-| Cord (20 ft), measuring cord, or chalk line | 2 sp | |
+| Cord (20 ft) | 2 sp | |
 | Springs and wire | 2 sp | parts for a gadget or a repair |
 | Notebook, songbook | 3 sp | |
-| Hooded lantern | 1 gp | light that can be shuttered |
-| Lantern | 5 sp | plain light |
+| Hooded lantern | 1 gp | light that can be shuttered; hangs from a belt or pack, leaving both hands free |
+| Lantern | 5 sp | plain light; hangs from a belt or pack, leaving both hands free |
+| Torch | 1 cp | plain light, burns an hour; must be held in hand |
 | Flint and tinder | 1 sp | |
 | Instrument | 2 gp | performance |
 | Travel library | 10 gp | reference books; research and recall |
@@ -554,6 +565,8 @@ Armor value is subtracted from damage. Total armor never exceeds 3, counting spe
 | Bright cloak | 5 sp | |
 | Dueling cloak, whetstone | 1 gp | |
 | Water skin, pack, bedroll | 5 sp | |
+
+<!-- pagebreak -->
 
 ### Supplies and services
 
@@ -599,6 +612,8 @@ Roll when the party browses a notable shop: what is in stock, how good it is, an
 | 4 | it comes with a condition |
 | 5 | it's slightly wrong in a way you can't place |
 | 6 | nothing's wrong with it, which is suspicious |
+
+<!-- pagebreak -->
 
 ## Knacks
 

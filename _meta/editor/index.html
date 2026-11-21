@@ -1,0 +1,783 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Section editor · ChromaForge</title>
+<style>
+:root {
+  --bg: #f6f4f9; --panel: #fff; --ink: #221d2b; --mute: #7a7287; --line: #e4dfeb;
+  --accent: #6a3fa0; --accent-ink: #fff; --sel: #ece4f7; --sel-strong: #dccdf0; --hover: #f3eff8;
+  --warn: #b5541c; --ok: #2f7d4f; --drop: #6a3fa0; --code: #faf8fc;
+  --shadow: 0 1px 2px rgba(30,20,50,.06), 0 4px 16px rgba(30,20,50,.06);
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #17141c; --panel: #1f1b26; --ink: #ebe6f2; --mute: #9a91a8; --line: #322c3c;
+    --accent: #a37be0; --accent-ink: #17141c; --sel: #2d2440; --sel-strong: #3a2e55; --hover: #262030;
+    --warn: #e68a4f; --ok: #5cc28a; --drop: #b893ee; --code: #1a1720;
+    --shadow: 0 1px 2px rgba(0,0,0,.3), 0 4px 16px rgba(0,0,0,.25);
+    color-scheme: dark;
+  }
+}
+* { box-sizing: border-box; }
+html, body { height: 100%; margin: 0; }
+body { background: var(--bg); color: var(--ink); font: 14px/1.4 system-ui, -apple-system, "Segoe UI", sans-serif; display: flex; flex-direction: column; }
+button { font: inherit; color: inherit; cursor: pointer; }
+kbd { font: 11px/1 ui-monospace, monospace; padding: 2px 5px; border: 1px solid var(--line); border-bottom-width: 2px; border-radius: 4px; background: var(--panel); color: var(--mute); }
+
+/* top bar */
+header { display: flex; align-items: center; gap: 10px; padding: 10px 16px; background: var(--panel); border-bottom: 1px solid var(--line); flex-wrap: wrap; }
+.brand { font-weight: 700; letter-spacing: .2px; display: flex; align-items: center; gap: 8px; }
+.brand i { width: 10px; height: 10px; border-radius: 3px; background: var(--accent); display: inline-block; }
+.seg { display: inline-flex; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; }
+.seg button { border: 0; background: transparent; padding: 5px 12px; }
+.seg button + button { border-left: 1px solid var(--line); }
+.seg button.on { background: var(--accent); color: var(--accent-ink); }
+.search { position: relative; }
+.search input { width: 220px; padding: 6px 10px 6px 28px; border: 1px solid var(--line); border-radius: 8px; background: var(--bg); color: var(--ink); font: inherit; }
+.search input:focus { outline: 2px solid var(--accent); outline-offset: -1px; }
+.search::before { content: "⌕"; position: absolute; left: 9px; top: 4px; color: var(--mute); font-size: 16px; }
+.grow { flex: 1; }
+.btn { border: 1px solid var(--line); background: var(--panel); padding: 5px 12px; border-radius: 8px; display: inline-flex; align-items: center; gap: 6px; }
+.btn:hover:not(:disabled) { background: var(--hover); }
+.btn:disabled { opacity: .4; cursor: default; }
+.btn.primary { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
+.btn.primary:hover:not(:disabled) { filter: brightness(1.08); background: var(--accent); }
+.icon { padding: 5px 8px; }
+.status { font-size: 12px; color: var(--mute); min-width: 74px; text-align: right; }
+.status.dirty { color: var(--warn); }
+
+/* banner */
+.banner { display: flex; gap: 10px; align-items: center; padding: 8px 16px; background: color-mix(in srgb, var(--warn) 15%, var(--panel)); border-bottom: 1px solid var(--line); }
+.banner[hidden] { display: none; }
+
+main { flex: 1; display: grid; grid-template-columns: minmax(360px, 46%) 1fr; min-height: 0; }
+@media (max-width: 860px) { main { grid-template-columns: 1fr; grid-template-rows: 1fr 1fr; } }
+
+/* tree */
+#treewrap { overflow: auto; padding: 12px 10px 80px 12px; border-right: 1px solid var(--line); }
+#tree { position: relative; outline: none; }
+.row { display: flex; align-items: center; gap: 6px; height: 32px; padding: 0 8px 0 calc(6px + var(--d) * 20px); border-radius: 7px; user-select: none; position: relative; cursor: default; }
+.row:hover { background: var(--hover); }
+.row.sel { background: var(--sel); }
+.row.sel.focus { background: var(--sel-strong); }
+#tree:focus-visible .row.focus, #tree:focus .row.focus { box-shadow: inset 0 0 0 1.5px var(--accent); }
+.row.dragging { opacity: .35; }
+.row.match .title { background: color-mix(in srgb, var(--accent) 22%, transparent); border-radius: 3px; }
+.row::after { /* indent guides */
+  content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: calc(6px + var(--d) * 20px);
+  background: repeating-linear-gradient(90deg, transparent 0 15px, var(--line) 15px 16px, transparent 16px 20px);
+  background-position: 6px 0; pointer-events: none; }
+.pbline { display: flex; align-items: center; gap: 8px; margin: 10px 0 2px calc(6px + var(--d) * 20px); color: var(--mute); font-size: 10.5px; letter-spacing: .6px; text-transform: uppercase; }
+.pbline::before, .pbline::after { content: ""; flex: 1; border-top: 1px dashed var(--line); }
+.pbline::before { flex: 0 0 14px; }
+.grip { color: var(--mute); opacity: 0; cursor: grab; font-size: 12px; letter-spacing: -2px; width: 12px; }
+.row:hover .grip, .row.sel .grip { opacity: .8; }
+.caret { border: 0; background: none; width: 18px; height: 18px; padding: 0; color: var(--mute); border-radius: 4px; transition: transform .12s; font-size: 11px; }
+.caret:hover { background: var(--line); }
+.caret.open { transform: rotate(90deg); }
+.caret.leaf { visibility: hidden; }
+.lv { font: 600 10px/1 ui-monospace, monospace; padding: 3px 4px; border-radius: 4px; background: var(--line); color: var(--mute); }
+.l1 .lv, .l2 .lv { background: var(--accent); color: var(--accent-ink); }
+.title { flex: 1; min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.l1 .title { font-weight: 700; font-size: 15px; }
+.l2 .title { font-weight: 650; color: var(--accent); }
+.l4 .title, .l5 .title, .l6 .title { color: var(--mute); }
+.title[contenteditable] { outline: 2px solid var(--accent); background: var(--panel); border-radius: 4px; padding: 0 4px; text-overflow: clip; cursor: text; user-select: text; color: var(--ink); }
+.chips { display: flex; gap: 4px; align-items: center; }
+.chip { font-size: 11px; border: 1px solid var(--line); background: var(--panel); color: var(--mute); padding: 1px 6px; border-radius: 999px; white-space: nowrap; }
+button.chip.pb { opacity: 0; }
+.row:hover button.chip.pb, .row.sel button.chip.pb { opacity: 1; }
+button.chip.pb.on { opacity: 1; background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
+.count { font: 11px ui-monospace, monospace; color: var(--mute); width: 30px; text-align: right; }
+#dropline { position: absolute; height: 2px; background: var(--drop); border-radius: 2px; pointer-events: none; right: 4px; display: none; z-index: 2; }
+#dropline::before { content: ""; position: absolute; left: -5px; top: -4px; width: 6px; height: 6px; border: 2px solid var(--drop); border-radius: 50%; background: var(--panel); }
+#ghost { position: fixed; top: -100px; left: -100px; padding: 5px 10px; background: var(--accent); color: var(--accent-ink); border-radius: 7px; font-weight: 600; font-size: 12px; box-shadow: var(--shadow); }
+.empty { color: var(--mute); padding: 24px; text-align: center; }
+
+/* right pane */
+#pane { display: flex; flex-direction: column; min-height: 0; min-width: 0; }
+.tabs { display: flex; gap: 2px; padding: 8px 12px 0; border-bottom: 1px solid var(--line); background: var(--panel); }
+.tabs button { border: 0; background: none; padding: 7px 12px; border-bottom: 2px solid transparent; color: var(--mute); }
+.tabs button.on { color: var(--ink); border-bottom-color: var(--accent); }
+.tabs .grow { flex: 1; }
+.view { flex: 1; min-height: 0; display: flex; flex-direction: column; }
+.view[hidden] { display: none; }
+.crumbs { padding: 12px 16px 0; font-size: 12px; color: var(--mute); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.crumbs b { color: var(--ink); font-weight: 600; }
+.multi { padding: 16px; }
+.multi h3 { margin: 0 0 8px; }
+.multi ul { margin: 0 0 14px; padding-left: 18px; color: var(--mute); max-height: 30vh; overflow: auto; }
+.actions { display: flex; gap: 6px; flex-wrap: wrap; }
+textarea { flex: 1; margin: 10px 16px 16px; padding: 12px 14px; border: 1px solid var(--line); border-radius: 10px; background: var(--code); color: var(--ink); font: 12.5px/1.55 ui-monospace, "DejaVu Sans Mono", monospace; resize: none; tab-size: 2; }
+textarea:focus { outline: 2px solid var(--accent); outline-offset: -1px; }
+iframe { flex: 1; border: 0; background: #888; }
+.pdfempty { margin: auto; color: var(--mute); text-align: center; }
+#log { margin: 0; max-height: 34%; overflow: auto; padding: 10px 16px; font: 12px/1.45 ui-monospace, monospace; background: var(--code); border-top: 1px solid var(--line); white-space: pre-wrap; }
+#log[hidden] { display: none; }
+#log .bad { color: var(--warn); }
+
+footer { padding: 6px 16px; font-size: 11.5px; color: var(--mute); border-top: 1px solid var(--line); background: var(--panel); display: flex; gap: 14px; flex-wrap: wrap; }
+footer span { white-space: nowrap; }
+
+/* toast + modal */
+#toasts { position: fixed; bottom: 44px; right: 16px; display: flex; flex-direction: column; gap: 8px; z-index: 20; }
+.toast { background: var(--ink); color: var(--bg); padding: 9px 14px; border-radius: 9px; box-shadow: var(--shadow); font-size: 13px; animation: in .18s ease-out; max-width: 380px; }
+.toast.bad { background: var(--warn); color: #fff; }
+@keyframes in { from { transform: translateY(8px); opacity: 0; } }
+#modal { position: fixed; inset: 0; background: rgba(20,15,30,.45); display: grid; place-items: center; z-index: 30; }
+#modal[hidden] { display: none; }
+#modal .box { background: var(--panel); border-radius: 12px; padding: 20px; width: min(440px, 92vw); box-shadow: var(--shadow); }
+#modal p { margin: 0 0 16px; }
+#modal .actions { justify-content: flex-end; }
+#help .box { width: min(560px, 94vw); }
+#help table { width: 100%; border-collapse: collapse; font-size: 13px; }
+#help td { padding: 5px 4px; border-bottom: 1px solid var(--line); }
+#help td:first-child { white-space: nowrap; width: 1%; padding-right: 16px; }
+</style>
+</head>
+<body>
+<header>
+  <span class="brand"><i></i>Sections</span>
+  <div class="seg" id="files"></div>
+  <label class="search"><input id="filter" placeholder="Filter headings  (Ctrl+F)" autocomplete="off"></label>
+  <span class="grow"></span>
+  <button class="btn icon" id="undo" title="Undo (Ctrl+Z)">↶</button>
+  <button class="btn icon" id="redo" title="Redo (Ctrl+Shift+Z)">↷</button>
+  <span class="status" id="status">—</span>
+  <button class="btn" id="save" title="Save (Ctrl+S)">Save</button>
+  <button class="btn primary" id="build" title="Save, build PDFs, show PDF (Ctrl+B)">▶ Build</button>
+  <button class="btn icon" id="helpbtn" title="Shortcuts (?)">?</button>
+</header>
+<div class="banner" id="banner" hidden>
+  <span>⚠ This file changed on disk after it was loaded.</span>
+  <button class="btn" id="b-reload">Reload from disk (drop my changes)</button>
+  <button class="btn" id="b-keep">Keep mine (overwrite on save)</button>
+</div>
+<main>
+  <div id="treewrap"><div id="tree" tabindex="0"></div></div>
+  <section id="pane">
+    <div class="tabs">
+      <button data-tab="section" class="on">Section</button>
+      <button data-tab="pdf">PDF</button>
+      <span class="grow"></span>
+      <button id="logbtn" title="Build output">Build log</button>
+    </div>
+    <div class="view" id="v-section"></div>
+    <div class="view" id="v-pdf" hidden><div class="pdfempty">Press <kbd>Ctrl</kbd> <kbd>B</kbd> to build and preview.</div></div>
+    <pre id="log" hidden></pre>
+  </section>
+</main>
+<footer>
+  <span><kbd>Click</kbd> select</span><span><kbd>Shift</kbd>+click range</span><span><kbd>Ctrl</kbd>+click toggle</span>
+  <span>Drag to move</span><span><kbd>Alt</kbd> <kbd>↑↓</kbd> move</span><span><kbd>Tab</kbd> / <kbd>Shift</kbd><kbd>Tab</kbd> level</span>
+  <span><kbd>P</kbd> page break</span><span><kbd>Enter</kbd> rename</span><span><kbd>?</kbd> all shortcuts</span>
+</footer>
+<div id="ghost"></div>
+<div id="toasts"></div>
+<div id="modal" hidden><div class="box"><p id="m-text"></p><div class="actions" id="m-actions"></div></div></div>
+<div id="help" style="position:fixed;inset:0;background:rgba(20,15,30,.45);display:grid;place-items:center;z-index:30" hidden>
+  <div class="box" style="background:var(--panel);border-radius:12px;padding:20px;box-shadow:var(--shadow)">
+    <h3 style="margin-top:0">Shortcuts</h3>
+    <table>
+      <tr><td><kbd>↑</kbd> <kbd>↓</kbd></td><td>Move focus · with <kbd>Shift</kbd>, extend selection</td></tr>
+      <tr><td><kbd>Ctrl</kbd>+click · <kbd>Shift</kbd>+click</td><td>Toggle one · select a range</td></tr>
+      <tr><td><kbd>Ctrl</kbd> <kbd>A</kbd> · <kbd>Esc</kbd></td><td>Select all shown · clear selection / filter</td></tr>
+      <tr><td>Drag</td><td>Move selected sections; each brings its subsections. Collapsed rows drop after their whole block.</td></tr>
+      <tr><td><kbd>Alt</kbd> <kbd>↑</kbd> <kbd>↓</kbd></td><td>Move selection up / down one row</td></tr>
+      <tr><td><kbd>Tab</kbd> · <kbd>Shift</kbd> <kbd>Tab</kbd></td><td>Demote · promote heading level (with subsections)</td></tr>
+      <tr><td><kbd>←</kbd> <kbd>→</kbd> · <kbd>Space</kbd></td><td>Collapse · expand · toggle</td></tr>
+      <tr><td><kbd>Enter</kbd> / double-click</td><td>Rename heading</td></tr>
+      <tr><td><kbd>P</kbd></td><td>Toggle page break before selected (<code>&lt;!-- pagebreak --&gt;</code>)</td></tr>
+      <tr><td><kbd>E</kbd></td><td>Edit focused section's markdown</td></tr>
+      <tr><td><kbd>O</kbd></td><td>Show focused section's page in the PDF</td></tr>
+      <tr><td><kbd>Ctrl</kbd> <kbd>Z</kbd> · <kbd>Ctrl</kbd> <kbd>Shift</kbd> <kbd>Z</kbd></td><td>Undo · redo</td></tr>
+      <tr><td><kbd>Ctrl</kbd> <kbd>S</kbd> · <kbd>Ctrl</kbd> <kbd>B</kbd></td><td>Save · save + build + preview</td></tr>
+    </table>
+    <div class="actions" style="justify-content:flex-end;margin-top:14px"><button class="btn" onclick="help.hidden=true">Close</button></div>
+  </div>
+</div>
+
+<script id="core">
+// ---- markdown <-> sections. A section is its heading plus body; comment lines right above a heading
+// (page breaks, art markers) belong to that heading, so they move with it.
+const HEAD = /^(#{1,6})[ \t]+(.+?)[ \t]*#*[ \t]*$/;
+const COMMENT = /^<!--.*-->[ \t]*$/;
+let _id = 0;
+const uid = () => 's' + (++_id);
+
+function parse(text) {
+  const L = text.replace(/\r\n/g, '\n').split('\n');
+  const heads = [];
+  let code = false;
+  L.forEach((l, i) => {
+    if (/^\s*(```|~~~)/.test(l)) code = !code;
+    else if (!code && HEAD.test(l)) heads.push(i);
+  });
+  const starts = heads.map((h, k) => {
+    let s = h;
+    for (let j = h - 1, floor = k ? heads[k - 1] : -1; j > floor && (L[j].trim() === '' || COMMENT.test(L[j])); j--)
+      if (L[j].trim() !== '') s = j;
+    return s;
+  });
+  // Each part keeps its own count of trailing blank lines (tail), so untouched files round-trip byte for byte.
+  const part = (a, b) => {
+    const t = L.slice(a, b).join('\n'), text = t.replace(/\n+$/, '');
+    return { text, tail: t.length - text.length };
+  };
+  const p = part(0, starts.length ? starts[0] : L.length);
+  return {
+    pre: p.text, preTail: starts[0] === 0 ? -1 : p.tail,
+    secs: starts.map((s, k) => ({ id: uid(), ...part(s, k + 1 < starts.length ? starts[k + 1] : L.length) })),
+  };
+}
+function serialize(doc) {
+  const parts = doc.secs.map(s => s.text + '\n'.repeat(s.tail ?? 1));
+  if (doc.preTail !== -1) parts.unshift(doc.pre + '\n'.repeat(doc.preTail ?? 1));
+  const out = parts.join('\n');
+  return out.endsWith('\n') ? out : out + '\n';
+}
+const _info = new Map();
+function info(sec) {
+  let r = _info.get(sec.text);
+  if (r) return r;
+  const lines = sec.text.split('\n');
+  const hi = lines.findIndex(l => HEAD.test(l));
+  const m = HEAD.exec(lines[hi]);
+  const lead = lines.slice(0, hi);
+  r = {
+    hi, level: m[1].length, title: m[2],
+    pb: lead.some(l => /<!--\s*pagebreak\s*-->/.test(l)),
+    fill: lead.some(l => /<!--\s*art fill/.test(l)),
+    art: (sec.text.match(/<!--\s*(art|edge)\b/g) || []).length,
+    tables: lines.filter(l => /^\|[\s:|]*-[\s:|-]*\|?\s*$/.test(l)).length,
+    n: lines.length - hi - 1,
+  };
+  if (_info.size > 5000) _info.clear();
+  _info.set(sec.text, r);
+  return r;
+}
+function setHeading(sec, level, title) {
+  const lines = sec.text.split('\n');
+  lines[info(sec).hi] = '#'.repeat(level) + ' ' + title;
+  sec.text = lines.join('\n');
+}
+function togglePB(sec, on = !info(sec).pb) {
+  if (on === info(sec).pb) return;
+  let lines = sec.text.split('\n');
+  if (on) lines = ['<!-- pagebreak -->', '', ...lines];
+  else {
+    const i = lines.findIndex(l => /<!--\s*pagebreak\s*-->/.test(l));
+    lines.splice(i, lines[i + 1] === '' ? 2 : 1);
+  }
+  sec.text = lines.join('\n');
+}
+function blockEnd(secs, i) {
+  const lv = info(secs[i]).level;
+  let j = i + 1;
+  while (j < secs.length && info(secs[j]).level > lv) j++;
+  return j;
+}
+// Selected sections, minus any inside another selected section's block: [index, ...] in order.
+function roots(secs, sel) {
+  const out = [];
+  for (let i = 0, cover = 0; i < secs.length; i++)
+    if (sel.has(secs[i].id) && i >= cover) { out.push(i); cover = blockEnd(secs, i); }
+  return out;
+}
+// Move the selected blocks so they start at flat index `drop`. Returns false if nothing moved.
+function moveTo(secs, sel, drop) {
+  const rs = roots(secs, sel);
+  if (!rs.length) return false;
+  const spans = rs.map(r => [r, blockEnd(secs, r)]);
+  if (spans.some(([a, b]) => drop > a && drop < b)) return false;
+  const moving = new Set(spans.flatMap(([a, b]) => secs.slice(a, b)));
+  const blocks = secs.filter(s => moving.has(s));
+  const rest = secs.filter(s => !moving.has(s));
+  const at = secs.slice(0, drop).filter(s => !moving.has(s)).length;
+  const next = [...rest.slice(0, at), ...blocks, ...rest.slice(at)];
+  if (next.every((s, i) => s === secs[i])) return false;
+  secs.splice(0, secs.length, ...next);
+  return true;
+}
+if (typeof module !== 'undefined') module.exports = { parse, serialize, info, moveTo, blockEnd, togglePB, setHeading };
+</script>
+
+<script>
+const $ = s => document.querySelector(s);
+const tree = $('#tree'), help = $('#help');
+const esc = s => s.replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+const S = {
+  files: {}, file: null, doc: { pre: '', secs: [] }, mtime: 0, saved: '',
+  sel: new Set(), anchor: null, focus: null, collapsed: new Set(),
+  undo: [], redo: [], filter: '', pages: {}, tab: 'section', keepMine: false,
+};
+const secs = () => S.doc.secs;
+const idx = id => secs().findIndex(s => s.id === id);
+const dirty = () => serialize(S.doc) !== S.saved;
+
+// ---- history ----
+const snap = () => ({ pre: S.doc.pre, preTail: S.doc.preTail, secs:secs().map(s => ({ ...s })), sel: [...S.sel], focus: S.focus });
+function commit(fn) {
+  const before = snap();
+  if (fn() === false) return;
+  S.undo.push(before); S.redo = [];
+  if (S.undo.length > 300) S.undo.shift();
+  render();
+}
+function restore(from, to) {
+  if (!from.length) return;
+  to.push(snap());
+  const s = from.pop();
+  S.doc = { pre: s.pre, preTail: s.preTail, secs: s.secs };
+  S.sel = new Set(s.sel); S.focus = s.focus;
+  render();
+}
+
+// ---- visibility: collapsed blocks and the filter ----
+function visible() {
+  const out = [], list = secs(), q = S.filter.toLowerCase();
+  let hideBelow = 7;
+  const keep = new Set();
+  if (q) list.forEach((s, i) => {
+    if (!info(s).title.toLowerCase().includes(q)) return;
+    keep.add(i);
+    for (let lv = info(s).level, j = i - 1; j >= 0 && lv > 1; j--) // ancestors stay visible
+      if (info(list[j]).level < lv) { keep.add(j); lv = info(list[j]).level; }
+  });
+  list.forEach((s, i) => {
+    const lv = info(s).level;
+    if (lv <= hideBelow) hideBelow = 7;
+    if (lv > hideBelow) return;
+    if (q && !keep.has(i)) return;
+    out.push(i);
+    if (S.collapsed.has(s.id) && !q) hideBelow = lv;
+  });
+  return out;
+}
+
+// ---- render ----
+function render() {
+  const list = secs(), vis = visible(), q = S.filter.toLowerCase();
+  if (!list.length) tree.innerHTML = '<div class="empty">No headings in this file.</div>';
+  else tree.innerHTML = vis.map(i => {
+    const s = list[i], f = info(s), d = f.level - 1;
+    const kids = i + 1 < list.length && info(list[i + 1]).level > f.level;
+    const cls = ['row', 'l' + f.level, S.sel.has(s.id) && 'sel', S.focus === s.id && 'focus', q && f.title.toLowerCase().includes(q) && 'match'].filter(Boolean).join(' ');
+    return (f.pb ? `<div class="pbline" style="--d:${d}">new page</div>` : '') +
+      `<div class="${cls}" data-i="${i}" draggable="true" style="--d:${d}">` +
+      `<span class="grip">⋮⋮</span>` +
+      `<button class="caret ${kids ? (S.collapsed.has(s.id) ? '' : 'open') : 'leaf'}" tabindex="-1">▶</button>` +
+      `<span class="lv">H${f.level}</span><span class="title">${esc(f.title)}</span><span class="chips">` +
+      (f.fill ? `<span class="chip" title="&lt;!-- art fill --&gt;: sits at the bottom of the right column">▼ fill</span>` : '') +
+      (f.art ? `<span class="chip" title="Art markers">▣ ${f.art}</span>` : '') +
+      (f.tables ? `<span class="chip" title="Tables">▦ ${f.tables}</span>` : '') +
+      `<button class="chip pb ${f.pb ? 'on' : ''}" tabindex="-1" title="Page break before (P)">⤓ page</button></span>` +
+      `<span class="count" title="Lines">${f.n}</span></div>`;
+  }).join('') + '<div id="dropline"></div>';
+  if (q && !vis.length) tree.insertAdjacentHTML('afterbegin', '<div class="empty">No headings match.</div>');
+  const st = $('#status'), d = dirty();
+  st.textContent = d ? '● Unsaved' : 'Saved';
+  st.classList.toggle('dirty', d);
+  $('#save').disabled = !d;
+  $('#undo').disabled = !S.undo.length;
+  $('#redo').disabled = !S.redo.length;
+  document.title = (d ? '● ' : '') + 'Section editor · ' + (S.file || '');
+  renderPane();
+  tree.querySelector('.row.focus')?.scrollIntoView({ block: 'nearest' });
+}
+
+let paneKey = '';
+function renderPane() {
+  const v = $('#v-section'), list = secs();
+  const chosen = list.filter(s => S.sel.has(s.id));
+  const key = chosen.length > 1 ? 'm:' + chosen.map(s => s.id + info(s).title).join() : 's:' + S.focus;
+  if (chosen.length > 1) {
+    if (key === paneKey) return;
+    v.innerHTML = `<div class="multi"><h3>${chosen.length} sections selected</h3><ul>${chosen.map(s => `<li>${esc(info(s).title)}</li>`).join('')}</ul>
+      <div class="actions">
+        <button class="btn" data-act="up">↑ Move up</button><button class="btn" data-act="down">↓ Move down</button>
+        <button class="btn" data-act="promote">⇤ Promote</button><button class="btn" data-act="demote">⇥ Demote</button>
+        <button class="btn" data-act="pb">⤓ Toggle page break</button>
+      </div></div>`;
+  } else {
+    const s = list[idx(S.focus)];
+    if (!s) { v.innerHTML = '<div class="pdfempty">Select a section.</div>'; paneKey = key; return; }
+    const ta = v.querySelector('textarea');
+    if (key === paneKey && ta) { if (document.activeElement !== ta && ta.value !== s.text) ta.value = s.text; crumbs(); return; }
+    v.innerHTML = '<div class="crumbs"></div><textarea spellcheck="false"></textarea>';
+    v.querySelector('textarea').value = s.text;
+    crumbs();
+  }
+  paneKey = key;
+}
+function crumbs() {
+  const list = secs(), i = idx(S.focus), el = $('#v-section .crumbs');
+  if (i < 0 || !el) return;
+  const path = [];
+  for (let lv = info(list[i]).level, j = i - 1; j >= 0 && lv > 1; j--)
+    if (info(list[j]).level < lv) { path.unshift(info(list[j]).title); lv = info(list[j]).level; }
+  el.innerHTML = [...path.map(esc), `<b>${esc(info(list[i]).title)}</b>`].join(' › ');
+}
+
+// ---- section text editing (textarea) ----
+let editBefore = null;
+$('#v-section').addEventListener('focusin', e => { if (e.target.tagName === 'TEXTAREA') editBefore = snap(); });
+$('#v-section').addEventListener('input', e => {
+  if (e.target.tagName !== 'TEXTAREA') return;
+  const s = secs()[idx(S.focus)];
+  if (!s) return;
+  s.text = e.target.value.replace(/\n+$/, '');
+  if (!HEAD.test(s.text.split('\n').find(l => !COMMENT.test(l) && l.trim()) || '')) return; // heading mid-edit
+  render();
+});
+$('#v-section').addEventListener('focusout', e => {
+  if (e.target.tagName !== 'TEXTAREA' || !editBefore) return;
+  // Re-split in case headings were added or removed, keeping ids where the count still lines up.
+  const old = secs(), d = parse(serialize(S.doc));
+  if (d.secs.length === old.length) d.secs.forEach((s, i) => s.id = old[i].id);
+  else { S.sel = new Set(); const f = d.secs[Math.min(idx(S.focus), d.secs.length - 1)]; S.focus = f?.id; f && S.sel.add(f.id); }
+  const changed = serialize(d) !== serialize(editBefore);
+  S.doc = d;
+  if (changed) { S.undo.push(editBefore); S.redo = []; }
+  editBefore = null;
+  paneKey = '';
+  render();
+});
+$('#v-section').addEventListener('click', e => {
+  const a = e.target.closest('[data-act]')?.dataset.act;
+  if (a === 'up') moveStep(-1); else if (a === 'down') moveStep(1);
+  else if (a === 'promote') shiftLevel(-1); else if (a === 'demote') shiftLevel(1);
+  else if (a === 'pb') togglePBSel();
+});
+
+// ---- operations ----
+function selectOnly(id) { S.sel = new Set([id]); S.anchor = S.focus = id; }
+function moveStep(dir) {
+  const list = secs(), vis = visible(), rs = roots(list, S.sel);
+  if (!rs.length) return;
+  if (dir < 0) {
+    const p = vis.filter(i => i < rs[0]).pop();
+    if (p === undefined) return;
+    commit(() => moveTo(list, S.sel, p));
+  } else {
+    const end = blockEnd(list, rs[rs.length - 1]);
+    const q = vis.find(i => i >= end);
+    if (q === undefined) return;
+    const qv = S.collapsed.has(list[q].id) || !(q + 1 < list.length && info(list[q + 1]).level > info(list[q]).level) ? blockEnd(list, q) : q + 1;
+    commit(() => moveTo(list, S.sel, qv));
+  }
+}
+function shiftLevel(dir) {
+  const list = secs(), rs = roots(list, S.sel);
+  const all = rs.flatMap(r => list.slice(r, blockEnd(list, r)));
+  if (!all.length || all.some(s => { const l = info(s).level + dir; return l < 1 || l > 6; })) return toast('Heading levels stay between H1 and H6', true);
+  commit(() => all.forEach(s => setHeading(s, info(s).level + dir, info(s).title)));
+}
+function togglePBSel() {
+  const chosen = secs().filter(s => S.sel.has(s.id));
+  if (!chosen.length) return;
+  const on = !chosen.every(s => info(s).pb);
+  commit(() => chosen.forEach(s => togglePB(s, on)));
+}
+function rename(row) {
+  const t = row.querySelector('.title'), s = secs()[+row.dataset.i];
+  row.draggable = false;
+  t.contentEditable = 'plaintext-only';
+  t.focus();
+  getSelection().selectAllChildren(t);
+  const done = ok => {
+    t.removeEventListener('blur', onBlur);
+    const v = t.textContent.trim();
+    if (ok && v && v !== info(s).title) commit(() => setHeading(s, info(s).level, v)); else render();
+    tree.focus();
+  };
+  const onBlur = () => done(true);
+  t.addEventListener('blur', onBlur);
+  t.addEventListener('keydown', e => {
+    e.stopPropagation();
+    if (e.key === 'Enter') { e.preventDefault(); done(true); }
+    if (e.key === 'Escape') { e.preventDefault(); done(false); }
+  });
+}
+
+// ---- mouse ----
+tree.addEventListener('mousedown', e => { if (e.shiftKey) e.preventDefault(); }); // no text selection on shift-click
+tree.addEventListener('click', e => {
+  const row = e.target.closest('.row');
+  if (!row || row.querySelector('[contenteditable]')) return;
+  const s = secs()[+row.dataset.i];
+  if (e.target.closest('.caret')) {
+    S.collapsed.has(s.id) ? S.collapsed.delete(s.id) : S.collapsed.add(s.id);
+    return render();
+  }
+  if (e.target.closest('.chip.pb')) {
+    if (!S.sel.has(s.id)) selectOnly(s.id);
+    return togglePBSel();
+  }
+  if (e.shiftKey && S.anchor) {
+    const vis = visible(), a = vis.indexOf(idx(S.anchor)), b = vis.indexOf(+row.dataset.i);
+    if (!(e.ctrlKey || e.metaKey)) S.sel = new Set();
+    vis.slice(Math.min(a, b), Math.max(a, b) + 1).forEach(i => S.sel.add(secs()[i].id));
+    S.focus = s.id;
+  } else if (e.ctrlKey || e.metaKey) {
+    S.sel.has(s.id) ? S.sel.delete(s.id) : S.sel.add(s.id);
+    S.anchor = S.focus = s.id;
+  } else selectOnly(s.id);
+  tree.focus();
+  render();
+});
+tree.addEventListener('dblclick', e => {
+  const row = e.target.closest('.row');
+  if (row && e.target.closest('.title')) rename(row);
+});
+
+// ---- drag and drop ----
+let drop = null;
+tree.addEventListener('dragstart', e => {
+  const row = e.target.closest('.row');
+  if (!row) return;
+  const s = secs()[+row.dataset.i];
+  if (!S.sel.has(s.id)) selectOnly(s.id);
+  const list = secs(), rs = roots(list, S.sel);
+  const n = rs.reduce((a, r) => a + blockEnd(list, r) - r, 0);
+  const g = $('#ghost');
+  g.textContent = rs.length === 1 ? info(list[rs[0]]).title + (n > 1 ? `  +${n - 1}` : '') : `${rs.length} sections` + (n > rs.length ? ` (+${n - rs.length} inside)` : '');
+  e.dataTransfer.setData('text/plain', g.textContent);
+  e.dataTransfer.effectAllowed = 'move';
+  e.dataTransfer.setDragImage(g, 12, 14);
+  requestAnimationFrame(() => {
+    render();
+    const moving = new Set(rs.flatMap(r => list.slice(r, blockEnd(list, r)).map(x => x.id)));
+    tree.querySelectorAll('.row').forEach(el => moving.has(list[+el.dataset.i].id) && el.classList.add('dragging'));
+  });
+});
+function dropAt(e) {
+  const list = secs(), rows = [...tree.querySelectorAll('.row')];
+  if (!rows.length) return null;
+  let row = e.target.closest?.('.row');
+  if (!row) { // below the last row, or on a page-break line: nearest row
+    row = rows.reduce((best, r) => Math.abs(r.getBoundingClientRect().top + 16 - e.clientY) < Math.abs(best.getBoundingClientRect().top + 16 - e.clientY) ? r : best);
+  }
+  const i = +row.dataset.i, box = row.getBoundingClientRect(), before = e.clientY < box.top + box.height / 2;
+  if (before) return { at: i, row, before };
+  const kids = i + 1 < list.length && info(list[i + 1]).level > info(list[i]).level;
+  const open = kids && !S.collapsed.has(list[i].id) && !S.filter;
+  return { at: open ? i + 1 : blockEnd(list, i), row, before };
+}
+tree.addEventListener('dragover', e => {
+  e.preventDefault();
+  const d = dropAt(e), line = $('#dropline');
+  if (!d) return;
+  const list = secs(), rs = roots(list, S.sel);
+  const bad = rs.some(r => d.at > r && d.at < blockEnd(list, r));
+  drop = bad ? null : d.at;
+  e.dataTransfer.dropEffect = bad ? 'none' : 'move';
+  const r = d.row, top = r.offsetTop + (d.before ? 0 : r.offsetHeight);
+  // Indent the line to the level the dropped block will sit beside.
+  const ref = d.before ? r : (list[d.at] ? tree.querySelector(`.row[data-i="${d.at}"]`) || r : r);
+  line.style.display = bad ? 'none' : 'block';
+  line.style.top = top - 1 + 'px';
+  line.style.left = (12 + (+getComputedStyle(ref).getPropertyValue('--d') || 0) * 20) + 'px';
+});
+tree.addEventListener('dragleave', e => { if (!tree.contains(e.relatedTarget)) $('#dropline').style.display = 'none'; });
+tree.addEventListener('drop', e => {
+  e.preventDefault();
+  if (drop !== null) commit(() => moveTo(secs(), S.sel, drop));
+  drop = null;
+});
+tree.addEventListener('dragend', () => { drop = null; render(); });
+
+// ---- keyboard ----
+tree.addEventListener('keydown', e => {
+  const list = secs(), vis = visible(), ctrl = e.ctrlKey || e.metaKey;
+  let at = vis.indexOf(idx(S.focus));
+  const go = n => {
+    n = Math.max(0, Math.min(vis.length - 1, n));
+    const id = list[vis[n]].id;
+    if (e.shiftKey && S.anchor) {
+      const a = vis.indexOf(idx(S.anchor));
+      S.sel = new Set(vis.slice(Math.min(a, n), Math.max(a, n) + 1).map(i => list[i].id));
+      S.focus = id;
+    } else selectOnly(id);
+    render();
+  };
+  const k = e.key;
+  if (k === 'ArrowDown' && e.altKey) moveStep(1);
+  else if (k === 'ArrowUp' && e.altKey) moveStep(-1);
+  else if (k === 'ArrowDown') go(at < 0 ? 0 : at + 1);
+  else if (k === 'ArrowUp') go(at < 0 ? 0 : at - 1);
+  else if (k === 'Home') go(0);
+  else if (k === 'End') go(vis.length - 1);
+  else if (k === 'Tab') shiftLevel(e.shiftKey ? -1 : 1);
+  else if (k === 'ArrowLeft' || k === 'ArrowRight' || k === ' ') {
+    const s = list[idx(S.focus)];
+    if (!s) return;
+    const want = k === ' ' ? !S.collapsed.has(s.id) : k === 'ArrowLeft';
+    if (!want && k === 'ArrowRight' && !S.collapsed.has(s.id)) go(at + 1);
+    else if (want && k === 'ArrowLeft' && (S.collapsed.has(s.id) || blockEnd(list, idx(s.id)) === idx(s.id) + 1)) {
+      for (let j = idx(s.id) - 1; j >= 0; j--) if (info(list[j]).level < info(s).level) { go(vis.indexOf(j)); break; } // to parent
+    } else { want ? S.collapsed.add(s.id) : S.collapsed.delete(s.id); render(); }
+  }
+  else if (k === 'Enter') { const r = tree.querySelector('.row.focus'); r && rename(r); }
+  else if (k === 'a' && ctrl) { S.sel = new Set(vis.map(i => list[i].id)); render(); }
+  else if (k === 'Escape') { if (S.filter) { $('#filter').value = S.filter = ''; } else S.sel = new Set(S.focus ? [S.focus] : []); render(); }
+  else if ((k === 'p' || k === 'P') && !ctrl) togglePBSel();
+  else if ((k === 'e' || k === 'E') && !ctrl) { setTab('section'); renderPane(); $('#v-section textarea')?.focus(); }
+  else if ((k === 'o' || k === 'O') && !ctrl) showInPdf();
+  else return;
+  e.preventDefault();
+});
+document.addEventListener('keydown', e => {
+  const ctrl = e.ctrlKey || e.metaKey, k = e.key.toLowerCase();
+  const typing = /INPUT|TEXTAREA/.test(document.activeElement?.tagName) || document.activeElement?.isContentEditable;
+  if (ctrl && k === 's') { e.preventDefault(); save(); }
+  else if (ctrl && k === 'b') { e.preventDefault(); build(); }
+  else if (ctrl && k === 'f') { e.preventDefault(); $('#filter').focus(); $('#filter').select(); }
+  else if (typing) return;
+  else if (ctrl && k === 'z' && !e.shiftKey) { e.preventDefault(); restore(S.undo, S.redo); }
+  else if (ctrl && (k === 'y' || (k === 'z' && e.shiftKey))) { e.preventDefault(); restore(S.redo, S.undo); }
+  else if (e.key === '?') help.hidden = !help.hidden;
+  else if (e.key === 'Escape') help.hidden = true;
+});
+$('#filter').addEventListener('input', e => { S.filter = e.target.value.trim(); render(); });
+$('#filter').addEventListener('keydown', e => {
+  if (e.key === 'Escape') { e.target.value = S.filter = ''; render(); tree.focus(); }
+  if (e.key === 'Enter' || e.key === 'ArrowDown') { e.preventDefault(); const v = visible(); v.length && selectOnly(secs()[v[0]].id); tree.focus(); render(); }
+});
+$('#undo').onclick = () => restore(S.undo, S.redo);
+$('#redo').onclick = () => restore(S.redo, S.undo);
+$('#helpbtn').onclick = () => help.hidden = false;
+help.onclick = e => { if (e.target === help) help.hidden = true; };
+
+// ---- tabs, toasts, modal ----
+function setTab(t) {
+  S.tab = t;
+  document.querySelectorAll('.tabs [data-tab]').forEach(b => b.classList.toggle('on', b.dataset.tab === t));
+  $('#v-section').hidden = t !== 'section';
+  $('#v-pdf').hidden = t !== 'pdf';
+}
+document.querySelectorAll('.tabs [data-tab]').forEach(b => b.onclick = () => setTab(b.dataset.tab));
+$('#logbtn').onclick = () => $('#log').hidden = !$('#log').hidden;
+function toast(msg, bad) {
+  const t = document.createElement('div');
+  t.className = 'toast' + (bad ? ' bad' : '');
+  t.textContent = msg;
+  $('#toasts').append(t);
+  setTimeout(() => t.remove(), bad ? 5000 : 2600);
+}
+function ask(text, buttons) {
+  return new Promise(res => {
+    $('#m-text').textContent = text;
+    $('#m-actions').innerHTML = '';
+    buttons.forEach(([label, val, primary]) => {
+      const b = document.createElement('button');
+      b.className = 'btn' + (primary ? ' primary' : '');
+      b.textContent = label;
+      b.onclick = () => { $('#modal').hidden = true; res(val); };
+      $('#m-actions').append(b);
+    });
+    $('#modal').hidden = false;
+    $('#m-actions .primary')?.focus();
+  });
+}
+
+// ---- server ----
+async function api(method, path, body) {
+  const r = await fetch(path, { method, headers: { 'Content-Type': 'application/json' }, body: body && JSON.stringify(body) });
+  const j = await r.json().catch(() => ({}));
+  return { status: r.status, ...j };
+}
+async function load(file) {
+  const r = await api('GET', '/api/doc?f=' + encodeURIComponent(file));
+  if (r.status !== 200) return toast(r.error || 'Could not load ' + file, true);
+  S.file = file; S.doc = parse(r.text); S.mtime = r.mtime; S.saved = serialize(S.doc);
+  S.undo = []; S.redo = []; S.collapsed = new Set(); S.keepMine = false; S.pages = {};
+  const first = secs()[0];
+  S.sel = new Set(first ? [first.id] : []); S.anchor = S.focus = first?.id;
+  $('#banner').hidden = true;
+  document.querySelectorAll('#files button').forEach(b => b.classList.toggle('on', b.dataset.f === file));
+  paneKey = '';
+  $('#v-pdf').innerHTML = '<div class="pdfempty">Press <kbd>Ctrl</kbd> <kbd>B</kbd> to build and preview.</div>';
+  try { localStorage.setItem('sections.file', file); } catch {}
+  render();
+  tree.focus();
+}
+async function save() {
+  if (document.activeElement?.tagName === 'TEXTAREA') document.activeElement.blur();
+  if (!dirty()) return true;
+  const text = serialize(S.doc);
+  if (S.keepMine) { const d = await api('GET', '/api/doc?f=' + encodeURIComponent(S.file)); S.mtime = d.mtime; S.keepMine = false; }
+  const r = await api('PUT', '/api/doc?f=' + encodeURIComponent(S.file), { text, mtime: S.mtime });
+  if (r.status === 409) { $('#banner').hidden = false; toast('Not saved: the file changed on disk. Pick reload or keep mine.', true); return false; }
+  if (r.status !== 200) { toast(r.error || 'Save failed', true); return false; }
+  S.mtime = r.mtime; S.saved = text; $('#banner').hidden = true;
+  toast('Saved ' + S.file);
+  render();
+  return true;
+}
+async function build() {
+  if (!(await save())) return;
+  const b = $('#build');
+  b.disabled = true; b.textContent = '◌ Building…';
+  try {
+    const r = await api('POST', '/api/build');
+    const log = $('#log');
+    log.innerHTML = esc(r.out || '(no output)').replace(/^(.*(warning|error|Error|Traceback).*)$/gm, '<span class="bad">$1</span>');
+    S.pages = {};
+    for (const m of (r.out || '').matchAll(/^(\d+)-(\d+)\s+(.+)$/gm)) S.pages[m[3].trim()] = +m[1];
+    if (!r.ok) { log.hidden = false; return toast('Build failed. See the build log.', true); }
+    if (/WARNING|warning/.test(r.out)) log.hidden = false;
+    toast('Built');
+    showInPdf(true);
+  } finally { b.disabled = false; b.textContent = '▶ Build'; }
+}
+// Page of the focused section: the page of the nearest page-break section at or above it (GM handbook build prints these).
+function showInPdf(fromBuild) {
+  const pdf = S.files[S.file];
+  const list = secs();
+  let page = 1;
+  for (let j = idx(S.focus); j >= 0; j--) {
+    const t = info(list[j]).title;
+    if (S.pages[t]) { page = S.pages[t]; break; }
+  }
+  $('#v-pdf').innerHTML = `<iframe src="/pdf/${pdf}?t=${Date.now()}#page=${page}"></iframe>`;
+  setTab('pdf');
+  if (!fromBuild && !Object.keys(S.pages).length) toast('Build once (Ctrl+B) to jump to pages.');
+}
+$('#save').onclick = save;
+$('#build').onclick = build;
+$('#b-reload').onclick = () => load(S.file);
+$('#b-keep').onclick = () => { S.keepMine = true; $('#banner').hidden = true; toast('Your version will overwrite the file on save.'); };
+// Pick up edits made elsewhere; never silently overwrite them.
+window.addEventListener('focus', async () => {
+  if (!S.file) return;
+  const r = await api('GET', '/api/doc?f=' + encodeURIComponent(S.file));
+  if (r.status !== 200 || r.mtime === S.mtime) return;
+  if (!dirty() && !S.undo.length) { const f = S.focus; await load(S.file); toast('Reloaded: file changed on disk'); }
+  else if (!S.keepMine) $('#banner').hidden = false;
+});
+window.addEventListener('beforeunload', e => { if (dirty()) { e.preventDefault(); e.returnValue = ''; } });
+
+(async () => {
+  S.files = await api('GET', '/api/files');
+  delete S.files.status;
+  $('#files').innerHTML = Object.keys(S.files).map(f => `<button data-f="${f}">${f.replace('-HANDBOOK.md', '').replace('PLAYER', 'Player')}</button>`).join('');
+  $('#files').onclick = async e => {
+    const f = e.target.dataset.f;
+    if (!f || f === S.file) return;
+    if (dirty()) {
+      const a = await ask(`${S.file} has unsaved changes.`, [['Cancel', 0], ['Discard', 1], ['Save and switch', 2, true]]);
+      if (!a || (a === 2 && !(await save()))) return;
+    }
+    load(f);
+  };
+  let f = 'GM-HANDBOOK.md';
+  try { f = localStorage.getItem('sections.file') || f; } catch {}
+  load(S.files[f] ? f : Object.keys(S.files)[0]);
+})();
+</script>
+</body>
+</html>

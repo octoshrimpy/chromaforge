@@ -41,11 +41,11 @@ _one race from the rolled bracket._
 | 56-66      | {{pick: Fae \| Satyr \| Roo}}                                                       |
 | 67-77      | {{pick: Apeling \| Amazon \| Shelled Elemental (earth/water/fire/air) \| Etterkin}} |
 | 78-88      | {{pick: Qualf \| Moonfolk \| Ommel \| D'varen}}                                    |
-| 89-99      | {{pick: Animated Armor \| Halfling \| Hippofolk}}                                   |
+| 89-99      | {{pick: Animated Armor \| Halfling \| Kitkin \| Hippofolk}}                         |
 
 ### archetype
 
-_an archetype of the NPC's Fount (see [archetypes](/compendium/archetypes.md)). NPCs who fight use a threat tier from the GM guide._
+_an archetype of the NPC's Fount (see [archetypes](/compendium/archetypes.md)). NPCs who fight use a threat tier from the GM handbook._
 
 | fount               | 1-6                                          |
 | ------------------- | -------------------------------------------- |

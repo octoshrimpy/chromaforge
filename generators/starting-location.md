@@ -4,8 +4,8 @@ Roll each step in order. Record results in the output block. Re-roll only duplic
 
 ## 1. Primary Fount — d10
 
-|  d10 | Primary           | Color  | Reliable core rule                                          |
-| ---: | ----------------- | ------ | ----------------------------------------------------------- |
+|  d10 | Primary             | Color  | Reliable core rule                                          |
+| ---: | ------------------- | ------ | ----------------------------------------------------------- |
 |  1–2 | ᛄ Seron — Integrity | yellow | a named boundary, distinction, or promise holds literally   |
 |  3–4 | ∵ Orvik — Knowledge | blue   | repeated observation reveals a hidden pattern or memory     |
 |  5–6 | ϟ Zhark — Change    | red    | one defined feature transforms when disturbed               |
@@ -22,11 +22,11 @@ When present, list the four Founts other than primary in guide order—ᛄ Seron
 
 | Secondary | Add one discoverable twist                                   |
 | --------- | ------------------------------------------------------------ |
-| ᛄ Seron     | an exact word, edge, or category creates an exception        |
-| ∵ Orvik     | a repeatable pattern reveals a safer use or hidden cost      |
-| ϟ Zhark     | one trigger can redirect or transform the core effect        |
-| △ Drun      | enduring a cycle stores an opportunity, but rushing it costs |
-| ⌘ Veyra     | linked beings share, transfer, or bargain with the effect    |
+| ᛄ Seron   | an exact word, edge, or category creates an exception        |
+| ∵ Orvik   | a repeatable pattern reveals a safer use or hidden cost      |
+| ϟ Zhark   | one trigger can redirect or transform the core effect        |
+| △ Drun    | enduring a cycle stores an opportunity, but rushing it costs |
+| ⌘ Veyra   | linked beings share, transfer, or bargain with the effect    |
 
 These are prompts, not the unfinished 20-pair reference. State one concrete trigger and outcome before play.
 

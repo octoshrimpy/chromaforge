@@ -4,7 +4,7 @@ Archetypes are starting training, not classes or caps. Characters may learn any 
 
 ## ᛄ Warden
 
-- **Kit:** light armor, standard bow (heavy), light sidearm, chalk line, 20 feet of cord.
+- **Kit:** light armor, standard bow, light sidearm, chalk line, 20 feet of cord.
 - **Archetype ability — Hold the Line:** reaction when a nearby ally would take damage: move between them and source; attack targets Warden instead. If movement is impossible, no effect.
 
 - **Marchwarden**
@@ -28,7 +28,7 @@ Archetypes are starting training, not classes or caps. Characters may learn any 
 
 ## ϟ Pathfinder
 
-- **Kit:** light armor, standard blade or shortbow (heavy), climbing hook, 30 feet of rope, hooded lantern.
+- **Kit:** light armor, standard blade or shortbow, climbing hook, 30 feet of rope, hooded lantern.
 - **Archetype ability — Find Another Way:** once per short rest, after a route is blocked, you spot one costly, risky, or slow alternate route that exists.
 
 - **Trailbreaker**
@@ -40,7 +40,7 @@ Archetypes are starting training, not classes or caps. Characters may learn any 
 
 ## △ Bulwark
 
-- **Kit:** light armor, heavy maul (heavy), shield or planks, tool roll, 50 feet of rope.
+- **Kit:** light armor, axe or mace, shield or planks, tool roll, 50 feet of rope.
 - **Archetype ability — Shore It Up:** once per short rest, reaction when a nearby ally or structure would take damage: reduce it by `d6`.
 
 - **Stalwart**
@@ -64,7 +64,7 @@ Archetypes are starting training, not classes or caps. Characters may learn any 
 
 ## ᛄ Paladin
 
-- **Kit:** heavy armor, heavy blade (heavy), banner or holy symbol, oath token.
+- **Kit:** heavy armor, heavy blade, banner or holy symbol, oath token.
 - **Archetype ability — Sworn Word:** once per short rest, swear to protect or reach one thing; your next important check that directly serves the oath has advantage. Breaking the oath ends it.
 
 - **Inquisitor**
@@ -124,7 +124,7 @@ Archetypes are starting training, not classes or caps. Characters may learn any 
 
 ## △ Delver
 
-- **Kit:** light armor, pick or hammer (heavy), lantern, 50 feet of rope, chalk.
+- **Kit:** light armor, pick or hammer, lantern, 50 feet of rope, chalk.
 - **Archetype ability — Dig Through:** once per short rest, action: open or close a passage in earth, loose rock, or crude masonry up to about 5 feet thick, wide enough for one person, until your next rest. Solid bedrock and warded or metal barriers resist it.
 
 - **Burrower**

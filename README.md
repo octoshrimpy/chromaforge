@@ -4,9 +4,9 @@ A no-prep tabletop campaign generator for Kathara. One GM, players, ordinary dic
 
 ## Start here
 
-1. Open **[The Alpha Guide](guide.md)**. It contains character creation, checks, combat, magic, recovery, XP, travel, and the GM loop.
+1. Players read the **[player handbook](PLAYER-HANDBOOK.md)** ([PDF](PLAYER-HANDBOOK.pdf)): character creation, checks, combat, magic, recovery, advancement, ancestries, archetypes, spells, items.
 2. Give each player a **[character sheet](assets/character-sheet.md)** and make characters together.
-3. The GM reads the **[GM guide](GM-GUIDE.md)**: rulings, enemies, hazards, traps, treasure, hexcrawl, which generator to roll when, and solo play.
+3. The GM reads the **[GM handbook](GM-HANDBOOK.md)**: rulings, enemies, hazards, traps, treasure, hexcrawl, which generator to roll when, and solo play. The **[handbook](handbook.md)** has both in one file.
 4. Roll a starting situation with the **[starting-location generator](generators/starting-location.md)**.
 5. Use the **[Katharra alpha pool](compendium/katharra-alpha.md)** when a result needs a known place, person, or creature.
 6. See the **[example session](examples/alpha-session.md)** for opening, detour, offscreen development, and revisit.
@@ -17,7 +17,7 @@ No campaign concept or session preparation is required. Record generated facts: 
 
 - [Starting archetypes](compendium/archetypes.md)
 - [Fount reference](compendium/colors_houses.md)
-- [GM guide](GM-GUIDE.md)
+- [GM handbook](GM-HANDBOOK.md)
 - [DM toolbox](compendium/dm.md)
 - [Spells](compendium/spells.md)
 - [Race ideas](compendium/races.md)

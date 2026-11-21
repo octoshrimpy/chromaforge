@@ -72,7 +72,7 @@ Source: `../katharra.wiki/entities/sentients/vis_rodan_elder.md`.
 
 ## Creatures
 
-Stats use [alpha enemy bands](../guide.md#enemies-and-encounter-size). Wildlife usually wants safety, food, territory, or offspring protected—not a fight to death.
+Stats use [threat tiers](../GM-HANDBOOK.md#threat-tiers). Wildlife usually wants safety, food, territory, or offspring protected—not a fight to death.
 
 ### Krailgoat
 

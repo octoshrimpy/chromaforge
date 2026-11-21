@@ -1,6 +1,6 @@
 # Player Generation
 
-A quick random character: a couple of dice rolls and a few choices. This generator follows the [alpha guide](../guide.md#character-creation); if they differ, the guide wins.
+A quick random character: a couple of dice rolls and a few choices. This generator follows the [alpha guide](../PLAYER-HANDBOOK.md#character-creation); if they differ, the guide wins.
 
 _Generating a character before a campaign. You can follow the instructions below or manually create a character that matches the [sheet](../assets/character-sheet.md)._
 
@@ -41,7 +41,7 @@ Races are divided into groups within a 100-digit bracket, read as percentile (`0
 - 56-66: Fae, Satyr, or Roo
 - 67-77: Apeling, Amazon, Shelled Elemental (earth/water/fire/air), or Etterkin
 - 78-88: Qualf, Moonfolk, Ommel, or D'varen
-- 89-99: Animated Armor, Halfling, or Hippofolk
+- 89-99: Animated Armor, Halfling, Kitkin, or Hippofolk
 
 ### Founts
 

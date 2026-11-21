@@ -40,7 +40,7 @@ _the Katharra bestiary. Descriptions live in the wiki; drill in for the statbloc
 
 ### threat
 
-_how many, and how tough. Stats for each tier (HP, armor, damage) are in the [GM guide](/GM-GUIDE.md). For a first party, never more than one capable enemy per character._
+_how many, and how tough. Stats for each tier (HP, armor, damage) are in the [GM handbook](/GM-HANDBOOK.md). For a first party, never more than one capable enemy per character._
 
 | roll | result                                                            |
 | ---- | ----------------------------------------------------------------- |

@@ -8,16 +8,17 @@ Gear for alpha. Prices use the money table: `1 gp = 10 sp = 100 cp`, and `1 rp =
 
 ## Weapons
 
-Attack is `d6 + Fount − armor`. Weapons add nothing except the heavy bonus.
+Attack is `weapon die + Fount − armor`. Each weapon kind has its own die and perk. Heavy weapons and bows take both hands: no shield, and no torch.
 
-| Item                                                               | Bonus | Hands      | Price | Notes                             |
-| ------------------------------------------------------------------ | ----: | ---------- | ----: | --------------------------------- |
-| Light weapon (dagger, sling, light sidearm)                        |    +0 | one        |  5 sp | easy to hide                      |
-| Standard weapon (sword, rapier or fine blade, spear, axe)          |    +0 | one        |  2 gp |                                   |
-| Staff (light staff, quarterstaff, focus staff, surveyor's staff, club)|    +0 | one or two |  5 sp | a focus staff can channel a spell |
-| Standard bow or shortbow (heavy)                                   |    +1 | two        |  4 gp | nearby range                      |
-| Heavy weapon (maul, heavy blade, pick or hammer)                   |    +1 | two        |  5 gp |                                   |
-| Spring-gun                                                         |    +0 | one        |  8 gp | reloading uses your move          |
+| Item | Die | Hands | Price | Perk |
+| ---- | --: | ----- | ----: | ---- |
+| Light weapon (dagger, sling, light sidearm) | d4 | one | 5 sp | easy to hide. **Sneaky:** d8 against a target that hasn't noticed you. **Paired:** a light weapon in each hand rolls 2d4, keep the higher. **Thrown:** a dagger reaches nearby range. Perks don't stack; an unaware target is always d8 |
+| Standard weapon (sword, rapier, spear, axe, mace) | d6 | one | 2 gp | **Steady:** reroll a 1 on the damage die, once. A spear can be thrown nearby; an axe hooks a shield away, so the target loses its shield's +1 armor for that hit |
+| Staff (light staff, quarterstaff, focus staff, surveyor's staff, club) | d4 / d6 | one or two | 5 sp | d4 in one hand, d6 in two. A focus staff can channel a spell |
+| Standard bow or shortbow | d6 | two | 4 gp | nearby range. **Aimed:** skip your move to roll d8 |
+| Heavy weapon (maul, heavy blade, pick or hammer) | d8 | two | 5 gp | **Crushing:** on an 8, also shove the target or knock it down |
+| Spring-gun | d6 | one | 8 gp | reloading uses your move. **Punch:** ignores 1 armor |
+| Improvised (a chair leg, a bottle) | d4 | one | – | minimum 1 damage |
 
 Ammunition is not tracked.
 
@@ -38,14 +39,15 @@ Armor value is subtracted from damage. Total armor never exceeds 3, counting spe
 | ------------------------------------------- | ----: | ----------------------------------------------------------------------------------------------------------------------------------------------- |
 | Toolkit or tool roll                        |  3 gp | repairs, locks, and mechanisms; the minimal tools for repairing animated armor                                                                  |
 | Healer's kit (bandages, splint, antiseptic) |  1 gp | medicine that explains a rescue; lets ordinary treatment work                                                                                   |
-| Disguise kit                                |  5 gp | pass as a kind of person (guard, noble, priest) with no roll and no time limit. When someone looks closely or questions you, make a risky ⌘ Veyra check; it is hard to copy a specific person, someone of a different size, or to fool someone who knows who you claim to be |
+| Disguise kit                                |  5 gp | pass as a kind of person (guard, noble, priest). Close scrutiny needs a risky ⌘ Veyra check; copying a specific person is hard |
 | Climbing hook and rope (30 ft)              |  8 sp | climbing and hauling                                                                                                                            |
 | Rope, 50 ft                                 |  5 sp |                                                                                                                                                 |
-| Cord (20 ft), measuring cord, or chalk line |  2 sp |                                                                                                                                                 |
+| Cord (20 ft) |  2 sp |                                                                                                                                                 |
 | Springs and wire                            |  2 sp | parts for a gadget or a repair                                                                                                                  |
 | Notebook, songbook                          |  3 sp |                                                                                                                                                 |
-| Hooded lantern                              |  1 gp | light that can be shuttered                                                                                                                     |
-| Lantern                                     |  5 sp | plain light                                                                                                                                     |
+| Hooded lantern                              |  1 gp | light that can be shuttered; hangs from a belt or pack, leaving both hands free |
+| Lantern                                     |  5 sp | plain light; hangs from a belt or pack, leaving both hands free |
+| Torch | 1 cp | plain light, burns an hour; must be held in hand |
 | Flint and tinder                            |  1 sp |                                                                                                                                                 |
 | Instrument                                  |  2 gp | performance                                                                                                                                     |
 | Travel library                              | 10 gp | reference books; research and recall                                                                                                            |

@@ -285,7 +285,7 @@
         transition: outline-color 1.5s;
       }
 
-      /* Rules pages generated from PLAYER-GUIDE.md. */
+      /* Rules pages generated from PLAYER-HANDBOOK.md. */
       .guide {
         line-height: 1.5;
 
@@ -1061,8 +1061,12 @@
           display: none;
         }
 
+        /* Print only the character sheet, whichever page is open. */
         .page.info {
-          height: auto !important;
+          display: none !important;
+        }
+
+        .page[data-view="sheet"] {
           display: block !important;
         }
 
@@ -1584,10 +1588,11 @@
                     />
                     <input
                       class="numeric"
-                      name="weapon_bonus"
-                      type="number"
-                      aria-label="Weapon damage bonus"
-                      title="Weapon damage (+1 for a heavy two-handed weapon)"
+                      name="weapon_die"
+                      type="text"
+                      placeholder="d6"
+                      aria-label="Weapon damage die"
+                      title="Weapon die: light d4, standard d6, heavy d8"
                     />
                     <span
                       class="wpn-fount"
@@ -1599,7 +1604,7 @@
                     </span>
                   </div>
                   <p class="combat-hint">
-                    Damage: roll d6, add weapon bonus, add attacking Fount
+                    Damage: roll weapon die, add attacking Fount
                   </p>
                 </div>
                 <div class="combat-row armor-row">
@@ -1701,7 +1706,7 @@
       </header>
       <div class="cards" id="fount-cards"></div>
     </main>
-    <!-- Rules pages below are generated from PLAYER-GUIDE.md by build.py; edit the guide, not this. -->
+    <!-- Rules pages below are generated from PLAYER-HANDBOOK.md by build.py; edit the guide, not this. -->
     <!-- guide:start -->
 <main class="page info guide" data-view="rules" hidden>
 <header class="page-head"><h1>RULES</h1></header>
@@ -1762,10 +1767,10 @@
 <h3>Attacks and damage</h3>
 <p>Attacks always land unless fiction prevents them. No attack roll, no Defense.</p>
 <ol>
-<li>Roll <code>d6 + attack Fount</code> (+1 for a heavy two-handed weapon).</li>
+<li>Roll <code>weapon die + attack Fount</code> (light <code>d4</code>, standard <code>d6</code>, heavy <code>d8</code>; see Weapons).</li>
 <li>Subtract target armor (minimum 0). The rest is HP damage.</li>
 </ol>
-<p>The archetype kit names its normal attack Fount; unusual methods use the Fount agreed before rolling. Improvised harmless objects deal <code>d6 − 2</code> (minimum 1). Fiction can make an attack impossible or remove cover before damage is rolled.</p>
+<p>The archetype kit names its normal attack Fount; unusual methods use the Fount agreed before rolling. Improvised objects deal <code>d4</code> (minimum 1). Fiction can make an attack impossible or remove cover before damage is rolled.</p>
 <p>Alpha has no separate intellect score: use ∵&nbsp;Orvik for risky knowledge, memory, or analysis.</p>
 <h3>Downed and rescue</h3>
 <p>At 0 HP, a character is down: unable to act, but available to rescue. If every party member is down, GM follows enemy motives—capture, theft, abandonment, or rescue are better alpha outcomes than an unexplained total-party death.</p>
@@ -1888,6 +1893,8 @@
 <p>Spend points on any Fount. Raising a Fount costs its new level: 1→2 costs 2, 2→3 costs 3, 3→4 costs 4. Unspent points carry over.</p>
 <p><strong>Call on a Fount.</strong> Before rolling a check, spend 1 unspent point to gain advantage on it. The check must use that Fount and the point is gone. Use it sparingly: the same points raise your Founts.</p>
 <p>Higher scores will unlock abilities, but thresholds are not defined. Starting archetype and specialty abilities are not threshold unlocks.</p>
+<!-- pagebreak -->
+
 </main>
 <main class="page info guide" data-view="archetypes" hidden>
 <header class="page-head"><h1>ARCHETYPES</h1></header>
@@ -1895,7 +1902,7 @@
 <p>Archetypes are starting training, not classes or caps. Characters may learn any specialty or ability through play. Each Fount has three archetypes; each archetype supplies one kit, one archetype ability, and three specialties: one of its own Fount and one of each of the two Founts opposite it on the wheel (yellow, blue, red, purple, green). Your archetype gives +1 to its Fount; specialties give no stat bonus.</p>
 <h3>ᛄ Warden</h3>
 <ul>
-<li><strong>Kit:</strong> light armor, standard bow (heavy), light sidearm, chalk line, 20 feet of cord.</li>
+<li><strong>Kit:</strong> light armor, standard bow, light sidearm, chalk line, 20 feet of cord.</li>
 <li>
 <p><strong>Archetype ability — Hold the Line:</strong> reaction when a nearby ally would take damage: move between them and source; attack targets Warden instead. If movement is impossible, no effect.</p>
 </li>
@@ -1937,7 +1944,7 @@
 </ul>
 <h3>ϟ Pathfinder</h3>
 <ul>
-<li><strong>Kit:</strong> light armor, standard blade or shortbow (heavy), climbing hook, 30 feet of rope, hooded lantern.</li>
+<li><strong>Kit:</strong> light armor, standard blade or shortbow, climbing hook, 30 feet of rope, hooded lantern.</li>
 <li>
 <p><strong>Archetype ability — Find Another Way:</strong> once per short rest, after a route is blocked, you spot one costly, risky, or slow alternate route that exists.</p>
 </li>
@@ -1958,7 +1965,7 @@
 </ul>
 <h3>△ Bulwark</h3>
 <ul>
-<li><strong>Kit:</strong> light armor, heavy maul (heavy), shield or planks, tool roll, 50 feet of rope.</li>
+<li><strong>Kit:</strong> light armor, axe or mace, shield or planks, tool roll, 50 feet of rope.</li>
 <li>
 <p><strong>Archetype ability — Shore It Up:</strong> once per short rest, reaction when a nearby ally or structure would take damage: reduce it by <code>d6</code>.</p>
 </li>
@@ -2000,7 +2007,7 @@
 </ul>
 <h3>ᛄ Paladin</h3>
 <ul>
-<li><strong>Kit:</strong> heavy armor, heavy blade (heavy), banner or holy symbol, oath token.</li>
+<li><strong>Kit:</strong> heavy armor, heavy blade, banner or holy symbol, oath token.</li>
 <li>
 <p><strong>Archetype ability — Sworn Word:</strong> once per short rest, swear to protect or reach one thing; your next important check that directly serves the oath has advantage. Breaking the oath ends it.</p>
 </li>
@@ -2105,7 +2112,7 @@
 </ul>
 <h3>△ Delver</h3>
 <ul>
-<li><strong>Kit:</strong> light armor, pick or hammer (heavy), lantern, 50 feet of rope, chalk.</li>
+<li><strong>Kit:</strong> light armor, pick or hammer, lantern, 50 feet of rope, chalk.</li>
 <li>
 <p><strong>Archetype ability — Dig Through:</strong> once per short rest, action: open or close a passage in earth, loose rock, or crude masonry up to about 5 feet thick, wide enough for one person, until your next rest. Solid bedrock and warded or metal barriers resist it.</p>
 </li>
@@ -2208,6 +2215,8 @@
 </ul>
 </li>
 </ul>
+<!-- pagebreak -->
+
 </main>
 <main class="page info guide" data-view="spells" hidden>
 <header class="page-head"><h1>SPELLS</h1></header>
@@ -2236,7 +2245,7 @@
 <li><strong>Wizard mark (1):</strong> touch to coat a target in paint only casters can see, even through walls.</li>
 <li><strong>Thaumaturgic anchor (2):</strong> an enchanted item draws the next spell or magical effect aimed at something else nearby, then goes inert.</li>
 <li><strong>Illusion (2):</strong> an illusion aimed at one of a target's five senses.</li>
-<li><strong>Mirror image (3):</strong> physical clones of you appear, as many as your <strong>∵</strong> <em>Orvik</em> score, for 5 minutes. They have your mindset and act on their own, have your normal physical capabilities, cannot cast spells or use abilities that cost mana, and vanish if hit once. They carry no copy of your inventory, gear, or tools; clones cannot use consumables. They move and act independently, but only one clone can attack each round, dealing <code>d6 − 2</code> (minimum 1).</li>
+<li><strong>Mirror image (3):</strong> physical clones of you appear, as many as your <strong>∵</strong> <em>Orvik</em> score, for 5 minutes. They have your mindset and act on their own, have your normal physical capabilities, cannot cast spells or use abilities that cost mana, and vanish if hit once. They carry no copy of your inventory, gear, or tools; clones cannot use consumables. They move and act independently, but only one clone can attack each round, dealing <code>d4</code> (minimum 1).</li>
 <li><strong>Question rock (1):</strong> ask an object or non-verbal creature one question about what it has plausibly perceived. Only you hear the answer, and it is always true but may be partial.</li>
 </ul>
 <h3>ϟ&nbsp;Zhark</h3>
@@ -2322,6 +2331,8 @@
 <li><strong>Soothing voice:</strong> your voice steadies a willing creature's breathing. It feels calmer, but nothing else changes.</li>
 <li><strong>Shared rhythm:</strong> you and one willing creature fall into step, keeping an even pace together while walking, rowing, or working for 1 minute.</li>
 </ul>
+<!-- pagebreak -->
+
 </main>
 <main class="page info guide" data-view="items" hidden>
 <header class="page-head"><h1>ITEMS</h1></header>
@@ -2330,59 +2341,66 @@
 <p><strong>How gear works.</strong> Gear gives a method, not a number. Having the right tool means the task is possible and a failed check does not ruin it; lacking it can make the task impossible or hard. Only weapons and armor change numbers. Food and rations are not tracked.</p>
 <p><strong>Quality.</strong> Shoddy items cost half and show it. Common is listed price. Fine costs double. Exceptional costs four times and has a quirk of the GM's choosing. Quality changes looks, reliability, and story, not numbers.</p>
 <h3>Weapons</h3>
-<p>Attack is <code>d6 + Fount − armor</code>. Weapons add nothing except the heavy bonus.</p>
+<p>Attack is <code>weapon die + Fount − armor</code>. Each weapon kind has its own die and perk. Heavy weapons and bows take both hands: no shield, and no torch.</p>
 <table>
 <thead>
 <tr>
 <th>Item</th>
-<th style="text-align: right;">Bonus</th>
+<th style="text-align: right;">Die</th>
 <th>Hands</th>
 <th style="text-align: right;">Price</th>
-<th>Notes</th>
+<th>Perk</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>Light weapon (dagger, sling, light sidearm)</td>
-<td style="text-align: right;">+0</td>
+<td style="text-align: right;">d4</td>
 <td>one</td>
 <td style="text-align: right;">5 sp</td>
-<td>easy to hide</td>
+<td>easy to hide. <strong>Sneaky:</strong> d8 against a target that hasn't noticed you. <strong>Paired:</strong> a light weapon in each hand rolls 2d4, keep the higher. <strong>Thrown:</strong> a dagger reaches nearby range. Perks don't stack; an unaware target is always d8</td>
 </tr>
 <tr>
-<td>Standard weapon (sword, rapier, spear, axe)</td>
-<td style="text-align: right;">+0</td>
+<td>Standard weapon (sword, rapier, spear, axe, mace)</td>
+<td style="text-align: right;">d6</td>
 <td>one</td>
 <td style="text-align: right;">2 gp</td>
-<td></td>
+<td><strong>Steady:</strong> reroll a 1 on the damage die, once. A spear can be thrown nearby; an axe hooks a shield away, so the target loses its shield's +1 armor for that hit</td>
 </tr>
 <tr>
 <td>Staff (light staff, quarterstaff, focus staff, surveyor's staff, club)</td>
-<td style="text-align: right;">+0</td>
+<td style="text-align: right;">d4 / d6</td>
 <td>one or two</td>
 <td style="text-align: right;">5 sp</td>
-<td>a focus staff can channel a spell</td>
+<td>d4 in one hand, d6 in two. A focus staff can channel a spell</td>
 </tr>
 <tr>
-<td>Standard bow or shortbow (heavy)</td>
-<td style="text-align: right;">+1</td>
+<td>Standard bow or shortbow</td>
+<td style="text-align: right;">d6</td>
 <td>two</td>
 <td style="text-align: right;">4 gp</td>
-<td>nearby range</td>
+<td>nearby range. <strong>Aimed:</strong> skip your move to roll d8</td>
 </tr>
 <tr>
 <td>Heavy weapon (maul, heavy blade, pick or hammer)</td>
-<td style="text-align: right;">+1</td>
+<td style="text-align: right;">d8</td>
 <td>two</td>
 <td style="text-align: right;">5 gp</td>
-<td></td>
+<td><strong>Crushing:</strong> on an 8, also shove the target or knock it down</td>
 </tr>
 <tr>
 <td>Spring-gun</td>
-<td style="text-align: right;">+0</td>
+<td style="text-align: right;">d6</td>
 <td>one</td>
 <td style="text-align: right;">8 gp</td>
-<td>reloading uses your move</td>
+<td>reloading uses your move. <strong>Punch:</strong> ignores 1 armor</td>
+</tr>
+<tr>
+<td>Improvised (a chair leg, a bottle)</td>
+<td style="text-align: right;">d4</td>
+<td>one</td>
+<td style="text-align: right;">–</td>
+<td>minimum 1 damage</td>
 </tr>
 </tbody>
 </table>
@@ -2448,7 +2466,7 @@
 <tr>
 <td>Disguise kit</td>
 <td style="text-align: right;">5 gp</td>
-<td>pass as a kind of person (guard, noble, priest) with no roll and no time limit. When someone looks closely or questions you, make a risky ⌘&nbsp;Veyra check; it is hard to copy a specific person, someone of a different size, or to fool someone who knows who you claim to be</td>
+<td>pass as a kind of person (guard, noble, priest). Close scrutiny needs a risky ⌘&nbsp;Veyra check; copying a specific person is hard</td>
 </tr>
 <tr>
 <td>Climbing hook and rope (30 ft)</td>
@@ -2461,7 +2479,7 @@
 <td></td>
 </tr>
 <tr>
-<td>Cord (20 ft), measuring cord, or chalk line</td>
+<td>Cord (20 ft)</td>
 <td style="text-align: right;">2 sp</td>
 <td></td>
 </tr>
@@ -2478,12 +2496,17 @@
 <tr>
 <td>Hooded lantern</td>
 <td style="text-align: right;">1 gp</td>
-<td>light that can be shuttered</td>
+<td>light that can be shuttered; hangs from a belt or pack, leaving both hands free</td>
 </tr>
 <tr>
 <td>Lantern</td>
 <td style="text-align: right;">5 sp</td>
-<td>plain light</td>
+<td>plain light; hangs from a belt or pack, leaving both hands free</td>
+</tr>
+<tr>
+<td>Torch</td>
+<td style="text-align: right;">1 cp</td>
+<td>plain light, burns an hour; must be held in hand</td>
 </tr>
 <tr>
 <td>Flint and tinder</td>
@@ -2562,6 +2585,8 @@
 </tr>
 </tbody>
 </table>
+<!-- pagebreak -->
+
 <h3>Supplies and services</h3>
 <table>
 <thead>
@@ -2711,6 +2736,8 @@
 </tr>
 </tbody>
 </table>
+<!-- pagebreak -->
+
 </main>
 <main class="page info guide" data-view="knacks" hidden>
 <header class="page-head"><h1>KNACKS</h1></header>
@@ -3145,6 +3172,13 @@
           desc:
             "Friendly, cheerful humans, no taller than your average waist. Goes unnoticed in a crowd until it acts.",
         },
+        kitkin: {
+          boon: ["veyra"],
+          bane: "drun",
+          size: "Small",
+          desc:
+            "Kitten-cute cat-folk, taller than a halfling but shorter than a human. Lands on its feet: a fall never leaves it prone and deals half damage.",
+        },
         hippofolk: {
           boon: ["drun", "orvik"],
           bane: "seron",
@@ -3186,7 +3220,7 @@
       const archetypes = {
         warden: {
           attack: "seron", // Archetype Fount, also the normal attack Fount
-          heavy: 1, // 1 = heavy two-handed weapon
+          die: "d6", // starting weapon die (first weapon in the kit)
           signature:
             "Hold the Line — reaction: step between an ally and the attack, take the hit.",
           kit:
@@ -3208,7 +3242,7 @@
         },
         medic: {
           attack: "orvik", // Archetype Fount, also the normal attack Fount
-          heavy: 0, // 1 = heavy two-handed weapon
+          die: "d6", // starting weapon die (first weapon in the kit)
           signature:
             "Field Treatment — action: heal an adjacent target d6, once per short rest.",
           kit:
@@ -3230,7 +3264,7 @@
         },
         pathfinder: {
           attack: "zhark", // Archetype Fount, also the normal attack Fount
-          heavy: 1, // 1 = heavy two-handed weapon
+          die: "d6", // starting weapon die (first weapon in the kit)
           signature:
             "Find Another Way — once per short rest, after a route is blocked, you spot one costly, risky, or slow alternate route that exists.",
           kit:
@@ -3252,11 +3286,11 @@
         },
         bulwark: {
           attack: "drun", // Archetype Fount, also the normal attack Fount
-          heavy: 1, // 1 = heavy two-handed weapon
+          die: "d6", // starting weapon die (first weapon in the kit)
           signature:
             "Shore It Up — once per short rest, reaction: reduce damage to a nearby ally or structure by d6.",
           kit:
-            "light armor, heavy maul, shield or planks, tool roll, 50 feet of rope",
+            "light armor, axe or mace, shield or planks, tool roll, 50 feet of rope",
           specialties: {
             Gatekeeper: {
               text:
@@ -3274,7 +3308,7 @@
         },
         cartographer: {
           attack: "seron", // Archetype Fount, also the normal attack Fount
-          heavy: 0, // 1 = heavy two-handed weapon
+          die: "d6", // starting weapon die (first weapon in the kit)
           signature:
             "Fix the Bounds — once per short rest, study a nearby area; you know its true edges, exits, and one hidden hazard.",
           kit:
@@ -3296,11 +3330,11 @@
         },
         paladin: {
           attack: "seron", // Archetype Fount, also the normal attack Fount
-          heavy: 1, // 1 = heavy two-handed weapon
+          die: "d8", // starting weapon die (first weapon in the kit)
           signature:
             "Sworn Word — once per short rest, swear to protect or reach one thing; your next important check that directly serves the oath has advantage. Breaking the oath ends it.",
           kit:
-            "heavy armor, heavy blade (heavy), banner or holy symbol, oath token",
+            "heavy armor, heavy blade, banner or holy symbol, oath token",
           specialties: {
             Inquisitor: {
               text:
@@ -3318,7 +3352,7 @@
         },
         tinkerer: {
           attack: "orvik", // Archetype Fount, also the normal attack Fount
-          heavy: 0, // 1 = heavy two-handed weapon
+          die: "d6", // starting weapon die (first weapon in the kit)
           signature:
             "Jury Device — once per short rest, action: build a small gadget from scrap that does one simple thing until your next rest.",
           kit:
@@ -3340,7 +3374,7 @@
         },
         loremaster: {
           attack: "orvik", // Archetype Fount, also the normal attack Fount
-          heavy: 0, // 1 = heavy two-handed weapon
+          die: "d6", // starting weapon die (first weapon in the kit)
           signature:
             "I Read About This — once per short rest, name a creature, place, or custom; you recall one true fact about it.",
           kit:
@@ -3362,7 +3396,7 @@
         },
         duelist: {
           attack: "zhark", // Archetype Fount, also the normal attack Fount
-          heavy: 0, // 1 = heavy two-handed weapon
+          die: "d6", // starting weapon die (first weapon in the kit)
           signature:
             "Break the Pattern — reaction when an enemy attacks you: step aside and reduce that damage by d6 (minimum 0).",
           kit: "light armor, rapier or fine blade, dueling cloak, whetstone",
@@ -3383,7 +3417,7 @@
         },
         wildcaller: {
           attack: "zhark", // Archetype Fount, also the normal attack Fount
-          heavy: 0, // 1 = heavy two-handed weapon
+          die: "d6", // starting weapon die (first weapon in the kit)
           signature:
             "Loose the Storm — once per short rest, action: unleash a burst on a nearby zone; creatures there take d6 + ϟ Zhark, minus armor, and it leaves one fitting side effect on the zone.",
           kit: "light armor, focus staff, flint, pouch of volatile reagents",
@@ -3404,11 +3438,11 @@
         },
         delver: {
           attack: "drun", // Archetype Fount, also the normal attack Fount
-          heavy: 1, // 1 = heavy two-handed weapon
+          die: "d8", // starting weapon die (first weapon in the kit)
           signature:
             "Dig Through — once per short rest, action: open or close a passage in earth, loose rock, or crude masonry up to about 5 feet thick, wide enough for one person, until your next rest. Solid bedrock and warded or metal barriers resist it.",
           kit:
-            "light armor, pick or hammer (heavy), lantern, 50 feet of rope, chalk",
+            "light armor, pick or hammer, lantern, 50 feet of rope, chalk",
           specialties: {
             Burrower: {
               text:
@@ -3426,7 +3460,7 @@
         },
         rootbound: {
           attack: "drun", // Archetype Fount, also the normal attack Fount
-          heavy: 0, // 1 = heavy two-handed weapon
+          die: "d6", // starting weapon die (first weapon in the kit)
           signature:
             "Take Root — once per short rest, action: through living plants, heal a nearby ally d6 or give them 1 armor until your next turn.",
           kit:
@@ -3447,7 +3481,7 @@
         },
         bard: {
           attack: "veyra", // Archetype Fount, also the normal attack Fount
-          heavy: 0, // 1 = heavy two-handed weapon
+          die: "d4", // starting weapon die (first weapon in the kit)
           signature:
             "Rally the Room — once per short rest, reaction: give an ally advantage on their next check.",
           kit:
@@ -3469,7 +3503,7 @@
         },
         envoy: {
           attack: "veyra", // Archetype Fount, also the normal attack Fount
-          heavy: 0, // 1 = heavy two-handed weapon
+          die: "d4", // starting weapon die (first weapon in the kit)
           signature:
             "Fair Trade — once per day, name anything you want arranged; you know the fair price or favor it would cost.",
           kit:
@@ -3491,7 +3525,7 @@
         },
         trickster: {
           attack: "veyra", // Archetype Fount, also the normal attack Fount
-          heavy: 0, // 1 = heavy two-handed weapon
+          die: "d4", // starting weapon die (first weapon in the kit)
           signature:
             "Borrowed Face — once per short rest, action: pass as a plausible person or role to NPCs who have not met you, until questioned or tested.",
           kit:
@@ -3512,7 +3546,7 @@
         },
       };
 
-      // From guide.md, "The Five Founts". Founts are laws, not agents.
+      // From PLAYER-HANDBOOK.md, "The Five Founts". Founts are laws, not agents.
       const founts = {
         seron: {
           name: "ᛄ Seron",
@@ -4021,7 +4055,7 @@
         }
         e.max_hp.value = e.current_hp.value = 6 + final.drun;
         e.max_mana.value = e.current_mana.value = 3 + final.orvik;
-        e.weapon_bonus.value = a.heavy;
+        e.weapon_die.value = a.die;
         limitBoon();
         listSpecialties();
         form.dispatchEvent(new Event("input"));
