@@ -73,8 +73,8 @@ The archetype gives +1 to its Fount, which is also its normal attack Fount. Copy
 
 ## derived values
 
-- **Maximum HP:** `6 + △ Drun`
-- **Maximum mana:** `3 + ∵ Orvik`
+- **Maximum HP:** `3d4 + △ Drun`
+- **Maximum mana:** `2 +` boon Fount
 - **Spells:** 1 or 2 known (more are learned through play)
 - **Armor:** `0` unarmored, `1` light, `2` heavy
 

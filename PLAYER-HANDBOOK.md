@@ -25,7 +25,7 @@ One procedure; no House, Guild, class cap, or second stat roll.
 1. **Concept.** Name the character and describe one visible trait and one desire (it also says why you travel with this party). Pick an ancestry from the roster: note its boon and bane. The boon is +1 to one of its listed Founts (your choice). The bane is −1 to its bane Fount.
 2. **Roll Founts.** Roll 6d6 and drop the lowest. Halve each remaining die, rounding up (1–2 is 1, 3–4 is 2, 5–6 is 3). Assign the five values to your Founts (ᛄ Seron, ∵ Orvik, ϟ Zhark, △ Drun, ⌘ Veyra) however you like. Then apply your ancestry's boon (+1) and bane (−1). Step 3 adds the archetype's +1; all modifiers stack and are added after assigning.
 3. **Choose an archetype and specialty.** Pick one archetype and one of its specialties from Starting archetypes. Copy its kit and archetype ability. Your archetype adds +1 to its Fount, which is also its normal attack Fount. Your specialty gives no stat bonus; its ability text names any Fount it uses. Archetype is a beginning, not a restriction.
-4. **Derived values.** Maximum HP is `6 + △ Drun`. Maximum mana is `3 + ∵ Orvik`. Armor value is `0` unarmored, `1` light, `2` heavy.
+4. **Derived values.** Maximum HP is `3d4 + △ Drun`, rolled once at creation. Maximum mana is `2 +` your ancestry boon Fount. Armor value is `0` unarmored, `1` light, `2` heavy.
 5. **Finish.** Copy equipment, roll starting coin (1d4 gp + 2d6 sp), choose one useful mundane personal item, and one mundane knack (cooking, knots, card tricks, a song; humans pick two; see Knacks). You never need a roll to do your knack well, and the GM uses it in the fiction. The GM may grant advantage or a bonus when it fits, but you can't plan on one. A knack can reinforce your archetype (drawing for a Cartographer).
 
 Example: rolls `6, 2, 4, 1, 5, 3` drop the 1 and halve to `3, 1, 2, 3, 2`; assigned as ᛄ Seron 3, ∵ Orvik 2, ϟ Zhark 1, △ Drun 2, ⌘ Veyra 3. An elf (ᛄ Seron boon, ⌘ Veyra bane) who picks a ᛄ Seron archetype (Warden) ends with ᛄ Seron 5 and ⌘ Veyra 2.
@@ -120,6 +120,7 @@ A spell cannot erase an established clue or fact. Larger scope, distance, durati
 - **Wheel distance.** The Founts sit on a wheel: ᛄ Seron, ∵ Orvik, ϟ Zhark, ⌘ Veyra, △ Drun, then back to ᛄ Seron, running clockwise from yellow at the top. A Fount's two "opposites" are the two Founts two steps away. Your home Founts are your archetype's Fount and your ancestry boon Fount. Count the steps from the nearest home Fount to the spell's Fount: the same Fount adds 0, one step adds 1, two steps adds 2.
 - **Fount reductions.** The cost drops by 1 if you cast with a Fount score of 4 or more and by 2 at 6 or more. Raising that Fount with points lowers the cost this way.
 - **Practiced spells.** You can keep a number of spells practiced equal to your ∵ Orvik score. A practiced spell costs 1 less. Changing your practiced list takes a few days of downtime.
+- **Marks.** During a long rest you can add one mark to a practiced spell. A mark is one stretch the spell keeps: one more damage or healing die, reach to far, target to a group or zone, or duration up one step. A spell holds as many marks as your score in its Fount. When you cast, choose which marks to use; each adds 1 mana and no difficulty. Marks work only while the spell is practiced.
 
 Alpha numbers: playtest will balance wheel distance and practice.
 
@@ -388,10 +389,11 @@ Archetypes are starting training, not classes or caps. Characters may learn any 
 Active alpha spells. Rules for casting, mana, and rests are in the guide.
 
 - **Starting spells:** a new character knows 1 or 2 spells. More are learned through play.
-- **Cost:** base mana cost in brackets. It drops by 1 if you cast with a Fount score of 4+ and by 2 at 6+, never below 1 (never below 2 for a base-3 spell).
+- **Cost:** base mana cost in brackets. Wheel distance adds mana; Fount score 4+/6+ and practiced spells lower it, never below 1 (never below 2 for a base-3 spell). See Mana.
 - **Defaults:** range nearby (about 30 ft), duration 5 minutes. Larger scope, distance, duration, or unwilling targets are harder.
 - **Stacking:** the same spell does not stack with itself; the newer replaces the older. Different spells stack, but spells never raise armor above 3.
 - **Unwilling targets:** Charm, Babble, Mad jig, Improv sesh, and any other spell that controls, disables, or erases an unwilling creature follow the hard-cast rule in the guide.
+- **Marks:** a practiced spell can grow, one mark per long rest; see Mana in the guide.
 - **Check:** see when to roll. A risky cast rolls `d20 + Fount` for the spell's Fount. A failed cast still spends its mana.
 
 ### ᛄ Seron

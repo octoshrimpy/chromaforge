@@ -1,4 +1,4 @@
-# Build handbook.md, PLAYER-HANDBOOK.pdf, and the character sheet's rules pages from the handbooks.
+# Build handbook.md, PLAYER-HANDBOOK.pdf, MONSTER-MANUAL.pdf, and the character sheet's rules pages from the handbooks.
 # Run from repo root: uv run --with weasyprint --with markdown --with typst --with pypandoc_binary python build.py
 import markdown, weasyprint, re
 SHEET = 'ChromaForge_Alpha_Character_Sheet.html'
@@ -70,6 +70,13 @@ table.split{break-inside:auto}
 th,td{border:1px solid #ccc;padding:2pt 5pt;text-align:left}th{background:#f0eaf7}
 ul{padding-left:14pt}li{margin:1pt 0;break-inside:avoid}p{margin:4pt 0}li>p{margin:0}hr{border:0}'''
 weasyprint.HTML(string='<style>' + css + '</style>' + h).write_pdf('PLAYER-HANDBOOK.pdf')
+
+# ---- Monster manual PDF: same look; threat tiers copied in from the GM handbook ----
+tiers = re.search(r'^### Threat tiers\n.*?(?=^### )', open('GM-HANDBOOK.md').read(), re.S | re.M)[0]
+mm = open('MONSTER-MANUAL.md').read().replace('<!-- tiers -->', tiers.replace('###', '##', 1))
+mm = markdown.markdown(mm, extensions=['tables', 'sane_lists'])
+mm = re.sub(r'(<h3>.*?)(?=<h3>|$)', r'<div class="keep">\1</div>', mm, flags=re.S)  # one creature per block
+weasyprint.HTML(string='<style>' + css.replace('player handbook', 'monster manual') + '</style>' + mm).write_pdf('MONSTER-MANUAL.pdf')
 
 # ---- GM handbook PDF: Typst, two columns ----
 # Pandoc turns the markdown into Typst; build.py adds page breaks, art, and wide tables.

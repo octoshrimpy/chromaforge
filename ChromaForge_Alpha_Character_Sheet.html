@@ -1552,7 +1552,7 @@
                       />
                     </span>
                   </div>
-                  <p class="combat-hint hp-hint">Max HP: 6 + your △ Drun.</p>
+                  <p class="combat-hint hp-hint">Max HP: 3d4 + your △ Drun.</p>
                 </div>
                 <div class="mana-col">
                 <div class="combat-row hp-row">
@@ -1575,7 +1575,7 @@
                     />
                   </span>
                 </div>
-                <p class="combat-hint hp-hint">Max mana: 3 + your ∵ Orvik.</p>
+                <p class="combat-hint hp-hint">Max mana: 2 + your boon Fount.</p>
                 </div>
                 <div class="weapon-col">
                   <div class="combat-row weapon-row">
@@ -1656,7 +1656,8 @@
             <div class="panel-body">
               <textarea
                 class="ruled"
-                aria-label="Spells known, with mana cost; mark practiced spells"
+                aria-label="Spells known, with mana cost; tick practiced spells and list their marks"
+                placeholder="Name (cost) ✓ practiced · marks"
                 name="spells"
                 rows="3"
               ></textarea>
@@ -1718,8 +1719,8 @@
 <li><strong>Concept.</strong> Name the character and describe one visible trait and one desire (it also says why you travel with this party). Pick an ancestry from the roster: note its boon and bane. The boon is +1 to one of its listed Founts (your choice). The bane is −1 to its bane Fount.</li>
 <li><strong>Roll Founts.</strong> Roll 6d6 and drop the lowest. Halve each remaining die, rounding up (1–2 is 1, 3–4 is 2, 5–6 is 3). Assign the five values to your Founts (ᛄ&nbsp;Seron, ∵&nbsp;Orvik, ϟ&nbsp;Zhark, △&nbsp;Drun, ⌘&nbsp;Veyra) however you like. Then apply your ancestry's boon (+1) and bane (−1). Step 3 adds the archetype's +1; all modifiers stack and are added after assigning.</li>
 <li><strong>Choose an archetype and specialty.</strong> Pick one archetype and one of its specialties from Starting archetypes. Copy its kit and archetype ability. Your archetype adds +1 to its Fount, which is also its normal attack Fount. Your specialty gives no stat bonus; its ability text names any Fount it uses. Archetype is a beginning, not a restriction.</li>
-<li><strong>Derived values.</strong> Maximum HP is <code>6 + △&nbsp;Drun</code>. Maximum mana is <code>3 + ∵&nbsp;Orvik</code>. Armor value is <code>0</code> unarmored, <code>1</code> light, <code>2</code> heavy.</li>
-<li><strong>Finish.</strong> Copy equipment, choose one useful mundane personal item, and one mundane knack (cooking, knots, card tricks, a song; humans pick two; see Knacks). You never need a roll to do your knack well, and the GM uses it in the fiction. The GM may grant advantage or a bonus when it fits, but you can't plan on one. A knack can reinforce your archetype (drawing for a Cartographer).</li>
+<li><strong>Derived values.</strong> Maximum HP is <code>3d4 + △&nbsp;Drun</code>, rolled once at creation. Maximum mana is <code>2 +</code> your ancestry boon Fount. Armor value is <code>0</code> unarmored, <code>1</code> light, <code>2</code> heavy.</li>
+<li><strong>Finish.</strong> Copy equipment, roll starting coin (1d4 gp + 2d6 sp), choose one useful mundane personal item, and one mundane knack (cooking, knots, card tricks, a song; humans pick two; see Knacks). You never need a roll to do your knack well, and the GM uses it in the fiction. The GM may grant advantage or a bonus when it fits, but you can't plan on one. A knack can reinforce your archetype (drawing for a Cartographer).</li>
 </ol>
 <p>Example: rolls <code>6, 2, 4, 1, 5, 3</code> drop the 1 and halve to <code>3, 1, 2, 3, 2</code>; assigned as ᛄ&nbsp;Seron 3, ∵&nbsp;Orvik 2, ϟ&nbsp;Zhark 1, △&nbsp;Drun 2, ⌘&nbsp;Veyra 3. An elf (ᛄ&nbsp;Seron boon, ⌘&nbsp;Veyra bane) who picks a ᛄ&nbsp;Seron archetype (Warden) ends with ᛄ&nbsp;Seron 5 and ⌘&nbsp;Veyra 2.</p>
 <h2>Checks</h2>
@@ -1858,6 +1859,7 @@
 <li><strong>Wheel distance.</strong> The Founts sit on a wheel: ᛄ&nbsp;Seron, ∵&nbsp;Orvik, ϟ&nbsp;Zhark, ⌘&nbsp;Veyra, △&nbsp;Drun, then back to ᛄ&nbsp;Seron, running clockwise from yellow at the top. A Fount's two "opposites" are the two Founts two steps away. Your home Founts are your archetype's Fount and your ancestry boon Fount. Count the steps from the nearest home Fount to the spell's Fount: the same Fount adds 0, one step adds 1, two steps adds 2.</li>
 <li><strong>Fount reductions.</strong> The cost drops by 1 if you cast with a Fount score of 4 or more and by 2 at 6 or more. Raising that Fount with points lowers the cost this way.</li>
 <li><strong>Practiced spells.</strong> You can keep a number of spells practiced equal to your ∵&nbsp;Orvik score. A practiced spell costs 1 less. Changing your practiced list takes a few days of downtime.</li>
+<li><strong>Marks.</strong> During a long rest you can add one mark to a practiced spell. A mark is one stretch the spell keeps: one more damage or healing die, reach to far, target to a group or zone, or duration up one step. A spell holds as many marks as your score in its Fount. When you cast, choose which marks to use; each adds 1 mana and no difficulty. Marks work only while the spell is practiced.</li>
 </ul>
 <p>Alpha numbers: playtest will balance wheel distance and practice.</p>
 <p>A failed cast still spends its mana, and a natural 1 has its usual consequence. Minor effects with no risk are cantrips: no roll, no mana. With no mana left, you cannot cast spells.</p>
@@ -2224,10 +2226,11 @@
 <p>Active alpha spells. Rules for casting, mana, and rests are in the guide.</p>
 <ul>
 <li><strong>Starting spells:</strong> a new character knows 1 or 2 spells. More are learned through play.</li>
-<li><strong>Cost:</strong> base mana cost in brackets. It drops by 1 if you cast with a Fount score of 4+ and by 2 at 6+, never below 1 (never below 2 for a base-3 spell).</li>
+<li><strong>Cost:</strong> base mana cost in brackets. Wheel distance adds mana; Fount score 4+/6+ and practiced spells lower it, never below 1 (never below 2 for a base-3 spell). See Mana.</li>
 <li><strong>Defaults:</strong> range nearby (about 30 ft), duration 5 minutes. Larger scope, distance, duration, or unwilling targets are harder.</li>
 <li><strong>Stacking:</strong> the same spell does not stack with itself; the newer replaces the older. Different spells stack, but spells never raise armor above 3.</li>
 <li><strong>Unwilling targets:</strong> Charm, Babble, Mad jig, Improv sesh, and any other spell that controls, disables, or erases an unwilling creature follow the hard-cast rule in the guide.</li>
+<li><strong>Marks:</strong> a practiced spell can grow, one mark per long rest; see Mana in the guide.</li>
 <li><strong>Check:</strong> see when to roll. A risky cast rolls <code>d20 + Fount</code> for the spell's Fount. A failed cast still spends its mana.</li>
 </ul>
 <h3>ᛄ&nbsp;Seron</h3>
@@ -4053,8 +4056,9 @@
             (a.attack === f) -
             (e.bane_fount.value === f);
         }
-        e.max_hp.value = e.current_hp.value = 6 + final.drun;
-        e.max_mana.value = e.current_mana.value = 3 + final.orvik;
+        e.max_hp.value = e.current_hp.value =
+          [1, 2, 3].reduce((t) => t + 1 + Math.floor(Math.random() * 4), 0) + final.drun;
+        e.max_mana.value = e.current_mana.value = 2 + (final[e.primary_fount.value] || 0);
         e.weapon_die.value = a.die;
         limitBoon();
         listSpecialties();

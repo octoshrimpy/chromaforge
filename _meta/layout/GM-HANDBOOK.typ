@@ -152,17 +152,34 @@ A failed check never just means "nothing happens." Pick one, or roll d6:
 
 == Enemies
 === Threat tiers
+A creature is built like a character: its size sets its HP dice, its natural weapon sets its attack die, and its tier adds a flat bonus to both, the way △~Drun and the attack Fount do for players.
+
 #figure(
   align(center)[#table(
-    columns: (7fr, auto, auto, auto, 21fr,),
+    columns: (7fr, auto, auto, 4fr, 21fr,),
     align: (left,right,right,right,left,),
-    table.header([Threat], [HP], [Armor], [Damage], [Use],),
+    table.header([Threat], [HP bonus], [Armor], [Attack bonus], [Use],),
     table.hline(),
-    [fragile], [6], [0], [d6], [skittish animal, guard, hazard body],
-    [capable], [10], [1], [d6 + 1], [trained foe or large predator],
-    [dangerous], [14], [1], [d6 + 2], [scene centerpiece],)]
+    [fragile], [+0], [0], [+0], [skittish animal, guard, hazard body],
+    [capable], [+3], [1], [+1], [trained foe or large predator],
+    [dangerous], [+6], [1], [+2], [scene centerpiece],)]
   , kind: table
   )
+
+#figure(
+  align(center)[#table(
+    columns: (auto, auto, 41fr,),
+    align: (left,right,left,),
+    table.header([Size], [HP dice], [Scale],),
+    table.hline(),
+    [tiny], [`1d4`], [pocket or pack sized; carried in one hand, slips through any crack],
+    [small], [`2d4`], [as small ancestries: fits tight spaces, can be carried],
+    [medium], [`3d4`], [as medium ancestries],
+    [large], [`4d4`], [as large ancestries: blocks passages, cannot fit narrow gaps],)]
+  , kind: table
+  )
+
+Natural weapons use the weapon dice: light `d4` (beak, nip, small claws), standard `d6` (jaws, claws, slam), heavy `d8` (horns, tusks, antlers on a large body). Roll HP once when the creature appears; a fragile group member dies to any damaging hit, so its HP rarely matters.
 
 Enemy attacks always land, like player attacks: roll damage, subtract the target's armor.
 
@@ -181,16 +198,16 @@ A boss is a dangerous enemy with three additions:
 Use at most one boss per party.
 
 === Creature entries
-Write every creature in this shape (see the Katharra alpha pool for three finished examples):
+Write every creature in this shape. Finished creatures live in the monster manual (MONSTER-MANUAL.md and its PDF):
 
 - #strong[Behavior:] what it is doing when found, and what makes it fight.
-- #strong[Stats:] tier, HP, armor, attack.
+- #strong[Stats:] tier, size, HP, armor, attack.
+- #strong[Founts:] a boon and a bane, like an ancestry.
+- #strong[Traits:] what its body lets it do, like an ancestry's notes: how it moves, what it senses, what it ignores.
 - #strong[End combat:] two or three ways the fight stops short of death.
 - #strong[Lead:] what following it, or studying it, reveals.
 
 Wildlife wants safety, food, territory, or its young protected, not a fight to the death.
-
-#strong[Open:] the monster generator roster has 29 Katharra creatures with no entries yet. Each needs a tier and the four lines above, drawn from the wiki bestiary.
 
 === Down and defeat
 At 0 HP a character is down. If every party member is down, follow enemy motives: capture, theft, abandonment, or rescue are better outcomes than an unexplained total-party death. Maiming and rescue are in the player handbook.

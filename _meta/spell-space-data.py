@@ -42,6 +42,28 @@ def score(text, *, dmg=False, heal=False, area=False, school=None):
     return a, d, u
 
 
+# Fount domains from compendium/colors_houses.md
+FOUNT_KW = {
+    "S": r"\bward|abjur|barrier|\bwall|banish|\bbind|\bhold\b|seal|\block|truth|\blie\b|lies|judg|oath|\blaw|sanctuary|shield|dispel|counter|glyph|alarm|imprison|prison|forbid|true seeing|see invisib|\blight\b|radian|holy|smite|protect",
+    "O": r"detect|divin|scry|\bknow|learn|memor|forget|\bread|language|comprehend|identif|locate|\bsense|thought|telepath|message|clairvoy|foresee|predict|legend|insight|reveal|hidden|secret|\bmap\b|pattern|mind",
+    "Z": r"\bfire|flame|burn|lightning|electric|thunder|sonic|explo|shatter|\bbreak|destroy|acid|\bforce\b|blast|chaos|luck|teleport|swap|polymorph|transform|disintegrat|storm|spark|\bbolt",
+    "D": r"\bheal|cure|regenerat|plant|vine|\broot|earth|stone|\btree|beast|animal|strength|endur|disease|restor|vital|\bgrow|nature|poison|necrot|undead|death|\bvoid\b|stamina|tough|wood|\bbody",
+    "V": r"charm|friend|emotion|\bfear|frighten|\blove|\bcalm|suggest|persua|beguil|enthral|compel|dominat|attract|allur|\blink|\bbond|\ball(y|ies)\b|disguise|illusion|\bmask|desire|\bsong|music|emotion|mental|hypno|confus",
+}
+SCHOOL_F = {"abjuration": "S", "divination": "O", "evocation": "Z", "transmutation": "Z", "necromancy": "D", "enchantment": "V", "illusion": "V"}
+
+
+def fount(text, a, d, u, school=None):
+    t = text.lower()
+    sc = {f: len(re.findall(p, t)) for f, p in FOUNT_KW.items()}
+    if school in SCHOOL_F:
+        sc[SCHOOL_F[school]] += 2
+    best = max(sc.values())
+    if best == 0:  # ponytail: no keyword hit, fall back on main role
+        return "Z" if a >= max(d, u) else "D" if d >= u else "O"
+    return max(sc, key=lambda f: (sc[f], "SOZDV".index(f) * -1))
+
+
 def blurb(text, n=150):
     s = re.sub(r"\s+", " ", html.unescape(re.sub(r"<[^>]+>|@\w+\[[^\]]*\](\{([^}]*)\})?", lambda m: m.group(2) or "", text))).strip()
     s = re.split(r"(?<=[.!?]) ", s)[0]
@@ -60,7 +82,7 @@ def dnd(src):
         text = " ".join(s["desc"])
         lvl = s["level"]
         a, d, u = score(text, dmg="damage" in s, heal="heal_at_slot_level" in s, area="area_of_effect" in s, school=s["school"]["index"])
-        out.append([s["name"], tier(lvl, lvl == 0, 9), lvl, a, d, u, blurb(text)])
+        out.append([s["name"], tier(lvl, lvl == 0, 9), lvl, a, d, u, blurb(text), fount(s["name"] + " " + text, a, d, u, s["school"]["index"])])
     return out
 
 
@@ -78,7 +100,7 @@ def pf2e(src):
         lvl = s["level"]["value"]
         cantrip = "cantrip" in traits
         a, d, u = score(text, dmg=dmg and not heal, heal=heal, area=bool(s.get("area")))
-        out.append([j["name"], tier(lvl, cantrip, 10), 0 if cantrip else lvl, a, d, u, blurb(text)])
+        out.append([j["name"], tier(lvl, cantrip, 10), 0 if cantrip else lvl, a, d, u, blurb(text), fount(" ".join([j["name"], *traits, *traits, text]), a, d, u)])
     return out
 
 
@@ -87,7 +109,7 @@ def cairn(src):
     for m in re.finditer(r"^\|\s*\*\*\d+\*\*\s*\|\s*\*\*(.+?)\*\*\s*\|(.+?)\|\s*$", open(f"{src}/cairn/spellbooks.md").read(), re.M):
         name, desc = m.group(1).strip(), re.sub(r"_.*?_", "", m.group(2)).strip()  # drop italic flavor text
         a, d, u = score(desc)
-        out.append([name, 1, None, a, d, u, desc])
+        out.append([name, 1, None, a, d, u, desc, fount(name + " " + desc, a, d, u)])
     return out
 
 

@@ -14,25 +14,25 @@ A custom spell has one or two **Effects**, an optional **medium**, and three set
 
 ## Effects
 
-Each Effect has a base cost of 1 or 2.
+Every Effect costs 1. Each Fount holds three: one for its own role, and one for each of its two neighbors' roles on the wheel (Seron → Orvik → Zhark → Veyra → Drun → Seron). The roles are control (ᛄ Seron), insight (∵ Orvik), attack (ϟ Zhark), influence (⌘ Veyra), and defense (△ Drun). Zhark trades its insight Effect for Swap, a change of form or state. A role a Fount lacks takes a second Effect from another Fount.
 
-| Fount   | Effect (cost) | What it does                                                            |
-| ------- | ------------- | ----------------------------------------------------------------------- |
-| ᛄ Seron | Hold (1)      | keep something in place or inside a boundary                            |
-|         | Mark (1)      | set a line and know when it is crossed                                  |
-|         | Bind (2)      | make a promise, tie, or condition stick                                 |
-| ∵ Orvik | Sense (1)     | learn something present and close                                       |
-|         | Recall (1)    | bring back a fact someone once knew                                     |
-|         | Unveil (2)    | reveal what is known to be hidden                                                   |
-| ϟ Zhark | Spark (1)     | a burst of heat, light, or force                                        |
-|         | Break (2)     | shatter, loosen, or cut a bond                                          |
-|         | Shift (2)     | change a thing's form or state                                          |
-| △ Drun  | Steady (1)    | settle something against disturbance: quiet it, hold it still, brace it |
-|         | Mend (1)      | heal, repair, or regrow a little                                        |
-|         | Anchor (2)    | make something heavy, rooted, or enduring                               |
-| ⌘ Veyra | Draw (1)      | pull attention, feeling, or notice toward something                     |
-|         | Soothe (1)    | calm or sway a mood                                                     |
-|         | Tie (2)       | link two things so one affects the other                                |
+| Fount   | Effect   | Role      | What it does                                                            |
+| ------- | -------- | --------- | ----------------------------------------------------------------------- |
+| ᛄ Seron | Ward     | defense   | set a boundary that harm cannot cross                                   |
+|         | Hold     | control   | keep something in place, inside a boundary, or to its word              |
+|         | Mark     | insight   | set a line and know when it is crossed                                  |
+| ∵ Orvik | Proof    | control   | a pattern that closes a door or loosens a knot                          |
+|         | Sense    | insight   | learn something present and close, or a fact someone nearby once knew   |
+|         | Confound | attack    | knot a mind with pattern: it takes harm or loses its next thought       |
+| ϟ Zhark | Swap     | change    | trade two things' places, forms, or states                              |
+|         | Spark    | attack    | a burst of heat, light, or force that can shatter                       |
+|         | Kindle   | influence | stir a passion: anger, daring, or want                                  |
+| ⌘ Veyra | Dread    | attack    | send fear or pain along a feeling                                       |
+|         | Draw     | influence | pull attention, feeling, or notice toward something, or calm it         |
+|         | Tie      | defense   | link two things so one shares what the other suffers                    |
+| △ Drun  | Hearten  | influence | lend courage or stamina                                                 |
+|         | Mend     | defense   | heal, repair, or regrow a little                                        |
+|         | Steady   | control   | settle something against disturbance: quiet it, brace it, root it      |
 
 ## Target, Reach, Duration
 
@@ -40,7 +40,10 @@ Each Effect has a base cost of 1 or 2.
 | -------- | --------------------------------------------------- | -------------------------------------------------------------------------------------- |
 | Target   | you, one willing creature, or one unattended object | a group (+1), or a nearby zone (+1)                                                    |
 | Reach    | touch or nearby (about 30 ft)                       | far, within sight (+1)                                                                 |
+| Strength | an ordinary effect                                  | potent, one step stronger, such as minor harm to serious (+1)                          |
 | Duration | 5 minutes                                           | instant (free, for a one-off), until the next rest (+1), until the next long rest (+2) |
+
+A designed spell, once practiced, can take marks like any other (see Mana in the guide): each mark is one of these stretches, trained in so it adds mana but no difficulty.
 
 An unwilling target makes the cast hard, as in the guide's Magic section. A group or zone with an unwilling creature in it does the same.
 
@@ -70,6 +73,9 @@ A potion holds one spell's effect for whoever drinks or applies it. The drinker 
 - **Limits.** A potion cannot carry a hard cast against an unwilling target; it works only on someone who takes it willingly. Stretched settings cost the same extra mana as for a cast.
 
 ## Open questions
+
+- Insight has only two Effects (Mark, Sense) since Swap took Zhark's slot. Enough?
+- Cut in the move to three per Fount: Bind (into Hold), Recall and Unveil (into Sense), Break (into Spark), Soothe (into Draw), Anchor (into Steady), Shift (into Swap).
 
 - Does a second Effect need its own Fount score to use?
 - How many custom spells can one character hold before the practiced list matters?

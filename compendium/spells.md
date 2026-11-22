@@ -8,6 +8,7 @@ Active alpha spells. Rules for casting, mana, and rests are in the [guide](../PL
 - **Defaults:** range nearby (about 30 ft), duration 5 minutes. Larger scope, distance, duration, or unwilling targets are harder.
 - **Stacking:** the same spell does not stack with itself; the newer replaces the older. Different spells stack, but spells never raise armor above 3.
 - **Unwilling targets:** Charm, Babble, Mad jig, Improv sesh, and any other spell that controls, disables, or erases an unwilling creature follow the hard-cast rule in the guide.
+- **Marks:** a practiced spell can grow, one mark per long rest; see Mana in the [guide](../PLAYER-HANDBOOK.md#magic).
 - **Check:** see [when to roll](../PLAYER-HANDBOOK.md#magic). A risky cast rolls `d20 + Fount` for the spell's Fount. A failed cast still spends its mana.
 
 ## ᛄ Seron
