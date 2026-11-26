@@ -582,39 +582,6 @@ Armor value is subtracted from damage. Total armor never exceeds 3, counting spe
 
 Mounts are beasts, not gear: they have motives and limits. A mount lets the party cross a long journey faster, but the travel table still applies.
 
-### Shop stock
-
-Roll when the party browses a notable shop: what is in stock, how good it is, and what is odd about it. Price comes from the tables above; quality sets the multiplier.
-
-| d10 | Item |
-| --: | ---- |
-| 1 | a weapon: blade, bow, hafted, or hidden |
-| 2 | armor or a shield |
-| 3 | a potion or draught |
-| 4 | a tool or kit for a trade |
-| 5 | a book, map, or sealed letter |
-| 6 | jewelry or a small trinket |
-| 7 | fine clothing or a disguise |
-| 8 | a mount, beast, or familiar |
-| 9 | raw material: ore, hide, reagents, or lumber |
-| 10 | an oddity even the seller cannot explain |
-
-| d6 | Quality | Price |
-| -: | ------- | ----: |
-| 1 | shoddy: cheap, and it shows | half |
-| 2–3 | common: fair price, does the job | listed |
-| 4–5 | fine: well-made | double |
-| 6 | exceptional: rare, and dear | four times |
-
-| d6 | Quirk |
-| -: | ----- |
-| 1 | the seller won't say where it came from |
-| 2 | it's not actually theirs to sell |
-| 3 | there's exactly one, and someone else wants it |
-| 4 | it comes with a condition |
-| 5 | it's slightly wrong in a way you can't place |
-| 6 | nothing's wrong with it, which is suspicious |
-
 <!-- pagebreak -->
 
 ## Knacks

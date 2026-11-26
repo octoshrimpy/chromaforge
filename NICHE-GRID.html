@@ -1,0 +1,144 @@
+<!doctype html><meta charset="utf-8"><meta name="viewport" content="width=device-width">
+<title>Katharra Niche Grid</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC:wght@500;700&family=Alegreya+Sans:wght@400;500;700&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+/* Layout: field-survey sheet. Five Fount bands, each three altitude plates of temp × moisture. Detail panel follows the click. */
+:root{
+  --ground:#eef0ee; --sheet:#ffffff; --ink:#1d2421; --muted:#5e6964; --rule:#d3d9d5; --empty:#e4e8e5;
+  --S:#c99a06; --O:#2f6fd0; --Z:#d23b2a; --V:#8a45c4; --D:#2f9a4c;
+  --display:"Alegreya Sans SC","Alegreya Sans",system-ui,sans-serif;
+  --body:"Alegreya Sans",system-ui,sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --ground:#141917; --sheet:#1c2220; --ink:#e3e8e5; --muted:#97a39d; --rule:#2e3633; --empty:#242b28;
+  --S:#e8b923; --O:#5b93ec; --Z:#ee5f4c; --V:#ad74e3; --D:#4fbf6c; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --ground:#141917; --sheet:#1c2220; --ink:#e3e8e5; --muted:#97a39d; --rule:#2e3633; --empty:#242b28;
+  --S:#e8b923; --O:#5b93ec; --Z:#ee5f4c; --V:#ad74e3; --D:#4fbf6c; color-scheme:dark}
+body{background:var(--ground);color:var(--ink);font:17px/1.5 var(--body);
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:28px 48px}
+main{max-width:1100px;margin:0 auto;display:grid;gap:28px}
+h1,h2,h3{font-family:var(--display);font-weight:700;text-wrap:balance;margin:0}
+h1{font-size:2.1rem;letter-spacing:.02em}
+h2{font-size:1.35rem;letter-spacing:.03em}
+p{margin:0;max-width:68ch}
+.lede{color:var(--muted)}
+.stats{display:flex;flex-wrap:wrap;gap:8px 28px;font-family:var(--mono);font-size:.85rem;color:var(--muted)}
+.stats b{color:var(--ink);font-weight:600}
+.band{background:var(--sheet);border:1px solid var(--rule);border-radius:6px;padding:18px;display:grid;gap:14px}
+.bandhead{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 16px}
+.bandhead h2{color:var(--c)}
+.bandhead span{font-family:var(--mono);font-size:.8rem;color:var(--muted)}
+.plates{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+@media (max-width:760px){.plates{grid-template-columns:1fr}}
+.plate h3{font-size:.9rem;letter-spacing:.08em;color:var(--muted);margin-bottom:6px}
+.grid{display:grid;grid-template-columns:auto repeat(3,1fr);gap:3px;font-family:var(--mono);font-size:.72rem}
+.ax{color:var(--muted);display:flex;align-items:center;justify-content:center;padding:2px 4px}
+.cell{aspect-ratio:1.5;max-width:100%;border:0;border-radius:3px;font:600 1rem var(--mono);cursor:pointer;
+  background:color-mix(in oklab,var(--c) calc(var(--k)*100%),var(--empty));color:var(--ink)}
+.cell.hot{color:#fff}
+.cell.zero{background:repeating-linear-gradient(45deg,var(--empty) 0 5px,transparent 5px 10px);outline:1px dashed var(--muted)}
+.cell[aria-pressed="true"]{outline:3px solid var(--ink);outline-offset:1px}
+.cell:focus-visible{outline:3px solid var(--ink);outline-offset:1px}
+#detail{background:var(--sheet);border:1px solid var(--rule);border-left:6px solid var(--c);border-radius:6px;padding:18px;display:grid;gap:12px}
+#detail h2{color:var(--c)}
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
+.label{font-family:var(--display);font-size:.85rem;letter-spacing:.08em;color:var(--muted)}
+ul.chips{list-style:none;padding:0;margin:6px 0 0;display:flex;flex-wrap:wrap;gap:6px}
+ul.chips li{border:1px solid var(--rule);border-radius:999px;padding:2px 10px;font-size:.92rem}
+ul.chips li i{font-style:normal;color:var(--muted);font-size:.8rem}
+ul.chips.gap li{border-style:dashed;color:var(--muted)}
+.tablewrap{overflow-x:auto}
+table{border-collapse:collapse;font-size:.92rem;font-variant-numeric:tabular-nums;min-width:560px;width:100%}
+th,td{padding:6px 10px;border-bottom:1px solid var(--rule);text-align:right}
+th:first-child,td:first-child{text-align:left}
+thead th{font-family:var(--display);letter-spacing:.05em;font-weight:700}
+td.h{background:color-mix(in oklab,var(--Z) calc(var(--k)*55%),transparent)}
+ol.holes{margin:0;padding-left:1.4em;display:grid;gap:8px;max-width:72ch}
+.legend{display:flex;align-items:center;gap:10px;font-family:var(--mono);font-size:.78rem;color:var(--muted);flex-wrap:wrap}
+.ramp{width:160px;height:10px;border-radius:2px;background:linear-gradient(90deg,var(--empty),var(--ink))}
+</style>
+<main>
+<header style="display:grid;gap:10px">
+  <h1>Katharra Niche Grid</h1>
+  <p class="lede">Five Fount regions, each split into 27 climate cells (temperature × moisture × altitude): 135 niches in all. Each number is how many of the 31 manual creatures live in that cell. A healthy community has about 15 species, from grubs to an apex hunter. Click any cell to see who lives there and which roles are missing.</p>
+  <div class="stats" id="stats"></div>
+  <div class="legend"><span>0</span><span class="ramp"></span><span>16 species</span><span>· hatched = empty niche</span></div>
+</header>
+<section id="detail" aria-live="polite"></section>
+<div id="bands" style="display:grid;gap:20px"></div>
+<section class="band" style="--c:var(--ink)">
+  <h2>Missing roles by region</h2>
+  <p class="lede">Out of 27 cells in each region, the number of cells where nobody fills the role. 27 means the role is absent from the whole region.</p>
+  <div class="tablewrap"><table id="gaps"></table></div>
+</section>
+<section class="band" style="--c:var(--ink)">
+  <h2>Holes, worst first</h2>
+  <ol class="holes" id="holes"><li><b>Swarm insects</b> are almost absent: only the midgemire, and only in hot or temperate wet lowland. Every region needs a dry-country swarm, a cold one and a highland one. Seron and Orvik have none at all.</li>
+<li><b>Insectivores</b> barely exist: one bramilla. Zhark and Veyra have none. Once swarm insects are added, something has to eat them.</li>
+<li><b>Aquatic life</b> covers only wet lowland. Drun has no aquatic creature at all, and nothing lives in cold water or highland streams.</li>
+<li><b>Seron has no mid predator and no scavenger.</b> The spindlebeast covers the hot desert, so cold and temperate Seron have nothing hunting between the small and apex tiers.</li>
+<li><b>Drun has no small predator and no carrion bird.</b> The cairnbeak's bane is Drun, so Drun needs a carrion eater of its own.</li>
+<li><b>Veyra is the thinnest region</b>, with 16 species and an average under 4 per niche. It has no burrower, decomposer, browser or small flier, and only the stranglemaw at the top, in hot wet lowland.</li>
+<li><b>Cold wet country is empty almost everywhere</b>: bogs, fens and snowmelt marsh. Zhark cold wet lowland has nothing, and Seron hot wet highland (cloud forest) has nothing.</li>
+<li><b>Apex predators cover three patches</b>: hot desert (spindlebeast), hot jungle lowland (stranglemaw) and cold tundra (thrumble). Nothing hunts at the top in temperate country, and the only highland apex is the spindlebeast in hot dry highland.</li>
+</ol>
+</section>
+</main>
+<script>
+const DATA={"creatures": [{"name": "Bramilla", "boon": "S", "bane": "Z", "role": "insectivore", "regions": "SOD", "t": "TH", "m": "M", "a": "LM"}, {"name": "Bumbleboar", "boon": "D", "bane": "O", "role": "large grazer", "regions": "DZS", "t": "T", "m": "MW", "a": "LM"}, {"name": "Cairnbeak", "boon": "O", "bane": "D", "role": "carrion bird", "regions": "OSZV", "t": "CT", "m": "DM", "a": "LMH"}, {"name": "Cindral", "boon": "Z", "bane": "V", "role": "decomposer", "regions": "ZSO", "t": "H", "m": "DM", "a": "LMH"}, {"name": "Denonia", "boon": "V", "bane": "O", "role": "mid predator", "regions": "VZD", "t": "TH", "m": "MW", "a": "LM"}, {"name": "Drudge", "boon": "D", "bane": "Z", "role": "large grazer", "regions": "DSO", "t": "T", "m": "DM", "a": "LM"}, {"name": "Fezzle", "boon": "Z", "bane": "S", "role": "small grazer", "regions": "ZVO", "t": "TH", "m": "DM", "a": "LM"}, {"name": "Gnomad", "boon": "S", "bane": "V", "role": "oddity", "regions": "SODZ", "t": "CTH", "m": "DM", "a": "LMH"}, {"name": "Grubbler", "boon": "Z", "bane": "S", "role": "scavenger", "regions": "ZVDO", "t": "TH", "m": "MW", "a": "LM"}, {"name": "Knibblet", "boon": "S", "bane": "Z", "role": "small grazer", "regions": "SOD", "t": "C", "m": "DM", "a": "LMH"}, {"name": "Krailgoat", "boon": "D", "bane": "O", "role": "browser/climber", "regions": "DSZ", "t": "CT", "m": "DM", "a": "MH"}, {"name": "Lodelark", "boon": "O", "bane": "Z", "role": "small flier", "regions": "OSD", "t": "CT", "m": "DM", "a": "MH"}, {"name": "Midgemire", "boon": "Z", "bane": "S", "role": "swarm insect", "regions": "ZVD", "t": "TH", "m": "W", "a": "L"}, {"name": "Miregrub", "boon": "D", "bane": "V", "role": "decomposer", "regions": "DSZ", "t": "TH", "m": "MW", "a": "LM"}, {"name": "Salamandarin", "boon": "V", "bane": "D", "role": "aquatic", "regions": "VOZ", "t": "TH", "m": "W", "a": "LM"}, {"name": "Shirrak beetle", "boon": "O", "bane": "V", "role": "decomposer", "regions": "OSZ", "t": "H", "m": "D", "a": "LM"}, {"name": "Skithfish", "boon": "O", "bane": "D", "role": "aquatic", "regions": "OVZS", "t": "TH", "m": "W", "a": "L"}, {"name": "Spindlebeast", "boon": "S", "bane": "Z", "role": "apex predator", "regions": "SOD", "t": "H", "m": "D", "a": "LMH"}, {"name": "Stranglemaw", "boon": "V", "bane": "Z", "role": "apex predator", "regions": "VDO", "t": "H", "m": "W", "a": "L"}, {"name": "Tallowtail", "boon": "S", "bane": "O", "role": "small flier", "regions": "SDZ", "t": "TH", "m": "MW", "a": "LM"}, {"name": "Thritch", "boon": "Z", "bane": "D", "role": "mid predator", "regions": "ZOV", "t": "TH", "m": "W", "a": "L"}, {"name": "Thrumble", "boon": "O", "bane": "V", "role": "apex predator", "regions": "OSZD", "t": "C", "m": "DM", "a": "LM"}, {"name": "Thrumling", "boon": "D", "bane": "V", "role": "burrower", "regions": "DSZO", "t": "CT", "m": "DM", "a": "MH"}, {"name": "Timberback", "boon": "D", "bane": "Z", "role": "browser/climber", "regions": "DSO", "t": "CT", "m": "MW", "a": "LM"}, {"name": "Veloom", "boon": "V", "bane": "D", "role": "small predator", "regions": "VOZS", "t": "TH", "m": "MW", "a": "LM"}, {"name": "Vuun", "boon": "D", "bane": "Z", "role": "large grazer", "regions": "DSV", "t": "CT", "m": "M", "a": "LMH"}, {"name": "Whiffle", "boon": "Z", "bane": "S", "role": "oddity", "regions": "ZOVD", "t": "CTH", "m": "DMW", "a": "MH"}, {"name": "Whimblight", "boon": "O", "bane": "Z", "role": "oddity", "regions": "OVS", "t": "CT", "m": "MW", "a": "LMH"}, {"name": "Whimwick", "boon": "V", "bane": "S", "role": "scavenger", "regions": "VZOD", "t": "TH", "m": "DM", "a": "MH"}, {"name": "Whirrel", "boon": "D", "bane": "O", "role": "small grazer", "regions": "DSZV", "t": "T", "m": "MW", "a": "LM"}, {"name": "Wogget", "boon": "V", "bane": "O", "role": "large grazer", "regions": "VZD", "t": "H", "m": "W", "a": "L"}], "roles": ["decomposer", "burrower", "swarm insect", "small grazer", "large grazer", "browser/climber", "small flier", "carrion bird", "aquatic", "insectivore", "small predator", "mid predator", "apex predator", "scavenger", "oddity"]};
+const F={S:"ᛄ Seron",O:"∵ Orvik",Z:"ϟ Zhark",V:"⌘ Veyra",D:"△ Drun"};
+const T={C:"cold",T:"temperate",H:"hot"},M={D:"dry",M:"moderate",W:"wet"},A={L:"lowland",M:"midland",H:"highland"};
+const cr=DATA.creatures, R=DATA.roles;
+const here=(r,t,m,a)=>cr.filter(c=>c.regions.includes(r)&&c.t.includes(t)&&c.m.includes(m)&&c.a.includes(a));
+const MAX=16;
+let sel=null;
+const el=(tag,props={},kids=[])=>{const e=document.createElement(tag);Object.assign(e,props);for(const k of kids)e.append(k);return e;};
+function chips(list,cls){const u=el("ul",{className:"chips"+(cls?" "+cls:"")});list.forEach(x=>u.append(x));return u;}
+function show(r,t,m,a){
+  sel=[r,t,m,a].join("");
+  document.querySelectorAll(".cell").forEach(b=>b.setAttribute("aria-pressed",b.dataset.k===sel));
+  const h=here(r,t,m,a), roles=new Set(h.map(c=>c.role)), missing=R.filter(x=>!roles.has(x));
+  const d=document.getElementById("detail"); d.style.setProperty("--c",`var(--${r})`); d.replaceChildren();
+  d.append(el("h2",{textContent:`${F[r]} · ${T[t]}, ${M[m]}, ${A[a]}`}),
+    el("p",{className:"lede",textContent:`${h.length} species, ${roles.size} of ${R.length} roles filled.`}));
+  const cols=el("div",{className:"cols"});
+  const live=h.map(c=>{const li=el("li",{textContent:c.name+" "});li.append(el("i",{textContent:c.role+(c.boon===r?" · home":"")}));return li;});
+  cols.append(el("div",{},[el("div",{className:"label",textContent:"Lives here"}),live.length?chips(live):el("p",{className:"lede",textContent:"Nothing yet."})]));
+  cols.append(el("div",{},[el("div",{className:"label",textContent:"Missing roles"}),chips(missing.map(x=>el("li",{textContent:x})),"gap")]));
+  d.append(cols);
+}
+const bands=document.getElementById("bands"); let total=0,empty=0,thin=0,best=[null,-1];
+for(const r of "SOZVD"){
+  const n=cr.filter(c=>c.regions.includes(r)).length, home=cr.filter(c=>c.boon===r).length;
+  const band=el("section",{className:"band"}); band.style.setProperty("--c",`var(--${r})`);
+  const hd=el("div",{className:"bandhead"},[el("h2",{textContent:F[r]+" region"}),el("span",{textContent:`${n} species · ${home} call it home`})]);
+  const plates=el("div",{className:"plates"});
+  for(const a of "HML"){
+    const g=el("div",{className:"grid"}); g.append(el("span"));
+    for(const t of "CTH") g.append(el("span",{className:"ax",textContent:T[t]}));
+    for(const m of "WMD"){
+      g.append(el("span",{className:"ax",textContent:M[m]}));
+      for(const t of "CTH"){
+        const k=here(r,t,m,a).length; total+=k; if(!k)empty++; if(k<=2)thin++; if(k>best[1])best=[r+t+m+a,k];
+        const b=el("button",{className:"cell"+(k?"":" zero")+(k/MAX>.55?" hot":""),textContent:k,
+          ariaLabel:`${F[r]}, ${T[t]}, ${M[m]}, ${A[a]}: ${k} species`});
+        b.dataset.k=r+t+m+a; b.style.setProperty("--k",Math.min(k/MAX,1).toFixed(3));
+        b.setAttribute("aria-pressed","false"); b.onclick=()=>show(r,t,m,a); g.append(b);
+      }
+    }
+    plates.append(el("div",{className:"plate"},[el("h3",{textContent:A[a]}),g]));
+  }
+  band.append(hd,plates); bands.append(band);
+}
+document.getElementById("stats").innerHTML=`<span><b>${cr.length}</b> creatures</span><span><b>${(total/135).toFixed(1)}</b> species per niche, avg</span><span><b>${empty}</b> empty niches</span><span><b>${thin}</b> niches with 2 or fewer</span><span>target <b>~15</b> per niche</span>`;
+// gap table
+const gt=document.getElementById("gaps");
+gt.innerHTML="<thead><tr><th>Role</th>"+[..."SOZVD"].map(r=>`<th style="color:var(--${r})">${F[r]}</th>`).join("")+"<th>All 135</th></tr></thead>";
+const tb=el("tbody"); const rows=R.map(x=>{const per={};let s=0;for(const r of "SOZVD"){let c=0;for(const t of "CTH")for(const m of "DMW")for(const a of "LMH")if(!here(r,t,m,a).some(c=>c.role===x))c++;per[r]=c;s+=c;}return [x,per,s];}).sort((p,q)=>q[2]-p[2]);
+for(const [x,per,s] of rows){const tr=el("tr");tr.append(el("td",{textContent:x}));for(const r of "SOZVD"){const td=el("td",{className:"h",textContent:per[r]});td.style.setProperty("--k",(per[r]/27).toFixed(3));tr.append(td);}tr.append(el("td",{textContent:s}));tb.append(tr);}
+gt.append(tb);
+show(...best[0]);
+</script>

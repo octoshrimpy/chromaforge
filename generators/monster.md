@@ -8,7 +8,7 @@ Creatures are Katharra's own fauna (see the wiki bestiary, `entities/fauna_and_b
 | ------ | ----------------- | ------- |
 | `1d10` | encounter_purpose |         |
 | `1d10` | creature          |         |
-| `1d6`  | threat            |         |
+| `1d6`  | number            |         |
 
 ### encounter_purpose
 
@@ -27,24 +27,20 @@ Creatures are Katharra's own fauna (see the wiki bestiary, `entities/fauna_and_b
 
 ### creature
 
-_the Katharra bestiary. Descriptions live in the wiki; drill in for the statblock later._
+_the Katharra bestiary. Stats and tiers are in the [monster manual](/MONSTER-MANUAL.md)._
 
 | roll | result                                                                                                                                                                                                                                                                                                                                                                                  |
 | ---- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 1-10 | {{pick: bramilla \| bumbleboar \| cairnbeak \| cindral \| denonia \| drudge \| fezzle \| gnomad \| grubbler \| knibblet \| krailgoat \| lodelark \| marcove horn bend \| midgemire \| salamandarin \| shirrak beetle \| skithfish \| spindlebeast \| stranglemaw \| tallowtail \| thritch \| thrumble \| timberback \| vuun \| whiffle \| whimblight \| whimwick \| whirrel \| wogget}} |
+| 1-10 | {{pick: bramilla \| bumbleboar \| cairnbeak \| cindral \| denonia \| drudge \| fezzle \| gnomad \| grubbler \| knibblet \| krailgoat \| lodelark \| midgemire \| miregrub \| salamandarin \| shirrak beetle \| skithfish \| spindlebeast \| stranglemaw \| tallowtail \| thritch \| thrumble \| thrumling \| timberback \| veloom \| vuun \| whiffle \| whimblight \| whimwick \| whirrel \| wogget}} |
 
-<!-- ponytail: flat roster - most wiki creatures have no biome assigned yet, so
-     biome-keying would mean inventing habitats. Re-key by biome once the wiki
-     assigns them. Descriptions/statblocks should migrate from the wiki bestiary
-     into compendium/dm.md (whose V1 monster pool holds the old generic D&D roster). -->
+<!-- ponytail: flat roster. Each MONSTER-MANUAL.md entry has a Habitat line,
+     so this can be re-keyed by region and climate when biome rolls need it. -->
 
-### threat
+### number
 
-_how many, and how tough. Stats for each tier (HP, armor, damage) are in the [GM handbook](/GM-HANDBOOK.md). For a first party, never more than one capable enemy per character._
+_how many, set by the creature's tier in the [monster manual](/MONSTER-MANUAL.md). For a first party, never more than one capable enemy per character._
 
-| roll | result                                                            |
-| ---- | ----------------------------------------------------------------- |
-| 1-2  | fragile group: one per character + 1d4, acting as one group       |
-| 3-4  | capable: one, plus one per two characters                         |
-| 5    | capable: one per character                                        |
-| 6    | dangerous: one, with a fragile group of 1d4                       |
+| roll | result                                                                                              |
+| ---- | --------------------------------------------------------------------------------------------------- |
+| 1-4  | fragile: a group of one per character + 1d4 · capable: one, plus one per two characters · dangerous: one |
+| 5-6  | fragile: a group of one per character + 1d4 · capable: one per character · dangerous: one             |

@@ -204,6 +204,7 @@ Write every creature in this shape. Finished creatures live in the monster manua
 - #strong[Stats:] tier, size, HP, armor, attack.
 - #strong[Founts:] a boon and a bane, like an ancestry.
 - #strong[Traits:] what its body lets it do, like an ancestry's notes: how it moves, what it senses, what it ignores.
+- #strong[Habitat:] role in the food web; Fount regions (boon first, never the bane); climate patch of temperature, moisture, and altitude. Never all 27 climate cells.
 - #strong[End combat:] two or three ways the fight stops short of death.
 - #strong[Lead:] what following it, or studying it, reveals.
 
@@ -438,38 +439,41 @@ Roll color, biome, then contents. Name what is there; generate its insides only 
   )
 
 #fence("Monster")
-#place(auto, float: true, scope: "parent", clearance: 10pt, block(width: 100%)[#set align(left)
+#place(top, float: true, scope: "parent", clearance: 10pt, block(width: 100%)[#set align(left)
 === Monster
-Roll creature, threat, then purpose. Stats for each tier are under Threat tiers.
+])
+Roll creature, number, then purpose. Each creature's stats and tier are in the monster manual.
 
-#strong[Creature:] roll a d6 for the row and a d6 for the column. On a 6 for the column, choose from the row.
+#strong[Creature:] roll a d8 for the row and a d4 for the column.
 
 #figure(
   align(center)[#table(
-    columns: (auto, 8fr, 7fr, 9fr, 7fr, 8fr,),
-    align: (right,left,left,left,left,left,),
-    table.header([d6], [1], [2], [3], [4], [5],),
+    columns: (auto, 7fr, 7fr, 8fr, 9fr,),
+    align: (right,left,left,left,left,),
+    table.header([d8], [1], [2], [3], [4],),
     table.hline(),
-    [1], [bramilla], [bumbleboar], [cairnbeak], [cindral], [denonia],
-    [2], [drudge], [fezzle], [gnomad], [grubbler], [knibblet],
-    [3], [krailgoat], [lodelark], [marcove horn bend], [midgemire], [salamandarin],
-    [4], [shirrak beetle], [skithfish], [spindlebeast], [stranglemaw], [tallowtail],
-    [5], [thritch], [thrumble], [timberback], [vuun], [whiffle],
-    [6], [whimblight], [whimwick], [whirrel], [wogget], [GM's choice],)]
+    [1], [bramilla], [bumbleboar], [cairnbeak], [cindral],
+    [2], [denonia], [drudge], [fezzle], [gnomad],
+    [3], [grubbler], [knibblet], [krailgoat], [lodelark],
+    [4], [midgemire], [miregrub], [salamandarin], [shirrak beetle],
+    [5], [skithfish], [spindlebeast], [stranglemaw], [tallowtail],
+    [6], [thritch], [thrumble], [thrumling], [timberback],
+    [7], [veloom], [vuun], [whiffle], [whimblight],
+    [8], [whimwick], [whirrel], [wogget], [GM's choice],)]
   , kind: table
   )
 
-])
+#strong[Number:] set by the creature's tier.
+
 #figure(
   align(center)[#table(
-    columns: (auto, 35fr,),
-    align: (right,left,),
-    table.header([d6], [Threat],),
+    columns: (7fr, 32fr,),
+    align: (left,left,),
+    table.header([Tier], [How many],),
     table.hline(),
-    [1-2], [fragile group: one per character + d4, acting as one group],
-    [3-4], [capable: one, plus one per two characters],
-    [5], [capable: one per character],
-    [6], [dangerous: one, with a fragile group of d4],)]
+    [fragile], [a group of one per character + d4, acting as one group],
+    [capable], [d6: 1-4, one, plus one per two characters; 5-6, one per character],
+    [dangerous], [one],)]
   , kind: table
   )
 

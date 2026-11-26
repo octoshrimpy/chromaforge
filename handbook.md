@@ -586,39 +586,6 @@ Armor value is subtracted from damage. Total armor never exceeds 3, counting spe
 
 Mounts are beasts, not gear: they have motives and limits. A mount lets the party cross a long journey faster, but the travel table still applies.
 
-#### Shop stock
-
-Roll when the party browses a notable shop: what is in stock, how good it is, and what is odd about it. Price comes from the tables above; quality sets the multiplier.
-
-| d10 | Item |
-| --: | ---- |
-| 1 | a weapon: blade, bow, hafted, or hidden |
-| 2 | armor or a shield |
-| 3 | a potion or draught |
-| 4 | a tool or kit for a trade |
-| 5 | a book, map, or sealed letter |
-| 6 | jewelry or a small trinket |
-| 7 | fine clothing or a disguise |
-| 8 | a mount, beast, or familiar |
-| 9 | raw material: ore, hide, reagents, or lumber |
-| 10 | an oddity even the seller cannot explain |
-
-| d6 | Quality | Price |
-| -: | ------- | ----: |
-| 1 | shoddy: cheap, and it shows | half |
-| 2–3 | common: fair price, does the job | listed |
-| 4–5 | fine: well-made | double |
-| 6 | exceptional: rare, and dear | four times |
-
-| d6 | Quirk |
-| -: | ----- |
-| 1 | the seller won't say where it came from |
-| 2 | it's not actually theirs to sell |
-| 3 | there's exactly one, and someone else wants it |
-| 4 | it comes with a condition |
-| 5 | it's slightly wrong in a way you can't place |
-| 6 | nothing's wrong with it, which is suspicious |
-
 <!-- pagebreak -->
 
 ### Knacks
@@ -790,6 +757,7 @@ Write every creature in this shape. Finished creatures live in the monster manua
 - **Stats:** tier, size, HP, armor, attack.
 - **Founts:** a boon and a bane, like an ancestry.
 - **Traits:** what its body lets it do, like an ancestry's notes: how it moves, what it senses, what it ignores.
+- **Habitat:** role in the food web; Fount regions (boon first, never the bane); climate patch of temperature, moisture, and altitude. Never all 27 climate cells.
 - **End combat:** two or three ways the fight stops short of death.
 - **Lead:** what following it, or studying it, reveals.
 
@@ -984,25 +952,28 @@ Roll color, biome, then contents. Name what is there; generate its insides only 
 
 #### Monster
 
-Roll creature, threat, then purpose. Stats for each tier are under Threat tiers.
+Roll creature, number, then purpose. Each creature's stats and tier are in the monster manual.
 
-**Creature:** roll a d6 for the row and a d6 for the column. On a 6 for the column, choose from the row.
+**Creature:** roll a d8 for the row and a d4 for the column.
 
-| d6 | 1 | 2 | 3 | 4 | 5 |
-| -: | - | - | - | - | - |
-| 1 | bramilla | bumbleboar | cairnbeak | cindral | denonia |
-| 2 | drudge | fezzle | gnomad | grubbler | knibblet |
-| 3 | krailgoat | lodelark | marcove horn bend | midgemire | salamandarin |
-| 4 | shirrak beetle | skithfish | spindlebeast | stranglemaw | tallowtail |
-| 5 | thritch | thrumble | timberback | vuun | whiffle |
-| 6 | whimblight | whimwick | whirrel | wogget | GM's choice |
+| d8 | 1 | 2 | 3 | 4 |
+| -: | - | - | - | - |
+| 1 | bramilla | bumbleboar | cairnbeak | cindral |
+| 2 | denonia | drudge | fezzle | gnomad |
+| 3 | grubbler | knibblet | krailgoat | lodelark |
+| 4 | midgemire | miregrub | salamandarin | shirrak beetle |
+| 5 | skithfish | spindlebeast | stranglemaw | tallowtail |
+| 6 | thritch | thrumble | thrumling | timberback |
+| 7 | veloom | vuun | whiffle | whimblight |
+| 8 | whimwick | whirrel | wogget | GM's choice |
 
-| d6 | Threat |
-| -: | ------ |
-| 1-2 | fragile group: one per character + d4, acting as one group |
-| 3-4 | capable: one, plus one per two characters |
-| 5 | capable: one per character |
-| 6 | dangerous: one, with a fragile group of d4 |
+**Number:** set by the creature's tier.
+
+| Tier | How many |
+| ---- | -------- |
+| fragile | a group of one per character + d4, acting as one group |
+| capable | d6: 1-4, one, plus one per two characters; 5-6, one per character |
+| dangerous | one |
 
 | d10 | Purpose: how the fight ends, or how it should feel |
 | --: | ------- |
